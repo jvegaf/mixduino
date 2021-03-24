@@ -137,67 +137,67 @@ Text GLabel 5925 6650 1    60   Input ~ 0
 D2
 Text GLabel 5725 6650 0    60   Input ~ 0
 D3
-Text GLabel 1000 6450 0    60   Input ~ 0
+Text GLabel 1000 6450 2    60   Input ~ 0
 BL1
-Text GLabel 4575 6450 0    60   Input ~ 0
+Text GLabel 4575 6450 2    60   Input ~ 0
 Bshift
-Text GLabel 10451 1067 0    60   Input ~ 0
+Text GLabel 10451 1067 2    60   Input ~ 0
 VU0
-Text GLabel 10440 2976 0    60   Input ~ 0
+Text GLabel 10440 2976 2    60   Input ~ 0
 VU8
-Text GLabel 10440 3076 0    60   Input ~ 0
+Text GLabel 10440 3076 2    60   Input ~ 0
 VU7
-Text GLabel 10451 1167 0    60   Input ~ 0
+Text GLabel 10451 1167 2    60   Input ~ 0
 VU1
-Text GLabel 10451 1267 0    60   Input ~ 0
+Text GLabel 10451 1267 2    60   Input ~ 0
 VU2
-Text GLabel 10451 1367 0    60   Input ~ 0
+Text GLabel 10451 1367 2    60   Input ~ 0
 VU3
-Text GLabel 10451 1467 0    60   Input ~ 0
+Text GLabel 10451 1467 2    60   Input ~ 0
 VU4
-Text GLabel 10451 1567 0    60   Input ~ 0
+Text GLabel 10451 1567 2    60   Input ~ 0
 VU5
-Text GLabel 10451 1667 0    60   Input ~ 0
+Text GLabel 10451 1667 2    60   Input ~ 0
 VU6
-Text GLabel 10440 2876 0    60   Input ~ 0
+Text GLabel 10440 2876 2    60   Input ~ 0
 VU9
-Text GLabel 10440 2776 0    60   Input ~ 0
+Text GLabel 10440 2776 2    60   Input ~ 0
 VU10
-Text GLabel 10440 2676 0    60   Input ~ 0
+Text GLabel 10440 2676 2    60   Input ~ 0
 VU11
-Text GLabel 10440 2576 0    60   Input ~ 0
+Text GLabel 10440 2576 2    60   Input ~ 0
 VU12
-Text GLabel 10440 2476 0    60   Input ~ 0
+Text GLabel 10440 2476 2    60   Input ~ 0
 VU13
-Text GLabel 10433 3748 0    60   Input ~ 0
+Text GLabel 10433 3748 2    60   Input ~ 0
 ledL1
-Text GLabel 10433 3848 0    60   Input ~ 0
+Text GLabel 10433 3848 2    60   Input ~ 0
 ledL2
-Text GLabel 10433 3948 0    60   Input ~ 0
+Text GLabel 10433 3948 2    60   Input ~ 0
 ledL3
-Text GLabel 10433 4048 0    60   Input ~ 0
+Text GLabel 10433 4048 2    60   Input ~ 0
 ledL4
-Text GLabel 10433 4148 0    60   Input ~ 0
+Text GLabel 10433 4148 2    60   Input ~ 0
 ledL5
-Text GLabel 10433 4248 0    60   Input ~ 0
+Text GLabel 10433 4248 2    60   Input ~ 0
 ledR1
-Text GLabel 10433 4348 0    60   Input ~ 0
+Text GLabel 10433 4348 2    60   Input ~ 0
 ledR2
-Text GLabel 10433 4448 0    60   Input ~ 0
+Text GLabel 10433 4448 2    60   Input ~ 0
 ledR3
-Text GLabel 10451 967  0    60   Input ~ 0
+Text GLabel 10451 967  2    60   Input ~ 0
 ledR4
-Text GLabel 10440 2376 0    60   Input ~ 0
+Text GLabel 10440 2376 2    60   Input ~ 0
 ledR5
-Text GLabel 9033 4348 2    60   Input ~ 0
+Text GLabel 9033 4348 0    60   Input ~ 0
 GND
-Text GLabel 9051 1467 2    60   Input ~ 0
+Text GLabel 9051 1467 0    60   Input ~ 0
 D8
-Text GLabel 9051 967  2    60   Input ~ 0
+Text GLabel 9051 967  0    60   Input ~ 0
 D11
-Text GLabel 9051 1267 2    60   Input ~ 0
+Text GLabel 9051 1267 0    60   Input ~ 0
 VCC
-Text GLabel 9051 1567 2    60   Input ~ 0
+Text GLabel 9051 1567 0    60   Input ~ 0
 GND
 $Comp
 L Traktorino-rescue:ARDUINO_SHIELD SHIELD1
@@ -276,15 +276,15 @@ F 3 "" H 9733 4198 60  0000 C CNN
 	1    9733 4198
 	1    0    0    -1  
 $EndComp
-Text GLabel 9033 4248 2    60   Input ~ 0
+Text GLabel 9033 4248 0    60   Input ~ 0
 D8
-Text GLabel 9051 1167 2    60   Input ~ 0
+Text GLabel 9051 1167 0    60   Input ~ 0
 D12
-Text GLabel 9033 3948 2    60   Input ~ 0
+Text GLabel 9033 3948 0    60   Input ~ 0
 D12
 Text GLabel 7596 1173 2    60   Input ~ 0
 D12
-Text GLabel 9033 4048 2    60   Input ~ 0
+Text GLabel 9033 4048 0    60   Input ~ 0
 VCC
 Text GLabel 5696 2173 0    60   Input ~ 0
 A2
@@ -294,7 +294,7 @@ Text GLabel 5696 2373 0    60   Input ~ 0
 A4
 Text GLabel 5696 2473 0    60   Input ~ 0
 A5
-Text GLabel 10433 4648 0    60   Input ~ 0
+Text GLabel 10433 4648 2    60   Input ~ 0
 595_out
 $Comp
 L Traktorino-rescue:CONN_01X06 J2
@@ -318,13 +318,13 @@ F 3 "" H 4850 2600 50  0001 C CNN
 	1    4850 2600
 	1    0    0    -1  
 $EndComp
-Text GLabel 9040 2976 2    60   Input ~ 0
+Text GLabel 9040 2976 0    60   Input ~ 0
 GND
-Text GLabel 9040 2876 2    60   Input ~ 0
+Text GLabel 9040 2876 0    60   Input ~ 0
 D8
-Text GLabel 9040 2576 2    60   Input ~ 0
+Text GLabel 9040 2576 0    60   Input ~ 0
 D12
-Text GLabel 9040 2676 2    60   Input ~ 0
+Text GLabel 9040 2676 0    60   Input ~ 0
 VCC
 $Comp
 L Traktorino-rescue:CONN_01X07 J1
@@ -946,35 +946,13 @@ Wire Notes Line
 	550  3475 550  675 
 Text Notes 1750 625  0    50   ~ 0
 Multiplexers
-$Comp
-L Traktorino-rescue:74HC595 VUL1
-U 1 1 59743C7D
-P 9751 1417
-F 0 "VUL1" H 9901 2017 70  0000 C CNN
-F 1 "74HC595" H 9751 817 70  0000 C CNN
-F 2 "74HC595:DIL16" H 9751 1417 60  0001 C CNN
-F 3 "" H 9751 1417 60  0000 C CNN
-	1    9751 1417
-	1    0    0    -1  
-$EndComp
-Text GLabel 10451 1867 0    60   Input ~ 0
+Text GLabel 10451 1867 2    60   Input ~ 0
 VUL1-VUR1
 Text GLabel 9040 2376 0    60   Input ~ 0
 VUL1-VUR1
-$Comp
-L Traktorino-rescue:74HC595 VUR1
-U 1 1 597578F3
-P 9740 2826
-F 0 "VUR1" H 9890 3426 70  0000 C CNN
-F 1 "74HC595" H 9740 2226 70  0000 C CNN
-F 2 "74HC595:DIL16" H 9740 2826 60  0001 C CNN
-F 3 "" H 9740 2826 60  0000 C CNN
-	1    9740 2826
-	1    0    0    -1  
-$EndComp
-Text GLabel 10440 3276 0    60   Input ~ 0
+Text GLabel 10440 3276 2    60   Input ~ 0
 VUR1-leds1
-Text GLabel 9033 3748 2    60   Input ~ 0
+Text GLabel 9033 3748 0    60   Input ~ 0
 VUR1-leds1
 Wire Notes Line
 	8415 705  11048 705 
@@ -997,7 +975,7 @@ F 3 "" H 1475 6350 50  0000 C CNN
 	1    1475 6350
 	1    0    0    -1  
 $EndComp
-Text GLabel 1575 6450 0    60   Input ~ 0
+Text GLabel 1575 6450 2    60   Input ~ 0
 BL2
 $Comp
 L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0119
@@ -1023,7 +1001,7 @@ F 3 "" H 2075 6350 50  0000 C CNN
 	1    2075 6350
 	1    0    0    -1  
 $EndComp
-Text GLabel 2175 6450 0    60   Input ~ 0
+Text GLabel 2175 6450 2    60   Input ~ 0
 BL3
 $Comp
 L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0120
@@ -1049,7 +1027,7 @@ F 3 "" H 2650 6350 50  0000 C CNN
 	1    2650 6350
 	1    0    0    -1  
 $EndComp
-Text GLabel 2750 6450 0    60   Input ~ 0
+Text GLabel 2750 6450 2    60   Input ~ 0
 BL4
 $Comp
 L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0121
@@ -1075,7 +1053,7 @@ F 3 "" H 3250 6350 50  0000 C CNN
 	1    3250 6350
 	1    0    0    -1  
 $EndComp
-Text GLabel 3350 6450 0    60   Input ~ 0
+Text GLabel 3350 6450 2    60   Input ~ 0
 BL5
 $Comp
 L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0122
@@ -1101,7 +1079,7 @@ F 3 "" H 3825 6350 50  0000 C CNN
 	1    3825 6350
 	1    0    0    -1  
 $EndComp
-Text GLabel 3925 6450 0    60   Input ~ 0
+Text GLabel 3925 6450 2    60   Input ~ 0
 BL6
 $Comp
 L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0123
@@ -1151,7 +1129,7 @@ F 3 "" H 1475 6725 50  0000 C CNN
 	1    1475 6725
 	1    0    0    -1  
 $EndComp
-Text GLabel 1575 6825 0    60   Input ~ 0
+Text GLabel 1575 6825 2    60   Input ~ 0
 BR2
 $Comp
 L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0125
@@ -1177,7 +1155,7 @@ F 3 "" H 2075 6725 50  0000 C CNN
 	1    2075 6725
 	1    0    0    -1  
 $EndComp
-Text GLabel 2175 6825 0    60   Input ~ 0
+Text GLabel 2175 6825 2    60   Input ~ 0
 BR3
 $Comp
 L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0126
@@ -1203,7 +1181,7 @@ F 3 "" H 2650 6725 50  0000 C CNN
 	1    2650 6725
 	1    0    0    -1  
 $EndComp
-Text GLabel 2750 6825 0    60   Input ~ 0
+Text GLabel 2750 6825 2    60   Input ~ 0
 BR4
 $Comp
 L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0127
@@ -1229,7 +1207,7 @@ F 3 "" H 3250 6725 50  0000 C CNN
 	1    3250 6725
 	1    0    0    -1  
 $EndComp
-Text GLabel 3350 6825 0    60   Input ~ 0
+Text GLabel 3350 6825 2    60   Input ~ 0
 BR5
 $Comp
 L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0128
@@ -1268,9 +1246,9 @@ F 3 "" H 3625 6625 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	3725 6625 3625 6625
-Text GLabel 1000 6825 0    60   Input ~ 0
+Text GLabel 1000 6825 2    60   Input ~ 0
 BR1
-Text GLabel 3925 6825 0    60   Input ~ 0
+Text GLabel 3925 6825 2    60   Input ~ 0
 BR6
 Wire Notes Line
 	600  6875 600  6175
@@ -1676,7 +1654,7 @@ F 3 "" H 6875 4225 50  0000 C CNN
 	1    6875 4225
 	1    0    0    -1  
 $EndComp
-Text GLabel 6625 4075 2    60   Input ~ 0
+Text GLabel 6625 4075 0    60   Input ~ 0
 potL4
 Wire Wire Line
 	6475 4225 6375 4225
@@ -1715,7 +1693,7 @@ F 3 "" H 6875 4700 50  0000 C CNN
 	1    6875 4700
 	1    0    0    -1  
 $EndComp
-Text GLabel 6625 4550 2    60   Input ~ 0
+Text GLabel 6625 4550 0    60   Input ~ 0
 potL3
 Wire Wire Line
 	6475 4700 6375 4700
@@ -1754,7 +1732,7 @@ F 3 "" H 6875 5175 50  0000 C CNN
 	1    6875 5175
 	1    0    0    -1  
 $EndComp
-Text GLabel 6625 5025 2    60   Input ~ 0
+Text GLabel 6625 5025 0    60   Input ~ 0
 potL2
 Wire Wire Line
 	6475 5175 6375 5175
@@ -1793,7 +1771,7 @@ F 3 "" H 6875 5650 50  0000 C CNN
 	1    6875 5650
 	1    0    0    -1  
 $EndComp
-Text GLabel 6625 5500 2    60   Input ~ 0
+Text GLabel 6625 5500 0    60   Input ~ 0
 potL1
 Wire Wire Line
 	6475 5650 6375 5650
@@ -1832,7 +1810,7 @@ F 3 "" H 7625 3275 50  0000 C CNN
 	1    7625 3275
 	1    0    0    -1  
 $EndComp
-Text GLabel 7375 3125 2    60   Input ~ 0
+Text GLabel 7375 3125 0    60   Input ~ 0
 potR6
 Wire Wire Line
 	7225 3275 7125 3275
@@ -1871,7 +1849,7 @@ F 3 "" H 7625 3750 50  0000 C CNN
 	1    7625 3750
 	1    0    0    -1  
 $EndComp
-Text GLabel 7375 3600 2    60   Input ~ 0
+Text GLabel 7375 3600 0    60   Input ~ 0
 potR5
 Wire Wire Line
 	7225 3750 7125 3750
@@ -1899,7 +1877,7 @@ F 3 "" H 7625 4225 50  0000 C CNN
 	1    7625 4225
 	1    0    0    -1  
 $EndComp
-Text GLabel 7375 4075 2    60   Input ~ 0
+Text GLabel 7375 4075 0    60   Input ~ 0
 potR4
 Wire Wire Line
 	7225 4225 7125 4225
@@ -1938,7 +1916,7 @@ F 3 "" H 7625 4700 50  0000 C CNN
 	1    7625 4700
 	1    0    0    -1  
 $EndComp
-Text GLabel 7375 4550 2    60   Input ~ 0
+Text GLabel 7375 4550 0    60   Input ~ 0
 potR3
 Wire Wire Line
 	7225 4700 7125 4700
@@ -2014,13 +1992,13 @@ F 3 "" H 7625 5650 50  0000 C CNN
 	1    7625 5650
 	1    0    0    -1  
 $EndComp
-Text GLabel 7375 5500 2    60   Input ~ 0
+Text GLabel 7375 5500 0    60   Input ~ 0
 potR1
 Wire Wire Line
 	7225 5650 7125 5650
 Wire Wire Line
 	7625 5650 7525 5650
-Text GLabel 7375 5025 2    60   Input ~ 0
+Text GLabel 7375 5025 0    60   Input ~ 0
 potR2
 $Comp
 L Traktorino-rescue:POT-RESCUE-DJ_0 potR4
@@ -2267,10 +2245,32 @@ F 3 "" H 4400 5325 50  0000 C CNN
 $EndComp
 Text GLabel 6625 3125 0    60   Input ~ 0
 potL6
-Text GLabel 6625 3600 2    60   Input ~ 0
+Text GLabel 6625 3600 0    60   Input ~ 0
 potL5
 Text GLabel 7596 1373 2    60   Input ~ 0
 ledOnOff
 Text GLabel 7596 1473 2    60   Input ~ 0
 encoder_sw
+$Comp
+L Traktorino-rescue:74HC595 VUL1
+U 1 1 59743C7D
+P 9751 1417
+F 0 "VUL1" H 9901 2017 70  0000 C CNN
+F 1 "74HC595" H 9751 817 70  0000 C CNN
+F 2 "74HC595:DIL16" H 9751 1417 60  0001 C CNN
+F 3 "" H 9751 1417 60  0000 C CNN
+	1    9751 1417
+	1    0    0    -1  
+$EndComp
+$Comp
+L Traktorino-rescue:74HC595 VUR1
+U 1 1 597578F3
+P 9740 2826
+F 0 "VUR1" H 9890 3426 70  0000 C CNN
+F 1 "74HC595" H 9740 2226 70  0000 C CNN
+F 2 "74HC595:DIL16" H 9740 2826 60  0001 C CNN
+F 3 "" H 9740 2826 60  0000 C CNN
+	1    9740 2826
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

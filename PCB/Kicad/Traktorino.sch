@@ -143,20 +143,6 @@ Text Label 1000 6450 0    60   ~ 0
 BL1
 Text Label 4575 6450 0    60   ~ 0
 Bshift
-Text Label 5550 3250 0    60   ~ 0
-GND
-Text Label 1850 975  0    60   ~ 0
-potR1
-Text Label 1850 1075 0    60   ~ 0
-potR2
-Text Label 1850 1175 0    60   ~ 0
-potR3
-Text Label 1850 1275 0    60   ~ 0
-potR4
-Text Label 1850 1375 0    60   ~ 0
-potR5
-Text Label 1850 1475 0    60   ~ 0
-potR6
 Text Label 10451 1067 0    60   ~ 0
 VU0
 Text Label 10440 2976 0    60   ~ 0
@@ -207,26 +193,12 @@ Text Label 10440 2376 0    60   ~ 0
 ledR5
 Text Label 7596 1373 0    60   ~ 0
 ledOnOff
-Text Label 4650 1900 2    60   ~ 0
-D4
-Text Label 4650 2000 2    60   ~ 0
-D5
-Text Label 4650 2100 2    60   ~ 0
-D6
-Text Label 4650 2200 2    60   ~ 0
-D7
-Text Label 4650 1700 2    60   ~ 0
-GND
 Text Label 9033 4348 2    60   ~ 0
 GND
-Text Label 4650 2500 2    60   ~ 0
-VCC
 Text Label 9051 1467 2    60   ~ 0
 D8
 Text Label 9051 967  2    60   ~ 0
 D11
-Text Label 4650 2400 2    60   ~ 0
-GND
 Text Label 9051 1267 2    60   ~ 0
 VCC
 Text Label 9051 1567 2    60   ~ 0
@@ -242,12 +214,6 @@ F 3 "" H 6646 1673 60  0000 C CNN
 	1    6646 1673
 	1    0    0    -1  
 $EndComp
-Text Label 5696 1573 2    60   ~ 0
-GND
-Text Label 5696 1673 2    60   ~ 0
-GND
-Text Label 5696 1473 2    60   ~ 0
-VCC
 Text Label 7596 2273 0    60   ~ 0
 D2
 Text Label 7596 2173 0    60   ~ 0
@@ -264,8 +230,6 @@ Text Label 7596 1573 0    60   ~ 0
 D8
 Text Label 7596 1273 0    60   ~ 0
 D11
-Text Label 5696 1973 2    60   ~ 0
-A0
 Text Label 5696 2073 2    60   ~ 0
 A1
 $Comp
@@ -318,13 +282,9 @@ F 3 "" H 9733 4198 60  0000 C CNN
 	1    9733 4198
 	1    0    0    -1  
 $EndComp
-Text Label 4650 2700 2    60   ~ 0
-D8
 Text Label 9033 4248 2    60   ~ 0
 D8
 Text Label 9051 1167 2    60   ~ 0
-D12
-Text Label 4650 2600 2    60   ~ 0
 D12
 Text Label 9033 3948 2    60   ~ 0
 D12
@@ -332,18 +292,6 @@ Text Label 7596 1173 0    60   ~ 0
 D12
 Text Label 9033 4048 2    60   ~ 0
 VCC
-Text Label 4650 1100 2    60   ~ 0
-vi_in
-Text Label 4650 1200 2    60   ~ 0
-A2
-Text Label 4650 1300 2    60   ~ 0
-A3
-Text Label 4650 1400 2    60   ~ 0
-A4
-Text Label 4650 1500 2    60   ~ 0
-A5
-Text Label 5696 1773 2    60   ~ 0
-vi_in
 Text Label 5696 2173 2    60   ~ 0
 A2
 Text Label 5696 2273 2    60   ~ 0
@@ -354,14 +302,6 @@ Text Label 5696 2473 2    60   ~ 0
 A5
 Text Label 10433 4648 0    60   ~ 0
 595_out
-Text Label 4650 2800 2    60   ~ 0
-595_out
-Text Label 4650 1800 2    60   ~ 0
-VCC
-Text Label 4650 1000 2    60   ~ 0
-VCC
-Text Label 4650 900  2    60   ~ 0
-GND
 $Comp
 L Traktorino-rescue:CONN_01X06 J2
 U 1 1 5B398F8B
@@ -414,12 +354,6 @@ F 3 "" H 4850 3150 50  0001 C CNN
 	1    4850 3150
 	1    0    0    -1  
 $EndComp
-Text Label 4650 3250 2    60   ~ 0
-D13
-Text Label 4650 3150 2    60   ~ 0
-VCC
-Text Label 4650 3050 2    60   ~ 0
-GND
 Text Label 7596 1073 0    60   ~ 0
 D13
 $Comp
@@ -493,8 +427,6 @@ Wire Wire Line
 	5450 2950 5450 3000
 Wire Wire Line
 	5450 3000 5550 3000
-Text Label 5550 3000 0    60   ~ 0
-VCC
 $Comp
 L Traktorino-rescue:LED-RESCUE-DJ_0 VU0
 U 1 1 5775C1C2
@@ -644,10 +576,10 @@ $EndComp
 Wire Wire Line
 	904  4516 804  4516
 $Comp
-L Traktorino-rescue:LED-RESCUE-DJ_0 VU5
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU4
 U 1 1 60B00EC3
 P 1104 4516
-F 0 "VU5" H 1104 4616 50  0000 C CNN
+F 0 "VU4" H 1104 4616 50  0000 C CNN
 F 1 "LED" H 1104 4416 50  0001 C CNN
 F 2 "LEDs:LED-3MM" H 1104 4516 50  0001 C CNN
 F 3 "" H 1104 4516 50  0000 C CNN
@@ -999,44 +931,6 @@ Wire Notes Line
 	554  6016 3104 6016
 Text Notes 1700 3600 0    50   ~ 0
 Vumeter
-Text Label 2550 2475 2    60   ~ 0
-A1
-Text Label 3550 3075 0    60   ~ 0
-GND
-Text Label 3550 2675 0    60   ~ 0
-D7
-Text Label 3550 2775 0    60   ~ 0
-D6
-Text Label 3550 2875 0    60   ~ 0
-D5
-Text Label 3550 2975 0    60   ~ 0
-D4
-Text Label 3550 1375 0    60   ~ 0
-BR5
-Text Label 3550 1975 0    60   ~ 0
-BL6
-Text Label 3550 1575 0    60   ~ 0
-Bshift
-Text Label 3550 1475 0    60   ~ 0
-BR6
-Text Label 3550 2075 0    60   ~ 0
-BL5
-Text Label 3550 1275 0    60   ~ 0
-BR4
-Text Label 3550 2175 0    60   ~ 0
-BL4
-Text Label 3550 1175 0    60   ~ 0
-BR3
-Text Label 3550 2275 0    60   ~ 0
-BL3
-Text Label 3550 1075 0    60   ~ 0
-BR2
-Text Label 3550 2375 0    60   ~ 0
-BL2
-Text Label 3550 975  0    60   ~ 0
-BR1
-Text Label 3550 2475 0    60   ~ 0
-BL1
 $Comp
 L Traktorino-rescue:4067D-RESCUE-DJ_0 MUXbuttons1
 U 1 1 579016CB
@@ -2273,4 +2167,110 @@ Text GLabel 1850 1675 2    60   Input ~ 0
 potMain
 Text GLabel 1850 1575 2    60   Input ~ 0
 potR7
+Text GLabel 1850 1475 2    60   Input ~ 0
+potR6
+Text GLabel 1850 1375 2    60   Input ~ 0
+potR5
+Text GLabel 1850 1275 2    60   Input ~ 0
+potR4
+Text GLabel 1850 1175 2    60   Input ~ 0
+potR3
+Text GLabel 1850 1075 2    60   Input ~ 0
+potR2
+Text GLabel 1850 975  2    60   Input ~ 0
+potR1
+Text GLabel 2550 2475 0    60   Input ~ 0
+A1
+Text GLabel 3550 2675 2    60   Input ~ 0
+D7
+Text GLabel 3550 2775 2    60   Input ~ 0
+D6
+Text GLabel 3550 2875 2    60   Input ~ 0
+D5
+Text GLabel 3550 2975 2    60   Input ~ 0
+D4
+Text GLabel 3550 3075 2    60   Input ~ 0
+GND
+Text GLabel 3550 2475 2    60   Input ~ 0
+BL1
+Text GLabel 3550 2375 2    60   Input ~ 0
+BL2
+Text GLabel 3550 2275 2    60   Input ~ 0
+BL3
+Text GLabel 3550 2175 2    60   Input ~ 0
+BL4
+Text GLabel 3550 2075 2    60   Input ~ 0
+BL5
+Text GLabel 3550 1975 2    60   Input ~ 0
+BL6
+Text GLabel 3550 1575 2    60   Input ~ 0
+Bshift
+Text GLabel 3550 1475 2    60   Input ~ 0
+BR6
+Text GLabel 3550 1375 2    60   Input ~ 0
+BR5
+Text GLabel 3550 1275 2    60   Input ~ 0
+BR4
+Text GLabel 3550 1175 2    60   Input ~ 0
+BR3
+Text GLabel 3550 1075 2    60   Input ~ 0
+BR2
+Text GLabel 3550 975  2    60   Input ~ 0
+BR1
+Text GLabel 4650 900  0    60   Input ~ 0
+GND
+Text GLabel 4650 1000 0    60   Input ~ 0
+VCC
+Text GLabel 4650 1100 0    60   Input ~ 0
+vi_in
+Text GLabel 4650 1200 0    60   Input ~ 0
+A2
+Text GLabel 4650 1300 0    60   Input ~ 0
+A3
+Text GLabel 4650 1400 0    60   Input ~ 0
+A4
+Text GLabel 4650 1500 0    60   Input ~ 0
+A5
+Text GLabel 4650 1700 0    60   Input ~ 0
+GND
+Text GLabel 4650 1800 0    60   Input ~ 0
+VCC
+Text GLabel 4650 1900 0    60   Input ~ 0
+D4
+Text GLabel 4650 2000 0    60   Input ~ 0
+D5
+Text GLabel 4650 2100 0    60   Input ~ 0
+D6
+Text GLabel 4650 2200 0    60   Input ~ 0
+D7
+Text GLabel 4650 2400 0    60   Input ~ 0
+GND
+Text GLabel 4650 2500 0    60   Input ~ 0
+VCC
+Text GLabel 4650 2600 0    60   Input ~ 0
+D12
+Text GLabel 4650 2700 0    60   Input ~ 0
+D8
+Text GLabel 4650 2800 0    60   Input ~ 0
+595_out
+Text GLabel 4650 3050 0    60   Input ~ 0
+GND
+Text GLabel 4650 3150 0    60   Input ~ 0
+VCC
+Text GLabel 4650 3250 0    60   Input ~ 0
+D13
+Text GLabel 5550 3000 2    60   Input ~ 0
+VCC
+Text GLabel 5550 3250 2    60   Input ~ 0
+GND
+Text GLabel 5696 1473 0    60   Input ~ 0
+VCC
+Text GLabel 5696 1573 0    60   Input ~ 0
+GND
+Text GLabel 5696 1673 0    60   Input ~ 0
+GND
+Text GLabel 5696 1773 0    60   Input ~ 0
+vi_in
+Text GLabel 5696 1973 0    60   Input ~ 0
+A0
 $EndSCHEMATC

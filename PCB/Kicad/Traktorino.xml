@@ -1,0 +1,1403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\Users\josev\Documents\Code\traktorino\PCB\Kicad\Traktorino.sch</source>
+    <date>26/03/2021 1:37:54</date>
+    <tool>Eeschema (5.1.9)-1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>Traktorino.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="potL6">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57758867</tstamp>
+    </comp>
+    <comp ref="BL1">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>577599A6</tstamp>
+    </comp>
+    <comp ref="Bshift1">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>57759CFE</tstamp>
+    </comp>
+    <comp ref="ledL1">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5775A6B1</tstamp>
+    </comp>
+    <comp ref="MUXpots1">
+      <value>4067D</value>
+      <footprint>40xx:40xx-DIL24-6</footprint>
+      <libsource lib="Traktorino-rescue" part="4067D-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>578962B0</tstamp>
+    </comp>
+    <comp ref="SHIELD1">
+      <value>ARDUINO_SHIELD</value>
+      <footprint>arduino_shields:ARDUINO_SHIELD_2_040pins</footprint>
+      <libsource lib="Traktorino-rescue" part="ARDUINO_SHIELD" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5797BC2B</tstamp>
+    </comp>
+    <comp ref="RVU0">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5797D8B7</tstamp>
+    </comp>
+    <comp ref="RL1">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5797EBC6</tstamp>
+    </comp>
+    <comp ref="En1">
+      <value>Encoder_switch</value>
+      <footprint>sparkfun:SF-ROTARY-ENCODER_gus</footprint>
+      <libsource lib="Traktorino-rescue" part="Encoder_switch" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>59726870</tstamp>
+    </comp>
+    <comp ref="leds1">
+      <value>74HC595</value>
+      <footprint>74HC595:DIL16</footprint>
+      <libsource lib="Traktorino-rescue" part="74HC595" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5975AEC7</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>mux_pins</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x06_Pitch2.54mm</footprint>
+      <libsource lib="Traktorino-rescue" part="CONN_01X06" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B398F8B</tstamp>
+    </comp>
+    <comp ref="J3">
+      <value>595_pins</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x05_Pitch2.54mm</footprint>
+      <libsource lib="Traktorino-rescue" part="CONN_01X05" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B3990AC</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>analog_pins</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x07_Pitch2.54mm</footprint>
+      <libsource lib="Traktorino-rescue" part="CONN_01X07" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B398CB1</tstamp>
+    </comp>
+    <comp ref="J4">
+      <value>d13</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x03_Pitch2.54mm</footprint>
+      <libsource lib="Traktorino-rescue" part="CONN_01X03" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B3AAF5E</tstamp>
+    </comp>
+    <comp ref="VU0">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5775C1C2</tstamp>
+    </comp>
+    <comp ref="RVU1">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60AF9AC3</tstamp>
+    </comp>
+    <comp ref="VU1">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60AF9AD0</tstamp>
+    </comp>
+    <comp ref="RVU2">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60AFC093</tstamp>
+    </comp>
+    <comp ref="VU2">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60AFC0A0</tstamp>
+    </comp>
+    <comp ref="RVU3">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60AFE73C</tstamp>
+    </comp>
+    <comp ref="VU3">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60AFE749</tstamp>
+    </comp>
+    <comp ref="RVU4">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B00EB6</tstamp>
+    </comp>
+    <comp ref="VU4">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B00EC3</tstamp>
+    </comp>
+    <comp ref="RVU5">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B03873</tstamp>
+    </comp>
+    <comp ref="VU5">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B03880</tstamp>
+    </comp>
+    <comp ref="RVU6">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B063F9</tstamp>
+    </comp>
+    <comp ref="VU6">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B06406</tstamp>
+    </comp>
+    <comp ref="RVU7">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B0E1</tstamp>
+    </comp>
+    <comp ref="VU7">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B0EE</tstamp>
+    </comp>
+    <comp ref="RVU8">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B0F5</tstamp>
+    </comp>
+    <comp ref="VU8">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B102</tstamp>
+    </comp>
+    <comp ref="RVU9">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B109</tstamp>
+    </comp>
+    <comp ref="VU9">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B116</tstamp>
+    </comp>
+    <comp ref="RVU10">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B11D</tstamp>
+    </comp>
+    <comp ref="VU10">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B12A</tstamp>
+    </comp>
+    <comp ref="RVU11">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B131</tstamp>
+    </comp>
+    <comp ref="VU11">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B13E</tstamp>
+    </comp>
+    <comp ref="RVU12">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B145</tstamp>
+    </comp>
+    <comp ref="VU12">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B152</tstamp>
+    </comp>
+    <comp ref="RVU13">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B159</tstamp>
+    </comp>
+    <comp ref="VU13">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60B9B167</tstamp>
+    </comp>
+    <comp ref="MUXbuttons1">
+      <value>4067D</value>
+      <footprint>40xx:40xx-DIL24-6</footprint>
+      <libsource lib="Traktorino-rescue" part="4067D-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>579016CB</tstamp>
+    </comp>
+    <comp ref="BL2">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61473FFD</tstamp>
+    </comp>
+    <comp ref="BL3">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6147B069</tstamp>
+    </comp>
+    <comp ref="BL4">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6147B077</tstamp>
+    </comp>
+    <comp ref="BL5">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6148802F</tstamp>
+    </comp>
+    <comp ref="BL6">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6148803D</tstamp>
+    </comp>
+    <comp ref="BR1">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>614B99DF</tstamp>
+    </comp>
+    <comp ref="BR2">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>614B99ED</tstamp>
+    </comp>
+    <comp ref="BR3">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>614B99FB</tstamp>
+    </comp>
+    <comp ref="BR4">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>614B9A09</tstamp>
+    </comp>
+    <comp ref="BR5">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>614B9A17</tstamp>
+    </comp>
+    <comp ref="BR6">
+      <value>SW_PUSH_SMALL</value>
+      <footprint>Gustavo:SW_tactile</footprint>
+      <libsource lib="Traktorino-rescue" part="SW_PUSH_SMALL" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>614B9A25</tstamp>
+    </comp>
+    <comp ref="ledL2">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615BE3B8</tstamp>
+    </comp>
+    <comp ref="RL2">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615BE3BF</tstamp>
+    </comp>
+    <comp ref="ledL3">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615CA4D0</tstamp>
+    </comp>
+    <comp ref="RL3">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615CA4D7</tstamp>
+    </comp>
+    <comp ref="ledL4">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615CA4E4</tstamp>
+    </comp>
+    <comp ref="RL4">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615CA4EB</tstamp>
+    </comp>
+    <comp ref="ledL5">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615D7E0A</tstamp>
+    </comp>
+    <comp ref="ledR1">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>616424C6</tstamp>
+    </comp>
+    <comp ref="RR1">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>616424CD</tstamp>
+    </comp>
+    <comp ref="ledR2">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>616424DA</tstamp>
+    </comp>
+    <comp ref="RR2">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>616424E1</tstamp>
+    </comp>
+    <comp ref="RR3">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>616424F5</tstamp>
+    </comp>
+    <comp ref="ledR4">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61642502</tstamp>
+    </comp>
+    <comp ref="ledR5">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61642516</tstamp>
+    </comp>
+    <comp ref="RR5">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6164251D</tstamp>
+    </comp>
+    <comp ref="ledR3">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>616424EE</tstamp>
+    </comp>
+    <comp ref="RR4">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61642509</tstamp>
+    </comp>
+    <comp ref="potL5">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>616F814C</tstamp>
+    </comp>
+    <comp ref="potL4">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61709984</tstamp>
+    </comp>
+    <comp ref="potL3">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61709999</tstamp>
+    </comp>
+    <comp ref="potL2">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61727F07</tstamp>
+    </comp>
+    <comp ref="potL1">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>61727F1C</tstamp>
+    </comp>
+    <comp ref="potR6">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6175D8BD</tstamp>
+    </comp>
+    <comp ref="potR5">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6175D8D2</tstamp>
+    </comp>
+    <comp ref="potR3">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6175D8FC</tstamp>
+    </comp>
+    <comp ref="potR2">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6175D911</tstamp>
+    </comp>
+    <comp ref="potR1">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6175D926</tstamp>
+    </comp>
+    <comp ref="potR4">
+      <value>POT</value>
+      <footprint>Gustavo:Pot_vertical</footprint>
+      <libsource lib="Traktorino-rescue" part="POT-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>6175D8E7</tstamp>
+    </comp>
+    <comp ref="ROnOff1">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5797FACF</tstamp>
+    </comp>
+    <comp ref="ledOnOff1">
+      <value>LED</value>
+      <footprint>LEDs:LED-3MM</footprint>
+      <libsource lib="Traktorino-rescue" part="LED-RESCUE-DJ_0" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5775E5B1</tstamp>
+    </comp>
+    <comp ref="RL5">
+      <value>R_Small</value>
+      <footprint>Resistors_ThroughHole:Resistor_Horizontal_RM7mm</footprint>
+      <libsource lib="Traktorino-rescue" part="R_Small" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>615D7E11</tstamp>
+    </comp>
+    <comp ref="VUL1">
+      <value>74HC595</value>
+      <footprint>74HC595:DIL16</footprint>
+      <libsource lib="Traktorino-rescue" part="74HC595" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>59743C7D</tstamp>
+    </comp>
+    <comp ref="VUR1">
+      <value>74HC595</value>
+      <footprint>74HC595:DIL16</footprint>
+      <libsource lib="Traktorino-rescue" part="74HC595" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>597578F3</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Traktorino-rescue" part="4067D-RESCUE-DJ_0">
+      <fields>
+        <field name="Reference">IC</field>
+        <field name="Value">4067D-RESCUE-DJ_0</field>
+        <field name="Footprint">40xx-SO24W</field>
+      </fields>
+      <pins>
+        <pin num="1" name="X" type="output"/>
+        <pin num="2" name="X7" type="input"/>
+        <pin num="3" name="X6" type="input"/>
+        <pin num="4" name="X5" type="input"/>
+        <pin num="5" name="X4" type="input"/>
+        <pin num="6" name="X3" type="input"/>
+        <pin num="7" name="X2" type="input"/>
+        <pin num="8" name="X1" type="input"/>
+        <pin num="9" name="X0" type="input"/>
+        <pin num="10" name="A" type="input"/>
+        <pin num="11" name="B" type="input"/>
+        <pin num="12" name="VSS" type="power_in"/>
+        <pin num="13" name="D" type="input"/>
+        <pin num="14" name="C" type="input"/>
+        <pin num="15" name="INH" type="input"/>
+        <pin num="16" name="X15" type="input"/>
+        <pin num="17" name="X14" type="input"/>
+        <pin num="18" name="X13" type="input"/>
+        <pin num="19" name="X12" type="input"/>
+        <pin num="20" name="X11" type="input"/>
+        <pin num="21" name="X10" type="input"/>
+        <pin num="22" name="X9" type="input"/>
+        <pin num="23" name="X8" type="input"/>
+        <pin num="24" name="vcc" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="Traktorino-rescue" part="74HC595">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">74HC595</field>
+      </fields>
+      <pins>
+        <pin num="1" name="QB" type="3state"/>
+        <pin num="2" name="QC" type="3state"/>
+        <pin num="3" name="QD" type="3state"/>
+        <pin num="4" name="QE" type="3state"/>
+        <pin num="5" name="QF" type="3state"/>
+        <pin num="6" name="QG" type="3state"/>
+        <pin num="7" name="QH" type="3state"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="~QH" type="output"/>
+        <pin num="10" name="SRCLR" type="input"/>
+        <pin num="11" name="SRCLK" type="input"/>
+        <pin num="12" name="RCLK" type="input"/>
+        <pin num="13" name="G" type="input"/>
+        <pin num="14" name="SER" type="input"/>
+        <pin num="15" name="QA" type="3state"/>
+        <pin num="16" name="VCC" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Traktorino-rescue" part="ARDUINO_SHIELD">
+      <fields>
+        <field name="Reference">SHIELD</field>
+        <field name="Value">ARDUINO_SHIELD</field>
+      </fields>
+      <pins>
+        <pin num="0" name="0" type="BiDi"/>
+        <pin num="1" name="1" type="BiDi"/>
+        <pin num="2" name="2" type="BiDi"/>
+        <pin num="3" name="3" type="BiDi"/>
+        <pin num="4" name="4" type="BiDi"/>
+        <pin num="5" name="5" type="BiDi"/>
+        <pin num="5V" name="5V" type="power_in"/>
+        <pin num="6" name="6" type="BiDi"/>
+        <pin num="7" name="7" type="BiDi"/>
+        <pin num="8" name="8" type="BiDi"/>
+        <pin num="9" name="9" type="BiDi"/>
+        <pin num="10" name="10" type="BiDi"/>
+        <pin num="11" name="11" type="BiDi"/>
+        <pin num="12" name="12" type="BiDi"/>
+        <pin num="13" name="13" type="BiDi"/>
+        <pin num="3V3" name="3V3" type="power_in"/>
+        <pin num="AD0" name="AD0" type="BiDi"/>
+        <pin num="AD1" name="AD1" type="BiDi"/>
+        <pin num="AD2" name="AD2" type="BiDi"/>
+        <pin num="AD3" name="AD3" type="BiDi"/>
+        <pin num="AD4" name="AD4" type="BiDi"/>
+        <pin num="AD5" name="AD5" type="BiDi"/>
+        <pin num="AREF" name="AREF" type="power_in"/>
+        <pin num="GND1" name="GND1" type="power_in"/>
+        <pin num="GND2" name="GND2" type="power_in"/>
+        <pin num="GND3" name="GND3" type="power_in"/>
+        <pin num="RST" name="RST" type="input"/>
+        <pin num="V_IN" name="V_IN" type="power_in"/>
+      </pins>
+    </libpart>
+    <libpart lib="Traktorino-rescue" part="CONN_01X03">
+      <footprints>
+        <fp>Pin_Header_Straight_1X*</fp>
+        <fp>Pin_Header_Angled_1X*</fp>
+        <fp>Socket_Strip_Straight_1X*</fp>
+        <fp>Socket_Strip_Angled_1X*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">CONN_01X03</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Traktorino-rescue" part="CONN_01X05">
+      <footprints>
+        <fp>Pin_Header_Straight_1X*</fp>
+        <fp>Pin_Header_Angled_1X*</fp>
+        <fp>Socket_Strip_Straight_1X*</fp>
+        <fp>Socket_Strip_Angled_1X*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">CONN_01X05</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Traktorino-rescue" part="CONN_01X06">
+      <footprints>
+        <fp>Pin_Header_Straight_1X*</fp>
+        <fp>Pin_Header_Angled_1X*</fp>
+        <fp>Socket_Strip_Straight_1X*</fp>
+        <fp>Socket_Strip_Angled_1X*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">CONN_01X06</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Traktorino-rescue" part="CONN_01X07">
+      <footprints>
+        <fp>Pin_Header_Straight_1X*</fp>
+        <fp>Pin_Header_Angled_1X*</fp>
+        <fp>Socket_Strip_Straight_1X*</fp>
+        <fp>Socket_Strip_Angled_1X*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">CONN_01X07</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+        <pin num="7" name="P7" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Traktorino-rescue" part="Encoder_switch">
+      <fields>
+        <field name="Reference">En</field>
+        <field name="Value">Encoder_switch</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="input"/>
+        <pin num="2" name="~" type="input"/>
+        <pin num="3" name="~" type="input"/>
+        <pin num="4" name="~" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Traktorino-rescue" part="LED-RESCUE-DJ_0">
+      <footprints>
+        <fp>LED-3MM</fp>
+        <fp>LED-5MM</fp>
+        <fp>LED-10MM</fp>
+        <fp>LED-0603</fp>
+        <fp>LED-0805</fp>
+        <fp>LED-1206</fp>
+        <fp>LEDV</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">LED-RESCUE-DJ_0</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Traktorino-rescue" part="POT-RESCUE-DJ_0">
+      <fields>
+        <field name="Reference">RV</field>
+        <field name="Value">POT-RESCUE-DJ_0</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+        <pin num="3" name="3" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Traktorino-rescue" part="R_Small">
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Traktorino-rescue" part="SW_PUSH_SMALL">
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_PUSH_SMALL</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Traktorino-rescue">
+      <uri>C:\Users\josev\Documents\Code\traktorino\PCB\Kicad/Traktorino-rescue.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="GND">
+      <node ref="SHIELD1" pin="GND1"/>
+      <node ref="SHIELD1" pin="GND3"/>
+      <node ref="SHIELD1" pin="GND2"/>
+      <node ref="potR4" pin="1"/>
+      <node ref="ledOnOff1" pin="1"/>
+      <node ref="potR3" pin="1"/>
+      <node ref="J1" pin="1"/>
+      <node ref="MUXpots1" pin="15"/>
+      <node ref="MUXpots1" pin="12"/>
+      <node ref="ledL1" pin="1"/>
+      <node ref="Bshift1" pin="1"/>
+      <node ref="BL1" pin="1"/>
+      <node ref="leds1" pin="8"/>
+      <node ref="leds1" pin="13"/>
+      <node ref="J3" pin="1"/>
+      <node ref="J2" pin="1"/>
+      <node ref="ledL4" pin="1"/>
+      <node ref="VUL1" pin="8"/>
+      <node ref="ledL3" pin="1"/>
+      <node ref="ledL2" pin="1"/>
+      <node ref="potR5" pin="1"/>
+      <node ref="potR1" pin="1"/>
+      <node ref="potR2" pin="1"/>
+      <node ref="VUL1" pin="13"/>
+      <node ref="VUR1" pin="8"/>
+      <node ref="VUR1" pin="13"/>
+      <node ref="VU6" pin="1"/>
+      <node ref="VU5" pin="1"/>
+      <node ref="VU2" pin="1"/>
+      <node ref="J4" pin="1"/>
+      <node ref="VU1" pin="1"/>
+      <node ref="VU4" pin="1"/>
+      <node ref="potL6" pin="1"/>
+      <node ref="VU3" pin="1"/>
+      <node ref="VU7" pin="1"/>
+      <node ref="VU9" pin="1"/>
+      <node ref="VU13" pin="1"/>
+      <node ref="VU8" pin="1"/>
+      <node ref="VU10" pin="1"/>
+      <node ref="VU12" pin="1"/>
+      <node ref="VU11" pin="1"/>
+      <node ref="BL4" pin="1"/>
+      <node ref="VU0" pin="1"/>
+      <node ref="MUXbuttons1" pin="15"/>
+      <node ref="MUXbuttons1" pin="12"/>
+      <node ref="BL3" pin="1"/>
+      <node ref="BL2" pin="1"/>
+      <node ref="BR6" pin="1"/>
+      <node ref="ledR4" pin="1"/>
+      <node ref="potL1" pin="1"/>
+      <node ref="BR5" pin="1"/>
+      <node ref="potL4" pin="1"/>
+      <node ref="BR4" pin="1"/>
+      <node ref="ledR5" pin="1"/>
+      <node ref="BR1" pin="1"/>
+      <node ref="BL6" pin="1"/>
+      <node ref="BR2" pin="1"/>
+      <node ref="BL5" pin="1"/>
+      <node ref="ledR1" pin="1"/>
+      <node ref="potL3" pin="1"/>
+      <node ref="BR3" pin="1"/>
+      <node ref="ledR3" pin="1"/>
+      <node ref="potL2" pin="1"/>
+      <node ref="ledR2" pin="1"/>
+      <node ref="ledL5" pin="1"/>
+      <node ref="potL5" pin="1"/>
+      <node ref="potR6" pin="1"/>
+    </net>
+    <net code="2" name="Net-(RR3-Pad2)">
+      <node ref="RR3" pin="2"/>
+      <node ref="ledR3" pin="2"/>
+    </net>
+    <net code="3" name="ledR4">
+      <node ref="VUL1" pin="15"/>
+      <node ref="RR4" pin="1"/>
+    </net>
+    <net code="4" name="Net-(RR4-Pad2)">
+      <node ref="RR4" pin="2"/>
+      <node ref="ledR4" pin="2"/>
+    </net>
+    <net code="5" name="potL5">
+      <node ref="MUXpots1" pin="4"/>
+      <node ref="potL5" pin="2"/>
+    </net>
+    <net code="6" name="potL4">
+      <node ref="potL4" pin="2"/>
+      <node ref="MUXpots1" pin="5"/>
+    </net>
+    <net code="7" name="Net-(RR2-Pad2)">
+      <node ref="ledR2" pin="2"/>
+      <node ref="RR2" pin="2"/>
+    </net>
+    <net code="8" name="ledR3">
+      <node ref="RR3" pin="1"/>
+      <node ref="leds1" pin="7"/>
+    </net>
+    <net code="9" name="Net-(RR5-Pad2)">
+      <node ref="RR5" pin="2"/>
+      <node ref="ledR5" pin="2"/>
+    </net>
+    <net code="10" name="ledR5">
+      <node ref="RR5" pin="1"/>
+      <node ref="VUR1" pin="15"/>
+    </net>
+    <net code="11" name="potL1">
+      <node ref="MUXpots1" pin="8"/>
+      <node ref="potL1" pin="2"/>
+    </net>
+    <net code="12" name="potR6">
+      <node ref="potR6" pin="2"/>
+      <node ref="MUXpots1" pin="21"/>
+    </net>
+    <net code="13" name="potL3">
+      <node ref="MUXpots1" pin="6"/>
+      <node ref="potL3" pin="2"/>
+    </net>
+    <net code="14" name="ledR2">
+      <node ref="RR2" pin="1"/>
+      <node ref="leds1" pin="6"/>
+    </net>
+    <net code="15" name="potL2">
+      <node ref="potL2" pin="2"/>
+      <node ref="MUXpots1" pin="7"/>
+    </net>
+    <net code="16" name="BR3">
+      <node ref="BR3" pin="2"/>
+      <node ref="MUXbuttons1" pin="18"/>
+    </net>
+    <net code="17" name="BR4">
+      <node ref="MUXbuttons1" pin="19"/>
+      <node ref="BR4" pin="2"/>
+    </net>
+    <net code="18" name="BR5">
+      <node ref="MUXbuttons1" pin="20"/>
+      <node ref="BR5" pin="2"/>
+    </net>
+    <net code="19" name="BL5">
+      <node ref="MUXbuttons1" pin="5"/>
+      <node ref="BL5" pin="2"/>
+    </net>
+    <net code="20" name="BL6">
+      <node ref="BL6" pin="2"/>
+      <node ref="MUXbuttons1" pin="4"/>
+    </net>
+    <net code="21" name="BR6">
+      <node ref="BR6" pin="2"/>
+      <node ref="MUXbuttons1" pin="21"/>
+    </net>
+    <net code="22" name="BR1">
+      <node ref="BR1" pin="2"/>
+      <node ref="MUXbuttons1" pin="16"/>
+    </net>
+    <net code="23" name="BR2">
+      <node ref="BR2" pin="2"/>
+      <node ref="MUXbuttons1" pin="17"/>
+    </net>
+    <net code="24" name="ledL4">
+      <node ref="RL4" pin="1"/>
+      <node ref="leds1" pin="3"/>
+    </net>
+    <net code="25" name="Net-(RL4-Pad2)">
+      <node ref="ledL4" pin="2"/>
+      <node ref="RL4" pin="2"/>
+    </net>
+    <net code="26" name="Net-(RL5-Pad2)">
+      <node ref="RL5" pin="2"/>
+      <node ref="ledL5" pin="2"/>
+    </net>
+    <net code="27" name="Net-(RR1-Pad2)">
+      <node ref="RR1" pin="2"/>
+      <node ref="ledR1" pin="2"/>
+    </net>
+    <net code="28" name="ledR1">
+      <node ref="RR1" pin="1"/>
+      <node ref="leds1" pin="5"/>
+    </net>
+    <net code="29" name="Net-(RL2-Pad2)">
+      <node ref="RL2" pin="2"/>
+      <node ref="ledL2" pin="2"/>
+    </net>
+    <net code="30" name="ledL2">
+      <node ref="RL2" pin="1"/>
+      <node ref="leds1" pin="1"/>
+    </net>
+    <net code="31" name="Net-(RL3-Pad2)">
+      <node ref="ledL3" pin="2"/>
+      <node ref="RL3" pin="2"/>
+    </net>
+    <net code="32" name="ledL3">
+      <node ref="leds1" pin="2"/>
+      <node ref="RL3" pin="1"/>
+    </net>
+    <net code="33" name="VUL1-VUR1">
+      <node ref="VUR1" pin="14"/>
+      <node ref="VUL1" pin="9"/>
+    </net>
+    <net code="34" name="VU13">
+      <node ref="VUR1" pin="1"/>
+      <node ref="RVU13" pin="1"/>
+    </net>
+    <net code="35" name="VU12">
+      <node ref="VUR1" pin="2"/>
+      <node ref="RVU12" pin="1"/>
+    </net>
+    <net code="36" name="VU11">
+      <node ref="RVU11" pin="1"/>
+      <node ref="VUR1" pin="3"/>
+    </net>
+    <net code="37" name="VU10">
+      <node ref="RVU10" pin="1"/>
+      <node ref="VUR1" pin="4"/>
+    </net>
+    <net code="38" name="VU9">
+      <node ref="VUR1" pin="5"/>
+      <node ref="RVU9" pin="1"/>
+    </net>
+    <net code="39" name="VUR1-leds1">
+      <node ref="leds1" pin="14"/>
+      <node ref="VUR1" pin="9"/>
+    </net>
+    <net code="40" name="ledL5">
+      <node ref="leds1" pin="4"/>
+      <node ref="RL5" pin="1"/>
+    </net>
+    <net code="41" name="potR5">
+      <node ref="MUXpots1" pin="20"/>
+      <node ref="potR5" pin="2"/>
+    </net>
+    <net code="42" name="potR3">
+      <node ref="MUXpots1" pin="18"/>
+      <node ref="potR3" pin="2"/>
+    </net>
+    <net code="43" name="potR4">
+      <node ref="potR4" pin="2"/>
+      <node ref="MUXpots1" pin="19"/>
+    </net>
+    <net code="44" name="Net-(ROnOff1-Pad2)">
+      <node ref="ledOnOff1" pin="2"/>
+      <node ref="ROnOff1" pin="2"/>
+    </net>
+    <net code="45" name="e2">
+      <node ref="En1" pin="2"/>
+      <node ref="En1" pin="2"/>
+    </net>
+    <net code="46" name="Net-(SHIELD1-PadRST)">
+      <node ref="SHIELD1" pin="RST"/>
+    </net>
+    <net code="47" name="Net-(RVU0-Pad2)">
+      <node ref="VU0" pin="2"/>
+      <node ref="RVU0" pin="2"/>
+    </net>
+    <net code="48" name="Net-(RL1-Pad2)">
+      <node ref="RL1" pin="2"/>
+      <node ref="ledL1" pin="2"/>
+    </net>
+    <net code="49" name="ledOnOff">
+      <node ref="SHIELD1" pin="10"/>
+      <node ref="ROnOff1" pin="1"/>
+    </net>
+    <net code="50" name="D11">
+      <node ref="VUL1" pin="14"/>
+      <node ref="SHIELD1" pin="11"/>
+    </net>
+    <net code="51" name="D2">
+      <node ref="En1" pin="1"/>
+      <node ref="SHIELD1" pin="2"/>
+    </net>
+    <net code="52" name="D3">
+      <node ref="En1" pin="3"/>
+      <node ref="SHIELD1" pin="3"/>
+    </net>
+    <net code="53" name="Net-(SHIELD1-Pad3V3)">
+      <node ref="SHIELD1" pin="3V3"/>
+    </net>
+    <net code="54" name="encoder_sw">
+      <node ref="En1" pin="4"/>
+      <node ref="SHIELD1" pin="9"/>
+    </net>
+    <net code="55" name="A0">
+      <node ref="MUXpots1" pin="1"/>
+      <node ref="SHIELD1" pin="AD0"/>
+    </net>
+    <net code="56" name="Net-(SHIELD1-PadAREF)">
+      <node ref="SHIELD1" pin="AREF"/>
+    </net>
+    <net code="57" name="D6">
+      <node ref="MUXpots1" pin="14"/>
+      <node ref="J2" pin="5"/>
+      <node ref="SHIELD1" pin="6"/>
+      <node ref="MUXbuttons1" pin="14"/>
+    </net>
+    <net code="58" name="D4">
+      <node ref="MUXbuttons1" pin="10"/>
+      <node ref="MUXpots1" pin="10"/>
+      <node ref="SHIELD1" pin="4"/>
+      <node ref="J2" pin="3"/>
+    </net>
+    <net code="59" name="D5">
+      <node ref="MUXbuttons1" pin="11"/>
+      <node ref="J2" pin="4"/>
+      <node ref="MUXpots1" pin="11"/>
+      <node ref="SHIELD1" pin="5"/>
+    </net>
+    <net code="60" name="D7">
+      <node ref="J2" pin="6"/>
+      <node ref="SHIELD1" pin="7"/>
+      <node ref="MUXpots1" pin="13"/>
+      <node ref="MUXbuttons1" pin="13"/>
+    </net>
+    <net code="61" name="VCC">
+      <node ref="J4" pin="2"/>
+      <node ref="potL4" pin="3"/>
+      <node ref="potR6" pin="3"/>
+      <node ref="J1" pin="2"/>
+      <node ref="MUXbuttons1" pin="24"/>
+      <node ref="potL3" pin="3"/>
+      <node ref="potL1" pin="3"/>
+      <node ref="potL5" pin="3"/>
+      <node ref="potR5" pin="3"/>
+      <node ref="potR3" pin="3"/>
+      <node ref="potR4" pin="3"/>
+      <node ref="SHIELD1" pin="5V"/>
+      <node ref="J2" pin="2"/>
+      <node ref="J3" pin="2"/>
+      <node ref="leds1" pin="10"/>
+      <node ref="leds1" pin="16"/>
+      <node ref="VUL1" pin="10"/>
+      <node ref="VUR1" pin="16"/>
+      <node ref="VUR1" pin="10"/>
+      <node ref="VUL1" pin="16"/>
+      <node ref="potR2" pin="3"/>
+      <node ref="potR1" pin="3"/>
+      <node ref="potL2" pin="3"/>
+      <node ref="potL6" pin="3"/>
+      <node ref="MUXpots1" pin="24"/>
+    </net>
+    <net code="62" name="D12">
+      <node ref="VUL1" pin="11"/>
+      <node ref="VUR1" pin="11"/>
+      <node ref="J3" pin="3"/>
+      <node ref="leds1" pin="11"/>
+      <node ref="SHIELD1" pin="12"/>
+    </net>
+    <net code="63" name="D8">
+      <node ref="VUL1" pin="12"/>
+      <node ref="SHIELD1" pin="8"/>
+      <node ref="VUR1" pin="12"/>
+      <node ref="J3" pin="4"/>
+      <node ref="leds1" pin="12"/>
+    </net>
+    <net code="64" name="595_out">
+      <node ref="J3" pin="5"/>
+      <node ref="leds1" pin="9"/>
+    </net>
+    <net code="65" name="ledL1">
+      <node ref="leds1" pin="15"/>
+      <node ref="RL1" pin="1"/>
+    </net>
+    <net code="66" name="Net-(SHIELD1-Pad1)">
+      <node ref="SHIELD1" pin="1"/>
+    </net>
+    <net code="67" name="potR2">
+      <node ref="potR2" pin="2"/>
+      <node ref="MUXpots1" pin="17"/>
+    </net>
+    <net code="68" name="potL7">
+      <node ref="MUXpots1" pin="2"/>
+    </net>
+    <net code="69" name="potR7">
+      <node ref="MUXpots1" pin="22"/>
+    </net>
+    <net code="70" name="potMain">
+      <node ref="MUXpots1" pin="23"/>
+    </net>
+    <net code="71" name="potR1">
+      <node ref="MUXpots1" pin="16"/>
+      <node ref="potR1" pin="2"/>
+    </net>
+    <net code="72" name="potCF">
+      <node ref="MUXpots1" pin="9"/>
+    </net>
+    <net code="73" name="VU5">
+      <node ref="VUL1" pin="6"/>
+      <node ref="RVU5" pin="1"/>
+    </net>
+    <net code="74" name="VU0">
+      <node ref="VUL1" pin="1"/>
+      <node ref="RVU0" pin="1"/>
+    </net>
+    <net code="75" name="potL6">
+      <node ref="MUXpots1" pin="3"/>
+      <node ref="potL6" pin="2"/>
+    </net>
+    <net code="76" name="Net-(SHIELD1-Pad0)">
+      <node ref="SHIELD1" pin="0"/>
+    </net>
+    <net code="77" name="VU8">
+      <node ref="VUR1" pin="6"/>
+      <node ref="RVU8" pin="1"/>
+    </net>
+    <net code="78" name="Net-(RVU11-Pad2)">
+      <node ref="VU11" pin="2"/>
+      <node ref="RVU11" pin="2"/>
+    </net>
+    <net code="79" name="Net-(RVU12-Pad2)">
+      <node ref="VU12" pin="2"/>
+      <node ref="RVU12" pin="2"/>
+    </net>
+    <net code="80" name="Net-(RVU13-Pad2)">
+      <node ref="RVU13" pin="2"/>
+      <node ref="VU13" pin="2"/>
+    </net>
+    <net code="81" name="Net-(RVU8-Pad2)">
+      <node ref="RVU8" pin="2"/>
+      <node ref="VU8" pin="2"/>
+    </net>
+    <net code="82" name="Net-(RVU9-Pad2)">
+      <node ref="VU9" pin="2"/>
+      <node ref="RVU9" pin="2"/>
+    </net>
+    <net code="83" name="Net-(RVU10-Pad2)">
+      <node ref="RVU10" pin="2"/>
+      <node ref="VU10" pin="2"/>
+    </net>
+    <net code="84" name="BL3">
+      <node ref="MUXbuttons1" pin="7"/>
+      <node ref="BL3" pin="2"/>
+    </net>
+    <net code="85" name="BL2">
+      <node ref="MUXbuttons1" pin="8"/>
+      <node ref="BL2" pin="2"/>
+    </net>
+    <net code="86" name="BL1">
+      <node ref="MUXbuttons1" pin="9"/>
+      <node ref="BL1" pin="2"/>
+    </net>
+    <net code="87" name="BL4">
+      <node ref="MUXbuttons1" pin="6"/>
+      <node ref="BL4" pin="2"/>
+    </net>
+    <net code="88" name="A1">
+      <node ref="SHIELD1" pin="AD1"/>
+      <node ref="MUXbuttons1" pin="1"/>
+    </net>
+    <net code="89" name="Net-(MUXbuttons1-Pad2)">
+      <node ref="MUXbuttons1" pin="2"/>
+    </net>
+    <net code="90" name="Bshift">
+      <node ref="Bshift1" pin="2"/>
+      <node ref="MUXbuttons1" pin="22"/>
+    </net>
+    <net code="91" name="Net-(MUXbuttons1-Pad23)">
+      <node ref="MUXbuttons1" pin="23"/>
+    </net>
+    <net code="92" name="Net-(MUXbuttons1-Pad3)">
+      <node ref="MUXbuttons1" pin="3"/>
+    </net>
+    <net code="93" name="VU1">
+      <node ref="RVU1" pin="1"/>
+      <node ref="VUL1" pin="2"/>
+    </net>
+    <net code="94" name="Net-(RVU1-Pad2)">
+      <node ref="RVU1" pin="2"/>
+      <node ref="VU1" pin="2"/>
+    </net>
+    <net code="95" name="VU2">
+      <node ref="VUL1" pin="3"/>
+      <node ref="RVU2" pin="1"/>
+    </net>
+    <net code="96" name="Net-(RVU2-Pad2)">
+      <node ref="VU2" pin="2"/>
+      <node ref="RVU2" pin="2"/>
+    </net>
+    <net code="97" name="vi_in">
+      <node ref="SHIELD1" pin="V_IN"/>
+      <node ref="J1" pin="3"/>
+    </net>
+    <net code="98" name="A2">
+      <node ref="SHIELD1" pin="AD2"/>
+      <node ref="J1" pin="4"/>
+    </net>
+    <net code="99" name="A3">
+      <node ref="J1" pin="5"/>
+      <node ref="SHIELD1" pin="AD3"/>
+    </net>
+    <net code="100" name="A4">
+      <node ref="SHIELD1" pin="AD4"/>
+      <node ref="J1" pin="6"/>
+    </net>
+    <net code="101" name="A5">
+      <node ref="SHIELD1" pin="AD5"/>
+      <node ref="J1" pin="7"/>
+    </net>
+    <net code="102" name="D13">
+      <node ref="J4" pin="3"/>
+      <node ref="SHIELD1" pin="13"/>
+    </net>
+    <net code="103" name="Net-(RVU5-Pad2)">
+      <node ref="VU5" pin="2"/>
+      <node ref="RVU5" pin="2"/>
+    </net>
+    <net code="104" name="VU6">
+      <node ref="RVU6" pin="1"/>
+      <node ref="VUL1" pin="7"/>
+    </net>
+    <net code="105" name="Net-(RVU6-Pad2)">
+      <node ref="VU6" pin="2"/>
+      <node ref="RVU6" pin="2"/>
+    </net>
+    <net code="106" name="VU7">
+      <node ref="VUR1" pin="7"/>
+      <node ref="RVU7" pin="1"/>
+    </net>
+    <net code="107" name="Net-(RVU7-Pad2)">
+      <node ref="VU7" pin="2"/>
+      <node ref="RVU7" pin="2"/>
+    </net>
+    <net code="108" name="VU4">
+      <node ref="VUL1" pin="5"/>
+      <node ref="RVU4" pin="1"/>
+    </net>
+    <net code="109" name="VU3">
+      <node ref="RVU3" pin="1"/>
+      <node ref="VUL1" pin="4"/>
+    </net>
+    <net code="110" name="Net-(RVU3-Pad2)">
+      <node ref="VU3" pin="2"/>
+      <node ref="RVU3" pin="2"/>
+    </net>
+    <net code="111" name="Net-(RVU4-Pad2)">
+      <node ref="RVU4" pin="2"/>
+      <node ref="VU4" pin="2"/>
+    </net>
+  </nets>
+</export>

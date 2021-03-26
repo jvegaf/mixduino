@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
+Sheet 1 3
 Title ""
 Date ""
 Rev ""
@@ -89,17 +89,6 @@ F 2 "" H 5450 2950 50  0000 C CNN
 F 3 "" H 5450 2950 50  0000 C CNN
 	1    5450 2950
 	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:4067D-RESCUE-DJ_0 MUXpots1
-U 1 1 578962B0
-P 1350 2075
-F 0 "MUXpots1" H 1050 3200 50  0000 L BNN
-F 1 "4067D" H 1050 775 50  0000 L BNN
-F 2 "40xx:40xx-DIL24-6" H 1350 2225 50  0001 C CNN
-F 3 "" H 1350 2075 60  0000 C CNN
-	1    1350 2075
-	-1   0    0    1   
 $EndComp
 Text GLabel 1754 5416 2    60   Input ~ 0
 VU1
@@ -838,21 +827,8 @@ Wire Notes Line
 	554  6016 3104 6016
 Text Notes 1700 3600 0    50   ~ 0
 Vumeter
-$Comp
-L Traktorino-rescue:4067D-RESCUE-DJ_0 MUXbuttons1
-U 1 1 579016CB
-P 3050 2075
-F 0 "MUXbuttons1" H 2750 3200 50  0000 L BNN
-F 1 "4067D" H 2750 775 50  0000 L BNN
-F 2 "40xx:40xx-DIL24-6" H 3050 2225 50  0001 C CNN
-F 3 "" H 3050 2075 60  0000 C CNN
-	1    3050 2075
-	-1   0    0    1   
-$EndComp
 Wire Notes Line
 	550  675  3850 675 
-Wire Notes Line
-	3850 675  3850 3475
 Wire Notes Line
 	3850 3475 550  3475
 Wire Notes Line
@@ -1981,96 +1957,6 @@ Wire Notes Line
 	6500 6350 5475 6350
 Text Notes 5675 6300 0    50   ~ 0
 Browse encoder
-Text GLabel 2550 1575 0    60   Input ~ 0
-GND
-Text GLabel 2550 1725 0    60   Input ~ 0
-VCC
-Text GLabel 1850 2475 2    60   Input ~ 0
-potCF
-Text GLabel 1850 2375 2    60   Input ~ 0
-potL1
-Text GLabel 1850 2275 2    60   Input ~ 0
-potL2
-Text GLabel 1850 2175 2    60   Input ~ 0
-potL3
-Text GLabel 1850 1875 2    60   Input ~ 0
-potL6
-Text GLabel 1850 1975 2    60   Input ~ 0
-potL5
-Text GLabel 1850 2075 2    60   Input ~ 0
-potL4
-Text GLabel 1850 2675 2    60   Input ~ 0
-D7
-Text GLabel 850  1575 0    60   Input ~ 0
-GND
-Text GLabel 850  1725 0    60   Input ~ 0
-VCC
-Text GLabel 850  2475 0    60   Input ~ 0
-A0
-Text GLabel 1850 3075 2    60   Input ~ 0
-GND
-Text GLabel 1850 2975 2    60   Input ~ 0
-D4
-Text GLabel 1850 2775 2    60   Input ~ 0
-D6
-Text GLabel 1850 2875 2    60   Input ~ 0
-D5
-Text GLabel 1850 1775 2    60   Input ~ 0
-potL7
-Text GLabel 1850 1675 2    60   Input ~ 0
-potMain
-Text GLabel 1850 1575 2    60   Input ~ 0
-potR7
-Text GLabel 1850 1475 2    60   Input ~ 0
-potR6
-Text GLabel 1850 1375 2    60   Input ~ 0
-potR5
-Text GLabel 1850 1275 2    60   Input ~ 0
-potR4
-Text GLabel 1850 1175 2    60   Input ~ 0
-potR3
-Text GLabel 1850 1075 2    60   Input ~ 0
-potR2
-Text GLabel 1850 975  2    60   Input ~ 0
-potR1
-Text GLabel 2550 2475 0    60   Input ~ 0
-A1
-Text GLabel 3550 2675 2    60   Input ~ 0
-D7
-Text GLabel 3550 2775 2    60   Input ~ 0
-D6
-Text GLabel 3550 2875 2    60   Input ~ 0
-D5
-Text GLabel 3550 2975 2    60   Input ~ 0
-D4
-Text GLabel 3550 3075 2    60   Input ~ 0
-GND
-Text GLabel 3550 2475 2    60   Input ~ 0
-BL1
-Text GLabel 3550 2375 2    60   Input ~ 0
-BL2
-Text GLabel 3550 2275 2    60   Input ~ 0
-BL3
-Text GLabel 3550 2175 2    60   Input ~ 0
-BL4
-Text GLabel 3550 2075 2    60   Input ~ 0
-BL5
-Text GLabel 3550 1975 2    60   Input ~ 0
-BL6
-Text GLabel 3550 1575 2    60   Input ~ 0
-Bshift
-Text GLabel 3550 1475 2    60   Input ~ 0
-BR6
-Text GLabel 3550 1375 2    60   Input ~ 0
-BR5
-Text GLabel 3550 1275 2    60   Input ~ 0
-BR4
-Text GLabel 3550 1175 2    60   Input ~ 0
-BR3
-Text GLabel 3550 1075 2    60   Input ~ 0
-BR2
-Text GLabel 3550 975  2    60   Input ~ 0
-BR1
 Text GLabel 4650 900  0    60   Input ~ 0
 GND
 Text GLabel 4650 1000 0    60   Input ~ 0
@@ -2151,5 +2037,37 @@ S 9030 899  1811 2128
 U 605D0BAE
 F0 "ShiftRegistersSheet" 50
 F1 "shift-registers.sch" 50
+$EndSheet
+$Comp
+L Switch:SW_Push SW?
+U 1 1 605E95CD
+P 4400 7400
+F 0 "SW?" H 4400 7685 50  0000 C CNN
+F 1 "SW_Push" H 4400 7594 50  0000 C CNN
+F 2 "" H 4400 7600 50  0001 C CNN
+F 3 "~" H 4400 7600 50  0001 C CNN
+	1    4400 7400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 605F7A1F
+P 4100 7400
+F 0 "#PWR?" H 4100 7150 50  0001 C CNN
+F 1 "GND" H 4105 7227 50  0000 C CNN
+F 2 "" H 4100 7400 50  0001 C CNN
+F 3 "" H 4100 7400 50  0001 C CNN
+	1    4100 7400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 7400 4100 7400
+Text GLabel 4600 7400 2    40   Input ~ 0
+SWPLAY-L
+$Sheet
+S 9050 3700 1650 1450
+U 60600FDB
+F0 "MultiplexersSheet" 40
+F1 "multiplexers.sch" 40
 $EndSheet
 $EndSCHEMATC

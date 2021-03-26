@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 2
+Sheet 2 3
 Title ""
 Date ""
 Rev ""
@@ -344,41 +344,4 @@ Text GLabel 2580 3820 2    40   Input ~ 0
 LEDCUER
 Text GLabel 2580 3920 2    40   Input ~ 0
 LEDPLAYR
-Text GLabel 3320 3720 0    40   Input ~ 0
-D8
-Text GLabel 3320 3220 0    40   Input ~ 0
-D11
-Text GLabel 3320 3520 0    40   Input ~ 0
-VCC
-Text GLabel 3320 3820 0    40   Input ~ 0
-GND
-Text GLabel 3320 3420 0    40   Input ~ 0
-D12
-Text GLabel 4120 3220 2    40   Input ~ 0
-VUL2-7
-$Comp
-L 74xx:74HC595 U?
-U 1 1 606A7489
-P 3720 3620
-F 0 "U?" H 3720 4401 50  0000 C CNN
-F 1 "74HC595" H 3720 4310 50  0000 C CNN
-F 2 "" H 3720 3620 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" H 3720 3620 50  0001 C CNN
-	1    3720 3620
-	1    0    0    -1  
-$EndComp
-Text GLabel 4120 3320 2    40   Input ~ 0
-VUL2-6
-Text GLabel 4120 3420 2    40   Input ~ 0
-VUL2-5
-Text GLabel 4120 3520 2    40   Input ~ 0
-VUL2-4
-Text GLabel 4120 3620 2    40   Input ~ 0
-VUL2-3
-Text GLabel 4120 3720 2    40   Input ~ 0
-VUL2-2
-Text GLabel 4120 3820 2    40   Input ~ 0
-VUL2-1
-Text GLabel 4120 3920 2    40   Input ~ 0
-VUL2-0
 $EndSCHEMATC

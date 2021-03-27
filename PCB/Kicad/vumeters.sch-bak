@@ -1,0 +1,572 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 4 4
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel -1946 2346 2    60   Input ~ 0
+VU1
+Text GLabel -1946 2046 2    60   Input ~ 0
+VU2
+Text GLabel -1946 1746 2    60   Input ~ 0
+VU3
+Text GLabel -1946 1446 2    60   Input ~ 0
+VU4
+Text GLabel -1946 1146 2    60   Input ~ 0
+VU5
+Text GLabel -1946 2646 2    60   Input ~ 0
+VU0
+Text GLabel -1946 846  2    60   Input ~ 0
+VU6
+Text GLabel -796 2646 2    60   Input ~ 0
+VU7
+Text GLabel -796 2346 2    60   Input ~ 0
+VU8
+Text GLabel -796 2046 2    60   Input ~ 0
+VU9
+Text GLabel -796 1746 2    60   Input ~ 0
+VU10
+Text GLabel -796 1446 2    60   Input ~ 0
+VU11
+Text GLabel -796 1146 2    60   Input ~ 0
+VU12
+Text GLabel -796 846  2    60   Input ~ 0
+VU13
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B133F
+P -2296 2646
+F 0 "RVU?" V -2396 2546 50  0000 L CNN
+F 1 "R_Small" V -2196 2496 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -2296 2646 50  0001 C CNN
+F 3 "" H -2296 2646 50  0000 C CNN
+	1    -2296 2646
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B1345
+P -2896 2646
+F 0 "#PWR?" H -2896 2396 50  0001 C CNN
+F 1 "GND" H -2896 2496 50  0000 C CNN
+F 2 "" H -2896 2646 50  0000 C CNN
+F 3 "" H -2896 2646 50  0000 C CNN
+	1    -2896 2646
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2796 2646 -2896 2646
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B134C
+P -2596 2646
+F 0 "VU?" H -2596 2746 50  0000 C CNN
+F 1 "LED" H -2596 2546 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -2596 2646 50  0001 C CNN
+F 3 "" H -2596 2646 50  0000 C CNN
+	1    -2596 2646
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2196 2646 -1946 2646
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B1353
+P -2296 2346
+F 0 "RVU?" V -2396 2246 50  0000 L CNN
+F 1 "R_Small" V -2196 2196 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -2296 2346 50  0001 C CNN
+F 3 "" H -2296 2346 50  0000 C CNN
+	1    -2296 2346
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B1359
+P -2896 2346
+F 0 "#PWR?" H -2896 2096 50  0001 C CNN
+F 1 "GND" H -2896 2196 50  0000 C CNN
+F 2 "" H -2896 2346 50  0000 C CNN
+F 3 "" H -2896 2346 50  0000 C CNN
+	1    -2896 2346
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2796 2346 -2896 2346
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B1360
+P -2596 2346
+F 0 "VU?" H -2596 2446 50  0000 C CNN
+F 1 "LED" H -2596 2246 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -2596 2346 50  0001 C CNN
+F 3 "" H -2596 2346 50  0000 C CNN
+	1    -2596 2346
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2196 2346 -1946 2346
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B1367
+P -2296 2046
+F 0 "RVU?" V -2396 1946 50  0000 L CNN
+F 1 "R_Small" V -2196 1896 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -2296 2046 50  0001 C CNN
+F 3 "" H -2296 2046 50  0000 C CNN
+	1    -2296 2046
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B136D
+P -2896 2046
+F 0 "#PWR?" H -2896 1796 50  0001 C CNN
+F 1 "GND" H -2896 1896 50  0000 C CNN
+F 2 "" H -2896 2046 50  0000 C CNN
+F 3 "" H -2896 2046 50  0000 C CNN
+	1    -2896 2046
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2796 2046 -2896 2046
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B1374
+P -2596 2046
+F 0 "VU?" H -2596 2146 50  0000 C CNN
+F 1 "LED" H -2596 1946 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -2596 2046 50  0001 C CNN
+F 3 "" H -2596 2046 50  0000 C CNN
+	1    -2596 2046
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2196 2046 -1946 2046
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B137B
+P -2296 1746
+F 0 "RVU?" V -2396 1646 50  0000 L CNN
+F 1 "R_Small" V -2196 1596 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -2296 1746 50  0001 C CNN
+F 3 "" H -2296 1746 50  0000 C CNN
+	1    -2296 1746
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B1381
+P -2896 1746
+F 0 "#PWR?" H -2896 1496 50  0001 C CNN
+F 1 "GND" H -2896 1596 50  0000 C CNN
+F 2 "" H -2896 1746 50  0000 C CNN
+F 3 "" H -2896 1746 50  0000 C CNN
+	1    -2896 1746
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2796 1746 -2896 1746
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B1388
+P -2596 1746
+F 0 "VU?" H -2596 1846 50  0000 C CNN
+F 1 "LED" H -2596 1646 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -2596 1746 50  0001 C CNN
+F 3 "" H -2596 1746 50  0000 C CNN
+	1    -2596 1746
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2196 1746 -1946 1746
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B138F
+P -2296 1446
+F 0 "RVU?" V -2396 1346 50  0000 L CNN
+F 1 "R_Small" V -2196 1296 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -2296 1446 50  0001 C CNN
+F 3 "" H -2296 1446 50  0000 C CNN
+	1    -2296 1446
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B1395
+P -2896 1446
+F 0 "#PWR?" H -2896 1196 50  0001 C CNN
+F 1 "GND" H -2896 1296 50  0000 C CNN
+F 2 "" H -2896 1446 50  0000 C CNN
+F 3 "" H -2896 1446 50  0000 C CNN
+	1    -2896 1446
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2796 1446 -2896 1446
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B139C
+P -2596 1446
+F 0 "VU?" H -2596 1546 50  0000 C CNN
+F 1 "LED" H -2596 1346 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -2596 1446 50  0001 C CNN
+F 3 "" H -2596 1446 50  0000 C CNN
+	1    -2596 1446
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2196 1446 -1946 1446
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B13A3
+P -2296 1146
+F 0 "RVU?" V -2396 1046 50  0000 L CNN
+F 1 "R_Small" V -2196 996 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -2296 1146 50  0001 C CNN
+F 3 "" H -2296 1146 50  0000 C CNN
+	1    -2296 1146
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B13A9
+P -2896 1146
+F 0 "#PWR?" H -2896 896 50  0001 C CNN
+F 1 "GND" H -2896 996 50  0000 C CNN
+F 2 "" H -2896 1146 50  0000 C CNN
+F 3 "" H -2896 1146 50  0000 C CNN
+	1    -2896 1146
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2796 1146 -2896 1146
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B13B0
+P -2596 1146
+F 0 "VU?" H -2596 1246 50  0000 C CNN
+F 1 "LED" H -2596 1046 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -2596 1146 50  0001 C CNN
+F 3 "" H -2596 1146 50  0000 C CNN
+	1    -2596 1146
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2196 1146 -1946 1146
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B13B7
+P -2296 846
+F 0 "RVU?" V -2396 746 50  0000 L CNN
+F 1 "R_Small" V -2196 696 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -2296 846 50  0001 C CNN
+F 3 "" H -2296 846 50  0000 C CNN
+	1    -2296 846 
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B13BD
+P -2896 846
+F 0 "#PWR?" H -2896 596 50  0001 C CNN
+F 1 "GND" H -2896 696 50  0000 C CNN
+F 2 "" H -2896 846 50  0000 C CNN
+F 3 "" H -2896 846 50  0000 C CNN
+	1    -2896 846 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2796 846  -2896 846 
+Wire Wire Line
+	-2196 846  -1946 846 
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B13C5
+P -2596 846
+F 0 "VU?" H -2596 946 50  0000 C CNN
+F 1 "LED" H -2596 746 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -2596 846 50  0001 C CNN
+F 3 "" H -2596 846 50  0000 C CNN
+	1    -2596 846 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B13CB
+P -1146 2646
+F 0 "RVU?" V -1246 2546 50  0000 L CNN
+F 1 "R_Small" V -1046 2496 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -1146 2646 50  0001 C CNN
+F 3 "" H -1146 2646 50  0000 C CNN
+	1    -1146 2646
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B13D1
+P -1746 2646
+F 0 "#PWR?" H -1746 2396 50  0001 C CNN
+F 1 "GND" H -1746 2496 50  0000 C CNN
+F 2 "" H -1746 2646 50  0000 C CNN
+F 3 "" H -1746 2646 50  0000 C CNN
+	1    -1746 2646
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1646 2646 -1746 2646
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B13D8
+P -1446 2646
+F 0 "VU?" H -1446 2746 50  0000 C CNN
+F 1 "LED" H -1446 2546 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -1446 2646 50  0001 C CNN
+F 3 "" H -1446 2646 50  0000 C CNN
+	1    -1446 2646
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1046 2646 -796 2646
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B13DF
+P -1146 2346
+F 0 "RVU?" V -1246 2246 50  0000 L CNN
+F 1 "R_Small" V -1046 2196 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -1146 2346 50  0001 C CNN
+F 3 "" H -1146 2346 50  0000 C CNN
+	1    -1146 2346
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B13E5
+P -1746 2346
+F 0 "#PWR?" H -1746 2096 50  0001 C CNN
+F 1 "GND" H -1746 2196 50  0000 C CNN
+F 2 "" H -1746 2346 50  0000 C CNN
+F 3 "" H -1746 2346 50  0000 C CNN
+	1    -1746 2346
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1646 2346 -1746 2346
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B13EC
+P -1446 2346
+F 0 "VU?" H -1446 2446 50  0000 C CNN
+F 1 "LED" H -1446 2246 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -1446 2346 50  0001 C CNN
+F 3 "" H -1446 2346 50  0000 C CNN
+	1    -1446 2346
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1046 2346 -796 2346
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B13F3
+P -1146 2046
+F 0 "RVU?" V -1246 1946 50  0000 L CNN
+F 1 "R_Small" V -1046 1896 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -1146 2046 50  0001 C CNN
+F 3 "" H -1146 2046 50  0000 C CNN
+	1    -1146 2046
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B13F9
+P -1746 2046
+F 0 "#PWR?" H -1746 1796 50  0001 C CNN
+F 1 "GND" H -1746 1896 50  0000 C CNN
+F 2 "" H -1746 2046 50  0000 C CNN
+F 3 "" H -1746 2046 50  0000 C CNN
+	1    -1746 2046
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1646 2046 -1746 2046
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B1400
+P -1446 2046
+F 0 "VU?" H -1446 2146 50  0000 C CNN
+F 1 "LED" H -1446 1946 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -1446 2046 50  0001 C CNN
+F 3 "" H -1446 2046 50  0000 C CNN
+	1    -1446 2046
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1046 2046 -796 2046
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B1407
+P -1146 1746
+F 0 "RVU?" V -1246 1596 50  0000 L CNN
+F 1 "R_Small" V -1046 1596 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -1146 1746 50  0001 C CNN
+F 3 "" H -1146 1746 50  0000 C CNN
+	1    -1146 1746
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B140D
+P -1746 1746
+F 0 "#PWR?" H -1746 1496 50  0001 C CNN
+F 1 "GND" H -1746 1596 50  0000 C CNN
+F 2 "" H -1746 1746 50  0000 C CNN
+F 3 "" H -1746 1746 50  0000 C CNN
+	1    -1746 1746
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1646 1746 -1746 1746
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B1414
+P -1446 1746
+F 0 "VU?" H -1446 1846 50  0000 C CNN
+F 1 "LED" H -1446 1646 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -1446 1746 50  0001 C CNN
+F 3 "" H -1446 1746 50  0000 C CNN
+	1    -1446 1746
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1046 1746 -796 1746
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B141B
+P -1146 1446
+F 0 "RVU?" V -1246 1296 50  0000 L CNN
+F 1 "R_Small" V -1046 1296 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -1146 1446 50  0001 C CNN
+F 3 "" H -1146 1446 50  0000 C CNN
+	1    -1146 1446
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B1421
+P -1746 1446
+F 0 "#PWR?" H -1746 1196 50  0001 C CNN
+F 1 "GND" H -1746 1296 50  0000 C CNN
+F 2 "" H -1746 1446 50  0000 C CNN
+F 3 "" H -1746 1446 50  0000 C CNN
+	1    -1746 1446
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1646 1446 -1746 1446
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B1428
+P -1446 1446
+F 0 "VU?" H -1446 1546 50  0000 C CNN
+F 1 "LED" H -1446 1346 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -1446 1446 50  0001 C CNN
+F 3 "" H -1446 1446 50  0000 C CNN
+	1    -1446 1446
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1046 1446 -796 1446
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B142F
+P -1146 1146
+F 0 "RVU?" V -1246 996 50  0000 L CNN
+F 1 "R_Small" V -1046 996 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -1146 1146 50  0001 C CNN
+F 3 "" H -1146 1146 50  0000 C CNN
+	1    -1146 1146
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B1435
+P -1746 1146
+F 0 "#PWR?" H -1746 896 50  0001 C CNN
+F 1 "GND" H -1746 996 50  0000 C CNN
+F 2 "" H -1746 1146 50  0000 C CNN
+F 3 "" H -1746 1146 50  0000 C CNN
+	1    -1746 1146
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1646 1146 -1746 1146
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B143C
+P -1446 1146
+F 0 "VU?" H -1446 1246 50  0000 C CNN
+F 1 "LED" H -1446 1046 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -1446 1146 50  0001 C CNN
+F 3 "" H -1446 1146 50  0000 C CNN
+	1    -1446 1146
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1046 1146 -796 1146
+$Comp
+L Traktorino-rescue:R_Small RVU?
+U 1 1 606B1443
+P -1146 846
+F 0 "RVU?" V -1246 696 50  0000 L CNN
+F 1 "R_Small" V -1046 696 50  0001 L CNN
+F 2 "Resistors_ThroughHole:Resistor_Horizontal_RM7mm" H -1146 846 50  0001 C CNN
+F 3 "" H -1146 846 50  0000 C CNN
+	1    -1146 846 
+	0    1    1    0   
+$EndComp
+$Comp
+L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR?
+U 1 1 606B1449
+P -1746 846
+F 0 "#PWR?" H -1746 596 50  0001 C CNN
+F 1 "GND" H -1746 696 50  0000 C CNN
+F 2 "" H -1746 846 50  0000 C CNN
+F 3 "" H -1746 846 50  0000 C CNN
+	1    -1746 846 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-1646 846  -1746 846 
+Wire Wire Line
+	-1046 846  -796 846 
+$Comp
+L Traktorino-rescue:LED-RESCUE-DJ_0 VU?
+U 1 1 606B1451
+P -1446 846
+F 0 "VU?" H -1446 946 50  0000 C CNN
+F 1 "LED" H -1446 746 50  0001 C CNN
+F 2 "LEDs:LED-3MM" H -1446 846 50  0001 C CNN
+F 3 "" H -1446 846 50  0000 C CNN
+	1    -1446 846 
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	-596 596  -596 2946
+Wire Notes Line
+	-3146 2946 -3146 596 
+Wire Notes Line
+	-3146 596  -596 596 
+Wire Notes Line
+	-3146 2946 -596 2946
+Text Notes -2000 530  0    50   ~ 0
+Vumeter
+$EndSCHEMATC

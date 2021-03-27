@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 4
+Sheet 1 6
 Title ""
 Date ""
 Rev ""
@@ -14,39 +14,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potL6
-U 1 1 57758867
-P 6625 3275
-F 0 "potL6" H 6625 3195 50  0000 C CNN
-F 1 "POT" H 6625 3275 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 6625 3275 50  0001 C CNN
-F 3 "" H 6625 3275 50  0000 C CNN
-	1    6625 3275
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BL1
-U 1 1 577599A6
-P 900 6350
-F 0 "BL1" H 1050 6425 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 900 6200 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 900 6350 50  0001 C CNN
-F 3 "" H 900 6350 50  0000 C CNN
-	1    900  6350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL Bshift1
-U 1 1 57759CFE
-P 4475 6350
-F 0 "Bshift1" H 4675 6425 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 4475 6200 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 4475 6350 50  0001 C CNN
-F 3 "" H 4475 6350 50  0000 C CNN
-	1    4475 6350
-	1    0    0    -1  
-$EndComp
-$Comp
 L Traktorino-rescue:LED-RESCUE-DJ_0 ledL1
 U 1 1 5775A6B1
 P 4100 3975
@@ -55,28 +22,6 @@ F 1 "LED" H 4100 3875 50  0000 C CNN
 F 2 "LEDs:LED-3MM" H 4100 3975 50  0001 C CNN
 F 3 "" H 4100 3975 50  0000 C CNN
 	1    4100 3975
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR01
-U 1 1 57787957
-P 6375 3275
-F 0 "#PWR01" H 6375 3025 50  0001 C CNN
-F 1 "GND" H 6375 3125 50  0000 C CNN
-F 2 "" H 6375 3275 50  0000 C CNN
-F 3 "" H 6375 3275 50  0000 C CNN
-	1    6375 3275
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR02
-U 1 1 57788C1F
-P 6875 3275
-F 0 "#PWR02" H 6875 3125 50  0001 C CNN
-F 1 "+5V" H 6875 3415 50  0000 C CNN
-F 2 "" H 6875 3275 50  0000 C CNN
-F 3 "" H 6875 3275 50  0000 C CNN
-	1    6875 3275
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -94,14 +39,6 @@ Text GLabel 4500 3975 2    60   Input ~ 0
 ledL1
 Text GLabel 4475 5675 2    60   Input ~ 0
 ledOnOff
-Text GLabel 5925 6650 1    60   Input ~ 0
-D2
-Text GLabel 5725 6650 0    60   Input ~ 0
-D3
-Text GLabel 1000 6450 2    60   Input ~ 0
-BL1
-Text GLabel 4575 6450 2    60   Input ~ 0
-Bshift
 $Comp
 L Traktorino-rescue:ARDUINO_SHIELD SHIELD1
 U 1 1 5797BC2B
@@ -144,19 +81,6 @@ F 3 "" H 4400 3975 50  0000 C CNN
 $EndComp
 Text GLabel 7596 973  2    60   Input ~ 0
 GND
-$Comp
-L Traktorino-rescue:Encoder_switch En1
-U 1 1 59726870
-P 5825 6750
-F 0 "En1" H 5825 6950 60  0000 C CNN
-F 1 "Encoder_switch" H 5850 7000 60  0001 C CNN
-F 2 "sparkfun:SF-ROTARY-ENCODER_gus" H 5825 6750 60  0001 C CNN
-F 3 "" H 5825 6750 60  0000 C CNN
-	1    5825 6750
-	-1   0    0    1   
-$EndComp
-Text GLabel 5875 6850 2    60   Input ~ 0
-encoder_sw
 Text GLabel 7596 1173 2    60   Input ~ 0
 D12
 Text GLabel 5696 2173 0    60   Input ~ 0
@@ -224,10 +148,6 @@ F 3 "" H 5450 3350 50  0000 C CNN
 	1    5450 3350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6475 3275 6375 3275
-Wire Wire Line
-	6875 3275 6775 3275
 $Comp
 L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0102
 U 1 1 605FB349
@@ -241,332 +161,10 @@ F 3 "" H 3800 3975 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	3900 3975 3800 3975
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0103
-U 1 1 60668910
-P 4275 6250
-F 0 "#PWR0103" H 4275 6000 50  0001 C CNN
-F 1 "GND" H 4275 6100 50  0000 C CNN
-F 2 "" H 4275 6250 50  0000 C CNN
-F 3 "" H 4275 6250 50  0000 C CNN
-	1    4275 6250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4375 6250 4275 6250
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0104
-U 1 1 606A251F
-P 700 6250
-F 0 "#PWR0104" H 700 6000 50  0001 C CNN
-F 1 "GND" H 700 6100 50  0000 C CNN
-F 2 "" H 700 6250 50  0000 C CNN
-F 3 "" H 700 6250 50  0000 C CNN
-	1    700  6250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	800  6250 700  6250
 Wire Wire Line
 	5450 2950 5450 3000
 Wire Wire Line
 	5450 3000 5550 3000
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BL2
-U 1 1 61473FFD
-P 1475 6350
-F 0 "BL2" H 1625 6425 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 1475 6200 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 1475 6350 50  0001 C CNN
-F 3 "" H 1475 6350 50  0000 C CNN
-	1    1475 6350
-	1    0    0    -1  
-$EndComp
-Text GLabel 1575 6450 2    60   Input ~ 0
-BL2
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0119
-U 1 1 61474004
-P 1275 6250
-F 0 "#PWR0119" H 1275 6000 50  0001 C CNN
-F 1 "GND" H 1275 6100 50  0000 C CNN
-F 2 "" H 1275 6250 50  0000 C CNN
-F 3 "" H 1275 6250 50  0000 C CNN
-	1    1275 6250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1375 6250 1275 6250
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BL3
-U 1 1 6147B069
-P 2075 6350
-F 0 "BL3" H 2225 6425 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 2075 6200 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 2075 6350 50  0001 C CNN
-F 3 "" H 2075 6350 50  0000 C CNN
-	1    2075 6350
-	1    0    0    -1  
-$EndComp
-Text GLabel 2175 6450 2    60   Input ~ 0
-BL3
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0120
-U 1 1 6147B070
-P 1875 6250
-F 0 "#PWR0120" H 1875 6000 50  0001 C CNN
-F 1 "GND" H 1875 6100 50  0000 C CNN
-F 2 "" H 1875 6250 50  0000 C CNN
-F 3 "" H 1875 6250 50  0000 C CNN
-	1    1875 6250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1975 6250 1875 6250
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BL4
-U 1 1 6147B077
-P 2650 6350
-F 0 "BL4" H 2800 6425 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 2650 6200 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 2650 6350 50  0001 C CNN
-F 3 "" H 2650 6350 50  0000 C CNN
-	1    2650 6350
-	1    0    0    -1  
-$EndComp
-Text GLabel 2750 6450 2    60   Input ~ 0
-BL4
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0121
-U 1 1 6147B07E
-P 2450 6250
-F 0 "#PWR0121" H 2450 6000 50  0001 C CNN
-F 1 "GND" H 2450 6100 50  0000 C CNN
-F 2 "" H 2450 6250 50  0000 C CNN
-F 3 "" H 2450 6250 50  0000 C CNN
-	1    2450 6250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2550 6250 2450 6250
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BL5
-U 1 1 6148802F
-P 3250 6350
-F 0 "BL5" H 3400 6425 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 3250 6200 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 3250 6350 50  0001 C CNN
-F 3 "" H 3250 6350 50  0000 C CNN
-	1    3250 6350
-	1    0    0    -1  
-$EndComp
-Text GLabel 3350 6450 2    60   Input ~ 0
-BL5
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0122
-U 1 1 61488036
-P 3050 6250
-F 0 "#PWR0122" H 3050 6000 50  0001 C CNN
-F 1 "GND" H 3050 6100 50  0000 C CNN
-F 2 "" H 3050 6250 50  0000 C CNN
-F 3 "" H 3050 6250 50  0000 C CNN
-	1    3050 6250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3150 6250 3050 6250
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BL6
-U 1 1 6148803D
-P 3825 6350
-F 0 "BL6" H 3975 6425 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 3825 6200 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 3825 6350 50  0001 C CNN
-F 3 "" H 3825 6350 50  0000 C CNN
-	1    3825 6350
-	1    0    0    -1  
-$EndComp
-Text GLabel 3925 6450 2    60   Input ~ 0
-BL6
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0123
-U 1 1 61488044
-P 3625 6250
-F 0 "#PWR0123" H 3625 6000 50  0001 C CNN
-F 1 "GND" H 3625 6100 50  0000 C CNN
-F 2 "" H 3625 6250 50  0000 C CNN
-F 3 "" H 3625 6250 50  0000 C CNN
-	1    3625 6250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3725 6250 3625 6250
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BR1
-U 1 1 614B99DF
-P 900 6725
-F 0 "BR1" H 1050 6800 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 900 6575 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 900 6725 50  0001 C CNN
-F 3 "" H 900 6725 50  0000 C CNN
-	1    900  6725
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0124
-U 1 1 614B99E6
-P 700 6625
-F 0 "#PWR0124" H 700 6375 50  0001 C CNN
-F 1 "GND" H 700 6475 50  0000 C CNN
-F 2 "" H 700 6625 50  0000 C CNN
-F 3 "" H 700 6625 50  0000 C CNN
-	1    700  6625
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	800  6625 700  6625
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BR2
-U 1 1 614B99ED
-P 1475 6725
-F 0 "BR2" H 1625 6800 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 1475 6575 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 1475 6725 50  0001 C CNN
-F 3 "" H 1475 6725 50  0000 C CNN
-	1    1475 6725
-	1    0    0    -1  
-$EndComp
-Text GLabel 1575 6825 2    60   Input ~ 0
-BR2
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0125
-U 1 1 614B99F4
-P 1275 6625
-F 0 "#PWR0125" H 1275 6375 50  0001 C CNN
-F 1 "GND" H 1275 6475 50  0000 C CNN
-F 2 "" H 1275 6625 50  0000 C CNN
-F 3 "" H 1275 6625 50  0000 C CNN
-	1    1275 6625
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1375 6625 1275 6625
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BR3
-U 1 1 614B99FB
-P 2075 6725
-F 0 "BR3" H 2225 6800 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 2075 6575 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 2075 6725 50  0001 C CNN
-F 3 "" H 2075 6725 50  0000 C CNN
-	1    2075 6725
-	1    0    0    -1  
-$EndComp
-Text GLabel 2175 6825 2    60   Input ~ 0
-BR3
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0126
-U 1 1 614B9A02
-P 1875 6625
-F 0 "#PWR0126" H 1875 6375 50  0001 C CNN
-F 1 "GND" H 1875 6475 50  0000 C CNN
-F 2 "" H 1875 6625 50  0000 C CNN
-F 3 "" H 1875 6625 50  0000 C CNN
-	1    1875 6625
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1975 6625 1875 6625
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BR4
-U 1 1 614B9A09
-P 2650 6725
-F 0 "BR4" H 2800 6800 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 2650 6575 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 2650 6725 50  0001 C CNN
-F 3 "" H 2650 6725 50  0000 C CNN
-	1    2650 6725
-	1    0    0    -1  
-$EndComp
-Text GLabel 2750 6825 2    60   Input ~ 0
-BR4
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0127
-U 1 1 614B9A10
-P 2450 6625
-F 0 "#PWR0127" H 2450 6375 50  0001 C CNN
-F 1 "GND" H 2450 6475 50  0000 C CNN
-F 2 "" H 2450 6625 50  0000 C CNN
-F 3 "" H 2450 6625 50  0000 C CNN
-	1    2450 6625
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2550 6625 2450 6625
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BR5
-U 1 1 614B9A17
-P 3250 6725
-F 0 "BR5" H 3400 6800 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 3250 6575 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 3250 6725 50  0001 C CNN
-F 3 "" H 3250 6725 50  0000 C CNN
-	1    3250 6725
-	1    0    0    -1  
-$EndComp
-Text GLabel 3350 6825 2    60   Input ~ 0
-BR5
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0128
-U 1 1 614B9A1E
-P 3050 6625
-F 0 "#PWR0128" H 3050 6375 50  0001 C CNN
-F 1 "GND" H 3050 6475 50  0000 C CNN
-F 2 "" H 3050 6625 50  0000 C CNN
-F 3 "" H 3050 6625 50  0000 C CNN
-	1    3050 6625
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3150 6625 3050 6625
-$Comp
-L Traktorino-rescue:SW_PUSH_SMALL BR6
-U 1 1 614B9A25
-P 3825 6725
-F 0 "BR6" H 3975 6800 50  0000 C CNN
-F 1 "SW_PUSH_SMALL" H 3825 6575 50  0001 C CNN
-F 2 "Gustavo:SW_tactile" H 3825 6725 50  0001 C CNN
-F 3 "" H 3825 6725 50  0000 C CNN
-	1    3825 6725
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0129
-U 1 1 614B9A2C
-P 3625 6625
-F 0 "#PWR0129" H 3625 6375 50  0001 C CNN
-F 1 "GND" H 3625 6475 50  0000 C CNN
-F 2 "" H 3625 6625 50  0000 C CNN
-F 3 "" H 3625 6625 50  0000 C CNN
-	1    3625 6625
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3725 6625 3625 6625
-Text GLabel 1000 6825 2    60   Input ~ 0
-BR1
-Text GLabel 3925 6825 2    60   Input ~ 0
-BR6
-Wire Notes Line
-	600  6875 600  6175
-Text Notes 1950 6150 0    50   ~ 0
-Push Buttons
-Wire Notes Line
-	4950 6175 4950 6875
-Wire Notes Line
-	600  6175 4950 6175
-Wire Notes Line
-	600  6875 4950 6875
 $Comp
 L Traktorino-rescue:LED-RESCUE-DJ_0 ledL2
 U 1 1 615BE3B8
@@ -891,443 +489,6 @@ Text GLabel 5600 4325 2    60   Input ~ 0
 ledR2
 Wire Notes Line
 	5975 3775 3625 3775
-$Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potL5
-U 1 1 616F814C
-P 6625 3750
-F 0 "potL5" H 6625 3670 50  0000 C CNN
-F 1 "POT" H 6625 3750 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 6625 3750 50  0001 C CNN
-F 3 "" H 6625 3750 50  0000 C CNN
-	1    6625 3750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0139
-U 1 1 616F8152
-P 6375 3750
-F 0 "#PWR0139" H 6375 3500 50  0001 C CNN
-F 1 "GND" H 6375 3600 50  0000 C CNN
-F 2 "" H 6375 3750 50  0000 C CNN
-F 3 "" H 6375 3750 50  0000 C CNN
-	1    6375 3750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR0140
-U 1 1 616F8158
-P 6875 3750
-F 0 "#PWR0140" H 6875 3600 50  0001 C CNN
-F 1 "+5V" H 6875 3890 50  0000 C CNN
-F 2 "" H 6875 3750 50  0000 C CNN
-F 3 "" H 6875 3750 50  0000 C CNN
-	1    6875 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6475 3750 6375 3750
-Wire Wire Line
-	6875 3750 6775 3750
-$Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potL4
-U 1 1 61709984
-P 6625 4225
-F 0 "potL4" H 6625 4145 50  0000 C CNN
-F 1 "POT" H 6625 4225 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 6625 4225 50  0001 C CNN
-F 3 "" H 6625 4225 50  0000 C CNN
-	1    6625 4225
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0141
-U 1 1 6170998A
-P 6375 4225
-F 0 "#PWR0141" H 6375 3975 50  0001 C CNN
-F 1 "GND" H 6375 4075 50  0000 C CNN
-F 2 "" H 6375 4225 50  0000 C CNN
-F 3 "" H 6375 4225 50  0000 C CNN
-	1    6375 4225
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR0142
-U 1 1 61709990
-P 6875 4225
-F 0 "#PWR0142" H 6875 4075 50  0001 C CNN
-F 1 "+5V" H 6875 4365 50  0000 C CNN
-F 2 "" H 6875 4225 50  0000 C CNN
-F 3 "" H 6875 4225 50  0000 C CNN
-	1    6875 4225
-	1    0    0    -1  
-$EndComp
-Text GLabel 6625 4075 0    60   Input ~ 0
-potL4
-Wire Wire Line
-	6475 4225 6375 4225
-Wire Wire Line
-	6875 4225 6775 4225
-$Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potL3
-U 1 1 61709999
-P 6625 4700
-F 0 "potL3" H 6625 4620 50  0000 C CNN
-F 1 "POT" H 6625 4700 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 6625 4700 50  0001 C CNN
-F 3 "" H 6625 4700 50  0000 C CNN
-	1    6625 4700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0143
-U 1 1 6170999F
-P 6375 4700
-F 0 "#PWR0143" H 6375 4450 50  0001 C CNN
-F 1 "GND" H 6375 4550 50  0000 C CNN
-F 2 "" H 6375 4700 50  0000 C CNN
-F 3 "" H 6375 4700 50  0000 C CNN
-	1    6375 4700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR0144
-U 1 1 617099A5
-P 6875 4700
-F 0 "#PWR0144" H 6875 4550 50  0001 C CNN
-F 1 "+5V" H 6875 4840 50  0000 C CNN
-F 2 "" H 6875 4700 50  0000 C CNN
-F 3 "" H 6875 4700 50  0000 C CNN
-	1    6875 4700
-	1    0    0    -1  
-$EndComp
-Text GLabel 6625 4550 0    60   Input ~ 0
-potL3
-Wire Wire Line
-	6475 4700 6375 4700
-Wire Wire Line
-	6875 4700 6775 4700
-$Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potL2
-U 1 1 61727F07
-P 6625 5175
-F 0 "potL2" H 6625 5095 50  0000 C CNN
-F 1 "POT" H 6625 5175 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 6625 5175 50  0001 C CNN
-F 3 "" H 6625 5175 50  0000 C CNN
-	1    6625 5175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0145
-U 1 1 61727F0D
-P 6375 5175
-F 0 "#PWR0145" H 6375 4925 50  0001 C CNN
-F 1 "GND" H 6375 5025 50  0000 C CNN
-F 2 "" H 6375 5175 50  0000 C CNN
-F 3 "" H 6375 5175 50  0000 C CNN
-	1    6375 5175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR0146
-U 1 1 61727F13
-P 6875 5175
-F 0 "#PWR0146" H 6875 5025 50  0001 C CNN
-F 1 "+5V" H 6875 5315 50  0000 C CNN
-F 2 "" H 6875 5175 50  0000 C CNN
-F 3 "" H 6875 5175 50  0000 C CNN
-	1    6875 5175
-	1    0    0    -1  
-$EndComp
-Text GLabel 6625 5025 0    60   Input ~ 0
-potL2
-Wire Wire Line
-	6475 5175 6375 5175
-Wire Wire Line
-	6875 5175 6775 5175
-$Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potL1
-U 1 1 61727F1C
-P 6625 5650
-F 0 "potL1" H 6625 5570 50  0000 C CNN
-F 1 "POT" H 6625 5650 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 6625 5650 50  0001 C CNN
-F 3 "" H 6625 5650 50  0000 C CNN
-	1    6625 5650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0147
-U 1 1 61727F22
-P 6375 5650
-F 0 "#PWR0147" H 6375 5400 50  0001 C CNN
-F 1 "GND" H 6375 5500 50  0000 C CNN
-F 2 "" H 6375 5650 50  0000 C CNN
-F 3 "" H 6375 5650 50  0000 C CNN
-	1    6375 5650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR0148
-U 1 1 61727F28
-P 6875 5650
-F 0 "#PWR0148" H 6875 5500 50  0001 C CNN
-F 1 "+5V" H 6875 5790 50  0000 C CNN
-F 2 "" H 6875 5650 50  0000 C CNN
-F 3 "" H 6875 5650 50  0000 C CNN
-	1    6875 5650
-	1    0    0    -1  
-$EndComp
-Text GLabel 6625 5500 0    60   Input ~ 0
-potL1
-Wire Wire Line
-	6475 5650 6375 5650
-Wire Wire Line
-	6875 5650 6775 5650
-$Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potR6
-U 1 1 6175D8BD
-P 7375 3275
-F 0 "potR6" H 7375 3195 50  0000 C CNN
-F 1 "POT" H 7375 3275 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 7375 3275 50  0001 C CNN
-F 3 "" H 7375 3275 50  0000 C CNN
-	1    7375 3275
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0149
-U 1 1 6175D8C3
-P 7125 3275
-F 0 "#PWR0149" H 7125 3025 50  0001 C CNN
-F 1 "GND" H 7125 3125 50  0000 C CNN
-F 2 "" H 7125 3275 50  0000 C CNN
-F 3 "" H 7125 3275 50  0000 C CNN
-	1    7125 3275
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR0150
-U 1 1 6175D8C9
-P 7625 3275
-F 0 "#PWR0150" H 7625 3125 50  0001 C CNN
-F 1 "+5V" H 7625 3415 50  0000 C CNN
-F 2 "" H 7625 3275 50  0000 C CNN
-F 3 "" H 7625 3275 50  0000 C CNN
-	1    7625 3275
-	1    0    0    -1  
-$EndComp
-Text GLabel 7375 3125 0    60   Input ~ 0
-potR6
-Wire Wire Line
-	7225 3275 7125 3275
-Wire Wire Line
-	7625 3275 7525 3275
-$Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potR5
-U 1 1 6175D8D2
-P 7375 3750
-F 0 "potR5" H 7375 3670 50  0000 C CNN
-F 1 "POT" H 7375 3750 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 7375 3750 50  0001 C CNN
-F 3 "" H 7375 3750 50  0000 C CNN
-	1    7375 3750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0151
-U 1 1 6175D8D8
-P 7125 3750
-F 0 "#PWR0151" H 7125 3500 50  0001 C CNN
-F 1 "GND" H 7125 3600 50  0000 C CNN
-F 2 "" H 7125 3750 50  0000 C CNN
-F 3 "" H 7125 3750 50  0000 C CNN
-	1    7125 3750
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR0152
-U 1 1 6175D8DE
-P 7625 3750
-F 0 "#PWR0152" H 7625 3600 50  0001 C CNN
-F 1 "+5V" H 7625 3890 50  0000 C CNN
-F 2 "" H 7625 3750 50  0000 C CNN
-F 3 "" H 7625 3750 50  0000 C CNN
-	1    7625 3750
-	1    0    0    -1  
-$EndComp
-Text GLabel 7375 3600 0    60   Input ~ 0
-potR5
-Wire Wire Line
-	7225 3750 7125 3750
-Wire Wire Line
-	7625 3750 7525 3750
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0153
-U 1 1 6175D8ED
-P 7125 4225
-F 0 "#PWR0153" H 7125 3975 50  0001 C CNN
-F 1 "GND" H 7125 4075 50  0000 C CNN
-F 2 "" H 7125 4225 50  0000 C CNN
-F 3 "" H 7125 4225 50  0000 C CNN
-	1    7125 4225
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR0154
-U 1 1 6175D8F3
-P 7625 4225
-F 0 "#PWR0154" H 7625 4075 50  0001 C CNN
-F 1 "+5V" H 7625 4365 50  0000 C CNN
-F 2 "" H 7625 4225 50  0000 C CNN
-F 3 "" H 7625 4225 50  0000 C CNN
-	1    7625 4225
-	1    0    0    -1  
-$EndComp
-Text GLabel 7375 4075 0    60   Input ~ 0
-potR4
-Wire Wire Line
-	7225 4225 7125 4225
-Wire Wire Line
-	7625 4225 7525 4225
-$Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potR3
-U 1 1 6175D8FC
-P 7375 4700
-F 0 "potR3" H 7375 4620 50  0000 C CNN
-F 1 "POT" H 7375 4700 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 7375 4700 50  0001 C CNN
-F 3 "" H 7375 4700 50  0000 C CNN
-	1    7375 4700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0155
-U 1 1 6175D902
-P 7125 4700
-F 0 "#PWR0155" H 7125 4450 50  0001 C CNN
-F 1 "GND" H 7125 4550 50  0000 C CNN
-F 2 "" H 7125 4700 50  0000 C CNN
-F 3 "" H 7125 4700 50  0000 C CNN
-	1    7125 4700
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR0156
-U 1 1 6175D908
-P 7625 4700
-F 0 "#PWR0156" H 7625 4550 50  0001 C CNN
-F 1 "+5V" H 7625 4840 50  0000 C CNN
-F 2 "" H 7625 4700 50  0000 C CNN
-F 3 "" H 7625 4700 50  0000 C CNN
-	1    7625 4700
-	1    0    0    -1  
-$EndComp
-Text GLabel 7375 4550 0    60   Input ~ 0
-potR3
-Wire Wire Line
-	7225 4700 7125 4700
-Wire Wire Line
-	7625 4700 7525 4700
-$Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potR2
-U 1 1 6175D911
-P 7375 5175
-F 0 "potR2" H 7375 5095 50  0000 C CNN
-F 1 "POT" H 7375 5175 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 7375 5175 50  0001 C CNN
-F 3 "" H 7375 5175 50  0000 C CNN
-	1    7375 5175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0157
-U 1 1 6175D917
-P 7125 5175
-F 0 "#PWR0157" H 7125 4925 50  0001 C CNN
-F 1 "GND" H 7125 5025 50  0000 C CNN
-F 2 "" H 7125 5175 50  0000 C CNN
-F 3 "" H 7125 5175 50  0000 C CNN
-	1    7125 5175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR0158
-U 1 1 6175D91D
-P 7625 5175
-F 0 "#PWR0158" H 7625 5025 50  0001 C CNN
-F 1 "+5V" H 7625 5315 50  0000 C CNN
-F 2 "" H 7625 5175 50  0000 C CNN
-F 3 "" H 7625 5175 50  0000 C CNN
-	1    7625 5175
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7225 5175 7125 5175
-Wire Wire Line
-	7625 5175 7525 5175
-$Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potR1
-U 1 1 6175D926
-P 7375 5650
-F 0 "potR1" H 7375 5570 50  0000 C CNN
-F 1 "POT" H 7375 5650 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 7375 5650 50  0001 C CNN
-F 3 "" H 7375 5650 50  0000 C CNN
-	1    7375 5650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:GND-RESCUE-DJ_0 #PWR0159
-U 1 1 6175D92C
-P 7125 5650
-F 0 "#PWR0159" H 7125 5400 50  0001 C CNN
-F 1 "GND" H 7125 5500 50  0000 C CNN
-F 2 "" H 7125 5650 50  0000 C CNN
-F 3 "" H 7125 5650 50  0000 C CNN
-	1    7125 5650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Traktorino-rescue:+5V-power #PWR0160
-U 1 1 6175D932
-P 7625 5650
-F 0 "#PWR0160" H 7625 5500 50  0001 C CNN
-F 1 "+5V" H 7625 5790 50  0000 C CNN
-F 2 "" H 7625 5650 50  0000 C CNN
-F 3 "" H 7625 5650 50  0000 C CNN
-	1    7625 5650
-	1    0    0    -1  
-$EndComp
-Text GLabel 7375 5500 0    60   Input ~ 0
-potR1
-Wire Wire Line
-	7225 5650 7125 5650
-Wire Wire Line
-	7625 5650 7525 5650
-Text GLabel 7375 5025 0    60   Input ~ 0
-potR2
-$Comp
-L Traktorino-rescue:POT-RESCUE-DJ_0 potR4
-U 1 1 6175D8E7
-P 7375 4225
-F 0 "potR4" H 7375 4145 50  0000 C CNN
-F 1 "POT" H 7375 4225 50  0000 C CNN
-F 2 "Gustavo:Pot_vertical" H 7375 4225 50  0001 C CNN
-F 3 "" H 7375 4225 50  0000 C CNN
-	1    7375 4225
-	1    0    0    -1  
-$EndComp
-Wire Notes Line
-	6250 3000 7850 3000
-Wire Notes Line
-	7850 3000 7850 5900
-Wire Notes Line
-	7850 5900 6250 5900
-Wire Notes Line
-	6250 5900 6250 3000
-Text Notes 6750 2950 0    50   ~ 0
-Potenciometers
 Wire Wire Line
 	3875 5675 3775 5675
 $Comp
@@ -1375,24 +536,6 @@ Wire Notes Line
 	5975 3775 5975 5950
 Text Notes 4700 3725 0    50   ~ 0
 LEDs\n
-Wire Wire Line
-	5675 6850 5775 6850
-Text GLabel 5675 6850 3    60   Input ~ 0
-e2
-Text GLabel 5825 6500 0    60   Input ~ 0
-e2
-Wire Wire Line
-	5825 6650 5825 6500
-Wire Notes Line
-	5475 6350 5475 7125
-Wire Notes Line
-	5475 7125 6500 7125
-Wire Notes Line
-	6500 7125 6500 6350
-Wire Notes Line
-	6500 6350 5475 6350
-Text Notes 5675 6300 0    50   ~ 0
-Browse encoder
 Text GLabel 4650 900  0    60   Input ~ 0
 GND
 Text GLabel 4650 1000 0    60   Input ~ 0
@@ -1458,10 +601,6 @@ F 3 "" H 4400 5325 50  0000 C CNN
 	1    4400 5325
 	0    1    1    0   
 $EndComp
-Text GLabel 6625 3125 0    60   Input ~ 0
-potL6
-Text GLabel 6625 3600 0    60   Input ~ 0
-potL5
 Text GLabel 7596 1373 2    60   Input ~ 0
 ledOnOff
 Text GLabel 7596 1473 2    60   Input ~ 0
@@ -1472,32 +611,6 @@ U 605D0BAE
 F0 "ShiftRegistersSheet" 50
 F1 "shift-registers.sch" 50
 $EndSheet
-$Comp
-L Switch:SW_Push SW?
-U 1 1 605E95CD
-P 4400 7400
-F 0 "SW?" H 4400 7685 50  0000 C CNN
-F 1 "SW_Push" H 4400 7594 50  0000 C CNN
-F 2 "" H 4400 7600 50  0001 C CNN
-F 3 "~" H 4400 7600 50  0001 C CNN
-	1    4400 7400
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 605F7A1F
-P 4100 7400
-F 0 "#PWR?" H 4100 7150 50  0001 C CNN
-F 1 "GND" H 4105 7227 50  0000 C CNN
-F 2 "" H 4100 7400 50  0001 C CNN
-F 3 "" H 4100 7400 50  0001 C CNN
-	1    4100 7400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4200 7400 4100 7400
-Text GLabel 4600 7400 2    40   Input ~ 0
-SWPLAY-L
 $Sheet
 S 9050 3700 1650 1450
 U 60600FDB
@@ -1509,5 +622,17 @@ S 1050 3700 2310 2100
 U 60683D75
 F0 "VumetersSheet" 40
 F1 "vumeters.sch" 40
+$EndSheet
+$Sheet
+S 1500 1750 1800 1300
+U 6075470A
+F0 "PotenciometersSheet" 40
+F1 "potenciometers.sch" 40
+$EndSheet
+$Sheet
+S 6600 3550 1600 1400
+U 607FE61A
+F0 "SwitchersSheet" 40
+F1 "switchers.sch" 40
 $EndSheet
 $EndSCHEMATC

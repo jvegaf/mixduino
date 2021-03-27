@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 4
+Sheet 4 6
 Title ""
 Date ""
 Rev ""
@@ -1599,4 +1599,84 @@ Wire Notes Line
 	900  1600 10900 1600
 Wire Notes Line
 	900  6050 10900 6050
+Text GLabel 2400 2000 2    40   Input ~ 0
+VUL1-0
+Text GLabel 2400 2500 2    40   Input ~ 0
+VUL1-1
+Text GLabel 2400 3000 2    40   Input ~ 0
+VUL1-2
+Text GLabel 2400 3500 2    40   Input ~ 0
+VUL1-3
+Text GLabel 2400 4050 2    40   Input ~ 0
+VUL1-4
+Text GLabel 2400 4550 2    40   Input ~ 0
+VUL1-5
+Text GLabel 2400 5050 2    40   Input ~ 0
+VUL1-6
+Text GLabel 2400 5550 2    40   Input ~ 0
+VUL1-7
+Text GLabel 4400 2000 2    40   Input ~ 0
+VUL2-0
+Text GLabel 4400 2500 2    40   Input ~ 0
+VUL2-1
+Text GLabel 4400 3000 2    40   Input ~ 0
+VUL2-2
+Text GLabel 4400 3500 2    40   Input ~ 0
+VUL2-3
+Text GLabel 4400 4050 2    40   Input ~ 0
+VUL2-4
+Text GLabel 4400 4550 2    40   Input ~ 0
+VUL2-5
+Text GLabel 4400 5050 2    40   Input ~ 0
+VUL2-6
+Text GLabel 4400 5550 2    40   Input ~ 0
+VUL2-7
+Text GLabel 6400 2000 2    40   Input ~ 0
+VUL3-0
+Text GLabel 6400 2500 2    40   Input ~ 0
+VUL3-1
+Text GLabel 6400 3000 2    40   Input ~ 0
+VUL3-2
+Text GLabel 6400 3500 2    40   Input ~ 0
+VUL3-3
+Text GLabel 6400 4050 2    40   Input ~ 0
+VUL3-4
+Text GLabel 6400 4550 2    40   Input ~ 0
+VUL3-5
+Text GLabel 6400 5050 2    40   Input ~ 0
+VUL3-6
+Text GLabel 6400 5550 2    40   Input ~ 0
+VUL3-7
+Text GLabel 8400 2000 2    40   Input ~ 0
+VULMASL-0
+Text GLabel 8400 2500 2    40   Input ~ 0
+VULMASL-1
+Text GLabel 8400 3000 2    40   Input ~ 0
+VULMASL-2
+Text GLabel 8400 3500 2    40   Input ~ 0
+VULMASL-3
+Text GLabel 8400 4050 2    40   Input ~ 0
+VULMASL-4
+Text GLabel 8400 4550 2    40   Input ~ 0
+VULMASL-5
+Text GLabel 8400 5050 2    40   Input ~ 0
+VULMASL-6
+Text GLabel 8400 5550 2    40   Input ~ 0
+VULMASL-7
+Text GLabel 10400 2000 2    40   Input ~ 0
+VUMASR-0
+Text GLabel 10400 2500 2    40   Input ~ 0
+VUMASR-1
+Text GLabel 10400 3000 2    40   Input ~ 0
+VUMASR-2
+Text GLabel 10400 3500 2    40   Input ~ 0
+VUMASR-3
+Text GLabel 10400 4050 2    40   Input ~ 0
+VUMASR-4
+Text GLabel 10400 4550 2    40   Input ~ 0
+VUMASR-5
+Text GLabel 10400 5050 2    40   Input ~ 0
+VUMASR-6
+Text GLabel 10400 5550 2    40   Input ~ 0
+VUMASR-7
 $EndSCHEMATC

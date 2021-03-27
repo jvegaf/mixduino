@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 4
+Sheet 3 6
 Title ""
 Date ""
 Rev ""
@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L 4xxx_IEEE:4067 U?
+L 74xx:CD74HC4067M U?
 U 1 1 606035D2
 P 3200 2100
 F 0 "U?" H 3200 3116 50  0000 C CNN
@@ -138,29 +138,29 @@ Text GLabel -1150 1025 2    60   Input ~ 0
 BR2
 Text GLabel -1150 925  2    60   Input ~ 0
 BR1
-Text GLabel 2050 1250 1    40   Input ~ 0
+Text GLabel 3200 1100 1    40   Input ~ 0
 VCC
 $Comp
 L power:GND #PWR?
 U 1 1 606138F8
-P 2050 3350
-F 0 "#PWR?" H 2050 3100 50  0001 C CNN
-F 1 "GND" H 2055 3177 50  0000 C CNN
-F 2 "" H 2050 3350 50  0001 C CNN
-F 3 "" H 2050 3350 50  0001 C CNN
-	1    2050 3350
+P 3200 3200
+F 0 "#PWR?" H 3200 2950 50  0001 C CNN
+F 1 "GND" H 3205 3027 50  0000 C CNN
+F 2 "" H 3200 3200 50  0001 C CNN
+F 3 "" H 3200 3200 50  0001 C CNN
+	1    3200 3200
 	1    0    0    -1  
 $EndComp
-Text GLabel 2600 2650 0    40   Input ~ 0
+Text GLabel 2700 2700 0    40   Input ~ 0
 A0
-Text GLabel 2600 1950 0    40   Input ~ 0
+Text GLabel 2700 2000 0    40   Input ~ 0
 D4
-Text GLabel 2600 2050 0    40   Input ~ 0
+Text GLabel 2700 2100 0    40   Input ~ 0
 D5
-Text GLabel 2600 2150 0    40   Input ~ 0
+Text GLabel 2700 2200 0    40   Input ~ 0
 D6
-Text GLabel 2600 2250 0    40   Input ~ 0
+Text GLabel 2700 2300 0    40   Input ~ 0
 D7
-Text GLabel 2600 1550 0    40   Input ~ 0
+Text GLabel 2700 1600 0    40   Input ~ 0
 GND
 $EndSCHEMATC

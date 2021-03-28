@@ -39,10 +39,6 @@ Text GLabel 4500 3975 2    60   Input ~ 0
 ledL1
 Text GLabel 4475 5675 2    60   Input ~ 0
 ledOnOff
-Text GLabel 5925 6650 1    60   Input ~ 0
-D2
-Text GLabel 5725 6650 0    60   Input ~ 0
-D3
 $Comp
 L Traktorino-rescue:ARDUINO_SHIELD SHIELD1
 U 1 1 5797BC2B
@@ -85,19 +81,6 @@ F 3 "" H 4400 3975 50  0000 C CNN
 $EndComp
 Text GLabel 7596 973  2    60   Input ~ 0
 GND
-$Comp
-L Traktorino-rescue:Encoder_switch En1
-U 1 1 59726870
-P 5825 6750
-F 0 "En1" H 5825 6950 60  0000 C CNN
-F 1 "Encoder_switch" H 5850 7000 60  0001 C CNN
-F 2 "sparkfun:SF-ROTARY-ENCODER_gus" H 5825 6750 60  0001 C CNN
-F 3 "" H 5825 6750 60  0000 C CNN
-	1    5825 6750
-	-1   0    0    1   
-$EndComp
-Text GLabel 5875 6850 2    60   Input ~ 0
-encoder_sw
 Text GLabel 7596 1173 2    60   Input ~ 0
 D12
 Text GLabel 5696 2173 0    60   Input ~ 0
@@ -553,24 +536,6 @@ Wire Notes Line
 	5975 3775 5975 5950
 Text Notes 4700 3725 0    50   ~ 0
 LEDs\n
-Wire Wire Line
-	5675 6850 5775 6850
-Text GLabel 5675 6850 3    60   Input ~ 0
-e2
-Text GLabel 5825 6500 0    60   Input ~ 0
-e2
-Wire Wire Line
-	5825 6650 5825 6500
-Wire Notes Line
-	5475 6350 5475 7125
-Wire Notes Line
-	5475 7125 6500 7125
-Wire Notes Line
-	6500 7125 6500 6350
-Wire Notes Line
-	6500 6350 5475 6350
-Text Notes 5675 6300 0    50   ~ 0
-Browse encoder
 Text GLabel 4650 900  0    60   Input ~ 0
 GND
 Text GLabel 4650 1000 0    60   Input ~ 0

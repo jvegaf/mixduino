@@ -97,10 +97,12 @@ unsigned int numOutputs = numRegisters * 8;
 unsigned int numRGBLeds = numRegisters * 8 / 3;
 unsigned int fadingMode = 0; //start with all LED's off.
 
-unsigned int VuL[7] = {1, 2, 3, 4, 5, 6, 7}; // VU left pins
-unsigned int VuR[7] = {15, 14, 13, 12, 11, 10, 9}; // VU righ pins
-unsigned int buttonsLedL[5] = {20, 19, 18, 17, 16};
-unsigned int buttonsLedR[5] = {8, 0, 23, 22, 21};
+unsigned int VuL1[8] = {0, 1, 2, 3, 4, 5, 6, 7}; // VU line 1 pins
+unsigned int VuL2[8] = {8, 9, 10, 11, 12, 13, 14, 15}; // VU line 2 pins
+unsigned int VuL3[8] = {16, 17, 18, 19, 20, 21, 22, 23}; // VU line 3 pins
+unsigned int VuML[8] = {24, 25, 26, 27, 28, 29, 30, 31}; // VU master left pins
+unsigned int VuMR[8] = {32, 33, 34, 35, 36, 37, 38, 39}; // VU master right pins
+unsigned int buttonsLed[7] = {41, 42, 43, 44, 45, 46, 47};
 
 unsigned int red = 180;
 unsigned int green = 255;

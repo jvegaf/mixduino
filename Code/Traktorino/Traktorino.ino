@@ -44,8 +44,8 @@ const bool ShiftPWM_balanceLoad = false;
 
 /////////////////////////////////////////////
 // buttons
-const byte muxNButtons = 13; // *coloque aqui o numero de entradas digitais utilizadas no multiplexer
-const byte NButtons = 1; // *coloque aqui o numero de entradas digitais utilizadas
+const byte muxNButtons = 42; // *coloque aqui o numero de entradas digitais utilizadas no multiplexer
+const byte NButtons = 3; // *coloque aqui o numero de entradas digitais utilizadas
 const byte totalButtons = muxNButtons + NButtons;
 const byte muxButtonPin[muxNButtons] = {0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15}; // *neste array coloque na ordem desejada os pinos das portas digitais utilizadas
 const byte buttonPin[NButtons] = {9}; // *neste array coloque na ordem desejada os pinos das portas digitais utilizadas
@@ -59,7 +59,7 @@ unsigned long debounceDelay = 5;    // the debounce time; increase if the output
 
 /////////////////////////////////////////////
 // potentiometers
-const byte NPots = 14; // *coloque aqui o numero de entradas analogicas utilizadas
+const byte NPots = 29; // *coloque aqui o numero de entradas analogicas utilizadas
 const byte muxPotPin[NPots] = {0, 1, 2, 3, 4, 5, 6, 15, 14, 13, 12, 11, 10, 8}; // *neste array coloque na ordem desejada os pinos das portas analogicas, ou mux channel, utilizadas
 int potCState[NPots] = {0}; // estado atual da porta analogica
 int potPState[NPots] = {0}; // estado previo da porta analogica
@@ -113,14 +113,20 @@ byte ledOnOffPin = 10; //On Off pin
 
 /////////////////////////////////////////////
 // Multiplexer
-Multiplexer4067 mplexPots = Multiplexer4067(4, 5, 6, 7, A0);
-Multiplexer4067 mplexButtons = Multiplexer4067(4, 5, 6, 7, A1);
+Multiplexer4067 mplexPots1 = Multiplexer4067(4, 5, 6, 7, A0);
+Multiplexer4067 mplexPots2 = Multiplexer4067(4, 5, 6, 7, A1);
+Multiplexer4067 mplexButtons1 = Multiplexer4067(4, 5, 6, 7, A2);
+Multiplexer4067 mplexButtons2 = Multiplexer4067(4, 5, 6, 7, A3);
+Multiplexer4067 mplexButtons3 = Multiplexer4067(4, 5, 6, 7, A4);
 
 /////////////////////////////////////////////
 // threads - programa cada atividade do Arduino para acontecer em um determinado tempo
 ThreadController cpu; //thread master, onde as outras vao ser adicionadas
-Thread threadReadPots; // thread para controlar os pots
-Thread threadReadButtons; // thread para controlar os botoes
+Thread threadReadPots1; // thread para controlar os pots
+Thread threadReadPots2; // thread para controlar os pots
+Thread threadReadButtons1; // thread para controlar os botoes
+Thread threadReadButtons2; // thread para controlar os botoes
+Thread threadReadButtons3; // thread para controlar os botoes
 
 /////////////////////////////////////////////
 void setup() {
@@ -137,9 +143,14 @@ void setup() {
 
   /////////////////////////////////////////////
   // Multiplexers
-  mplexPots.begin(); // inicializa o multiplexer
-  mplexButtons.begin(); // inicializa o multiplexer
-  pinMode(A1, INPUT_PULLUP); // Buttons need input pull up
+  mplexPots1.begin(); // inicializa o multiplexer
+  mplexPots2.begin(); // inicializa o multiplexer
+  mplexButtons1.begin(); // inicializa o multiplexer
+  mplexButtons2.begin(); // inicializa o multiplexer
+  mplexButtons3.begin(); // inicializa o multiplexer
+  pinMode(A2, INPUT_PULLUP); // Buttons need input pull up
+  pinMode(A3, INPUT_PULLUP); // Buttons need input pull up
+  pinMode(A4, INPUT_PULLUP); // Buttons need input pull up
 
   /////////////////////////////////////////////
   // buttons on Arduino Digital pins
@@ -166,13 +177,25 @@ void setup() {
   /////////////////////////////////////////////
   // threads
   // pots
-  threadReadPots.setInterval(10);
-  threadReadPots.onRun(readPots);
-  cpu.add(&threadReadPots);
+  threadReadPots1.setInterval(10);
+  threadReadPots1.onRun(readPots);
+  cpu.add(&threadReadPots1);
+  
+  threadReadPots1.setInterval(10);
+  threadReadPots1.onRun(readPots);
+  cpu.add(&threadReadPots1);
   // buttons
-  threadReadButtons.setInterval(20);
-  threadReadButtons.onRun(readButtons);
-  cpu.add(&threadReadButtons);
+  threadReadButtons1.setInterval(20);
+  threadReadButtons1.onRun(readButtons);
+  cpu.add(&threadReadButtons1);
+
+  threadReadButtons2.setInterval(20);
+  threadReadButtons2.onRun(readButtons);
+  cpu.add(&threadReadButtons2);
+  
+  threadReadButtons3.setInterval(20);
+  threadReadButtons3.onRun(readButtons);
+  cpu.add(&threadReadButtons3);
 
   /////////////////////////////////////////////
   //leds
@@ -318,140 +341,172 @@ void handleControlChange(byte channel, byte number, byte value) {
 
   if (value_ != ccLastValue) {
 
-    // Left VU
+    // VUL1
     if (number == 12) {
 
       switch (value_) {
         case 0:
           for (int i = 0; i < 7; i++) {
-            ShiftPWM.SetOne(VuL[i], LOW);
+            ShiftPWM.SetOne(VuL1[i], LOW);
           }
           break;
         case 1:
           for (int i = 1; i < 7; i++) {
-            ShiftPWM.SetOne(VuL[i], LOW);
+            ShiftPWM.SetOne(VuL1[i], LOW);
           }
-          ShiftPWM.SetOne(VuL[0], green);
+          ShiftPWM.SetOne(VuL1[0], green);
           break;
         case 2:
           for (int i = 2; i < 7; i++) {
-            ShiftPWM.SetOne(VuL[i], LOW);
+            ShiftPWM.SetOne(VuL1[i], LOW);
           }
           for (int i = 0; i < 2; i++) {
-            ShiftPWM.SetOne(VuL[i], green);
+            ShiftPWM.SetOne(VuL1[i], green);
           }
           break;
         case 3:
           for (int i = 3; i < 7; i++) {
-            ShiftPWM.SetOne(VuL[i], LOW);
+            ShiftPWM.SetOne(VuL1[i], LOW);
           }
           for (int i = 0; i < 3; i++) {
-            ShiftPWM.SetOne(VuL[i], green);
+            ShiftPWM.SetOne(VuL1[i], green);
           }
           break;
         case 4:
           for (int i = 4; i < 7; i++) {
-            ShiftPWM.SetOne(VuL[i], LOW);
+            ShiftPWM.SetOne(VuL1[i], LOW);
           }
           for (int i = 0; i < 4; i++) {
-            ShiftPWM.SetOne(VuL[i], green);
+            ShiftPWM.SetOne(VuL1[i], green);
           }
           break;
         case 5:
           for (int i = 5; i < 7; i++) {
-            ShiftPWM.SetOne(VuL[i], LOW);
+            ShiftPWM.SetOne(VuL1[i], LOW);
           }
           for (int i = 0; i < 5; i++) {
-            ShiftPWM.SetOne(VuL[i], green);
+            ShiftPWM.SetOne(VuL1[i], green);
           }
           break;
         case 6:
           for (int i = 6; i < 7; i++) {
-            ShiftPWM.SetOne(VuL[i], LOW);
+            ShiftPWM.SetOne(VuL1[i], LOW);
           }
           for (int i = 0; i < 5; i++) {
-            ShiftPWM.SetOne(VuL[i], green);
+            ShiftPWM.SetOne(VuL1[i], green);
           }
-          ShiftPWM.SetOne(VuL[5], yellow);
+          ShiftPWM.SetOne(VuL1[5], yellow);
           break;
         case 7:
           for (int i = 6; i < 7; i++) {
-            ShiftPWM.SetOne(VuL[i], LOW);
+            ShiftPWM.SetOne(VuL1[i], LOW);
           }
           for (int i = 0; i < 5; i++) {
-            ShiftPWM.SetOne(VuL[i], green);
+            ShiftPWM.SetOne(VuL1[i], green);
           }
-          ShiftPWM.SetOne(VuL[5], yellow);
-          ShiftPWM.SetOne(VuL[6], red);
+          ShiftPWM.SetOne(VuL1[5], yellow);
+          ShiftPWM.SetOne(VuL1[6], yellow);
+          break;
+        case 8:
+          for (int i = 7; i < 8; i++) {
+            ShiftPWM.SetOne(VuL1[i], LOW);
+          }
+          for (int i = 0; i < 5; i++) {
+            ShiftPWM.SetOne(VuL1[i], green);
+          }
+          ShiftPWM.SetOne(VuL1[5], yellow);
+          ShiftPWM.SetOne(VuL1[6], yellow);
+          ShiftPWM.SetOne(VuL1[7], red);
           break;
       }
     }
 
-    // Right VU
+    // Right VUL2
     if (number == 13) {
 
       switch (value_) {
         case 0:
           for (int i = 0; i < 7; i++) {
-            ShiftPWM.SetOne(VuR[i], LOW);
+            ShiftPWM.SetOne(VuL2[i], LOW);
           }
           break;
         case 1:
           for (int i = 1; i < 7; i++) {
-            ShiftPWM.SetOne(VuR[i], LOW);
+            ShiftPWM.SetOne(VuL2[i], LOW);
           }
-          ShiftPWM.SetOne(VuR[0], green);
+          ShiftPWM.SetOne(VuL2[0], green);
           break;
         case 2:
           for (int i = 2; i < 7; i++) {
-            ShiftPWM.SetOne(VuR[i], LOW);
+            ShiftPWM.SetOne(VuL2[i], LOW);
           }
           for (int i = 0; i < 2; i++) {
-            ShiftPWM.SetOne(VuR[i], green);
+            ShiftPWM.SetOne(VuL2[i], green);
           }
           break;
         case 3:
           for (int i = 3; i < 7; i++) {
-            ShiftPWM.SetOne(VuR[i], LOW);
+            ShiftPWM.SetOne(VuL2[i], LOW);
           }
           for (int i = 0; i < 3; i++) {
-            ShiftPWM.SetOne(VuR[i], green);
+            ShiftPWM.SetOne(VuL2[i], green);
           }
           break;
         case 4:
           for (int i = 4; i < 7; i++) {
-            ShiftPWM.SetOne(VuR[i], LOW);
+            ShiftPWM.SetOne(VuL2[i], LOW);
           }
           for (int i = 0; i < 4; i++) {
-            ShiftPWM.SetOne(VuR[i], green);
+            ShiftPWM.SetOne(VuL2[i], green);
           }
           break;
         case 5:
           for (int i = 5; i < 7; i++) {
-            ShiftPWM.SetOne(VuR[i], LOW);
+            ShiftPWM.SetOne(VuL2[i], LOW);
           }
           for (int i = 0; i < 5; i++) {
-            ShiftPWM.SetOne(VuR[i], green);
+            ShiftPWM.SetOne(VuL2[i], green);
           }
           break;
         case 6:
           for (int i = 6; i < 7; i++) {
-            ShiftPWM.SetOne(VuR[i], LOW);
+            ShiftPWM.SetOne(VuL2[i], LOW);
           }
           for (int i = 0; i < 5; i++) {
-            ShiftPWM.SetOne(VuR[i], green);
+            ShiftPWM.SetOne(VuL2[i], green);
           }
-          ShiftPWM.SetOne(VuR[5], yellow);
+          ShiftPWM.SetOne(VuL2[5], yellow);
           break;
         case 7:
           for (int i = 6; i < 7; i++) {
-            ShiftPWM.SetOne(VuR[i], LOW);
+            ShiftPWM.SetOne(VuL2[i], LOW);
           }
           for (int i = 0; i < 5; i++) {
-            ShiftPWM.SetOne(VuR[i], green);
+            ShiftPWM.SetOne(VuL2[i], green);
           }
-          ShiftPWM.SetOne(VuR[5], yellow);
-          ShiftPWM.SetOne(VuR[6], red);
+          ShiftPWM.SetOne(VuL2[5], yellow);
+          ShiftPWM.SetOne(VuL2[6], red);
+          break;
+        case 7:
+          for (int i = 6; i < 7; i++) {
+            ShiftPWM.SetOne(VuL2[i], LOW);
+          }
+          for (int i = 0; i < 5; i++) {
+            ShiftPWM.SetOne(VuL2[i], green);
+          }
+          ShiftPWM.SetOne(VuL2[5], yellow);
+          ShiftPWM.SetOne(VuL2[6], red);
+          break;
+        case 8:
+          for (int i = 7; i < 8; i++) {
+            ShiftPWM.SetOne(VuL2[i], LOW);
+          }
+          for (int i = 0; i < 5; i++) {
+            ShiftPWM.SetOne(VuL2[i], green);
+          }
+          ShiftPWM.SetOne(VuL2[5], yellow);
+          ShiftPWM.SetOne(VuL2[6], yellow);
+          ShiftPWM.SetOne(VuL2[7], red);
           break;
       }
     }
@@ -557,5 +612,5 @@ void handleNoteOff(byte channel, byte number, byte value) {
   3 13
   2 14
   1 15
-
+  0 16
 */

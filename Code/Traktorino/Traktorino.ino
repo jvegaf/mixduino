@@ -89,7 +89,7 @@ int ccLastValue = 0;
 
 /////////////////////////////////////////////
 // Leds
-const byte ledNum = 24; // total number of leds used
+const byte ledNum = 47; // total number of leds used
 unsigned char maxBrightness = 255;
 unsigned char pwmFrequency = 75;
 unsigned int numRegisters = 3;
@@ -181,9 +181,9 @@ void setup() {
   threadReadPots1.onRun(readPots);
   cpu.add(&threadReadPots1);
   
-  threadReadPots1.setInterval(10);
-  threadReadPots1.onRun(readPots);
-  cpu.add(&threadReadPots1);
+  threadReadPots2.setInterval(10);
+  threadReadPots2.onRun(readPots);
+  cpu.add(&threadReadPots2);
   // buttons
   threadReadButtons1.setInterval(20);
   threadReadButtons1.onRun(readButtons);
@@ -201,9 +201,6 @@ void setup() {
   //leds
   analogWrite(ledOnOffPin, 255); // on/off led
 
-//  for (int i = 0; i < ledNum; i++) { // writeBit works just like digitalWrite
-//    ShiftPWM.SetOne(i, LOW);
-//  }
 
 }
 
@@ -421,7 +418,7 @@ void handleControlChange(byte channel, byte number, byte value) {
       }
     }
 
-    // Right VUL2
+    // VUL2
     if (number == 13) {
 
       switch (value_) {

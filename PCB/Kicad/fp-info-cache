@@ -1,4 +1,4 @@
-19450057997791453
+19451675232436758
 Arduino
 Arduino_101_Shield
 https://store.arduino.cc/genuino-101
@@ -56577,6 +56577,13 @@ LED_THT
 LED_VCCLite_5381H7_6.35x6.35mm
 Yellow 5381 Series LED VCCLite https://vcclite.com/wp-content/uploads/wpallimport/files/files/5381Series.pdf http://static.vcclite.com/pdf/Mounting%20Hole%20Pattern%202.pdf
 Yellow 5381 Series LED
+0
+2
+2
+Library
+ELAST_PAD_SQUARE_10MM_4X4WIDE
+
+
 0
 2
 2

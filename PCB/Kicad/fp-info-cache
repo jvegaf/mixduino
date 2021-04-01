@@ -1,4 +1,4 @@
-19451675232436758
+19456526924259281
 Arduino
 Arduino_101_Shield
 https://store.arduino.cc/genuino-101
@@ -56595,12 +56595,33 @@ fader-L60
 8
 3
 Library
+fader-L60_copy
+
+
+0
+8
+3
+Library
+fader-L75
+
+
+0
+8
+3
+Library
 sw-pad
 
 
 0
 2
 2
+Library
+trillbar
+
+
+0
+4
+4
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet

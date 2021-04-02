@@ -55,7 +55,11 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "clearance|379436020|208250684|78f7e158-0c42-49f5-a3cc-d721cd2dcc5e|42820a20-f53f-4d9c-9b88-0b0034139bb1",
+        "clearance|379436020|208250684|78f7e158-0c42-49f5-a3cc-d721cd2dcc5e|7d21f564-ca6a-4321-87eb-515421c260e8",
+        "via_dangling|336970000|191850000|9b0927da-0939-40df-bbb1-6b95fd63cffc|00000000-0000-0000-0000-000000000000"
+      ],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2
@@ -374,13 +378,31 @@
         "line_style": 0,
         "microvia_diameter": 0.0,
         "microvia_drill": 0.0,
+        "name": "GND",
+        "nets": [],
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 1.016,
+        "via_diameter": 1.2,
+        "via_drill": 0.8,
+        "wire_width": 6.0
+      },
+      {
+        "bus_width": 12.0,
+        "clearance": 0.508,
+        "diff_pair_gap": 0.0,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.0,
+        "line_style": 0,
+        "microvia_diameter": 0.0,
+        "microvia_drill": 0.0,
         "name": "VCC",
         "nets": [],
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
         "track_width": 1.016,
-        "via_diameter": 0.889,
-        "via_drill": 0.635,
+        "via_diameter": 1.2,
+        "via_drill": 0.8,
         "wire_width": 6.0
       }
     ],

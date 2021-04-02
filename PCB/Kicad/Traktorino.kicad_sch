@@ -2823,10 +2823,10 @@
       (reference "SW42") (unit 1) (value "SWSEL3") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/cca2e57b-80df-422d-b0c5-09f93acfe3fd"
-      (reference "SW43") (unit 1) (value "BROWSER-L") (footprint "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles")
+      (reference "SW43") (unit 1) (value "BROWSER-L") (footprint "Library:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/f272f32d-94a2-4ef9-b337-933c01947ce3"
-      (reference "SW44") (unit 1) (value "BROWSER-R") (footprint "Rotary_Encoder:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles")
+      (reference "SW44") (unit 1) (value "BROWSER-R") (footprint "Library:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/6007520e-ade6-4852-97a6-c9289d77974b"
       (reference "#PWR0147") (unit 1) (value "+5V") (footprint "")

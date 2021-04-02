@@ -1,67 +1,4 @@
-19468927782180996
-Arduino
-Arduino_101_Shield
-https://store.arduino.cc/genuino-101
-
-0
-38
-38
-Arduino
-Arduino_Due_Shield
-https://store.arduino.cc/arduino-due
-
-0
-92
-91
-Arduino
-Arduino_Leonardo_Shield
-https://store.arduino.cc/arduino-leonardo-with-headers
-
-0
-38
-37
-Arduino
-Arduino_Mega2560_Shield
-https://store.arduino.cc/arduino-mega-2560-rev3
-
-0
-92
-91
-Arduino
-Arduino_Micro_Socket
-https://store.arduino.cc/arduino-micro
-
-0
-34
-32
-Arduino
-Arduino_Mini_Socket
-https://store.arduino.cc/arduino-mini-05
-
-0
-35
-35
-Arduino
-Arduino_Nano_Socket
-https://store.arduino.cc/arduino-nano
-
-0
-30
-30
-Arduino
-Arduino_Uno_Shield
-https://store.arduino.cc/arduino-uno-rev3
-
-0
-38
-37
-Arduino
-Arduino_Zero_Shield
-https://store.arduino.cc/genuino-zero
-
-0
-38
-38
+19409744188094155
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -56587,6 +56524,27 @@ ELAST_PAD_SQUARE_10MM_4X4WIDE
 0
 2
 2
+Library
+Potentiometer_Bourns_PTV09A-1_Single_Vertical
+Potentiometer, vertical, Bourns PTV09A-1 Single, http://www.bourns.com/docs/Product-Datasheets/ptv09.pdf
+Potentiometer vertical Bourns PTV09A-1 Single
+0
+3
+3
+Library
+RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles
+Alps rotary encoder, EC12E... with switch, vertical shaft, mounting holes with circular drills, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+7
+6
+Library
+SO-16_3.9x9.9mm_P1.27mm
+SO, 16 Pin (https://www.nxp.com/docs/en/package-information/SOT109-1.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SO SO
+0
+16
+16
 Library
 fader-L60
 

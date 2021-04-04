@@ -1,5 +1,5 @@
 (footprint "fader-L60" (version 20210228) (generator pcbnew) (layer "F.Cu")
-  (tedit 60679B4F)
+  (tedit 60691780)
   (fp_text reference "REF**" (at 0 -2.4 unlocked) (layer "F.SilkS")
     (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 8c7fb6e8-747f-4ea5-b06f-d8ad36f2e537)
@@ -46,7 +46,7 @@
   (pad "2" thru_hole oval (at -27.432 1.27) (size 2.4 1.6) (drill 1) (layers *.Cu *.Mask) (tstamp cb75bf21-6ad4-4252-bff8-9e3f348bb558))
   (pad "3" thru_hole oval (at 27.432 -1.38) (size 2.4 1.6) (drill 1) (layers *.Cu *.Mask) (tstamp 6914008b-6590-44c2-b714-ed7a6343db9f))
   (pad "3" thru_hole oval (at 27.432 3.7) (size 2.4 1.6) (drill 1) (layers *.Cu *.Mask) (tstamp eb26e02e-f551-4643-9c41-c225f305e277))
-  (model "C:/Users/josev/Documents/Code/traktorino/PCB/3d-models/75mm Straight Slide Potentiometer.step"
+  (model "${KIPRJMOD}/3d-models/75mm Straight Slide Potentiometer.step"
     (offset (xyz 0 0 6))
     (scale (xyz 1 0.77 0.8))
     (rotate (xyz 0 180 -90))

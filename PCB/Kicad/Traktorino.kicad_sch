@@ -1031,10 +1031,10 @@
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "SF-DATA" (shape input) (at 127.635 105.41 180)
+  (global_label "MPLEX-S2" (shape input) (at 127.635 105.41 180)
     (effects (font (size 1.016 1.016)) (justify right))
-    (uuid 75acc45c-5dcb-40c8-b5fe-d3528b9dbcf5)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 119.0764 105.3465 0)
+    (uuid b2c99a8a-90cb-4680-9810-828db23583f0)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 117.625 105.4735 0)
       (effects (font (size 1.016 1.016)) (justify right) hide)
     )
   )
@@ -1388,10 +1388,10 @@
       (effects (font (size 1.016 1.016)) (justify left) hide)
     )
   )
-  (global_label "MPLEX-S2" (shape input) (at 193.675 143.51 0)
+  (global_label "SF-DATA" (shape input) (at 193.675 143.51 0)
     (effects (font (size 1.016 1.016)) (justify left))
-    (uuid b2c99a8a-90cb-4680-9810-828db23583f0)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 203.685 143.4465 0)
+    (uuid 75acc45c-5dcb-40c8-b5fe-d3528b9dbcf5)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 202.2336 143.5735 0)
       (effects (font (size 1.016 1.016)) (justify left) hide)
     )
   )
@@ -1667,7 +1667,7 @@
     (uuid 07bbd527-08a8-40cf-9368-ef726bba9691)
     (property "Reference" "IC-POTS-1" (id 0) (at 249.555 115.57 0))
     (property "Value" "74HC4067D,653" (id 1) (at 249.555 118.11 0))
-    (property "Footprint" "Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm" (id 2) (at 258.445 119.38 0)
+    (property "Footprint" "Library:SOIC-24W_7.5x15.4mm_P1.27mm" (id 2) (at 258.445 119.38 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
     (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74HC_HCT4067.pdf" (id 3) (at 258.445 121.92 0)
@@ -1726,7 +1726,7 @@
     (property "Value" "Arduino_Mega2560_Shield" (id 1) (at 160.655 157.48 0)
       (effects (font (size 1.524 1.524)))
     )
-    (property "Footprint" "Arduino:Arduino_Mega2560_Shield" (id 2) (at 178.435 24.13 0)
+    (property "Footprint" "Library:Arduino_Mega2560_Shield" (id 2) (at 178.435 24.13 0)
       (effects (font (size 1.524 1.524)) hide)
     )
     (property "Datasheet" "https://store.arduino.cc/arduino-mega-2560-rev3" (id 3) (at 178.435 24.13 0)
@@ -1896,7 +1896,7 @@
       (reference "#PWR02") (unit 1) (value "GND") (footprint "")
     )
     (path "/07bbd527-08a8-40cf-9368-ef726bba9691"
-      (reference "IC-POTS-1") (unit 1) (value "74HC4067D,653") (footprint "Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm")
+      (reference "IC-POTS-1") (unit 1) (value "74HC4067D,653") (footprint "Library:SOIC-24W_7.5x15.4mm_P1.27mm")
     )
     (path "/499401ba-d585-4a6c-99d3-a1cb46476140"
       (reference "TB1") (unit 1) (value "trillbar-left") (footprint "Library:trillbar")
@@ -1905,7 +1905,7 @@
       (reference "TB2") (unit 1) (value "trillbar-right") (footprint "Library:trillbar")
     )
     (path "/13986d56-86b6-4e78-9652-0d0cf169e5d8"
-      (reference "XA1") (unit 1) (value "Arduino_Mega2560_Shield") (footprint "Arduino:Arduino_Mega2560_Shield")
+      (reference "XA1") (unit 1) (value "Arduino_Mega2560_Shield") (footprint "Library:Arduino_Mega2560_Shield")
     )
     (path "/00000000-0000-0000-0000-000060683d75/00000000-0000-0000-0000-0000606e3702"
       (reference "#PWR07") (unit 1) (value "GND") (footprint "")
@@ -2028,286 +2028,286 @@
       (reference "#PWR046") (unit 1) (value "GND") (footprint "")
     )
     (path "/00000000-0000-0000-0000-000060683d75/0df910e1-a0a8-4d01-8537-af4794670835"
-      (reference "BCUELD1") (unit 1) (value "LED_ALT") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "BCUELD1") (unit 1) (value "LED_ALT") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/26e481c1-c89e-44e6-8a69-e715ce65c4f0"
-      (reference "BCUELR1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "BCUELR1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2c7179f9-371e-4764-bc7f-75f753381823"
-      (reference "BCUERD1") (unit 1) (value "LED_ALT") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "BCUERD1") (unit 1) (value "LED_ALT") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/b2bc2fd6-6300-4f95-a052-caec40cad76c"
-      (reference "BCUERR1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "BCUERR1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/609428c0-38f7-4281-8534-6aed727516c1"
-      (reference "BHPL1D1") (unit 1) (value "LED_ALT") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "BHPL1D1") (unit 1) (value "LED_ALT") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/fa31e3c4-5ffa-421f-970d-13f475878f80"
-      (reference "BHPL1R1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "BHPL1R1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/f6c49fbe-7beb-4131-a572-0bb5d6ad73ec"
-      (reference "BHPL2D1") (unit 1) (value "LED_ALT") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "BHPL2D1") (unit 1) (value "LED_ALT") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/c604bf1e-676e-4863-bec6-2d7a7e40a0f6"
-      (reference "BHPL2R1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "BHPL2R1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/c3aa79eb-7a03-4e22-a291-b23d2f0e0c2d"
-      (reference "BPLAYLD1") (unit 1) (value "LED_ALT") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "BPLAYLD1") (unit 1) (value "LED_ALT") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/cd8ba270-ad93-4664-a35a-2e73777b6b89"
-      (reference "BPLAYLR1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "BPLAYLR1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/eb1b4243-9039-4a36-b5b2-4d63e3541e8e"
-      (reference "BPLAYRD1") (unit 1) (value "LED_ALT") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "BPLAYRD1") (unit 1) (value "LED_ALT") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/c758f8c1-f7c0-4f49-9899-5814940066de"
-      (reference "BPLAYRR1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "BPLAYRR1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/3894fa54-3b4c-44af-8f0a-86cfbf0638d2"
-      (reference "D23") (unit 1) (value "LED_ALT") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "D23") (unit 1) (value "LED_ALT") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/ec17a33c-ba28-4c13-a56e-a403e7e3e359"
-      (reference "R23") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "R23") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/bbb05a8c-2564-4d68-adce-2491421a0159"
-      (reference "VUL1D1") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL1D1") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d742b5e5-2623-4c91-83a9-282733ed35d7"
-      (reference "VUL1D2") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL1D2") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d3747c16-0b02-41a2-97f8-cc5875cc2153"
-      (reference "VUL1D3") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL1D3") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/47c60eb8-cd5d-4f58-ab70-884bfd871222"
-      (reference "VUL1D4") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL1D4") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/b93c6473-752b-44ea-809d-9650e97a7a42"
-      (reference "VUL1D5") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL1D5") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/70868763-f89c-47fb-bc5e-655a82b90047"
-      (reference "VUL1D6") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL1D6") (unit 1) (value "LED_Filled") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/f8f03c38-cb84-4da2-ba2f-66a510017c71"
-      (reference "VUL1D7") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL1D7") (unit 1) (value "LED_Filled") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d19bc529-fd94-48f6-a61b-48a38884eebd"
-      (reference "VUL1D8") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL1D8") (unit 1) (value "LED_Filled") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/00000000-0000-0000-0000-0000606dfaaa"
-      (reference "VUL1R1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL1R1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/859ea934-ef74-4291-ae89-3450d5eb9843"
-      (reference "VUL1R2") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL1R2") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/61ca2770-fe1a-4e5c-84b6-995777382b41"
-      (reference "VUL1R3") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL1R3") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/c0125f91-2cdb-4610-95f3-fa2be348b79b"
-      (reference "VUL1R4") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL1R4") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2659b5f9-e1e2-4492-9b05-8667721276d5"
-      (reference "VUL1R5") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL1R5") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/0678d574-1cce-4fd4-b0a1-6421600558b7"
-      (reference "VUL1R6") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL1R6") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/86218649-40a8-4477-8d14-02410c2e0b10"
-      (reference "VUL1R7") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL1R7") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/4a79a477-6758-4d5f-8566-4eb4b9512314"
-      (reference "VUL1R8") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL1R8") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/bb7308fd-4bb0-4f7c-bc4c-69bc38a3c4b0"
-      (reference "VUL2D1") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL2D1") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/1ed6047b-be38-4810-9b16-bcd19e8daf88"
-      (reference "VUL2D2") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL2D2") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/56966aab-2c3f-4111-a650-05465ba2baba"
-      (reference "VUL2D3") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL2D3") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/903b1f65-1e1c-40e6-8a4e-4ee60b6e1f0e"
-      (reference "VUL2D4") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL2D4") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/8ca4b0fa-c9d2-4868-9a0a-caf0350a2359"
-      (reference "VUL2D5") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL2D5") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2e3ef7e1-7426-4d38-ab55-623ef2684327"
-      (reference "VUL2D6") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL2D6") (unit 1) (value "LED_Filled") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/26474482-94e6-47a3-8247-977eb76461b6"
-      (reference "VUL2D7") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL2D7") (unit 1) (value "LED_Filled") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/b6ec4daf-ecb2-4d03-8c87-8cebc182ca4f"
-      (reference "VUL2D8") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL2D8") (unit 1) (value "LED_Filled") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/cf39fba2-a469-4e13-b71f-77f3aa60e175"
-      (reference "VUL2R1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL2R1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/b29a013b-274c-485d-94b6-d00957d24a13"
-      (reference "VUL2R2") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL2R2") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/46f8b6c4-cc19-462e-a7aa-60ddd73bb98b"
-      (reference "VUL2R3") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL2R3") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/ccd0d6aa-5f22-4a02-b8f0-047a7f935e2d"
-      (reference "VUL2R4") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL2R4") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/57abe5e4-0ced-4923-816d-86e5afc96207"
-      (reference "VUL2R5") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL2R5") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/26fb5e4f-05e4-48f2-8a1d-1f11f6b3a2bb"
-      (reference "VUL2R6") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL2R6") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/b23c184e-3d82-4776-a7d0-50871cc3559c"
-      (reference "VUL2R7") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL2R7") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/9742707e-ecd0-4fea-ae58-51a6fa13cb19"
-      (reference "VUL2R8") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL2R8") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/bac291b8-f423-4e1c-a382-ed7682479401"
-      (reference "VUL3D1") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL3D1") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2cc2a61b-529f-4d2a-bf87-341d30e576d5"
-      (reference "VUL3D2") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL3D2") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/9922dc49-b5ea-4ad5-b8bb-1af20d4d07cf"
-      (reference "VUL3D3") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL3D3") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/af9b6e00-9075-43e2-a461-52ef93acbcf8"
-      (reference "VUL3D4") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL3D4") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/533639ee-33f9-4ec0-be16-199d3da3f4d1"
-      (reference "VUL3D5") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL3D5") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/e7dad7e7-2cc2-4827-8fe1-de08e45a0915"
-      (reference "VUL3D6") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL3D6") (unit 1) (value "LED_Filled") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/8963174a-5c60-4d46-8d36-687c7b03b7f2"
-      (reference "VUL3D7") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL3D7") (unit 1) (value "LED_Filled") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/f9ca32e4-b122-4f19-86ed-5f3405bdfb71"
-      (reference "VUL3D8") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUL3D8") (unit 1) (value "LED_Filled") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/152d16dd-58c6-497c-8cc9-dade848f1ac9"
-      (reference "VUL3R1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL3R1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/4a5d7b61-4c2d-43b4-b87a-7a9898895cc9"
-      (reference "VUL3R2") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL3R2") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/728d47af-256f-4d17-a8d9-658704fa2a5e"
-      (reference "VUL3R3") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL3R3") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/f261cb3e-9657-4c5b-aacd-5d7d0247e551"
-      (reference "VUL3R4") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL3R4") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7953ccb5-b64a-44d1-9e73-bc87dfdb649d"
-      (reference "VUL3R5") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL3R5") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/05fa1cd5-1011-48c5-ad30-e1031a203311"
-      (reference "VUL3R6") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL3R6") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/64268c9f-d003-4568-8cae-704c32b82994"
-      (reference "VUL3R7") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL3R7") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/184f5611-b078-4dc6-a693-9a6498847dfe"
-      (reference "VUL3R8") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUL3R8") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/db7ea295-1aed-4a51-9afc-f1c407c48434"
-      (reference "VUMASLD1") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASLD1") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/4ebc9227-a1de-430a-82bd-4ae4892b4216"
-      (reference "VUMASLD2") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASLD2") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/9082fb18-9c6a-4436-877f-72b0f2e417b6"
-      (reference "VUMASLD3") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASLD3") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/f9460ae4-91cf-4245-bee0-931dc6977b8a"
-      (reference "VUMASLD4") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASLD4") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/c3666fc9-caba-405c-b42d-3e785d33b9a2"
-      (reference "VUMASLD5") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASLD5") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7623be4c-083e-40a0-8a85-5d2226f6670b"
-      (reference "VUMASLD6") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASLD6") (unit 1) (value "LED_Filled") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d88a56d4-2a13-4844-99b9-a46331c0a9d3"
-      (reference "VUMASLD7") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASLD7") (unit 1) (value "LED_Filled") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/95d3a68d-0b7a-4ce2-aaa5-53c042807664"
-      (reference "VUMASLD8") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASLD8") (unit 1) (value "LED_Filled") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/9447cb19-9258-45c7-9119-792d920670bc"
-      (reference "VUMASLR1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASLR1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/be48bd58-5e8b-4b43-816f-c446ef94e1fc"
-      (reference "VUMASLR2") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASLR2") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/646856fe-d1b0-43da-9941-d067cda09444"
-      (reference "VUMASLR3") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASLR3") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/fd0ec830-7e8e-49cd-922a-4b8cd1cad566"
-      (reference "VUMASLR4") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASLR4") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/8afd8641-c543-4138-909d-2b5db288d7fb"
-      (reference "VUMASLR5") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASLR5") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/5227692e-c94d-4543-8200-d654c0ef40de"
-      (reference "VUMASLR6") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASLR6") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/a5930f3b-dcbd-4edb-a82d-d6b81fac6704"
-      (reference "VUMASLR7") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASLR7") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/3b59826e-7731-4d98-b3e1-3e5dc10202cd"
-      (reference "VUMASLR8") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASLR8") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/b17a84cb-a754-479a-ad84-31e7be591a84"
-      (reference "VUMASRD1") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASRD1") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/4925103a-454b-4b42-927f-1faebbd4c84c"
-      (reference "VUMASRD2") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASRD2") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/35c2553e-b839-493d-85d3-5f196cd1dc99"
-      (reference "VUMASRD3") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASRD3") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/c9394cbe-e39b-4be9-9d04-deb93c3197b0"
-      (reference "VUMASRD4") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASRD4") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/eb3a80f6-66d7-4bc2-9f49-560100a20dd3"
-      (reference "VUMASRD5") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASRD5") (unit 1) (value "LED_Filled") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/1f5f1251-9a57-45ff-8bb7-5a088116c340"
-      (reference "VUMASRD6") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASRD6") (unit 1) (value "LED_Filled") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/a94860e2-1c72-4bd3-9128-e183eb96155b"
-      (reference "VUMASRD7") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASRD7") (unit 1) (value "LED_Filled") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/fb87ba3f-9d03-40be-92ff-4e1173bde4bd"
-      (reference "VUMASRD8") (unit 1) (value "LED_Filled") (footprint "LED_THT:LED_Rectangular_W3.0mm_H2.0mm")
+      (reference "VUMASRD8") (unit 1) (value "LED_Filled") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/bd4b6734-0f3c-4507-ad68-2e645d9d4821"
-      (reference "VUMASRR1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASRR1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/b92928b7-f004-40f9-99a0-e91c4332f980"
-      (reference "VUMASRR2") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASRR2") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/53f3a661-34b0-4994-95b4-f23e75414bfc"
-      (reference "VUMASRR3") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASRR3") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/32bd77e7-6955-44a1-8ba1-f84ada5fefcd"
-      (reference "VUMASRR4") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASRR4") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/3cd495a4-5581-4141-b0aa-bd337747d1ee"
-      (reference "VUMASRR5") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASRR5") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/5178a22a-881f-45bd-a60e-36617dc391f6"
-      (reference "VUMASRR6") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASRR6") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/fff4e49f-a4dd-489b-a396-eaec588a54d9"
-      (reference "VUMASRR7") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASRR7") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/6acedf30-bc1e-4da0-90a1-72006ae2e5bd"
-      (reference "VUMASRR8") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "VUMASRR8") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060768e8e"
       (reference "#PWR047") (unit 1) (value "+5V") (footprint "")
@@ -2499,76 +2499,76 @@
       (reference "RV5") (unit 1) (value "PITH-R") (footprint "Library:fader-L75")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607f24e6"
-      (reference "RV6") (unit 1) (value "PMIX-HP") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV6") (unit 1) (value "PMIX-HP") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006076b739"
-      (reference "RV7") (unit 1) (value "FILTERL1") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV7") (unit 1) (value "FILTERL1") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060785a23"
-      (reference "RV8") (unit 1) (value "FILTERL2") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV8") (unit 1) (value "FILTERL2") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006078d44b"
-      (reference "RV9") (unit 1) (value "FILTERL3") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV9") (unit 1) (value "FILTERL3") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060796ace"
-      (reference "RV10") (unit 1) (value "PFX1L") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV10") (unit 1) (value "PFX1L") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607abc7a"
-      (reference "RV11") (unit 1) (value "PFX1R") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV11") (unit 1) (value "PFX1R") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607f2c6d"
-      (reference "RV12") (unit 1) (value "PVOL-HP") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV12") (unit 1) (value "PVOL-HP") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006077d470"
-      (reference "RV13") (unit 1) (value "BASL1") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV13") (unit 1) (value "BASL1") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060785a44"
-      (reference "RV14") (unit 1) (value "BASL2") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV14") (unit 1) (value "BASL2") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006078d46c"
-      (reference "RV15") (unit 1) (value "BASL3") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV15") (unit 1) (value "BASL3") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060796aef"
-      (reference "RV16") (unit 1) (value "PFX2L") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV16") (unit 1) (value "PFX2L") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607abc9b"
-      (reference "RV17") (unit 1) (value "PFX2R") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV17") (unit 1) (value "PFX2R") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607f2c8e"
-      (reference "RV18") (unit 1) (value "PMASTER") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV18") (unit 1) (value "PMASTER") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006077d747"
-      (reference "RV19") (unit 1) (value "MIDL1") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV19") (unit 1) (value "MIDL1") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060785a65"
-      (reference "RV20") (unit 1) (value "MIDL2") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV20") (unit 1) (value "MIDL2") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006078d48d"
-      (reference "RV21") (unit 1) (value "MIDL3") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV21") (unit 1) (value "MIDL3") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060796b10"
-      (reference "RV22") (unit 1) (value "PFX3L") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV22") (unit 1) (value "PFX3L") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607abcbc"
-      (reference "RV23") (unit 1) (value "PFX3R") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV23") (unit 1) (value "PFX3R") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607806ae"
-      (reference "RV24") (unit 1) (value "TREL1") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV24") (unit 1) (value "TREL1") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060785a86"
-      (reference "RV25") (unit 1) (value "TREL2") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV25") (unit 1) (value "TREL2") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006078d4ae"
-      (reference "RV26") (unit 1) (value "TREL3") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV26") (unit 1) (value "TREL3") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607809e9"
-      (reference "RV27") (unit 1) (value "GAINL1") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV27") (unit 1) (value "GAINL1") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060785aa7"
-      (reference "RV28") (unit 1) (value "GAINL2") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV28") (unit 1) (value "GAINL2") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006078d4cf"
-      (reference "RV29") (unit 1) (value "GAINL3") (footprint "Potentiometer_THT:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
+      (reference "RV29") (unit 1) (value "GAINL3") (footprint "Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060817334"
       (reference "#PWR03") (unit 1) (value "GND") (footprint "")
@@ -2745,82 +2745,82 @@
       (reference "SW16") (unit 1) (value "SWPADR8") (footprint "Library:sw-pad")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231d6"
-      (reference "SW17") (unit 1) (value "SWPLAYL") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW17") (unit 1) (value "SWPLAYL") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231e4"
-      (reference "SW18") (unit 1) (value "SWCUEL") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW18") (unit 1) (value "SWCUEL") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231f2"
-      (reference "SW19") (unit 1) (value "SWSHIFTL") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW19") (unit 1) (value "SWSHIFTL") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290dc"
-      (reference "SW20") (unit 1) (value "SWSYNCL") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW20") (unit 1) (value "SWSYNCL") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290ea"
-      (reference "SW21") (unit 1) (value "SWRANGEL") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW21") (unit 1) (value "SWRANGEL") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290c0"
-      (reference "SW22") (unit 1) (value "SWFX1L") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW22") (unit 1) (value "SWFX1L") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290ce"
-      (reference "SW23") (unit 1) (value "SWFX2L") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW23") (unit 1) (value "SWFX2L") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006081c596"
-      (reference "SW24") (unit 1) (value "SWFX3L") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW24") (unit 1) (value "SWFX3L") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231c8"
-      (reference "SW25") (unit 1) (value "SWBR-PREVL") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW25") (unit 1) (value "SWBR-PREVL") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006083e81a"
-      (reference "SW26") (unit 1) (value "SWBR-BACKL") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW26") (unit 1) (value "SWBR-BACKL") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060838288"
-      (reference "SW27") (unit 1) (value "SWPLAYR") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW27") (unit 1) (value "SWPLAYR") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060838296"
-      (reference "SW28") (unit 1) (value "SWCUER") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW28") (unit 1) (value "SWCUER") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608382a4"
-      (reference "SW29") (unit 1) (value "SWSHIFTR") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW29") (unit 1) (value "SWSHIFTR") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608382b2"
-      (reference "SW30") (unit 1) (value "SWSYNCR") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW30") (unit 1) (value "SWSYNCR") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608382c0"
-      (reference "SW31") (unit 1) (value "SWRANGER") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW31") (unit 1) (value "SWRANGER") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060841e0d"
-      (reference "SW32") (unit 1) (value "SWFX1R") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW32") (unit 1) (value "SWFX1R") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060841e1b"
-      (reference "SW33") (unit 1) (value "SWFX2R") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW33") (unit 1) (value "SWFX2R") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060841df1"
-      (reference "SW34") (unit 1) (value "SWFX3R") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW34") (unit 1) (value "SWFX3R") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/54184518-be11-4dd8-84de-207965922433"
-      (reference "SW35") (unit 1) (value "SWBR-PREVR") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW35") (unit 1) (value "SWBR-PREVR") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/ba69e490-de22-4c21-b5dd-b048a7e9145a"
-      (reference "SW36") (unit 1) (value "SWBR-BACKR") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW36") (unit 1) (value "SWBR-BACKR") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084af82"
-      (reference "SW37") (unit 1) (value "SWPCUEL1") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW37") (unit 1) (value "SWPCUEL1") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084af90"
-      (reference "SW38") (unit 1) (value "SWPCUEL2") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW38") (unit 1) (value "SWPCUEL2") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084af9d"
-      (reference "SW39") (unit 1) (value "SWPCUEL3") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW39") (unit 1) (value "SWPCUEL3") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084afab"
-      (reference "SW40") (unit 1) (value "SWSEL1") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW40") (unit 1) (value "SWSEL1") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084afb9"
-      (reference "SW41") (unit 1) (value "SWSEL2") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW41") (unit 1) (value "SWSEL2") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084afc8"
-      (reference "SW42") (unit 1) (value "SWSEL3") (footprint "Button_Switch_THT:SW_PUSH_6mm_H5mm")
+      (reference "SW42") (unit 1) (value "SWSEL3") (footprint "Library:SW_PUSH_6mm_H5mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/cca2e57b-80df-422d-b0c5-09f93acfe3fd"
       (reference "SW43") (unit 1) (value "BROWSER-L") (footprint "Library:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles")
@@ -2847,76 +2847,76 @@
       (reference "#PWR0152") (unit 1) (value "+5V") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606a7472"
-      (reference "U-LEDS1") (unit 1) (value "74HC595") (footprint "Package_SO:SO-16_3.9x9.9mm_P1.27mm")
+      (reference "U-LEDS1") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606245c1"
-      (reference "UVU-LINE1") (unit 1) (value "74HC595") (footprint "Package_SO:SO-16_3.9x9.9mm_P1.27mm")
+      (reference "UVU-LINE1") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-00006065cced"
-      (reference "UVU-LINE2") (unit 1) (value "74HC595") (footprint "Package_SO:SO-16_3.9x9.9mm_P1.27mm")
+      (reference "UVU-LINE2") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-00006066923d"
-      (reference "UVU-LINE3") (unit 1) (value "74HC595") (footprint "Package_SO:SO-16_3.9x9.9mm_P1.27mm")
+      (reference "UVU-LINE3") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606776d8"
-      (reference "UVU-MASTER-L1") (unit 1) (value "74HC595") (footprint "Package_SO:SO-16_3.9x9.9mm_P1.27mm")
+      (reference "UVU-MASTER-L1") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606776ef"
-      (reference "UVU-MASTER-R1") (unit 1) (value "74HC595") (footprint "Package_SO:SO-16_3.9x9.9mm_P1.27mm")
+      (reference "UVU-MASTER-R1") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/df118aaf-5864-4327-8260-83fd890ea0c8"
-      (reference "PADL-D1") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADL-D1") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/0bbccda4-a18f-4852-89cb-e586af293186"
-      (reference "PADL-D2") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADL-D2") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/42cc5faa-fca9-46bd-96e2-6658cfef48d3"
-      (reference "PADL-D3") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADL-D3") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/f5247161-331c-485d-a656-77ac98d70931"
-      (reference "PADL-D4") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADL-D4") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/14e84407-f8d8-486a-8827-20f6bf2719bf"
-      (reference "PADL-D5") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADL-D5") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/4d95b3e1-ec95-424c-bb22-6630063de747"
-      (reference "PADL-D6") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADL-D6") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/468153f3-811f-453d-bf88-5cd3ab1344f4"
-      (reference "PADL-D7") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADL-D7") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/d3e4367c-6280-49ab-9bc2-010ed6d531ae"
-      (reference "PADL-D8") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADL-D8") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/e77cb085-57e0-4325-a3d3-eb3d1f2d9ffd"
-      (reference "PADL-IN-R1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "PADL-IN-R1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/de284bda-4c8b-4384-ad1b-9c58cb796ee3"
-      (reference "PADR-D1") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADR-D1") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/966213bd-fb2f-4d8a-9aab-295476d15e0a"
-      (reference "PADR-D2") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADR-D2") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/1cd65fa5-1dd4-43a9-8b04-292bde6d428c"
-      (reference "PADR-D3") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADR-D3") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/4380ee41-6f9e-429a-b9ea-058395bf90e1"
-      (reference "PADR-D4") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADR-D4") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/b5cbabdc-ff34-4e69-b57e-a543d4b92147"
-      (reference "PADR-D5") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADR-D5") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/150c21b6-daab-4d8c-b6e8-dea2afe74c1e"
-      (reference "PADR-D6") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADR-D6") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/69cc73ce-8f6d-47f8-b11a-bf7c5dc2d368"
-      (reference "PADR-D7") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADR-D7") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/c58fc741-af5b-4dc3-9778-70a2a3b4ea69"
-      (reference "PADR-D8") (unit 1) (value "WS2812B") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "PADR-D8") (unit 1) (value "WS2812B") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/6107c0ab-f01d-4f9c-8778-fb853a8da67f"
-      (reference "PADR-IN-R1") (unit 1) (value "R_Small") (footprint "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
+      (reference "PADR-IN-R1") (unit 1) (value "R_Small") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")
     )
   )
 )

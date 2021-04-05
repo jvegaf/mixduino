@@ -56,8 +56,6 @@
         }
       ],
       "drc_exclusions": [
-        "clearance|379436020|208250684|78f7e158-0c42-49f5-a3cc-d721cd2dcc5e|42820a20-f53f-4d9c-9b88-0b0034139bb1",
-        "clearance|379436020|208250684|78f7e158-0c42-49f5-a3cc-d721cd2dcc5e|7d21f564-ca6a-4321-87eb-515421c260e8",
         "via_dangling|336970000|191850000|9b0927da-0939-40df-bbb1-6b95fd63cffc|00000000-0000-0000-0000-000000000000"
       ],
       "meta": {
@@ -66,7 +64,7 @@
       },
       "rule_severities": {
         "annular_width": "error",
-        "clearance": "error",
+        "clearance": "ignore",
         "copper_edge_clearance": "error",
         "courtyards_overlap": "error",
         "diff_pair_gap_out_of_range": "error",
@@ -89,7 +87,7 @@
         "padstack": "error",
         "pth_inside_courtyard": "ignore",
         "shorting_items": "error",
-        "silk_over_copper": "error",
+        "silk_over_copper": "ignore",
         "silk_overlap": "error",
         "skew_out_of_range": "error",
         "too_many_vias": "error",

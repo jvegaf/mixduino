@@ -1,5 +1,5 @@
 (footprint "fader-L75" (version 20210228) (generator pcbnew) (layer "F.Cu")
-  (tedit 6069B50F)
+  (tedit 606A5F3C)
   (fp_text reference "REF**" (at 0 -2.4 unlocked) (layer "F.SilkS")
     (effects (font (size 1 1) (thickness 0.15)))
     (tstamp ce384a72-0bce-4e35-93f3-aae070b46d24)

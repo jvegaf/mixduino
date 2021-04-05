@@ -1,5 +1,5 @@
 (footprint "Potentiometer_Bourns_PTV09A-1_Single_Vertical" (version 20210228) (generator pcbnew) (layer "F.Cu")
-  (tedit 606902B3)
+  (tedit 606A5EFB)
   (descr "Potentiometer, vertical, Bourns PTV09A-1 Single, http://www.bourns.com/docs/Product-Datasheets/ptv09.pdf")
   (tags "Potentiometer vertical Bourns PTV09A-1 Single")
   (attr through_hole)
@@ -38,11 +38,6 @@
   (pad "1" thru_hole circle (at 0 0) (locked) (size 1.8 1.8) (drill 1) (layers *.Cu *.Mask) (tstamp b6a219a7-a8ac-4510-98c6-1e58ecfc8ab1))
   (pad "2" thru_hole circle (at 0 -2.5) (locked) (size 1.8 1.8) (drill 1) (layers *.Cu *.Mask) (tstamp 4d71033c-d649-46d0-8cc2-17b2849cc029))
   (pad "3" thru_hole circle (at 0 -5) (locked) (size 1.8 1.8) (drill 1) (layers *.Cu *.Mask) (tstamp 4adf753c-6788-468e-a68e-793ae969f8da))
-  (model "${KICAD6_3DMODEL_DIR}/Potentiometer_THT.3dshapes/Potentiometer_Bourns_PTV09A-1_Single_Vertical.wrl"
-    (offset (xyz 0 0 0))
-    (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
-  )
   (model "${KIPRJMOD}/3d-models/R-0904N-L-25KT-green.step"
     (offset (xyz 7 2.5 0))
     (scale (xyz 1 1 1))

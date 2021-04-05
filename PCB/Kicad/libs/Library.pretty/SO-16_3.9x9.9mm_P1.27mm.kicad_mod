@@ -1,5 +1,5 @@
 (footprint "SO-16_3.9x9.9mm_P1.27mm" (version 20210228) (generator pcbnew) (layer "F.Cu")
-  (tedit 60690307)
+  (tedit 606A5F1E)
   (descr "SO, 16 Pin (https://www.nxp.com/docs/en/package-information/SOT109-1.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py")
   (tags "SO SO")
   (attr smd)
@@ -44,11 +44,6 @@
   (pad "14" smd roundrect (at 2.575 -1.905) (locked) (size 1.75 0.6) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (tstamp a4cf894c-c728-4433-a5c9-daa8f0e688f6))
   (pad "15" smd roundrect (at 2.575 -3.175) (locked) (size 1.75 0.6) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (tstamp d968e30c-6284-4057-8bac-f03d2b7239d9))
   (pad "16" smd roundrect (at 2.575 -4.445) (locked) (size 1.75 0.6) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25) (tstamp 6f42f84f-92a9-41e7-827e-da4863a66d5d))
-  (model "${KICAD6_3DMODEL_DIR}/Package_SO.3dshapes/SO-16_3.9x9.9mm_P1.27mm.wrl"
-    (offset (xyz 0 0 0))
-    (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
-  )
   (model "${KIPRJMOD}/3d-models/SO-16.step"
     (offset (xyz 0 0 0.9))
     (scale (xyz 1 1 1))

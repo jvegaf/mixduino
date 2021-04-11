@@ -51,8 +51,9 @@ unsigned int green = 255;
 unsigned int blue = 10;
 unsigned int yellow = 100;
 
-// functions declaration
+// statements
 void handleControlChange(byte channel, byte number, byte value);
+void setVURegister (int val, unsigned int pinSet[]);
 
 /////////////////////////////////////////////
 void setup() {

@@ -4,9 +4,6 @@
 // You can choose the latch pin yourself.
 const int ShiftPWM_latchPin = 8;
 
-
-
-
 // ** uncomment this part to NOT use the SPI port and change the pin numbers. This is 2.5x slower **
 // #define SHIFTPWM_NOSPI
 // const int ShiftPWM_dataPin = 11;
@@ -34,26 +31,26 @@ byte midiCh = 1; // *Canal midi a ser utilizado
 byte note = 36; // *Nota mais grave que sera utilizada
 byte cc = 1; // *CC mais baixo que sera utilizado
 
-int ccLastValue = 0;
+int ccVuLLastValue = 0;
+int ccVuRLastValue = 0;
 
 /////////////////////////////////////////////
 // Leds
-const byte ledNum = 8; // total number of leds used
+const byte ledNum = 16; // total number of leds used
 unsigned char maxBrightness = 255;
 unsigned char pwmFrequency = 75;
-unsigned int numRegisters = 1;
+unsigned int numRegisters = 2;
 
-unsigned int VuL[] = {0, 1, 2, 3, 4, 5, 6, 7}; // VU Master
-unsigned int VuR[] = {8, 9, 10, 11, 12, 13, 14, 15}; 
+unsigned int VuL[] = {0, 1, 2, 3, 4, 5, 6, 7}; // VU Master Left
+unsigned int VuR[] = {8, 9, 10, 11, 12, 13, 14, 15}; // VU Master Right
 
 unsigned int red = 180;
 unsigned int green = 255;
 unsigned int blue = 10;
 unsigned int yellow = 100;
 
-// statements
+// functions declaration
 void handleControlChange(byte channel, byte number, byte value);
-void setVURegister (int val, unsigned int pinSet[]);
 
 /////////////////////////////////////////////
 void setup() {
@@ -81,16 +78,21 @@ void loop() {
 ////////////////////////////////////////////
 // led feedback
 void handleControlChange(byte channel, byte number, byte value) {
-
-
+  
   int value_ = value;
-  if (value_ != ccLastValue) { 
-    if (number == 12) {
+  if (number == 12) {
+    if (value_ != ccVuLLastValue) {
       setVURegister(value_, VuL);
+      ccVuLLastValue = value;
     }
-    ccLastValue = value_;
+    
   }
-
+  if (number == 13) {
+    if (value_ != ccVuRLastValue ) {
+      setVURegister(value_, VuR);
+      ccVuRLastValue = value;
+    }
+  }
 }
 
 void setVURegister (int val, unsigned int pinSet[]) {

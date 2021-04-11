@@ -85,7 +85,6 @@ void handleControlChange(byte channel, byte number, byte value) {
       setVURegister(value_, VuL);
       ccVuLLastValue = value;
     }
-    
   }
   if (number == 13) {
     if (value_ != ccVuRLastValue ) {

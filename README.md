@@ -1,7 +1,14 @@
-# traktorino
-The open-source DIY MIDI Controller for DJs.
+# Mixduino
 
-For more info vist: www.musiconerd.com/traktorino
+## Note
+This project actually are WIP.
+## Previews
+![preview](https://github.com/jvegaf/traktorino/blob/dev/docs/images/Mixduino-black.png)
+</br>
+![preview](https://github.com/jvegaf/traktorino/blob/dev/docs/images/MixduinoPCB.png)
+
+
+
 
 .
 .

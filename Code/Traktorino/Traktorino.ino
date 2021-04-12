@@ -1,4 +1,7 @@
 #define SHIFTPWM_USE_TIMER2
+#define PADL_SIGPIN  48
+#define PADR_SIGPIN  46
+#define NUMPIXELS 8
 
 const int ShiftPWM_latchPin = 8;
 const bool ShiftPWM_invertOutputs = false;
@@ -14,6 +17,10 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 #include <Thread.h> // Threads library (by Ivan seidel) >> https://github.com/ivanseidel/ArduinoThread
 #include <ThreadController.h> 
 #include <Encoder.h> // Encoder library >> https://github.com/PaulStoffregen/Encoder
+#include <Adafruit_NeoPixel.h>  // https://github.com/adafruit/Adafruit_NeoPixel
+
+Adafruit_NeoPixel npadL(NUMPIXELS, PADL_SIGPIN, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel npadR(NUMPIXELS, PADR_SIGPIN, NEO_GRB + NEO_KHZ800);
 
 
 /////////////////////////////////////////////
@@ -121,6 +128,13 @@ void setup() {
   // Sets the number of 8-bit registers that are used.
   ShiftPWM.SetAmountOfRegisters(numRegisters);
   ShiftPWM.Start(pwmFrequency, maxBrightness);
+
+  /////////////////////////////////////////////
+  // Init neopixels
+  npadL.begin();
+  npadL.show();
+  npadR.begin();
+  npadR.show();
 
   /////////////////////////////////////////////
   // threads

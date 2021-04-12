@@ -7,6 +7,7 @@ const int ShiftPWM_latchPin = 8;
 const bool ShiftPWM_invertOutputs = false;
 const bool ShiftPWM_balanceLoad = false;
 
+
 /////////////////////////////////////////////
 // LIBRARIES
 #include <ShiftPWM.h>  // Bit shifter library >> https://github.com/elcojacobs/ShiftPWM - include ShiftPWM.h after setting the pins!
@@ -22,6 +23,10 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 Adafruit_NeoPixel npadL(NUMPIXELS, PADL_SIGPIN, NEO_GRB + NEO_KHZ800);
 Adafruit_NeoPixel npadR(NUMPIXELS, PADR_SIGPIN, NEO_GRB + NEO_KHZ800);
 
+uint32_t blueCol = npadL.Color(102, 204, 255);
+uint32_t greenCol = npadL.Color(0, 255, 0);
+uint32_t yellowCol = npadL.Color(255, 255, 0);
+uint32_t orangeCol = npadL.Color(255, 153, 51);
 
 /////////////////////////////////////////////
 // buttons

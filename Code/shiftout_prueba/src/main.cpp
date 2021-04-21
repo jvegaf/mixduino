@@ -8,7 +8,11 @@ int clockPin = 13;
 ////Pin connected to DS of 74HC595
 int dataPin = 11;
 
-int ccLastValue = 0;
+const int totalRegisters = 2;
+byte dataValues[] = {0x00, 0x01, 0x03, 0x07, 0x0F, 0x1F, 0x3F, 0x7F, 0xFF};
+byte registerValues[totalRegisters] = {0};
+
+int ccLastValues[totalRegisters] = {0}; 
 
 /////////////////////////////////////////////
 // midi
@@ -16,16 +20,19 @@ byte midiCh = 1; // *Canal midi a ser utilizado
 byte note = 36; // *Nota mais grave que sera utilizada
 byte cc = 1; // *CC mais baixo que sera utilizado
 
-void setVURegister (int val);
 void shiftOut(byte myDataOut);
 void handleControlChange(byte channel, byte number, byte value);
+void clearAll();
+void shiftAll(byte* regValues);
 
 void setup() {
-
+  pinMode(clockPin, OUTPUT);
+  pinMode(dataPin, OUTPUT);
   pinMode(latchPin, OUTPUT);
 
   Serial.begin(31250); // 115200 for hairless - 31250 for MOCO lufa
   
+  clearAll();
   MIDI.turnThruOff();
   MIDI.setHandleControlChange(handleControlChange);
 
@@ -35,37 +42,20 @@ void loop() {
   MIDI.read();
 }
 
-void setVURegister (int val) {
-  switch (val) {
-    case 0:
-      shiftOut(0x00);
-      break;
-    case 1:
-      shiftOut(0x80);
-      break;
-
-    case 2:
-      shiftOut(0xC0);
-      break;
-    case 3:
-      shiftOut(0xE0);
-      break;
-    case 4:
-      shiftOut(0xF0);
-      break;
-    case 5:
-      shiftOut(0xF8);
-      break;
-    case 6:
-      shiftOut(0xFC);
-      break;
-    case 7:
-      shiftOut(0xFE);
-      break;
-    case 8:
-      shiftOut(0xFF);
-      break;
+void clearAll() {
+  digitalWrite(latchPin, 0);
+  for(int i=0; i < totalRegisters; i++) {
+    shiftOut(0x00);
   }
+  digitalWrite(latchPin, 1);
+}
+
+void shiftAll(byte* regValues) {
+  digitalWrite(latchPin, 0);
+  for(int i=0; i < totalRegisters; i++) {
+    shiftOut(regValues[i]);
+  }
+  digitalWrite(latchPin, 1);
 }
 
 
@@ -80,15 +70,9 @@ void shiftOut(byte myDataOut) {
 
   //internal function setup
 
-  digitalWrite(latchPin, 0);
-
   int i=0;
 
   int pinState;
-
-  pinMode(clockPin, OUTPUT);
-
-  pinMode(dataPin, OUTPUT);
 
   //clear everything out just in case to
 
@@ -139,7 +123,6 @@ void shiftOut(byte myDataOut) {
     digitalWrite(clockPin, 1);
 
     //zero the data pin after shift to prevent bleed through
-
     digitalWrite(dataPin, 0);
 
   }
@@ -147,17 +130,24 @@ void shiftOut(byte myDataOut) {
   //stop shifting
 
   digitalWrite(clockPin, 0);
-
-  digitalWrite(latchPin, 1);
 }
 
 void handleControlChange(byte channel, byte number, byte value) {
 
   int value_ = value;
+  
   if (number == 12) {
-    if (value_ != ccLastValue) {
-      setVURegister(value_);
-      ccLastValue = value;
+    if (value_ != ccLastValues[0]) {
+      registerValues[0] = dataValues[value_];
+      ccLastValues[0] = value;
     }
   }
+
+  if (number == 13) {
+    if (value_ != ccLastValues[1]) {
+      registerValues[1] = dataValues[value_];
+      ccLastValues[1] = value;
+    }
+  }
+  shiftAll(registerValues);
 }

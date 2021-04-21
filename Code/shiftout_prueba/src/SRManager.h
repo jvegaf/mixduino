@@ -18,6 +18,6 @@ class SRManager
 		SRManager(byte *cNums); // int[] with cc number assigments
 		~SRManager();
 		void begin();
-		void handleControlChange(byte number, byte value);
+		void handleChange(byte number, byte value);
 };
 #endif

@@ -127,7 +127,7 @@ void SRManager::shiftAll()
     digitalWrite(latchPin, 1);
 }
 
-void SRManager::handleControlChange(byte number, byte value)
+void SRManager::handleChange(byte number, byte value)
 {
     int value_ = value;
 

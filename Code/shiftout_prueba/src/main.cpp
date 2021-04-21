@@ -29,5 +29,5 @@ void loop() {
 }
 
 void handleControlChange(byte channel, byte number, byte value) {
-  shiftManager.handleControlChange(number, value);
+  shiftManager.handleChange(number, value);
 }

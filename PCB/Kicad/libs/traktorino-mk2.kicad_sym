@@ -1,5 +1,5 @@
 (kicad_symbol_lib (version 20201005) (generator kicad_symbol_editor)
-  (symbol "traktorino-mk2:trillbar" (in_bom yes) (on_board yes)
+  (symbol "mixduino-mk2:trillbar" (in_bom yes) (on_board yes)
     (property "Reference" "TB" (id 0) (at -2.54 -7.62 0)
       (effects (font (size 1.27 1.27)))
     )

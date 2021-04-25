@@ -458,7 +458,7 @@
   },
   "sheets": [
     [
-      "00000000-0000-0000-0000-000060683d75",
+      "fcfda24c-2f05-4fa7-b052-9a437ead5fa6",
       ""
     ],
     [
@@ -479,7 +479,7 @@
     ],
     [
       "27ec6e33-6a27-4865-8f8e-aab38be2398e",
-      "PadLedsSheet"
+      "NeoPixelsSheet"
     ]
   ],
   "text_variables": {}

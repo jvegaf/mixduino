@@ -1,4 +1,5 @@
 (sym_lib_table
   (lib (name "arduino")(type "Legacy")(uri "${KIPRJMOD}/libs/arduino.lib")(options "")(descr ""))
   (lib (name "mixduino-mk2")(type "KiCad")(uri "${KIPRJMOD}/libs/mixduino-mk2.kicad_sym")(options "")(descr ""))
+  (lib (name "mixduino-mk21")(type "KiCad")(uri "${KIPRJMOD}/mixduino-mk2.kicad_sym")(options "")(descr ""))
 )

@@ -873,24 +873,24 @@
       (effects (font (size 1.016 1.016)) (justify left) hide)
     )
   )
-  (global_label "SIG_PAD_LED_L" (shape output) (at 127.635 39.37 180)
+  (global_label "SWPAD-L5" (shape input) (at 127.635 39.37 180)
     (effects (font (size 1.016 1.016)) (justify right))
-    (uuid 2b924540-7097-4242-8299-26c5dc3c4317)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 114.4318 39.4335 0)
-      (effects (font (size 1.016 1.016)) (justify right) hide)
+    (uuid 9e376e68-4cb6-4c28-9217-2384f55d0ea3)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 168.275 -58.42 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
-  (global_label "SWCUE-L" (shape input) (at 127.635 41.91 180)
-    (effects (font (size 1.016 1.016)) (justify right))
-    (uuid 239ecc5b-1730-49c6-aacf-8123ace05e94)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 239.395 92.71 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-  )
-  (global_label "SWPAD-L8" (shape input) (at 127.635 44.45 180)
+  (global_label "SWPAD-L8" (shape input) (at 127.635 41.91 180)
     (effects (font (size 1.016 1.016)) (justify right))
     (uuid c6e0f8f2-2c4f-4870-afbe-398f7f969d14)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 168.275 193.04 0)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 168.275 190.5 0)
+      (effects (font (size 1.27 1.27)) (justify left) hide)
+    )
+  )
+  (global_label "SWPAD-L2" (shape input) (at 127.635 44.45 180)
+    (effects (font (size 1.016 1.016)) (justify right))
+    (uuid f1bdeac4-2d96-4bb7-a28e-4ad12b795df1)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 168.275 92.71 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -919,13 +919,6 @@
     (effects (font (size 1.016 1.016)) (justify right))
     (uuid 9affbcbe-3814-427d-8885-07bdffa23214)
     (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 273.685 3.81 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "SWPAD-L5" (shape input) (at 127.635 57.15 180)
-    (effects (font (size 1.016 1.016)) (justify right))
-    (uuid 9e376e68-4cb6-4c28-9217-2384f55d0ea3)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 168.275 -40.64 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -1181,11 +1174,11 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "SWPAD-L2" (shape input) (at 193.675 69.85 0)
+  (global_label "SWCUE-L" (shape input) (at 193.675 69.85 0)
     (effects (font (size 1.016 1.016)) (justify left))
-    (uuid f1bdeac4-2d96-4bb7-a28e-4ad12b795df1)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 153.035 21.59 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
+    (uuid 239ecc5b-1730-49c6-aacf-8123ace05e94)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 81.915 19.05 0)
+      (effects (font (size 1.27 1.27)) hide)
     )
   )
   (global_label "NP_SIG_RIGTH" (shape output) (at 193.675 72.39 0)
@@ -2875,13 +2868,13 @@
     (path "/00000000-0000-0000-0000-0000605d0bae/66e9f694-c4b2-4bca-ba2a-700b11bbc0c9"
       (reference "U-LEDSR1") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
     )
-    (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-00006066923d"
+    (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606245c1"
       (reference "UVU-LINE1") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-00006065cced"
       (reference "UVU-LINE2") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
     )
-    (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606245c1"
+    (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-00006066923d"
       (reference "UVU-LINE3") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606776d8"
@@ -2891,130 +2884,130 @@
       (reference "UVU-MASTER-R1") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/beadbaa6-fcf7-4c3f-81c0-a74b13dde53a"
-      (reference "C1") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C1") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/f7af72b4-7423-4bf3-8c0a-b10a734d692a"
-      (reference "C2") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C2") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/82fc8588-4785-4200-bb02-8896037f53f6"
-      (reference "C3") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C3") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/bfdd7e18-30e1-44ba-83d8-f528e8d9ba6c"
-      (reference "C4") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C4") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/1987203e-8e13-40ac-9d11-2f95e6f9d5d4"
-      (reference "C5") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C5") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/68b1d9eb-a14b-4b7c-80fc-5da6be6089b5"
-      (reference "C6") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C6") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/9e58909a-51f6-4a54-b1ec-5609ac5bcfab"
-      (reference "C7") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C7") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/90ca56f2-69c7-47bb-99f2-3236a45bab1d"
-      (reference "C8") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C8") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/08e6382b-ae15-4e7c-98e7-34680eac45f0"
-      (reference "C9") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C9") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/933308c1-72b0-4bdc-ba47-e4dda7ad16ea"
-      (reference "C10") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C10") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/b383111b-b145-4f6f-8d5c-dfe94062ce09"
-      (reference "C11") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C11") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/b80e4604-0f34-4a2c-ada8-f246527215e2"
-      (reference "C12") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C12") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/b7864320-d3e4-4df5-b673-3366141f9299"
-      (reference "C13") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C13") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/d916989c-d7c8-4376-a8f8-20874c66e37e"
-      (reference "C14") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C14") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/c3464658-7739-4302-9d41-54ee61cd0504"
-      (reference "C15") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C15") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/73e95c03-44ce-45eb-9038-d59afccad52d"
-      (reference "C16") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C16") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/b2905d81-053d-4b55-9c94-1ca48ddb8c3f"
-      (reference "C17") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C17") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/8a8718ca-1aad-4e99-96f7-bc0f2aa37fd4"
-      (reference "C18") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C18") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/50bca312-9f3e-46ad-8e33-8efc305e5cb9"
-      (reference "C19") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C19") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/fe5e5206-6a4d-4884-bd30-a819cc90269f"
-      (reference "C20") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C20") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/ccf6e1ed-7848-4d1b-87f8-537ea377ff57"
-      (reference "C21") (unit 1) (value "100nF") (footprint "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
+      (reference "C21") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/df118aaf-5864-4327-8260-83fd890ea0c8"
-      (reference "NP1") (unit 1) (value "PADL-D1") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP1") (unit 1) (value "PADL-D1") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/0bbccda4-a18f-4852-89cb-e586af293186"
-      (reference "NP2") (unit 1) (value "PADL-D2") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP2") (unit 1) (value "PADL-D2") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/42cc5faa-fca9-46bd-96e2-6658cfef48d3"
-      (reference "NP3") (unit 1) (value "PADL-D3") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP3") (unit 1) (value "PADL-D3") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/f5247161-331c-485d-a656-77ac98d70931"
-      (reference "NP4") (unit 1) (value "PADL-D4") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP4") (unit 1) (value "PADL-D4") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/14e84407-f8d8-486a-8827-20f6bf2719bf"
-      (reference "NP5") (unit 1) (value "PADL-D5") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP5") (unit 1) (value "PADL-D5") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/4d95b3e1-ec95-424c-bb22-6630063de747"
-      (reference "NP6") (unit 1) (value "PADL-D6") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP6") (unit 1) (value "PADL-D6") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/468153f3-811f-453d-bf88-5cd3ab1344f4"
-      (reference "NP7") (unit 1) (value "PADL-D7") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP7") (unit 1) (value "PADL-D7") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/d3e4367c-6280-49ab-9bc2-010ed6d531ae"
-      (reference "NP8") (unit 1) (value "PADL-D8") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP8") (unit 1) (value "PADL-D8") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/17d0b5b7-a213-4de9-80ff-c4eda98d2874"
-      (reference "NP9") (unit 1) (value "L-RNG-D") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP9") (unit 1) (value "L-RNG-D") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/27a7ea37-4e4e-4a65-aec3-6833c9d27e65"
-      (reference "NP10") (unit 1) (value "L-SYNC-D") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP10") (unit 1) (value "L-SYNC-D") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/c58fc741-af5b-4dc3-9778-70a2a3b4ea69"
-      (reference "NP11") (unit 1) (value "PADR-D8") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP11") (unit 1) (value "PADR-D8") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/69cc73ce-8f6d-47f8-b11a-bf7c5dc2d368"
-      (reference "NP12") (unit 1) (value "PADR-D7") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP12") (unit 1) (value "PADR-D7") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/150c21b6-daab-4d8c-b6e8-dea2afe74c1e"
-      (reference "NP13") (unit 1) (value "PADR-D6") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP13") (unit 1) (value "PADR-D6") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/b5cbabdc-ff34-4e69-b57e-a543d4b92147"
-      (reference "NP14") (unit 1) (value "PADR-D5") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP14") (unit 1) (value "PADR-D5") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/4380ee41-6f9e-429a-b9ea-058395bf90e1"
-      (reference "NP15") (unit 1) (value "PADR-D4") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP15") (unit 1) (value "PADR-D4") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/1cd65fa5-1dd4-43a9-8b04-292bde6d428c"
-      (reference "NP16") (unit 1) (value "PADR-D3") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP16") (unit 1) (value "PADR-D3") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/966213bd-fb2f-4d8a-9aab-295476d15e0a"
-      (reference "NP17") (unit 1) (value "PADR-D2") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP17") (unit 1) (value "PADR-D2") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/de284bda-4c8b-4384-ad1b-9c58cb796ee3"
-      (reference "NP18") (unit 1) (value "PADR-D1") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP18") (unit 1) (value "PADR-D1") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/03ed2ce2-ea12-4c11-bc22-f5a270e8b863"
-      (reference "NP19") (unit 1) (value "DECK-SWITCHER-D") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP19") (unit 1) (value "DECK-SWITCHER-D") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/972a39cb-58f9-44f0-a799-fe5428c24823"
-      (reference "NP20") (unit 1) (value "R-RNG-D") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP20") (unit 1) (value "R-RNG-D") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/28671994-770f-4470-8e34-30b384556009"
-      (reference "NP21") (unit 1) (value "R-SYNC-D") (footprint "LED_SMD:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
+      (reference "NP21") (unit 1) (value "R-SYNC-D") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/e77cb085-57e0-4325-a3d3-eb3d1f2d9ffd"
       (reference "NPR1") (unit 1) (value "L-NP-SIG_R") (footprint "Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder")

@@ -5,14 +5,14 @@
   (paper "A4")
 
   (lib_symbols
-    (symbol "SamacSys_Parts:74HC4067D,653" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
-      (property "Reference" "IC" (id 0) (at 21.59 7.62 0)
-        (effects (font (size 1.27 1.27)) (justify left))
+    (symbol "mixduino-mk2:74HC4067D,653" (pin_names (offset 0.762)) (in_bom yes) (on_board yes)
+      (property "Reference" "IC-POTS-1" (id 0) (at 12.7 6.35 0)
+        (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "74HC4067D,653" (id 1) (at 21.59 5.08 0)
-        (effects (font (size 1.27 1.27)) (justify left))
+      (property "Value" "74HC4067D,653" (id 1) (at 12.7 3.81 0)
+        (effects (font (size 1.27 1.27)))
       )
-      (property "Footprint" "SOIC127P1032X265-24N" (id 2) (at 21.59 2.54 0)
+      (property "Footprint" "Library:SOIC-24W_7.5x15.4mm_P1.27mm" (id 2) (at 21.59 2.54 0)
         (effects (font (size 1.27 1.27)) (justify left) hide)
       )
       (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74HC_HCT4067.pdf" (id 3) (at 21.59 0 0)
@@ -150,14 +150,14 @@
         )
       )
     )
-    (symbol "arduino:Arduino_Mega2560_Shield" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+    (symbol "mixduino-mk2:Arduino_Mega2560_Shield" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
       (property "Reference" "XA1" (id 0) (at 0 -60.96 0)
         (effects (font (size 1.524 1.524)))
       )
       (property "Value" "Arduino_Mega2560_Shield" (id 1) (at 0 -63.5 0)
         (effects (font (size 1.524 1.524)))
       )
-      (property "Footprint" "Arduino:Arduino_Mega2560_Shield" (id 2) (at 17.78 69.85 0)
+      (property "Footprint" "Library:Arduino_Mega2560_Shield" (id 2) (at 17.78 69.85 0)
         (effects (font (size 1.524 1.524)) hide)
       )
       (property "Datasheet" "https://store.arduino.cc/arduino-mega-2560-rev3" (id 3) (at 17.78 69.85 0)
@@ -671,13 +671,13 @@
       )
     )
     (symbol "mixduino-mk2:trillbar" (in_bom yes) (on_board yes)
-      (property "Reference" "TB" (id 0) (at -2.54 -7.62 0)
-        (effects (font (size 1.27 1.27)))
+      (property "Reference" "TB1" (id 0) (at -1.905 14.6051 0)
+        (effects (font (size 1.27 1.27)) (justify right))
       )
-      (property "Value" "trillbar" (id 1) (at 0 7.62 0)
-        (effects (font (size 1.27 1.27)))
+      (property "Value" "trillbar" (id 1) (at -5.715 12.0651 0)
+        (effects (font (size 1.27 1.27)) (justify right))
       )
-      (property "Footprint" "" (id 2) (at 0 0 0)
+      (property "Footprint" "Library:trillbar" (id 2) (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "Datasheet" "" (id 3) (at 0 0 0)
@@ -689,6 +689,43 @@
         )
       )
       (symbol "trillbar_1_1"
+        (pin input line (at 7.62 3.81 180) (length 2.54)
+          (name "SCL" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin bidirectional line (at 7.62 1.27 180) (length 2.54)
+          (name "SDA" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+        (pin power_in line (at 7.62 -1.27 180) (length 2.54)
+          (name "VCC" (effects (font (size 1.27 1.27))))
+          (number "3" (effects (font (size 1.27 1.27))))
+        )
+        (pin power_in line (at 7.62 -3.81 180) (length 2.54)
+          (name "GND" (effects (font (size 1.27 1.27))))
+          (number "4" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+    (symbol "mixduino-mk2:trillbar_1" (in_bom yes) (on_board yes)
+      (property "Reference" "TB1" (id 0) (at -1.905 14.6051 0)
+        (effects (font (size 1.27 1.27)) (justify right))
+      )
+      (property "Value" "trillbar" (id 1) (at -5.715 12.0651 0)
+        (effects (font (size 1.27 1.27)) (justify right))
+      )
+      (property "Footprint" "Library:trillbar" (id 2) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "" (id 3) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "trillbar_1_0_1"
+        (rectangle (start -5.08 10.16) (end 5.08 -8.89)
+          (stroke (width 0.1524)) (fill (type background))
+        )
+      )
+      (symbol "trillbar_1_1_1"
         (pin input line (at 7.62 3.81 180) (length 2.54)
           (name "SCL" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
@@ -798,6 +835,7 @@
   )
 
 
+  (no_connect (at 127.635 57.15) (uuid 637c6c0f-1611-4cf5-ad15-ce6d07693432))
   (no_connect (at 127.635 64.77) (uuid 31a4ceb8-78a6-464d-92e5-956b74470020))
   (no_connect (at 127.635 67.31) (uuid 31a4ceb8-78a6-464d-92e5-956b74470020))
   (no_connect (at 127.635 105.41) (uuid 79d013c0-1cc0-433c-be30-c626ea0bc7e8))
@@ -1613,7 +1651,7 @@
     (pin "1" (uuid 9bb65ad1-463d-4a70-85c1-53f0de13c835))
   )
 
-  (symbol (lib_id "mixduino-mk2:trillbar") (at 102.87 180.975 0) (mirror y) (unit 1)
+  (symbol (lib_name "mixduino-mk2:trillbar_1") (lib_id "mixduino-mk2:trillbar") (at 102.87 180.975 0) (mirror y) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 499401ba-d585-4a6c-99d3-a1cb46476140)
     (property "Reference" "TB1" (id 0) (at 100.965 166.3699 0)
@@ -1651,7 +1689,7 @@
     (pin "4" (uuid 836ff326-2d77-432d-af25-4d46879adad4))
   )
 
-  (symbol (lib_id "SamacSys_Parts:74HC4067D,653") (at 236.855 121.92 0) (unit 1)
+  (symbol (lib_id "mixduino-mk2:74HC4067D,653") (at 236.855 121.92 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 07bbd527-08a8-40cf-9368-ef726bba9691)
     (property "Reference" "IC-POTS-1" (id 0) (at 249.555 115.57 0))
@@ -1706,7 +1744,7 @@
     (pin "9" (uuid e0aaf8a0-fdf7-4a0c-8ef3-587240eeac45))
   )
 
-  (symbol (lib_id "arduino:Arduino_Mega2560_Shield") (at 160.655 93.98 0) (unit 1)
+  (symbol (lib_id "mixduino-mk2:Arduino_Mega2560_Shield") (at 160.655 93.98 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 13986d56-86b6-4e78-9652-0d0cf169e5d8)
     (property "Reference" "XA1" (id 0) (at 160.655 154.94 0)
@@ -2882,69 +2920,6 @@
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606776ef"
       (reference "UVU-MASTER-R1") (unit 1) (value "74HC595") (footprint "Library:SO-16_3.9x9.9mm_P1.27mm")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/beadbaa6-fcf7-4c3f-81c0-a74b13dde53a"
-      (reference "C1") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/f7af72b4-7423-4bf3-8c0a-b10a734d692a"
-      (reference "C2") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/82fc8588-4785-4200-bb02-8896037f53f6"
-      (reference "C3") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/bfdd7e18-30e1-44ba-83d8-f528e8d9ba6c"
-      (reference "C4") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/1987203e-8e13-40ac-9d11-2f95e6f9d5d4"
-      (reference "C5") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/68b1d9eb-a14b-4b7c-80fc-5da6be6089b5"
-      (reference "C6") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/9e58909a-51f6-4a54-b1ec-5609ac5bcfab"
-      (reference "C7") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/90ca56f2-69c7-47bb-99f2-3236a45bab1d"
-      (reference "C8") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/08e6382b-ae15-4e7c-98e7-34680eac45f0"
-      (reference "C9") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/933308c1-72b0-4bdc-ba47-e4dda7ad16ea"
-      (reference "C10") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/b383111b-b145-4f6f-8d5c-dfe94062ce09"
-      (reference "C11") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/b80e4604-0f34-4a2c-ada8-f246527215e2"
-      (reference "C12") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/b7864320-d3e4-4df5-b673-3366141f9299"
-      (reference "C13") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/d916989c-d7c8-4376-a8f8-20874c66e37e"
-      (reference "C14") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/c3464658-7739-4302-9d41-54ee61cd0504"
-      (reference "C15") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/73e95c03-44ce-45eb-9038-d59afccad52d"
-      (reference "C16") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/b2905d81-053d-4b55-9c94-1ca48ddb8c3f"
-      (reference "C17") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/8a8718ca-1aad-4e99-96f7-bc0f2aa37fd4"
-      (reference "C18") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/50bca312-9f3e-46ad-8e33-8efc305e5cb9"
-      (reference "C19") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/fe5e5206-6a4d-4884-bd30-a819cc90269f"
-      (reference "C20") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
-    )
-    (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/ccf6e1ed-7848-4d1b-87f8-537ea377ff57"
-      (reference "C21") (unit 1) (value "100nF") (footprint "Library:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder")
     )
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e/df118aaf-5864-4327-8260-83fd890ea0c8"
       (reference "NP1") (unit 1) (value "PADL-D1") (footprint "Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm")

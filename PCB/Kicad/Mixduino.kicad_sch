@@ -2760,13 +2760,13 @@
       (reference "SW2") (unit 1) (value "SWPADR1") (footprint "Library:sw-pad")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231d6"
-      (reference "SW3") (unit 1) (value "SWPLAYL") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW3") (unit 1) (value "SWPLAYL") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060838288"
-      (reference "SW4") (unit 1) (value "SWPLAYR") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW4") (unit 1) (value "SWPLAYR") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084af82"
-      (reference "SW5") (unit 1) (value "SWPCUEL1") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW5") (unit 1) (value "SWPCUEL1") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060816382"
       (reference "SW6") (unit 1) (value "SWPADL2") (footprint "Library:sw-pad")
@@ -2775,25 +2775,25 @@
       (reference "SW7") (unit 1) (value "SWPADR2") (footprint "Library:sw-pad")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231e4"
-      (reference "SW8") (unit 1) (value "SWCUEL") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW8") (unit 1) (value "SWCUEL") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060838296"
-      (reference "SW9") (unit 1) (value "SWCUER") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW9") (unit 1) (value "SWCUER") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084af90"
-      (reference "SW10") (unit 1) (value "SWPCUEL2") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW10") (unit 1) (value "SWPCUEL2") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/65eb9280-185f-443f-aa19-d728bc3e5e7b"
       (reference "SW11") (unit 1) (value "SWPADL3") (footprint "Library:sw-pad")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231f2"
-      (reference "SW12") (unit 1) (value "SWSHIFTL") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW12") (unit 1) (value "SWSHIFTL") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608382a4"
-      (reference "SW13") (unit 1) (value "SWSHIFTR") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW13") (unit 1) (value "SWSHIFTR") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084af9d"
-      (reference "SW14") (unit 1) (value "SWPCUEL3") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW14") (unit 1) (value "SWPCUEL3") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/cef43e25-c081-4da0-9434-281231bbd85b"
       (reference "SW15") (unit 1) (value "SWPADR3") (footprint "Library:sw-pad")
@@ -2808,13 +2808,13 @@
       (reference "SW18") (unit 1) (value "SWPADR4") (footprint "Library:sw-pad")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290dc"
-      (reference "SW19") (unit 1) (value "SWSYNCL") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW19") (unit 1) (value "SWSYNCL") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608382b2"
-      (reference "SW20") (unit 1) (value "SWSYNCR") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW20") (unit 1) (value "SWSYNCR") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084afab"
-      (reference "SW21") (unit 1) (value "SWDECK") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW21") (unit 1) (value "SWDECK") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/e8e18419-aec8-4efe-b611-3e1efb3dec87"
       (reference "SW22") (unit 1) (value "SWPADL5") (footprint "Library:sw-pad")
@@ -2823,10 +2823,10 @@
       (reference "SW23") (unit 1) (value "SWPADR5") (footprint "Library:sw-pad")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290ea"
-      (reference "SW24") (unit 1) (value "SWRANGEL") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW24") (unit 1) (value "SWRANGEL") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608382c0"
-      (reference "SW25") (unit 1) (value "SWRANGER") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW25") (unit 1) (value "SWRANGER") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/f272f32d-94a2-4ef9-b337-933c01947ce3"
       (reference "SW26") (unit 1) (value "BROWSER-R") (footprint "Library:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles")
@@ -2838,10 +2838,10 @@
       (reference "SW28") (unit 1) (value "SWPADL6") (footprint "Library:sw-pad")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290c0"
-      (reference "SW29") (unit 1) (value "SWFX1L") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW29") (unit 1) (value "SWFX1L") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060841e0d"
-      (reference "SW30") (unit 1) (value "SWFX1R") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW30") (unit 1) (value "SWFX1R") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/8ddcfa68-3d31-4bad-ac8c-2b44f0b58d06"
       (reference "SW31") (unit 1) (value "SWPADR7") (footprint "Library:sw-pad")
@@ -2850,34 +2850,34 @@
       (reference "SW32") (unit 1) (value "SWPADL7") (footprint "Library:sw-pad")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290ce"
-      (reference "SW33") (unit 1) (value "SWFX2L") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW33") (unit 1) (value "SWFX2L") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060841e1b"
-      (reference "SW34") (unit 1) (value "SWFX2R") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW34") (unit 1) (value "SWFX2R") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/73ed2680-b5e5-46d1-96c4-590ce43eeeaa"
       (reference "SW35") (unit 1) (value "SWPADR8") (footprint "Library:sw-pad")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006081c596"
-      (reference "SW36") (unit 1) (value "SWFX3L") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW36") (unit 1) (value "SWFX3L") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060841df1"
-      (reference "SW37") (unit 1) (value "SWFX3R") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW37") (unit 1) (value "SWFX3R") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/07e69a70-8435-4a98-895c-09a12fcf9215"
       (reference "SW38") (unit 1) (value "SWPADL8") (footprint "Library:sw-pad")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231c8"
-      (reference "SW39") (unit 1) (value "SWBR-PREVL") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW39") (unit 1) (value "SWBR-PREVL") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/54184518-be11-4dd8-84de-207965922433"
-      (reference "SW40") (unit 1) (value "SWBR-PREVR") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW40") (unit 1) (value "SWBR-PREVR") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006083e81a"
-      (reference "SW41") (unit 1) (value "SWBR-BACKL") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW41") (unit 1) (value "SWBR-BACKL") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000607fe61a/ba69e490-de22-4c21-b5dd-b048a7e9145a"
-      (reference "SW42") (unit 1) (value "SWBR-BACKR") (footprint "Library:SW_PUSH_6mm_H5mm")
+      (reference "SW42") (unit 1) (value "SWBR-BACKR") (footprint "Library:SW_PUSH_6mm_H8mm")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/8c7b94a5-07d4-444e-af12-ca46a8fb3b6c"
       (reference "#PWR0141") (unit 1) (value "+5V") (footprint "")

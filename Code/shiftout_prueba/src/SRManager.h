@@ -7,17 +7,17 @@ class SRManager
 {
 	private:
 		int nRegisters;
-		byte *ccNums;
-		byte *regValues;
+		uint8_t *ccNums;
+		uint8_t *regValues;
 		int *cclastValues;
 		void clearAll();
-		void shiftOut(byte myDataOut);
+		void shiftOut(uint8_t myDataOut);
 		void shiftAll();
 	public:
 
-		SRManager(byte *cNums); // int[] with cc number assigments
+		SRManager(uint8_t *cNums); // int[] with cc number assigments
 		~SRManager();
 		void begin();
-		void handleChange(byte number, byte value);
+		void handleChange(uint8_t number, uint8_t value);
 };
 #endif

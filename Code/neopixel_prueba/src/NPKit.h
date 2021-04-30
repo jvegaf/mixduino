@@ -11,7 +11,6 @@ class NPKit
 
 		void handleON(byte number);
 		void handleHotCUE(byte number, byte value);
-
 		void clearAll();
 
 	public:

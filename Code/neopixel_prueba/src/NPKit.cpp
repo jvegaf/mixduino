@@ -62,7 +62,6 @@ void NPKit::handleON(byte number, byte value)
 void NPKit::handleOFF(byte number) 
 {
     byte reqNum = number - firstNumber;
-    if (reqNum == 15) { clearAll(); return; }
 
     adaPx.setPixelColor(reqNum, CLEAR);
     adaPx.show();

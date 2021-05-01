@@ -10,16 +10,16 @@
 // 00111111   3F       63
 // 01111111   7F      127
 // 11111111   FF      255
-const byte datavalues[] = {0x00, 0x01, 0x03, 0x07, 0x0F, 0x1F, 0x3F, 0x7F, 0xFF};
+const uint8_t datavalues[] = {0x00, 0x01, 0x03, 0x07, 0x0F, 0x1F, 0x3F, 0x7F, 0xFF};
 const int latchPin = 8;
 const int clockPin = 13;
 const int dataPin = 11;
 
-SRManager::SRManager(byte *cNums)
+SRManager::SRManager(uint8_t *cNums)
 {
     this->ccNums = cNums;
     this->nRegisters = sizeof(cNums);
-    this->regValues = new byte[nRegisters];
+    this->regValues = new uint8_t[nRegisters];
     this->cclastValues = {0};
 }
 
@@ -45,7 +45,7 @@ void SRManager::clearAll()
     digitalWrite(latchPin, 1);
 }
 
-void SRManager::shiftOut(byte myDataOut)
+void SRManager::shiftOut(uint8_t myDataOut)
 {
     // This shifts 8 bits out MSB first,
 
@@ -67,7 +67,7 @@ void SRManager::shiftOut(byte myDataOut)
 
     digitalWrite(clockPin, 0);
 
-    //for each bit in the byte myDataOut&#xFFFD;
+    //for each bit in the uint8_t myDataOut&#xFFFD;
 
     //NOTICE THAT WE ARE COUNTING DOWN in our for loop
 
@@ -127,7 +127,7 @@ void SRManager::shiftAll()
     digitalWrite(latchPin, 1);
 }
 
-void SRManager::handleChange(byte number, byte value)
+void SRManager::handleChange(uint8_t number, uint8_t value)
 {
     int value_ = value;
 

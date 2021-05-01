@@ -1,6 +1,6 @@
 
-#ifndef ARDUINO_NPMAP_H
-#define ARDUINO_NPMAP_H
+#ifndef ARDUINO_NP_MAP_H
+#define ARDUINO_NP_MAP_H
 #include <Arduino.h>
 
 #pragma once

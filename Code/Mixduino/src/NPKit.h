@@ -3,7 +3,7 @@
 #define ARDUINO_NPKIT_H
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
-#include "pinMap.h"
+#include "pin_map.h"
 
 class NPKit  
 {

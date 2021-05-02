@@ -3,7 +3,6 @@
 #define ARDUINO_NPKIT_H
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
-#include "np_colors.h"
 
 class NPKit  
 {

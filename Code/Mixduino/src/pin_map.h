@@ -62,8 +62,8 @@ uint8_t const SWPLAY_R       = 9;
 //////////////////////////////////////
 // I2C
 
-uint8_t const SDA            = 20;
-uint8_t const SCL            = 21;
+// uint8_t const SDA            = 20;
+// uint8_t const SCL            = 21;
 
 //////////////////////////////////////
 // BROWSER

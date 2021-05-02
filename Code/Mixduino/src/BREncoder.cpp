@@ -1,35 +1,32 @@
-#include "BREncoder.h"  
+#include "BREncoder.h"
 
-Encoder brEnc(3,4);
+Encoder enc(BROWSER_A, BROWSER_B);
 
 BREncoder::BREncoder()
 {
-    
-    this->oldPosition = -10;
+  this->oldPosition = -10;
 }
 
-BREncoder::~BREncoder()
+int BREncoder::readEnc()
 {
 
-}
-
-int BREncoder::read () {
-
-  int newPosition = brEnc.read();
+  int newPosition = enc.read();
   int encoderVal = map(newPosition, -1024, 1024, -256, 256);
-  int encoderValue;
+  int encoderValue = 0;
 
-  if (encoderVal != this->oldPosition) {
+  if (encoderVal != this->oldPosition)
+  {
 
-    if ((encoderVal - oldPosition) > 0) {
+    if ((encoderVal - oldPosition) > 0)
+    {
       encoderValue = 127;
     }
-    else {
+    else
+    {
       encoderValue = 1;
     }
 
     this->oldPosition = encoderVal;
-    return encoderValue;
   }
-
+  return encoderValue;
 }

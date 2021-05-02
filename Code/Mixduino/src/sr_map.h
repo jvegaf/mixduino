@@ -96,9 +96,9 @@ const uint8_t FX1_R           = 6;
 // FB LEFT
 const uint8_t CUE_L           = 9;
 const uint8_t PLAY_L          = 10;
-const uint8_t FX1_R           = 11;
-const uint8_t FX2_R           = 12;
-const uint8_t FX3_R           = 13;
+const uint8_t FX1_L           = 11;
+const uint8_t FX2_L           = 12;
+const uint8_t FX3_L           = 13;
 const uint8_t HP_L1           = 14;
 const uint8_t HP_L2           = 15;
 

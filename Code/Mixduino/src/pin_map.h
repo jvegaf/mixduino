@@ -96,10 +96,11 @@ uint8_t const MPLEX_A0       = A0;
 //////////////////////////////////////
 // SHIFT REGISTERS
 
-uint8_t const SF_LATCH       = 50;
+uint8_t const VU_LATCH       = 50;
+uint8_t const FB_LATCH       = 67; //A13
 uint8_t const SF_CLOCK       = 52;
 uint8_t const VU_SF_DATA     = 48;
-uint8_t const BTNLED_SF_DATA = 51;
+uint8_t const FB_SF_DATA     = 51;
 
 //////////////////////////////////////
 // NEOPIXELS DATA

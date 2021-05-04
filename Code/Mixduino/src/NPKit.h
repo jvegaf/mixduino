@@ -4,15 +4,16 @@
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 #include "pin_map.h"
+#include "model/Npixel.h"
 
 class NPKit  
 {
 	private:
-
+		Adafruit_NeoPixel np;
 	public:
-		void clear();
+		NPKit(byte dataPin, byte nPixels);
 		void begin();
-		void handleON(byte number, byte value);
-		void handleOFF(byte number, byte value);
+		void clear();
+		void handleChange(Npixel npx);
 };
 #endif

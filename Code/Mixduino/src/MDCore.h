@@ -7,6 +7,8 @@
 #include "pin_map.h"
 #include "sr_map.h"
 #include "midi_map.h"
+#include "model/Npixel.h"
+#include "model/Align.h"
 
 class MDCore  
 {
@@ -18,9 +20,9 @@ class MDCore
 
 	private:
 		void vuChange(byte number, byte value);
-		void rgbOn(byte number, byte value);
-		void rgbOff(byte number, byte value);
-		byte getIdx(byte* controlSet, byte num);
+		byte getIdx(byte* controlSet, byte nCSets, byte num);
+		void npChange(Align al, byte position, byte value);
+
 
 
 };

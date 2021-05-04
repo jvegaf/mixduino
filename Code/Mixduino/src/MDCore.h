@@ -12,16 +12,16 @@ class MDCore
 {
 	public:
 		void begin();
-		void cChange(uint8_t number, uint8_t value);
-		void noteOn(uint8_t channel, uint8_t number, uint8_t value);
-		void noteOff(uint8_t channel, uint8_t number);
+		void cChange(byte channel, byte number, byte value);
+		void noteOn(byte channel, byte number, byte value);
+		void noteOff(byte channel, byte number, byte value);
 
 	private:
-		void singleOn(uint8_t number, uint8_t value);
-		void rgbOn(uint8_t number, uint8_t value);
-		uint8_t getIdx(uint8_t* controlSet, uint8_t controlNum);
-		uint8_t getIdx(uint16_t* controlSet, uint8_t controlNum);
-		void send(uint16_t dataSet);
+		void vuChange(byte number, byte value);
+		void rgbOn(byte number, byte value);
+		void rgbOff(byte number, byte value);
+		byte getIdx(byte* controlSet, byte num);
+
 
 };
 #endif

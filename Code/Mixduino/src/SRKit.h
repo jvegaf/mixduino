@@ -6,14 +6,14 @@
 class SRKit  
 {
 	private:
-		uint8_t clockPin;
-		uint8_t dataPin;
-		uint8_t latchPin;
+		byte clockPin;
+		byte dataPin;
+		byte latchPin;
 	public:
-		SRKit(uint8_t clkPin, uint8_t dtPin, uint8_t lchPin);
-		void clear(uint8_t nRegs);
+		SRKit(byte clkPin, byte dtPin, byte lchPin);
+		void clear(byte nRegs);
 		void begin();
-		void sendState(uint8_t* registers);
+		void sendState(byte* registers);
 
 };
 #endif

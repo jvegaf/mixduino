@@ -12,7 +12,7 @@ class PotKit
 	public:
 
 		void begin();
-		void read(void (*scc_func)(uint8_t, uint8_t, uint8_t));
+		void read(void (*scc_func)(byte, byte, byte));
 
 };
 #endif

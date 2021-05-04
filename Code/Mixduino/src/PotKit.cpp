@@ -1,8 +1,22 @@
 #include "PotKit.h"
 
-const uint8_t muxPotPin[] = {0, 1, 2, 3, 4, 5, 6, 15, 14, 13, 12, 11, 10, 8};
-const uint8_t NPotPin[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-const uint8_t totalPots = sizeof(NPotPin) + sizeof(muxPotPin);
+const byte muxPotPin[] = {0, 1, 2, 3, 4, 5, 6, 15, 14, 13, 12, 11, 10, 8};
+const byte NPotPin[] = {
+    GAIN_L3,
+    GAIN_L2,
+    GAIN_L1,
+    PFXL_3,
+    PFXL_2,
+    PFXL_1,
+    PFXR_3,
+    PFXR_2,
+    PFXR_1,
+    TRE_L3,
+    TRE_L2,
+    TRE_L1,
+    PMASTER
+};
+const byte totalPots = sizeof(NPotPin) + sizeof(muxPotPin);
 
 int potCState[totalPots] = {}; // current state
 int potPState[totalPots] = {}; // previous state
@@ -11,31 +25,31 @@ int lastCcValue[totalPots] = {};
 
 Multiplexer4067 mplexPots = Multiplexer4067(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A0);
 
-uint8_t TIMEOUT = 50;
-uint8_t varThreshold = 8;
+byte TIMEOUT = 50;
+byte varThreshold = 8;
 boolean potMoving = true;
-unsigned long pTime[sizeof(NPotPin)] = {};
-unsigned long timer[sizeof(NPotPin)] = {};
+unsigned long pTime[totalPots] = { };
+unsigned long timer[totalPots] = { };
 
 void PotKit::begin()
 {
-    pinMode(MPLEX_A0, INPUT_PULLUP); // pots need input pull up
-    mplexPots.begin();         // inicializa o multiplexer
+    pinMode(MPLEX_A0, INPUT_PULLUP);
+    mplexPots.begin();
 }
 
-void PotKit::read(void (*scc_func)(uint8_t, uint8_t, uint8_t))
+void PotKit::read(void (*scc_func)(byte, byte, byte))
 {
-    for (uint8_t i = 0; i < sizeof(muxPotPin); i++)
+    for (byte i = 0; i < sizeof(muxPotPin); i++)
     {
         potCState[i] = mplexPots.readChannel(muxPotPin[i]);
     }
 
-    for (uint8_t i = 0; i < sizeof(NPotPin); i++)
+    for (byte i = 0; i < sizeof(NPotPin); i++)
     {
         potCState[i + sizeof(muxPotPin)] = analogRead(NPotPin[i]);
     }
 
-    for (uint8_t i = 0; i < totalPots; i++)
+    for (byte i = 0; i < totalPots; i++)
     {
 
         potVar = abs(potCState[i] - potPState[i]); // calcula a variacao da porta analogica

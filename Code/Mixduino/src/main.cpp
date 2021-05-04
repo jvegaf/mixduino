@@ -21,32 +21,28 @@ Thread threadReadButtons; // thread para controlar os botoes
 
 
 
-void handleControlChange(uint8_t channel, uint8_t number, uint8_t value);
-void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value);
-void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value);
+void handleControlChange(byte channel, byte number, byte value);
+void handleNoteOn(byte channel, byte number, byte value);
+void handleNoteOff(byte channel, byte number, byte value);
 void readButtons();
 void readPots();
 void readEncoder();
-void sendMidiNote(uint8_t number, uint8_t value, uint8_t channel);
-void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel);
+void sendMidiNote(byte number, byte value, byte channel);
+void sendMidiCC(byte number, byte value, byte channel);
 
 
 
 void setup()
 {
-
-  Serial.begin(31250); // 115200 for hairless - 31250 for MOCO lufa
-
+  Serial.begin(31250);
   MIDI.turnThruOff();
-  buttons.begin();
-  mdCore.begin();
-
   MIDI.setHandleControlChange(handleControlChange);
   MIDI.setHandleNoteOn(handleNoteOn);
   MIDI.setHandleNoteOff(handleNoteOff);
 
-
-
+  MIDI.begin(MIDI_CHANNEL_OMNI);
+  buttons.begin();
+  mdCore.begin();
 
   /////////////////////////////////////////////
   // threads
@@ -63,23 +59,23 @@ void setup()
 
 void loop()
 {
-  cpu.run();
+  // cpu.run();
   MIDI.read();
-  readEncoder();
+  // readEncoder();
 }
 
-void handleControlChange(uint8_t channel, uint8_t number, uint8_t value)
+void handleControlChange(byte channel, byte number, byte value)
 {
-  mdCore.cChange(number, value);
+  mdCore.cChange(channel, number, value);
 }
 
-void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
+void handleNoteOn(byte channel, byte number, byte value)
 {
   mdCore.noteOn(channel, number, value);
 }
-void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value)
+void handleNoteOff(byte channel, byte number, byte value)
 {
-  mdCore.noteOff(number, value);
+  mdCore.noteOff(channel, number, value);
 }
 
 
@@ -101,12 +97,12 @@ void readEncoder()
   MIDI.sendControlChange(14, position, 1);
 }
 
-void sendMidiNote(uint8_t number, uint8_t value, uint8_t channel)
+void sendMidiNote(byte number, byte value, byte channel)
 {
   MIDI.sendNoteOn(number, value, channel);
 }
 
-void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel)
+void sendMidiCC(byte number, byte value, byte channel)
 {
   MIDI.sendControlChange(number, value, channel);
 }

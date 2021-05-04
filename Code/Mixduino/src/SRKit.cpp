@@ -1,6 +1,6 @@
 #include "SRKit.h"
 
-SRKit::SRKit(uint8_t clkPin, uint8_t dtPin, uint8_t lchPin)
+SRKit::SRKit(byte clkPin, byte dtPin, byte lchPin)
 {
     this->clockPin = clkPin;
     this->dataPin = dtPin;
@@ -14,21 +14,21 @@ void SRKit::begin()
     pinMode(latchPin, OUTPUT);
 }
 
-void SRKit::clear(uint8_t nRegs)
+void SRKit::clear(byte nRegs)
 {
 
-    uint8_t srs[nRegs] = { };
-    for (uint8_t i = 0; i < nRegs; i++)
+    byte srs[nRegs] = { };
+    for (byte i = 0; i < nRegs; i++)
     {
         srs[i] = 0;
     }
 
     sendState(srs);
 }
-void SRKit::sendState(uint8_t *registers)
+void SRKit::sendState(byte *registers)
 {
     digitalWrite(latchPin, LOW);
-    for (uint8_t i = 0; i < sizeof(registers); i++)
+    for (byte i = 0; i < sizeof(registers); i++)
     {
         shiftOut(this->dataPin, this->clockPin, MSBFIRST, registers[i]);
     }

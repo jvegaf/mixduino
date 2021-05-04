@@ -33,7 +33,10 @@ const byte PLAY_DECK_B         = 49; // & DECK_C
 const byte CUE_DECK_A          = 50;
 const byte CUE_DECK_B          = 51; // & DECK_C
 
-// ch 1
+// Control Changes
+
+// channel 1
+
 const byte HOTCUE_1T_DK_A      = 0; // CC0
 const byte HOTCUE_2T_DK_A      = 1;
 const byte HOTCUE_3T_DK_A      = 2;
@@ -43,32 +46,36 @@ const byte HOTCUE_6T_DK_A      = 5;
 const byte HOTCUE_7T_DK_A      = 6;
 const byte HOTCUE_8T_DK_A      = 7; 
 
-const byte RANGE_SELECTOR_DK_A = 20; // G#0
-const byte TEMPO_MASTER_DK_A   = 21; // A0
-const byte SYNC_ON_DECK_A      = 22; // A#0
+const byte RANGE_SELECTOR_DK_A = 8; // G#0
+const byte TEMPO_MASTER_DK_A   = 9; // A0
+const byte SYNC_ON_DECK_A      = 10; // A#0
 
-const byte HOTCUE_1T_DK_B      = 23;
-const byte HOTCUE_2T_DK_B      = 24;
-const byte HOTCUE_3T_DK_B      = 25;
-const byte HOTCUE_4T_DK_B      = 26;
-const byte HOTCUE_5T_DK_B      = 27;
-const byte HOTCUE_6T_DK_B      = 28;
-const byte HOTCUE_7T_DK_B      = 29;
-const byte HOTCUE_8T_DK_B      = 30;
+// channel 2
+
+const byte HOTCUE_1T_DK_B      = 0;
+const byte HOTCUE_2T_DK_B      = 1;
+const byte HOTCUE_3T_DK_B      = 2;
+const byte HOTCUE_4T_DK_B      = 3;
+const byte HOTCUE_5T_DK_B      = 4;
+const byte HOTCUE_6T_DK_B      = 5;
+const byte HOTCUE_7T_DK_B      = 6;
+const byte HOTCUE_8T_DK_B      = 7;
+const byte DECK_B_C_SELECTION  = 8;
+const byte RANGE_SELECTOR_DK_B = 9;
+const byte SYNC_ON_DECK_B      = 10;
+const byte TEMPO_MASTER_DK_B   = 11;
+
+// channel 3
+
+const byte HOTCUE_1T_DK_C      = 0;
+const byte HOTCUE_2T_DK_C      = 1;
+const byte HOTCUE_3T_DK_C      = 2;
+const byte HOTCUE_4T_DK_C      = 3;
+const byte HOTCUE_5T_DK_C      = 4;
+const byte HOTCUE_6T_DK_C      = 5;
+const byte HOTCUE_7T_DK_C      = 6;
+const byte HOTCUE_8T_DK_C      = 7;
 
 
-const byte HOTCUE_1T_DK_C      = 59;
-const byte HOTCUE_2T_DK_C      = 60;
-const byte HOTCUE_3T_DK_C      = 61;
-const byte HOTCUE_4T_DK_C      = 62;
-const byte HOTCUE_5T_DK_C      = 63;
-const byte HOTCUE_6T_DK_C      = 64;
-const byte HOTCUE_7T_DK_C      = 65;
-const byte HOTCUE_8T_DK_C      = 66;
-
-
-const byte RANGE_SELECTOR_DK_B = 70;
-const byte SYNC_ON_DECK_B      = 71;
-const byte TEMPO_MASTER_DK_B   = 72;
 
 #endif

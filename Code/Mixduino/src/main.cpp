@@ -9,6 +9,7 @@
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
+
 BREncoder brEnc;
 BtnKit buttons;
 PotKit pots;
@@ -34,13 +35,13 @@ void sendMidiCC(byte number, byte value, byte channel);
 
 void setup()
 {
-  Serial.begin(31250);
-  MIDI.turnThruOff();
+  // Serial.begin(31250);
   MIDI.setHandleControlChange(handleControlChange);
   MIDI.setHandleNoteOn(handleNoteOn);
   MIDI.setHandleNoteOff(handleNoteOff);
 
   MIDI.begin(MIDI_CHANNEL_OMNI);
+  MIDI.turnThruOff();
   buttons.begin();
   mdCore.begin();
 

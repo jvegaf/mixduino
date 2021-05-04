@@ -9,8 +9,8 @@ byte noteSet[] = {0, MONITOR_CUE_C, PLAY_DECK_B, CUE_DECK_B, FX2_BTN_3, FX2_BTN_
 byte nSetAmount = 16U;
 SRKit vuSR(SF_CLOCK, VU_SF_DATA, VU_LATCH);
 SRKit fbSR(SF_CLOCK, FB_SF_DATA, FB_LATCH);
-NPKit npL(NP_SIG_LEFT, 11U);
-NPKit npR(NP_SIG_RIGHT, 12U);
+NPKit npL(NP_SIG_LEFT, 11);
+NPKit npR(NP_SIG_RIGHT, 12);
 
 void MDCore::begin()
 {
@@ -24,13 +24,13 @@ void MDCore::cChange(byte channel, byte number, byte value)
 {
     switch (channel)
     {
-    case 1U: // npL
+    case 1: // npL
         npChange( Align::LEFT, number, value);
         break;
-    case 2U: // npR
+    case 2: // npR
         npChange(Align::RIGHT, number, value);
         break;
-    case 3U: // VU
+    case 3: // VU
         vuChange(number, value);
         break;
 
@@ -77,7 +77,9 @@ void MDCore::npChange(Align al, byte position, byte value)
     Npixel pix(position, value);
     if(al == Align::LEFT){
         npL.handleChange(pix);
+        return;
     }
+    npR.handleChange(pix);
 }
 
 byte MDCore::getIdx(byte* controlSet, byte nCSets, byte num)

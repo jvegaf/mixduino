@@ -20,7 +20,6 @@ class MDCore
 
 	private:
 		void vuChange(byte number, byte value);
-		byte getIdx(byte* controlSet, byte nCSets, byte num);
 		void npChange(Align al, byte position, byte value);
 
 

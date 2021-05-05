@@ -1,10 +1,11 @@
 #include "SRKit.h"
 
-SRKit::SRKit(byte clkPin, byte dtPin, byte lchPin)
+SRKit::SRKit(byte clkPin, byte dtPin, byte lchPin, byte nRegs)
 {
-    this->clockPin = clkPin;
-    this->dataPin = dtPin;
-    this->latchPin = lchPin;
+    clockPin = clkPin;
+    dataPin = dtPin;
+    latchPin = lchPin;
+    regsAmount = nRegs;
 }
 
 void SRKit::begin()
@@ -12,25 +13,26 @@ void SRKit::begin()
     pinMode(clockPin, OUTPUT);
     pinMode(dataPin, OUTPUT);
     pinMode(latchPin, OUTPUT);
+    digitalWrite(clockPin, LOW);
+    digitalWrite(latchPin, LOW);
+    clear();
 }
 
-void SRKit::clear(byte nRegs)
+void SRKit::clear()
 {
-
-    byte srs[nRegs] = { };
-    for (byte i = 0; i < nRegs; i++)
+    byte regs[regsAmount] = {};
+    for (byte i = 0; i < regsAmount; i++)
     {
-        srs[i] = 0;
+        regs[i] = 0;
+        sendState(regs);
     }
-
-    sendState(srs);
 }
-void SRKit::sendState(byte *registers)
+void SRKit::sendState(byte* regs)
 {
     digitalWrite(latchPin, LOW);
-    for (byte i = 0; i < sizeof(registers); i++)
+    for (byte i = 0; i < regsAmount; i++)
     {
-        shiftOut(this->dataPin, this->clockPin, MSBFIRST, registers[i]);
+        shiftOut(this->dataPin, this->clockPin, MSBFIRST, regs[i]);
     }
     digitalWrite(latchPin, HIGH);
 }

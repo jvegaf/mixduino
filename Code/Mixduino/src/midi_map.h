@@ -10,11 +10,6 @@
 /////////////////////////////////////////
 // OUTS
 
-const byte MASTER_OUT_L        = 10;
-const byte MASTER_OUT_R        = 11;
-const byte LEVEL_DECK_A        = 12;
-const byte LEVEL_DECK_B        = 13;
-const byte LEVEL_DECK_C        = 14;
 
 const byte MONITOR_CUE_A       = 49;
 const byte MONITOR_CUE_B       = 50;
@@ -65,17 +60,23 @@ const byte RANGE_SELECTOR_DK_B = 9;
 const byte SYNC_ON_DECK_B      = 10;
 const byte TEMPO_MASTER_DK_B   = 11;
 
-// channel 3
+// // channel 3
 
-const byte HOTCUE_1T_DK_C      = 0;
-const byte HOTCUE_2T_DK_C      = 1;
-const byte HOTCUE_3T_DK_C      = 2;
-const byte HOTCUE_4T_DK_C      = 3;
-const byte HOTCUE_5T_DK_C      = 4;
-const byte HOTCUE_6T_DK_C      = 5;
-const byte HOTCUE_7T_DK_C      = 6;
-const byte HOTCUE_8T_DK_C      = 7;
+// const byte HOTCUE_1T_DK_C      = 0;
+// const byte HOTCUE_2T_DK_C      = 1;
+// const byte HOTCUE_3T_DK_C      = 2;
+// const byte HOTCUE_4T_DK_C      = 3;
+// const byte HOTCUE_5T_DK_C      = 4;
+// const byte HOTCUE_6T_DK_C      = 5;
+// const byte HOTCUE_7T_DK_C      = 6;
+// const byte HOTCUE_8T_DK_C      = 7;
 
+// channel 3 
 
+const byte MASTER_OUT_L        = 4;
+const byte MASTER_OUT_R        = 3;
+const byte LEVEL_DECK_A        = 2;
+const byte LEVEL_DECK_B        = 1;
+const byte LEVEL_DECK_C        = 0;
 
 #endif

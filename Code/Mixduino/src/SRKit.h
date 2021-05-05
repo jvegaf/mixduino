@@ -9,11 +9,12 @@ class SRKit
 		byte clockPin;
 		byte dataPin;
 		byte latchPin;
+		byte regsAmount;
 	public:
-		SRKit(byte clkPin, byte dtPin, byte lchPin);
-		void clear(byte nRegs);
+		SRKit(byte clkPin, byte dtPin, byte lchPin, byte nRegs);
+		void clear();
 		void begin();
-		void sendState(byte* registers);
+		void sendState(byte* regs);
 
 };
 #endif

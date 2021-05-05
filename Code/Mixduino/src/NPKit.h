@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 #include "pin_map.h"
-#include "model/Npixel.h"
+#include <Npixel.h>
 
 class NPKit  
 {

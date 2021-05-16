@@ -5,17 +5,26 @@ const byte NPotPin[] = {
     GAIN_L3,
     GAIN_L2,
     GAIN_L1,
-    PFXL_3,
-    PFXL_2,
-    PFXL_1,
-    PFXR_3,
-    PFXR_2,
-    PFXR_1,
     TRE_L3,
     TRE_L2,
     TRE_L1,
     PMASTER
-};
+}; //without pfx
+// const byte NPotPin[] = {
+//     GAIN_L3,
+//     GAIN_L2,
+//     GAIN_L1,
+//     PFXL_3,
+//     PFXL_2,
+//     PFXL_1,
+//     PFXR_3,
+//     PFXR_2,
+//     PFXR_1,
+//     TRE_L3,
+//     TRE_L2,
+//     TRE_L1,
+//     PMASTER
+// };
 const byte totalPots = sizeof(NPotPin) + sizeof(muxPotPin);
 
 int potCState[totalPots] = {}; // current state
@@ -33,7 +42,6 @@ unsigned long timer[totalPots] = { };
 
 void PotKit::begin()
 {
-    pinMode(MPLEX_A0, INPUT_PULLUP);
     mplexPots.begin();
 }
 

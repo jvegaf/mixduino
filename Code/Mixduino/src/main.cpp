@@ -60,9 +60,9 @@ void setup()
 
 void loop()
 {
-  // cpu.run();
+  cpu.run();
   MIDI.read();
-  // readEncoder();
+  readEncoder();
 }
 
 void handleControlChange(byte channel, byte number, byte value)

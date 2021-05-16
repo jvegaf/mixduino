@@ -6,7 +6,7 @@ SRKit::SRKit(byte clkPin, byte dtPin, byte lchPin, byte nRegs)
     dataPin = dtPin;
     latchPin = lchPin;
     regsAmount = nRegs;
-}
+} 
 
 void SRKit::begin()
 {

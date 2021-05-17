@@ -14,7 +14,7 @@ byte vuValues[] = {
 byte regsVU[] = { 0, 0, 0, 0, 0 };
 uint16_t fbRegs = 0;
 byte noteSet[] = {0, MONITOR_CUE_C, PLAY_DECK_B, CUE_DECK_B, FX2_BTN_3, FX2_BTN_2, FX2_BTN_1, 0, 0, CUE_DECK_A, PLAY_DECK_A, FX1_BTN_1, FX1_BTN_2, FX1_BTN_3, MONITOR_CUE_A, MONITOR_CUE_B};
-byte nSetAmount = 16U;
+byte nSetAmount = 16;
 SRKit vuSR(SF_CLOCK, VU_SF_DATA, VU_LATCH, 5);
 SRKit fbSR(SF_CLOCK, FB_SF_DATA, FB_LATCH, 2);
 NPKit npL(NP_SIG_LEFT, 11);

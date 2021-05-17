@@ -43,6 +43,7 @@ void setup()
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
   buttons.begin();
+  pots.begin();
   mdCore.begin();
 
   /////////////////////////////////////////////
@@ -93,9 +94,7 @@ void readPots()
 void readEncoder()
 {
 
-  int position = brEnc.readEnc();
-
-  MIDI.sendControlChange(14, position, 1);
+  brEnc.readEnc(sendMidiCC);
 }
 
 void sendMidiNote(byte number, byte value, byte channel)

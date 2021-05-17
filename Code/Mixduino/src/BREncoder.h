@@ -12,6 +12,6 @@ class BREncoder
 		long oldPosition;
 	public:
 		BREncoder();
-		int readEnc();
+		void readEnc(void (*scc_func)(byte, byte, byte));
 };
 #endif

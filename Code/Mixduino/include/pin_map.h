@@ -71,7 +71,7 @@ byte const SWPLAY_R       = 9;
 byte const BROWSER_B      = 34;
 byte const BROWSER_A      = 36;
 byte const SWBR_PREVIEW   = 30;
-byte const SWBR_BACK      = 38;
+byte const SWBR_BACK      = 38; //browser view
 byte const SW_BROWSER_L   = 10;
 byte const SW_BROWSER_R   = 32;
 

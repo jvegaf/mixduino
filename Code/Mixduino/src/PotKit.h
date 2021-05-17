@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include <Multiplexer4067.h>
 #include "pin_map.h"
+#include "pots_map.h"
 
 class PotKit  
 {

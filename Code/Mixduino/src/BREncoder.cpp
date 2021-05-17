@@ -4,29 +4,26 @@ Encoder enc(BROWSER_A, BROWSER_B);
 
 BREncoder::BREncoder()
 {
-  this->oldPosition = -10;
+  oldPosition = -10;
 }
 
-int BREncoder::readEnc()
+void BREncoder::readEnc(void (*scc_func)(byte, byte, byte))
 {
 
   int newPosition = enc.read();
-  int encoderVal = map(newPosition, -1024, 1024, -256, 256);
-  int encoderValue = 0;
 
-  if (encoderVal != this->oldPosition)
+  if (newPosition != oldPosition)
   {
 
-    if ((encoderVal - oldPosition) > 0)
+    if ((newPosition - oldPosition) > 0)
     {
-      encoderValue = 127;
+      scc_func(14, 127, 1);
     }
     else
     {
-      encoderValue = 1;
+      scc_func(14, 1, 1);
     }
 
-    this->oldPosition = encoderVal;
+    oldPosition = newPosition;
   }
-  return encoderValue;
 }

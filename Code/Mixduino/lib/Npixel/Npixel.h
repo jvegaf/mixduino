@@ -9,7 +9,7 @@ class Npixel
 		byte _value;
 	public:
 		Npixel(byte position, byte value);
-		byte position() const { return _position; }
-		byte value() const { return _value; }
+		byte position() const;
+		byte value() const;
 };
 #endif

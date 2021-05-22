@@ -12,7 +12,7 @@ byte vuValues[] = {
     B11111111,
 };
 byte regsVU[] = { 0, 0, 0, 0, 0 };
-uint16_t fbRegs = 0;
+int fbRegs = 0;
 byte noteSet[] = {0, MONITOR_CUE_C, PLAY_DECK_B, CUE_DECK_B, FX2_BTN_3, FX2_BTN_2, FX2_BTN_1, 0, 0, CUE_DECK_A, PLAY_DECK_A, FX1_BTN_1, FX1_BTN_2, FX1_BTN_3, MONITOR_CUE_A, MONITOR_CUE_B};
 byte nSetAmount = 16;
 SRKit vuSR(SF_CLOCK, VU_SF_DATA, VU_LATCH, 5);
@@ -49,7 +49,7 @@ void MDCore::cChange(byte channel, byte number, byte value)
 
 void MDCore::noteOn(byte channel, byte number, byte value)
 {
-    uint16_t mask = 1 << number;
+    int mask = 1 << number;
     fbRegs = fbRegs | mask;
     byte resArr[2];
     resArr[0] = fbRegs;
@@ -59,7 +59,7 @@ void MDCore::noteOn(byte channel, byte number, byte value)
 
 void MDCore::noteOff(byte channel, byte number, byte value)
 {
-    uint16_t mask = 1 << number;
+    int mask = 1 << number;
     fbRegs = fbRegs & ~mask;
     byte resArr[2];
     resArr[0] = fbRegs;

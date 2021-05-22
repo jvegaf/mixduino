@@ -32,7 +32,7 @@ void NPKit::begin()
 {
     np.setBrightness(BRIGHTNESS);
     np.begin();
-    np.clear();
+    np.show();
 }
 
 void NPKit::handleChange(Npixel npx) 

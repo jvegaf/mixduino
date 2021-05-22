@@ -9,18 +9,14 @@
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-
 BREncoder brEnc;
 BtnKit buttons;
 PotKit pots;
 MDCore mdCore;
 
-
 ThreadController cpu;     //thread master, onde as outras vao ser adicionadas
 Thread threadReadPots;    // thread para controlar os pots
 Thread threadReadButtons; // thread para controlar os botoes
-
-
 
 void handleControlChange(byte channel, byte number, byte value);
 void handleNoteOn(byte channel, byte number, byte value);
@@ -30,8 +26,6 @@ void readPots();
 void readEncoder();
 void sendMidiNote(byte number, byte value, byte channel);
 void sendMidiCC(byte number, byte value, byte channel);
-
-
 
 void setup()
 {
@@ -73,13 +67,17 @@ void handleControlChange(byte channel, byte number, byte value)
 
 void handleNoteOn(byte channel, byte number, byte value)
 {
+  if (value < 1U)
+  {
+    mdCore.noteOff(channel, number, value);
+    return;
+  }
   mdCore.noteOn(channel, number, value);
 }
 void handleNoteOff(byte channel, byte number, byte value)
 {
   mdCore.noteOff(channel, number, value);
 }
-
 
 void readButtons()
 {
@@ -106,4 +104,3 @@ void sendMidiCC(byte number, byte value, byte channel)
 {
   MIDI.sendControlChange(number, value, channel);
 }
-

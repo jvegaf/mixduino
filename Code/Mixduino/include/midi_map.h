@@ -32,7 +32,7 @@ const byte CUE_DECK_B          = 51; // & DECK_C
 
 // channel 1
 
-const byte HOTCUE_1T_DK_A      = 0; // CC0
+const byte HOTCUE_1T_DK_A      = 0; 
 const byte HOTCUE_2T_DK_A      = 1;
 const byte HOTCUE_3T_DK_A      = 2;
 const byte HOTCUE_4T_DK_A      = 3;
@@ -41,20 +41,20 @@ const byte HOTCUE_6T_DK_A      = 5;
 const byte HOTCUE_7T_DK_A      = 6;
 const byte HOTCUE_8T_DK_A      = 7; 
 
-const byte RANGE_SELECTOR_DK_A = 8; // G#0
-const byte TEMPO_MASTER_DK_A   = 9; // A0
-const byte SYNC_ON_DECK_A      = 10; // A#0
+const byte RANGE_SELECTOR_DK_A = 8; 
+const byte TEMPO_MASTER_DK_A   = 9; 
+const byte SYNC_ON_DECK_A      = 10;
 
 // channel 2
 
-const byte HOTCUE_1T_DK_B      = 0;
-const byte HOTCUE_2T_DK_B      = 1;
-const byte HOTCUE_3T_DK_B      = 2;
-const byte HOTCUE_4T_DK_B      = 3;
-const byte HOTCUE_5T_DK_B      = 4;
-const byte HOTCUE_6T_DK_B      = 5;
-const byte HOTCUE_7T_DK_B      = 6;
-const byte HOTCUE_8T_DK_B      = 7;
+const byte HOTCUE_1T_DK_B      = 7;
+const byte HOTCUE_2T_DK_B      = 6;
+const byte HOTCUE_3T_DK_B      = 5;
+const byte HOTCUE_4T_DK_B      = 4;
+const byte HOTCUE_5T_DK_B      = 3;
+const byte HOTCUE_6T_DK_B      = 2;
+const byte HOTCUE_7T_DK_B      = 1;
+const byte HOTCUE_8T_DK_B      = 0;
 const byte DECK_B_C_SELECTION  = 8;
 const byte RANGE_SELECTOR_DK_B = 9;
 const byte SYNC_ON_DECK_B      = 10;

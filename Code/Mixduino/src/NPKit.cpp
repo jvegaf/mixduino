@@ -1,6 +1,6 @@
 #include "NPKit.h"
 
-const byte BRIGHTNESS = 8;
+const byte BRIGHTNESS = 64;
 
 uint32_t CLEAR_COL  = Adafruit_NeoPixel::Color(0, 0, 0);
 uint32_t BLUE_COL   = Adafruit_NeoPixel::Color(0, 0, 255);
@@ -18,7 +18,7 @@ uint32_t HCCols[] = {
     BLUE_COL,       // cue
     ORANGE_COL,     // fade in
     ORANGE_COL,     // fade out
-    RED_COL,        // load
+    YELLOW_COL,        // load
     GRAY_COL,       // grid
     GREEN_COL       // loop
 };
@@ -32,7 +32,7 @@ void NPKit::begin()
 {
     np.setBrightness(BRIGHTNESS);
     np.begin();
-    np.show();
+    np.clear();
 }
 
 void NPKit::handleChange(Npixel npx) 

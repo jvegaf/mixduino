@@ -23,7 +23,7 @@ void SRKit::clear()
     byte regs[regsAmount] = {};
     for (byte i = 0; i < regsAmount; i++)
     {
-        regs[i] = 0;
+        regs[i] = B00000000;
         sendState(regs);
     }
 }

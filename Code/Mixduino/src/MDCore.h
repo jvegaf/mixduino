@@ -8,7 +8,9 @@
 #include "NPKit.h"
 #include "pin_map.h"
 #include "sr_map.h"
+#include "np_map.h"
 #include "midi_map.h"
+#include <Shifter.h>
 
 class MDCore  
 {
@@ -21,6 +23,7 @@ class MDCore
 	private:
 		void vuChange(byte number, byte value);
 		void npChange(Align al, byte position, byte value);
+		void setInitialDeckB();
 
 
 

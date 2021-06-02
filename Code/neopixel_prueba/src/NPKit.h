@@ -3,22 +3,16 @@
 #define ARDUINO_NPKIT_H
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
+#include "Npixel.h"
 
 class NPKit  
 {
 	private:
-		byte firstNumber;
-
-		void handleON(byte number);
-		void handleHotCUE(byte number, byte value);
-		void clearAll();
-
+		Adafruit_NeoPixel np;
 	public:
-		NPKit(byte firstNum);
+		NPKit(byte dataPin, byte nPixels);
 		void begin();
-		void handleON(byte number, byte value);
-		void handleOFF(byte number);
-
-
+		void clear();
+		void handleChange(Npixel npx);
 };
 #endif

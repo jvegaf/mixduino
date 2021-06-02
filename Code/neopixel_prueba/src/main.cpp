@@ -1,43 +1,40 @@
 #include <Arduino.h>
-#include <MIDI.h>
 #include "NPKit.h"
-MIDI_CREATE_DEFAULT_INSTANCE();
-
-
-
-/////////////////////////////////////////////
-// midi
-byte midiCh = 1;
-byte note = 36;
-byte cc = 1;
+#include "Npixel.h"
 
 /////////////////////////////////////////////
 // NeoPixels Module
-NPKit neoPx(note); // first number to receive changes (in this case is equals to lowest midi note)
-
+int nplTotal = 10;
+int nprTotal = 11;
+NPKit npLeft(2, nplTotal);   // first number to receive changes (in this case is equals to lowest midi note)
+NPKit npRight(23, nprTotal); // first number to receive changes (in this case is equals to lowest midi note)
 
 void handleNoteOn(byte channel, byte number, byte value);
 void handleNoteOff(byte channel, byte number, byte value);
 
-void setup() {
-  neoPx.begin();
-  Serial.begin(31250); // 115200 for hairless - 31250 for MOCO lufa
-
-  MIDI.turnThruOff();
-  MIDI.setHandleNoteOn(handleNoteOn);
-  MIDI.setHandleNoteOff(handleNoteOff);
-
+void setup()
+{
+  npLeft.begin();
+  npRight.begin();
+  Serial.begin(115200); // 115200 for hairless - 31250 for MOCO lufa
 }
 
-void loop() {
-  MIDI.read();
+void loop()
+{
+  for (size_t i = 0; i < nplTotal; i++)
+  {
+    Npixel pixel(i, 1);
+    npLeft.handleChange(pixel);
+    delay(500);
+  }
+  npLeft.clear();
+  delay(500);
+  for (size_t i = 0; i < nprTotal; i++)
+  {
+    Npixel pixel(i, 1);
+    npRight.handleChange(pixel);
+    delay(500);
+  }
+  npRight.clear();
+  delay(500);
 }
-
-void handleNoteOn(byte channel, byte number, byte value) {
-  neoPx.handleON(number, value);
-}
-
-void handleNoteOff(byte channel, byte number, byte value) {
-  neoPx.handleOFF(number);
-}
-

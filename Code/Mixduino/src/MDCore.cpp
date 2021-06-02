@@ -18,14 +18,14 @@ byte nSetAmount = 16;
 SRKit vuSR(SF_CLOCK, VU_SF_DATA, VU_LATCH, 5);
 Shifter fbackSR(FB_SF_DATA, FB_LATCH, SF_CLOCK, 2);
 byte npRMap[] = {
-    NP_PADR_8,
-    NP_PADR_7,
-    NP_PADR_6,
-    NP_PADR_5,
-    NP_PADR_4,
-    NP_PADR_3,
-    NP_PADR_2,
     NP_PADR_1,
+    NP_PADR_2,
+    NP_PADR_3,
+    NP_PADR_4,
+    NP_PADR_5,
+    NP_PADR_6,
+    NP_PADR_7,
+    NP_PADR_8,
     NP_DECK_SEL,
     NP_RANGE_R,
     NP_SYNC_R,

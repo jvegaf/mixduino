@@ -152,9 +152,7 @@
 
 
 
-  (no_connect (at 109.22 113.03) (uuid 7502f3c3-dc7b-4141-9d4e-861996a98c92))
   (no_connect (at 109.22 130.81) (uuid 48549315-d046-4bfa-86ad-3834db8f43fb))
-  (no_connect (at 172.72 113.03) (uuid 25286323-b55b-49db-b13d-2761b2d68ba9))
   (no_connect (at 172.72 135.89) (uuid 97fa2fec-4afe-4bbc-8717-56de208f5860))
   (no_connect (at 243.205 64.135) (uuid f7b6d6b9-643e-487b-a67e-18440bb5cb6c))
 
@@ -450,6 +448,13 @@
       (effects (font (size 1.27 1.27)) hide)
     )
   )
+  (global_label "LEDLOOPR" (shape input) (at 109.22 113.03 0)
+    (effects (font (size 1.016 1.016)) (justify left))
+    (uuid a4944047-593a-4c55-ac34-2af9b42d9f61)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 43.688 202.438 0)
+      (effects (font (size 1.016 1.016)) hide)
+    )
+  )
   (global_label "LEDHPL3" (shape input) (at 109.22 115.57 0)
     (effects (font (size 1.016 1.016)) (justify left))
     (uuid 9fff133f-b381-43e7-b6b3-50878cb65eec)
@@ -616,6 +621,13 @@
     (uuid 6af1234f-f7da-428d-b191-63c7dcdddae7)
     (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 116.332 344.424 0)
       (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+  (global_label "LEDLOOPL" (shape input) (at 172.72 113.03 0)
+    (effects (font (size 1.016 1.016)) (justify left))
+    (uuid a8cc45d1-bd02-4274-99ee-c4826cc91d5e)
+    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 107.188 199.898 0)
+      (effects (font (size 1.016 1.016)) hide)
     )
   )
   (global_label "LEDCUEL" (shape input) (at 172.72 115.57 0)

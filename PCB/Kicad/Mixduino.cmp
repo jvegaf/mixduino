@@ -1,0 +1,1939 @@
+Cmp-Mod V01 Created by PcbNew   date = lun 07 jun 2021 04:51:42
+
+BeginCmp
+TimeStamp = 005df488-da75-410e-b2d5-c0e1b70f1647
+Path = /00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-00006066923d
+Reference = UVU-LINE3;
+ValeurCmp = 74HC595;
+IdModule  = Library:SO-16_3.9x9.9mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 009b669a-a9b4-432e-a12e-8e314c9f9d0f
+Path = /00000000-0000-0000-0000-000060683d75/1bc79685-57d4-4c05-9b5a-126fedddfd75
+Reference = D17;
+ValeurCmp = VUL2D4;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 0150cc6e-8805-4cf3-867f-4bcff7226f7a
+Path = /00000000-0000-0000-0000-0000607fe61a/43102838-a9c4-4ce8-a557-c3544ca99dce
+Reference = SW44;
+ValeurCmp = SWLOOPR;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 01f3b962-e570-4d44-b3e8-e5386e5c5fd2
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290dc
+Reference = SW19;
+ValeurCmp = SWSYNCL;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 0222da86-16c7-4658-8a66-6411954df619
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607679c9
+Reference = RV1;
+ValeurCmp = FADERL1;
+IdModule  = Library:fader-L60;
+EndCmp
+
+BeginCmp
+TimeStamp = 027105c5-479e-4f1a-95f7-d28d60b1632a
+Path = /00000000-0000-0000-0000-000060683d75/f60c2c8e-9e96-495c-bb93-92dc421ef25d
+Reference = D14;
+ValeurCmp = VUL2D1;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 0741ffb1-f775-4e3d-af49-f8d8ae7dbada
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/0bbccda4-a18f-4852-89cb-e586af293186
+Reference = NP2;
+ValeurCmp = PADL-D2;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 07a6fb3b-93e3-4945-941c-ee49c1effeda
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231e4
+Reference = SW8;
+ValeurCmp = SWCUEL;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 0b03286b-f4c7-4e36-966d-9808a014b211
+Path = /00000000-0000-0000-0000-0000607fe61a/e8e18419-aec8-4efe-b611-3e1efb3dec87
+Reference = SW22;
+ValeurCmp = SWPADL5;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = 0b6cf5fb-7b64-4837-9130-9eafcf122872
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/03ed2ce2-ea12-4c11-bc22-f5a270e8b863
+Reference = NP19;
+ValeurCmp = DECK-SWITCHER-D;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 0ce3f40c-c7f3-4b54-b3e2-af9563f47ad7
+Path = 
+Reference = REF**;
+ValeurCmp = OSHW-Logo_28.5x30mm_SilkScreen;
+IdModule  = Symbol:OSHW-Logo_28.5x30mm_SilkScreen;
+EndCmp
+
+BeginCmp
+TimeStamp = 0d6972bf-dca6-4583-9019-43aa373cb981
+Path = /00000000-0000-0000-0000-000060683d75/d3747c16-0b02-41a2-97f8-cc5875cc2153
+Reference = D3;
+ValeurCmp = VUL1D3;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 0d88dd64-7427-47c7-8cfb-e27f9e274845
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_Pad_TopBottom;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_Pad_TopBottom;
+EndCmp
+
+BeginCmp
+TimeStamp = 0da42253-6120-4d7e-8708-2663602572a3
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084afab
+Reference = SW21;
+ValeurCmp = SWDECK;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 0e5f35f9-baeb-4a16-8f7f-9f713612d021
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/150c21b6-daab-4d8c-b6e8-dea2afe74c1e
+Reference = NP13;
+ValeurCmp = PADR-D6;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 0fbce786-353e-406b-bbe9-82eec48c470a
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = 103924cb-63f9-478f-bfba-cdebaf5e1417
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084af9d
+Reference = SW14;
+ValeurCmp = SWPCUEL3;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 114802e9-0e26-470b-8a54-b922ddb7b38b
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060796ace
+Reference = RV20;
+ValeurCmp = PFX1L;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 11b219f1-3c57-4191-af36-5e6ea13f0c5f
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/df118aaf-5864-4327-8260-83fd890ea0c8
+Reference = NP1;
+ValeurCmp = PADL-D1;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 13067e5b-0c77-4205-903b-146f8bc45181
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060796b10
+Reference = RV22;
+ValeurCmp = PFX3L;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 130d594c-aea3-4956-88ce-c638cc5ad08a
+Path = /499401ba-d585-4a6c-99d3-a1cb46476140
+Reference = TB1;
+ValeurCmp = trillbar-left;
+IdModule  = Library:trillbar;
+EndCmp
+
+BeginCmp
+TimeStamp = 155bbaab-27a5-407a-812d-82436189e86f
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290ce
+Reference = SW33;
+ValeurCmp = SWFX2L;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 15c6a496-9633-4434-8927-0fe1705bfdca
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608382c0
+Reference = SW25;
+ValeurCmp = SWRANGER;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 18c14b1e-c173-423e-a0c8-5f5deb58abac
+Path = 
+Reference = REF**;
+ValeurCmp = KiCad-Logo2_30mm_SilkScreen;
+IdModule  = Symbol:KiCad-Logo2_30mm_SilkScreen;
+EndCmp
+
+BeginCmp
+TimeStamp = 1bd3898c-6269-49e0-9764-6cfdde18cfda
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060785684
+Reference = RV7;
+ValeurCmp = FADERL2;
+IdModule  = Library:fader-L60;
+EndCmp
+
+BeginCmp
+TimeStamp = 1dc8d974-1730-49c9-9495-fe922ab4dded
+Path = /00000000-0000-0000-0000-000060683d75/db7ea295-1aed-4a51-9afc-f1c407c48434
+Reference = D38;
+ValeurCmp = VUMASLD1;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 1fbf3855-ee22-49dc-a77f-fe54a831d523
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060814539
+Reference = SW1;
+ValeurCmp = SWPADL1;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = 2038c778-3937-4d0d-b523-5d8049de2b6b
+Path = /00000000-0000-0000-0000-000060683d75/609428c0-38f7-4281-8534-6aed727516c1
+Reference = D22;
+ValeurCmp = L1HP-D;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = 21169674-6e1f-4483-93c1-2142984acee9
+Path = /00000000-0000-0000-0000-000060683d75/b66196a5-2b1b-4698-8c3d-4b673ce11034
+Reference = D54;
+ValeurCmp = L-LOOP-D;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = 221a4ec3-ac79-4b58-9612-322b048ebdb4
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060816382
+Reference = SW6;
+ValeurCmp = SWPADL2;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = 238eb758-1f7f-4aab-9395-8d0cb0c05539
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231f2
+Reference = SW12;
+ValeurCmp = SWSHIFTL;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 23b6ba42-dc68-49b1-b6a3-0bac412db80e
+Path = /00000000-0000-0000-0000-000060683d75/b17a84cb-a754-479a-ad84-31e7be591a84
+Reference = D46;
+ValeurCmp = VUMASRD1;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 25289f8d-d0dd-4a41-b183-802aae94500f
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060785a23
+Reference = RV8;
+ValeurCmp = FILTERL2;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 262032b8-658b-4bf8-ba10-410234afdff4
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060785aa7
+Reference = RV12;
+ValeurCmp = GAINL2;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 2633bd83-460c-447b-9aae-233e25f619e1
+Path = /00000000-0000-0000-0000-000060683d75/c3aa79eb-7a03-4e22-a291-b23d2f0e0c2d
+Reference = D9;
+ValeurCmp = LPLAY-D;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 26fc5bb7-835d-4600-9941-1f7c916fcced
+Path = /00000000-0000-0000-0000-000060683d75/a1cce05e-0b58-42c7-b4be-459b30942204
+Reference = D31;
+ValeurCmp = VUL3D2;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 289c8582-1b92-418d-98e6-fedfd4f6aecc
+Path = /00000000-0000-0000-0000-000060683d75/bbb05a8c-2564-4d68-adce-2491421a0159
+Reference = D1;
+ValeurCmp = VUL1D1;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 29a102a0-7d4b-406c-af0b-fa2a178414d0
+Path = /00000000-0000-0000-0000-000060683d75/eb1b4243-9039-4a36-b5b2-4d63e3541e8e
+Reference = D25;
+ValeurCmp = RPLAY-D;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 2a112308-1bee-40ae-9160-dd20398c1141
+Path = /00000000-0000-0000-0000-000060683d75/2a891f85-2b5f-41ce-9ad0-bd402db74c31
+Reference = D37;
+ValeurCmp = VUL3D8;
+IdModule  = Library:LED_RED;
+EndCmp
+
+BeginCmp
+TimeStamp = 2a1d4e05-0046-4e15-97b7-83479316a273
+Path = /00000000-0000-0000-0000-000060683d75/c9394cbe-e39b-4be9-9d04-deb93c3197b0
+Reference = D49;
+ValeurCmp = VUMASRD4;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 2da51fc4-29d9-4946-8d3e-c9e321a9cc77
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607ab589
+Reference = RV23;
+ValeurCmp = PITH-R;
+IdModule  = Library:fader-L75;
+EndCmp
+
+BeginCmp
+TimeStamp = 2e05978f-1c3b-499f-b085-81874bc18ba6
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = 2fe984f1-2319-4877-83b2-ce4c73e48c2f
+Path = /00000000-0000-0000-0000-0000607fe61a/07e69a70-8435-4a98-895c-09a12fcf9215
+Reference = SW38;
+ValeurCmp = SWPADL8;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = 30dbaaf5-4d67-4b75-ad67-06e2a9d58af6
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060838288
+Reference = SW4;
+ValeurCmp = SWPLAYR;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 351d5b4b-3322-4a06-adc6-091dd19c866c
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006083e81a
+Reference = SW41;
+ValeurCmp = SWBR-BACKL;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 3613be17-2b9f-49f9-bf7a-5244e4585ebd
+Path = /00000000-0000-0000-0000-000060683d75/96303da0-a1e8-487b-8d36-bea18476e7f0
+Reference = D11;
+ValeurCmp = LFX1-D;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 375663fd-169c-4fd3-83de-51154a5a14e9
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060785a86
+Reference = RV11;
+ValeurCmp = TREL2;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 382d6968-5aca-46ff-8c88-62a4b13ad27d
+Path = /00000000-0000-0000-0000-000060683d75/f9460ae4-91cf-4245-bee0-931dc6977b8a
+Reference = D41;
+ValeurCmp = VUMASLD4;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 3f92a932-156b-43d9-9b9b-b2bc0837affd
+Path = /00000000-0000-0000-0000-000060683d75/9fbadfc7-a055-4b1a-b63c-a797483f7498
+Reference = D16;
+ValeurCmp = VUL2D3;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 4024374f-2db3-4af7-a1b0-edf152613ef1
+Path = /00000000-0000-0000-0000-0000607fe61a/f272f32d-94a2-4ef9-b337-933c01947ce3
+Reference = SW26;
+ValeurCmp = BROWSER-R;
+IdModule  = Library:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles;
+EndCmp
+
+BeginCmp
+TimeStamp = 4267e69e-3fa2-4808-90c3-d4bf64d65fff
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = 42d8cb38-c3ef-402a-9f60-383bb0c12557
+Path = /00000000-0000-0000-0000-000060683d75/f77a8ff2-c062-4613-af94-f9a476603b93
+Reference = D55;
+ValeurCmp = R-LOOP-D;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = 4320f84e-afed-4d35-a7b2-03f4e5aab6b6
+Path = /00000000-0000-0000-0000-000060683d75/70197970-aa72-4857-b1bb-006884d14a39
+Reference = D27;
+ValeurCmp = RFX1-D;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 44cc483d-cd09-4499-9cf1-a042cc34b8d9
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = 45840957-af61-4834-8b7d-a7aa3025d12b
+Path = /00000000-0000-0000-0000-000060683d75/47c60eb8-cd5d-4f58-ab70-884bfd871222
+Reference = D4;
+ValeurCmp = VUL1D4;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 45939b0a-1480-4b17-a459-df27501b578e
+Path = /00000000-0000-0000-0000-000060683d75/afaf7197-e485-4367-ab12-f5292a9708f7
+Reference = D30;
+ValeurCmp = VUL3D1;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 45988ceb-fcab-4347-9638-7824c787145b
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = 46497e94-8e48-4fb1-859b-4f6be32f5c33
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_Pad_TopBottom;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_Pad_TopBottom;
+EndCmp
+
+BeginCmp
+TimeStamp = 494fd445-04f3-406a-b380-4c013d817fc6
+Path = /00000000-0000-0000-0000-000060683d75/1e383e40-9b40-4aa5-bd41-f94163422923
+Reference = D21;
+ValeurCmp = VUL2D8;
+IdModule  = Library:LED_RED;
+EndCmp
+
+BeginCmp
+TimeStamp = 4ac9149b-93de-4983-a6ed-380f6a4a69ea
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608382a4
+Reference = SW13;
+ValeurCmp = SWSHIFTR;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 4c020b70-8ccb-48dc-a66e-3edd3e7c6d97
+Path = /00000000-0000-0000-0000-0000607fe61a/ad7dbac1-a780-46f1-be15-52e8fd698a7d
+Reference = SW17;
+ValeurCmp = SWPADL4;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = 50153365-5e89-4051-b057-f096a8dca85d
+Path = /ee328eff-832d-45f0-9179-bd219e65e1c7
+Reference = IC-MPLEX-2;
+ValeurCmp = MP-BTNS;
+IdModule  = Library:SOIC-24W_7.5x15.4mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5209cac5-6f5a-4db7-9cbd-575ae6e21087
+Path = /00000000-0000-0000-0000-000060683d75/eb3a80f6-66d7-4bc2-9f49-560100a20dd3
+Reference = D50;
+ValeurCmp = VUMASRD5;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 52c8e066-7e10-40bb-9523-567192a5d21b
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231d6
+Reference = SW3;
+ValeurCmp = SWPLAYL;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 595cb1bc-eed3-462d-88af-441d78deec8a
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060841e1b
+Reference = SW34;
+ValeurCmp = SWFX2R;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 598192e4-8989-435f-aa3e-c1300a391494
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = 5da30b70-198f-42aa-89b3-ed03540d06ad
+Path = /00000000-0000-0000-0000-0000607fe61a/d08dcd02-87dd-4649-8126-28cbf8596aa7
+Reference = SW43;
+ValeurCmp = SWLOOPL;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 616a5fd7-ac0c-4577-9a93-fd8aa4472b4d
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607abc7a
+Reference = RV24;
+ValeurCmp = PFX1R;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 631a3ebb-8307-475f-b79c-2cc3b1f0339e
+Path = /00000000-0000-0000-0000-000060683d75/659b6136-8244-462e-9ff6-0af9ec587047
+Reference = D12;
+ValeurCmp = LFX2-D;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = 63d61fb1-acfb-4a08-88e4-d139485da453
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607806ae
+Reference = RV5;
+ValeurCmp = TREL1;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 64d671c0-72b0-44e9-817b-a19d4c3acba7
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006078d4ae
+Reference = RV17;
+ValeurCmp = TREL3;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 65eed0d4-d842-484b-ad16-5a3f943bb913
+Path = /00000000-0000-0000-0000-000060683d75/d19bc529-fd94-48f6-a61b-48a38884eebd
+Reference = D8;
+ValeurCmp = VUL1D8;
+IdModule  = Library:LED_RED;
+EndCmp
+
+BeginCmp
+TimeStamp = 6645269f-0129-42f1-bcff-ed6f5bc0a012
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006081f698
+Reference = SW7;
+ValeurCmp = SWPADR2;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = 6cbd0cb8-7ff5-4612-9b28-3996f9e0a306
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/468153f3-811f-453d-bf88-5cd3ab1344f4
+Reference = NP7;
+ValeurCmp = PADL-D7;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 6e16d957-3735-4d43-8e10-d9003ba49a62
+Path = /00000000-0000-0000-0000-000060683d75/d88a56d4-2a13-4844-99b9-a46331c0a9d3
+Reference = D44;
+ValeurCmp = VUMASLD7;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = 72f8b39c-7dec-4b75-8245-835f737853dc
+Path = /00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606a7472
+Reference = U-LEDS1;
+ValeurCmp = 74HC595;
+IdModule  = Library:SO-16_3.9x9.9mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 75dc544a-1a97-4a57-84f0-0c653d7376dd
+Path = /00000000-0000-0000-0000-000060683d75/35c2553e-b839-493d-85d3-5f196cd1dc99
+Reference = D48;
+ValeurCmp = VUMASRD3;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = 771e65f5-fd45-4c26-af9e-15f09a13b3f4
+Path = /00000000-0000-0000-0000-000060683d75/29b15bca-a135-4583-ad4e-07ff8bba8240
+Reference = D35;
+ValeurCmp = VUL3D6;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = 786b4769-7f58-4b9a-878a-c0b15985c334
+Path = /00000000-0000-0000-0000-000060683d75/420ca8c4-5f86-4ebe-97c0-261f768775b1
+Reference = D13;
+ValeurCmp = LFX3-D;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = 790a0de1-feb8-4994-acc5-33884cdd0c09
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = 791e5d09-e971-45d3-a2ef-0b3626997d76
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060838296
+Reference = SW9;
+ValeurCmp = SWCUER;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 7b1beef2-9275-4204-b219-39a960bf9ec2
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607abc9b
+Reference = RV25;
+ValeurCmp = PFX2R;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 7b43b496-b40c-43a7-be21-7e34fe37f0dc
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006081c596
+Reference = SW36;
+ValeurCmp = SWFX3L;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 7c1039a0-db3d-4ba2-b730-c1e6ba498db3
+Path = /00000000-0000-0000-0000-000060683d75/41b62b2e-e229-41d4-80e1-39f760204f70
+Reference = D20;
+ValeurCmp = VUL2D7;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = 7e394a34-4776-4ca1-992c-036cf1da05d8
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060785a65
+Reference = RV10;
+ValeurCmp = MIDL2;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 7e82b2a4-2096-485d-9cf1-64e5d6dfd385
+Path = /00000000-0000-0000-0000-0000607fe61a/ba69e490-de22-4c21-b5dd-b048a7e9145a
+Reference = SW42;
+ValeurCmp = SWBR-BACKR;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 7f9a688b-5b5d-4ac2-8c14-872ccecde9d3
+Path = /00000000-0000-0000-0000-000060683d75/fb87ba3f-9d03-40be-92ff-4e1173bde4bd
+Reference = D53;
+ValeurCmp = VUMASRD8;
+IdModule  = Library:LED_RED;
+EndCmp
+
+BeginCmp
+TimeStamp = 818f01f2-e6c2-4851-9177-7dd49b160200
+Path = /00000000-0000-0000-0000-0000607fe61a/73ed2680-b5e5-46d1-96c4-590ce43eeeaa
+Reference = SW35;
+ValeurCmp = SWPADR8;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = 83b0c46e-5b79-4232-aa09-ccae93554a67
+Path = /00000000-0000-0000-0000-0000607fe61a/40706219-c28d-4a75-8f0c-eeb0471cdf2a
+Reference = SW18;
+ValeurCmp = SWPADR4;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = 86639135-c635-4a86-ae42-dc85c0b8fa1e
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006078cf80
+Reference = RV13;
+ValeurCmp = FADERL3;
+IdModule  = Library:fader-L60;
+EndCmp
+
+BeginCmp
+TimeStamp = 87e98e60-8302-45fe-9f73-c8fa6153d7a8
+Path = /00000000-0000-0000-0000-000060683d75/7623be4c-083e-40a0-8a85-5d2226f6670b
+Reference = D43;
+ValeurCmp = VUMASLD6;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = 8cc4f123-4f4d-4185-bd56-ada04f7da38f
+Path = /13986d56-86b6-4e78-9652-0d0cf169e5d8
+Reference = XA1;
+ValeurCmp = Arduino_Mega2560_Shield;
+IdModule  = Library:Arduino_Mega2560_Shield;
+EndCmp
+
+BeginCmp
+TimeStamp = 8d6cd62d-dc4a-4438-b830-2c4ac28d81b3
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006078d4cf
+Reference = RV18;
+ValeurCmp = GAINL3;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 8ece39b1-6985-4fea-b40a-81c50210ca22
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060841e0d
+Reference = SW30;
+ValeurCmp = SWFX1R;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 8f11d00f-4254-4d85-bfbf-0ccc63c427b5
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = 90689397-6d09-448b-bf18-9a445b78878d
+Path = /00000000-0000-0000-0000-0000605d0bae/66e9f694-c4b2-4bca-ba2a-700b11bbc0c9
+Reference = U-LEDSR1;
+ValeurCmp = 74HC595;
+IdModule  = Library:SO-16_3.9x9.9mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 91ea3782-a7e5-4a08-becb-b5e5d709a9e2
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060785a44
+Reference = RV9;
+ValeurCmp = BASL2;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 934ec9f0-7a03-4352-9381-7692aa4a2dac
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-000060841df1
+Reference = SW37;
+ValeurCmp = SWFX3R;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 93c3a828-afb9-450a-a84b-42cfacff18b6
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = 94779221-cdad-499d-9a09-3ad43f1de168
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/14e84407-f8d8-486a-8827-20f6bf2719bf
+Reference = NP5;
+ValeurCmp = PADL-D5;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 9882c790-4b11-4451-adb4-1503e26befa0
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/17d0b5b7-a213-4de9-80ff-c4eda98d2874
+Reference = NP9;
+ValeurCmp = L-RNG-D;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 98e642b6-8958-4d3e-b3d4-35022291884b
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006077d747
+Reference = RV4;
+ValeurCmp = MIDL1;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 99ee39b7-fec1-4099-ac93-cfad60639101
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/1cd65fa5-1dd4-43a9-8b04-292bde6d428c
+Reference = NP16;
+ValeurCmp = PADR-D3;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 9ca9bbc5-9a38-453f-89ec-96a2b3f48e4a
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/42cc5faa-fca9-46bd-96e2-6658cfef48d3
+Reference = NP3;
+ValeurCmp = PADL-D3;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 9d99775f-0e53-4320-b932-d987e580cd8f
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/b5cbabdc-ff34-4e69-b57e-a543d4b92147
+Reference = NP14;
+ValeurCmp = PADR-D5;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 9e2d9081-0620-4549-96ba-11feb16860e2
+Path = /00000000-0000-0000-0000-000060683d75/2c7179f9-371e-4764-bc7f-75f753381823
+Reference = D26;
+ValeurCmp = RCUE-D;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = 9ec32ee7-a036-4dea-9f80-f0b269deec75
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608231c8
+Reference = SW39;
+ValeurCmp = SWBR-PREVL;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = a0c25d48-1572-472c-8d4c-721f3868af9d
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = a286d6f1-4ab5-4f18-b8b1-16135d13205a
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/d3e4367c-6280-49ab-9bc2-010ed6d531ae
+Reference = NP8;
+ValeurCmp = PADL-D8;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = a2ac3be4-524e-4e8c-a526-f78ec808f183
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/69cc73ce-8f6d-47f8-b11a-bf7c5dc2d368
+Reference = NP12;
+ValeurCmp = PADR-D7;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = a3ffccd2-6887-43b5-83ca-6a3529a953c6
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/27a7ea37-4e4e-4a65-aec3-6833c9d27e65
+Reference = NP10;
+ValeurCmp = L-SYNC-D;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = a47b3335-ab5f-4eeb-a96f-721fb089ef97
+Path = /00000000-0000-0000-0000-000060683d75/5da8c361-42d9-487c-836a-1d7f3204d8d9
+Reference = D32;
+ValeurCmp = VUL3D3;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = a6b58e9c-189e-490b-9618-f9dd29e8b4bb
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_Pad_TopBottom;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_Pad_TopBottom;
+EndCmp
+
+BeginCmp
+TimeStamp = a88a8de9-759a-4bb0-8fd7-d5dbb1ba0111
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = aa3e74ce-0760-40dd-9572-cd7c7917f3ef
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607964d7
+Reference = RV19;
+ValeurCmp = PITCH-L;
+IdModule  = Library:fader-L75;
+EndCmp
+
+BeginCmp
+TimeStamp = ae401ddc-8994-4f40-882e-cadb6e3d8e69
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006078d44b
+Reference = RV14;
+ValeurCmp = FILTERL3;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = aec8d5ac-1b37-4032-882a-5e2145c77856
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_Pad_TopBottom;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_Pad_TopBottom;
+EndCmp
+
+BeginCmp
+TimeStamp = af11d69b-0533-437e-b996-c4e12ceb4d37
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607f2c6d
+Reference = RV28;
+ValeurCmp = PVOL-HP;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = af6db5fe-0f2b-40a0-b8ff-6d7ce81cf92a
+Path = /00000000-0000-0000-0000-000060683d75/0df910e1-a0a8-4d01-8537-af4794670835
+Reference = D10;
+ValeurCmp = LCUE-D;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = b012893e-be6c-4eb7-9362-d957a86b82c9
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = b12719a6-36ab-4e9c-9925-9b90e4b3be15
+Path = /00000000-0000-0000-0000-000060683d75/31c3ec88-8177-476b-b9b2-5a8c7b016a4b
+Reference = D29;
+ValeurCmp = RFX3-D;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = b1335b99-a804-485a-999c-56cd66856ee7
+Path = /00000000-0000-0000-0000-000060683d75/f6c49fbe-7beb-4131-a572-0bb5d6ad73ec
+Reference = D23;
+ValeurCmp = L2HP-D;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = b1a5cbea-7d65-43bb-ab97-d75f701511e6
+Path = /00000000-0000-0000-0000-000060683d75/70868763-f89c-47fb-bc5e-655a82b90047
+Reference = D6;
+ValeurCmp = VUL1D6;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = b3b35b94-a761-411b-8cee-3a0f21348aaa
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607f24e6
+Reference = RV27;
+ValeurCmp = PMIX-HP;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = b4add59d-5ca0-4579-9fed-e9b228a65dfd
+Path = /00000000-0000-0000-0000-000060683d75/3894fa54-3b4c-44af-8f0a-86cfbf0638d2
+Reference = D24;
+ValeurCmp = L3HP-D;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = b7208ab4-497e-470c-9943-ba42cd74c033
+Path = /00000000-0000-0000-0000-0000607fe61a/cef43e25-c081-4da0-9434-281231bbd85b
+Reference = SW15;
+ValeurCmp = SWPADR3;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = b79d4760-a517-4da1-8ab6-5bd497dc7751
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607809e9
+Reference = RV6;
+ValeurCmp = GAINL1;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = b7fe9bcb-72c0-4d11-822d-e1de823cbd0a
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/972a39cb-58f9-44f0-a799-fe5428c24823
+Reference = NP20;
+ValeurCmp = R-RNG-D;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = b89bfe6e-5cad-4fe9-99e5-cb36e5635aa7
+Path = /00000000-0000-0000-0000-000060683d75/ab4080d2-cebb-4d09-97b7-a74499663730
+Reference = D33;
+ValeurCmp = VUL3D4;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = b9c792be-57b6-4fcf-a10b-5b88c59f0f0c
+Path = /00000000-0000-0000-0000-000060683d75/4925103a-454b-4b42-927f-1faebbd4c84c
+Reference = D47;
+ValeurCmp = VUMASRD2;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = bbaa3a24-cc7d-4966-815b-bb71db0de5e9
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607f2c8e
+Reference = RV29;
+ValeurCmp = PMASTER;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = bbc805dc-10f9-4313-9f60-1dc53f1fa0c5
+Path = /00000000-0000-0000-0000-000060683d75/2c38919e-74c1-4f3d-993d-f7f7a3116617
+Reference = D36;
+ValeurCmp = VUL3D7;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = bcc358b4-d1ba-45b5-8dbf-4468b682b86a
+Path = /00000000-0000-0000-0000-0000607fe61a/133b0fab-b32a-40cf-96f1-262bf1f54a1e
+Reference = SW32;
+ValeurCmp = SWPADL7;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = bcdfc0cc-0eb6-45af-bf05-b73a436ffdc6
+Path = /00000000-0000-0000-0000-000060683d75/9b54fe47-6e8b-448a-a867-b7d7086df747
+Reference = D34;
+ValeurCmp = VUL3D5;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = bdc01c1a-4bad-4a35-ae5d-e410eeb0af35
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/f5247161-331c-485d-a656-77ac98d70931
+Reference = NP4;
+ValeurCmp = PADL-D4;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = be2ec7a1-8498-4149-9c54-8c392df67cf5
+Path = /00000000-0000-0000-0000-000060683d75/e8b989ea-5b6d-4841-baca-7a5c39c7dd97
+Reference = D18;
+ValeurCmp = VUL2D5;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = be87268a-aeb4-45ee-a278-c6e57d9bb80b
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = bf114b06-cc86-490c-b381-561a11e2fb19
+Path = /00000000-0000-0000-0000-000060683d75/47d5d478-801d-419b-b84b-da1a66f1ee6d
+Reference = D15;
+ValeurCmp = VUL2D2;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = bf711fbb-c8a8-4006-9583-066f5930d06b
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084af90
+Reference = SW10;
+ValeurCmp = SWPCUEL2;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = c0409d70-cde5-4df0-8c5e-64c1b9251191
+Path = /00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606776d8
+Reference = UVU-MASTER-L1;
+ValeurCmp = 74HC595;
+IdModule  = Library:SO-16_3.9x9.9mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = c1b3f877-9fd5-4444-9d1b-417621d68ab0
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006078d46c
+Reference = RV15;
+ValeurCmp = BASL3;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = c214ecf7-0042-483d-8ad7-9088b9a4f1d9
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/4d95b3e1-ec95-424c-bb22-6630063de747
+Reference = NP6;
+ValeurCmp = PADL-D6;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = c627d3cd-b9f8-4141-8c22-1ee15dae71ab
+Path = /b153f367-9de9-4eaf-8066-69121271c9ec
+Reference = TB2;
+ValeurCmp = trillbar-right;
+IdModule  = Library:trillbar;
+EndCmp
+
+BeginCmp
+TimeStamp = c6e93b67-fbdf-4036-8619-405126dc0604
+Path = /181dd9e6-a398-45bb-9666-29a0e71e8c56
+Reference = IC-MPLEX-1;
+ValeurCmp = MP-POTS;
+IdModule  = Library:SOIC-24W_7.5x15.4mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = c7698d5c-c276-4e76-b830-3fb68dd5ff6e
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/c58fc741-af5b-4dc3-9778-70a2a3b4ea69
+Reference = NP11;
+ValeurCmp = PADR-D8;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = c94e340e-3ecc-491b-a260-8496ed24623c
+Path = /00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606776ef
+Reference = UVU-MASTER-R1;
+ValeurCmp = 74HC595;
+IdModule  = Library:SO-16_3.9x9.9mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = c9a6fb7a-6f09-499a-93b9-08db3ad8a518
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-000060796aef
+Reference = RV21;
+ValeurCmp = PFX2L;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = ca170303-a5de-4728-8d8d-7cfc70208961
+Path = /00000000-0000-0000-0000-000060683d75/9082fb18-9c6a-4436-877f-72b0f2e417b6
+Reference = D40;
+ValeurCmp = VUMASLD3;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = cb405549-9a66-45f4-a69b-e2043650b2a8
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608382b2
+Reference = SW20;
+ValeurCmp = SWSYNCR;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = cb5cc8c2-65d9-45fc-b776-ed887b47f7d6
+Path = /00000000-0000-0000-0000-000060683d75/f8f03c38-cb84-4da2-ba2f-66a510017c71
+Reference = D7;
+ValeurCmp = VUL1D7;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = cb9d30bb-54b0-4c2e-ac25-adcbef83b54b
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/966213bd-fb2f-4d8a-9aab-295476d15e0a
+Reference = NP17;
+ValeurCmp = PADR-D2;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = cd8ea8cb-8df8-4ad5-934f-7dfdabc9c7a5
+Path = /00000000-0000-0000-0000-000060683d75/1f5f1251-9a57-45ff-8bb7-5a088116c340
+Reference = D51;
+ValeurCmp = VUMASRD6;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = ce7850c8-0a7f-4394-9c4e-c428cd6ad422
+Path = /00000000-0000-0000-0000-000060683d75/4ebc9227-a1de-430a-82bd-4ae4892b4216
+Reference = D39;
+ValeurCmp = VUMASLD2;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = cf3dc8d0-0c7a-476c-94d5-1679af91a82a
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/4380ee41-6f9e-429a-b9ea-058395bf90e1
+Reference = NP15;
+ValeurCmp = PADR-D4;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = d3f04ed3-15e3-42a7-8df5-dab8835d03fa
+Path = /00000000-0000-0000-0000-0000607fe61a/c05ec785-9efa-417d-b2f7-0594e6116b4a
+Reference = SW27;
+ValeurCmp = SWPADR6;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = d46c4487-5027-4239-8995-05b3382ddb9f
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006076b739
+Reference = RV2;
+ValeurCmp = FILTERL1;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = d4aee733-2be8-4f84-a661-981e61a522c3
+Path = /00000000-0000-0000-0000-000060683d75/08180803-10eb-46d7-8fec-a51c36acd8c2
+Reference = D19;
+ValeurCmp = VUL2D6;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = db014276-f74a-4f71-a9cd-6d2065ee8724
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006078d48d
+Reference = RV16;
+ValeurCmp = MIDL3;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = db42f52c-e7ab-45cf-a9cb-8500695baa24
+Path = /00000000-0000-0000-0000-000060683d75/c3666fc9-caba-405c-b42d-3e785d33b9a2
+Reference = D42;
+ValeurCmp = VUMASLD5;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = dbb8c8ba-e5b7-4ebf-94ad-5f7bf57d0a25
+Path = /00000000-0000-0000-0000-0000607fe61a/8ddcfa68-3d31-4bad-ac8c-2b44f0b58d06
+Reference = SW31;
+ValeurCmp = SWPADR7;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = dbee78cf-108c-4e85-ad33-eb9a4699b299
+Path = /00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-0000606245c1
+Reference = UVU-LINE1;
+ValeurCmp = 74HC595;
+IdModule  = Library:SO-16_3.9x9.9mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = df473575-3901-49be-9156-3848659145a5
+Path = /00000000-0000-0000-0000-0000605d0bae/00000000-0000-0000-0000-00006065cced
+Reference = UVU-LINE2;
+ValeurCmp = 74HC595;
+IdModule  = Library:SO-16_3.9x9.9mm_P1.27mm;
+EndCmp
+
+BeginCmp
+TimeStamp = dff6664a-25e2-4cec-a457-955cc6e3527d
+Path = /00000000-0000-0000-0000-0000607fe61a/65eb9280-185f-443f-aa19-d728bc3e5e7b
+Reference = SW11;
+ValeurCmp = SWPADL3;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = e0058dc1-e05d-4f52-9b69-ab1d60a8c76e
+Path = /00000000-0000-0000-0000-000060683d75/b93c6473-752b-44ea-809d-9650e97a7a42
+Reference = D5;
+ValeurCmp = VUL1D5;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = e0d6361a-0076-4748-ac05-8bcb09fc7595
+Path = /00000000-0000-0000-0000-000060683d75/087c5fc3-2c15-4051-9f5f-163c836ef58f
+Reference = D28;
+ValeurCmp = RFX2-D;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = e323f426-f33e-4a94-9589-933e49c03738
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006081f68a
+Reference = SW2;
+ValeurCmp = SWPADR1;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = e56b4bf7-0b97-4378-9c0d-231acd977616
+Path = /00000000-0000-0000-0000-0000607fe61a/54184518-be11-4dd8-84de-207965922433
+Reference = SW40;
+ValeurCmp = SWBR-PREVR;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = e5ff4f7f-f5fd-487e-b7d2-74ea6e2bbad5
+Path = /00000000-0000-0000-0000-0000607fe61a/15383d38-0a38-4f61-8227-6a87a4d5e9c8
+Reference = SW28;
+ValeurCmp = SWPADL6;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = e65dd9d2-e5a1-4fd3-b535-333b7f61f23c
+Path = /00000000-0000-0000-0000-000060683d75/a94860e2-1c72-4bd3-9128-e183eb96155b
+Reference = D52;
+ValeurCmp = VUMASRD7;
+IdModule  = Library:LED_YELLOW;
+EndCmp
+
+BeginCmp
+TimeStamp = e74b1f75-0028-41c4-9b2c-607601411bf1
+Path = /00000000-0000-0000-0000-0000607fe61a/cca2e57b-80df-422d-b0c5-09f93acfe3fd
+Reference = SW16;
+ValeurCmp = BROWSER-L;
+IdModule  = Library:RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm_CircularMountingHoles;
+EndCmp
+
+BeginCmp
+TimeStamp = e7b3542d-9fba-423d-ae24-b6014182f3e0
+Path = /00000000-0000-0000-0000-0000607fe61a/1d7751f2-c446-43b2-b8a8-17781e4dfd89
+Reference = SW23;
+ValeurCmp = SWPADR5;
+IdModule  = Library:sw-pad;
+EndCmp
+
+BeginCmp
+TimeStamp = e80f11b3-9957-45ae-9a6f-64028c0dd9a5
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/28671994-770f-4470-8e34-30b384556009
+Reference = NP21;
+ValeurCmp = R-SYNC-D;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = e8eb8db2-ece7-4ee4-945e-b5b89a8ff986
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = e96ac618-b7b1-446f-aad8-e069fde3c461
+Path = /00000000-0000-0000-0000-000060683d75/d742b5e5-2623-4c91-83a9-282733ed35d7
+Reference = D2;
+ValeurCmp = VUL1D2;
+IdModule  = Library:LED_GREEN;
+EndCmp
+
+BeginCmp
+TimeStamp = e9a69920-695a-4256-8023-de2f7aa98619
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290ea
+Reference = SW24;
+ValeurCmp = SWRANGEL;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = f376fb55-bd1c-4204-8dbb-e426d814155d
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = f4e07eed-0b8f-4282-b568-b6e88e612990
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-00006084af82
+Reference = SW5;
+ValeurCmp = SWPCUEL1;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = f761e17a-ba27-4b72-92f0-33419ea7bda0
+Path = 
+Reference = REF**;
+ValeurCmp = MountingHole_3.2mm_M3_ISO7380;
+IdModule  = MountingHole:MountingHole_3.2mm_M3_ISO7380;
+EndCmp
+
+BeginCmp
+TimeStamp = fb33848c-e6e6-4ca8-9a36-879ab95ea36b
+Path = /00000000-0000-0000-0000-000060683d75/95d3a68d-0b7a-4ce2-aaa5-53c042807664
+Reference = D45;
+ValeurCmp = VUMASLD8;
+IdModule  = Library:LED_RED;
+EndCmp
+
+BeginCmp
+TimeStamp = fcc7a689-3b92-4e5f-9535-57c9470948e1
+Path = /00000000-0000-0000-0000-0000607fe61a/00000000-0000-0000-0000-0000608290c0
+Reference = SW29;
+ValeurCmp = SWFX1L;
+IdModule  = Library:SW_PUSH_6mm_H8mm;
+EndCmp
+
+BeginCmp
+TimeStamp = fe245614-1940-441a-a78b-11dc41628b85
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-00006077d470
+Reference = RV3;
+ValeurCmp = BASL1;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = fe50e1cc-4490-4ba3-965a-09d00c97e829
+Path = /00000000-0000-0000-0000-00006075470a/00000000-0000-0000-0000-0000607abcbc
+Reference = RV26;
+ValeurCmp = PFX3R;
+IdModule  = Library:Potentiometer_Bourns_PTV09A-1_Single_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = fed26aef-6246-4db7-b123-9fcf566cd376
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/de284bda-4c8b-4384-ad1b-9c58cb796ee3
+Reference = NP18;
+ValeurCmp = PADR-D1;
+IdModule  = Library:LED_WS2812B_PLCC4_5.0x5.0mm_P3.2mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 03a06cab-188b-4bff-b420-58dfb074c770
+Path = /00000000-0000-0000-0000-000060683d75/00000000-0000-0000-0000-0000606dfaaa
+Reference = R1;
+ValeurCmp = VUL1R1;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 05079d48-95ee-43a0-a9e8-bd1ed825bfb6
+Path = /00000000-0000-0000-0000-000060683d75/fff4e49f-a4dd-489b-a396-eaec588a54d9
+Reference = R52;
+ValeurCmp = VUMASRR7;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 061a367e-edbd-4cd3-bf50-8f5c7a1890bf
+Path = /00000000-0000-0000-0000-000060683d75/2b7fb6c9-aaae-47ab-ad77-a1fca7054648
+Reference = R11;
+ValeurCmp = LFX1R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 061f069e-c856-4a07-a388-e25edb25500c
+Path = /00000000-0000-0000-0000-000060683d75/efad07bb-954a-48db-9a35-e97609c59ea0
+Reference = R21;
+ValeurCmp = VUL2R8;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 1fd01498-8a53-49e9-80c9-449b850a39c4
+Path = /00000000-0000-0000-0000-000060683d75/c758f8c1-f7c0-4f49-9899-5814940066de
+Reference = R25;
+ValeurCmp = RPLAY-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 23a2fa42-43c1-4030-991d-02291aae1d7f
+Path = /00000000-0000-0000-0000-000060683d75/3cd495a4-5581-4141-b0aa-bd337747d1ee
+Reference = R50;
+ValeurCmp = VUMASRR5;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 2a18ef46-2e06-4754-a146-2fe8eeaba114
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/e77cb085-57e0-4325-a3d3-eb3d1f2d9ffd
+Reference = NPR1;
+ValeurCmp = L-NP-PADS_R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 2a217c3d-3a14-46de-8eb5-37525763aace
+Path = /00000000-0000-0000-0000-000060683d75/b2bc2fd6-6300-4f95-a052-caec40cad76c
+Reference = R26;
+ValeurCmp = RCUE-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 2f0a86aa-edf0-4420-930a-af19ead8a8c4
+Path = /00000000-0000-0000-0000-000060683d75/748885e3-e705-4d53-bdb8-75ccb533945b
+Reference = R34;
+ValeurCmp = VUL3R5;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 33c261d5-9b79-4755-9909-f0a4aba13cda
+Path = /00000000-0000-0000-0000-000060683d75/8214f60b-4417-4bdf-a366-b3f190fdb923
+Reference = R14;
+ValeurCmp = VUL2R1;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 3c4b9500-4fe4-457a-8a1b-1bb0aa075fca
+Path = /00000000-0000-0000-0000-000060683d75/45790b84-9076-4344-bf47-4bb30e343616
+Reference = R37;
+ValeurCmp = VUL3R8;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 3e42c6ed-d21a-4ead-bace-0e8f07749c5c
+Path = /00000000-0000-0000-0000-000060683d75/5227692e-c94d-4543-8200-d654c0ef40de
+Reference = R43;
+ValeurCmp = VUMASLR6;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 42176bcf-8b39-469f-9182-eff686e0a623
+Path = /00000000-0000-0000-0000-000060683d75/3b59826e-7731-4d98-b3e1-3e5dc10202cd
+Reference = R45;
+ValeurCmp = VUMASLR8;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 42853eb0-519a-4c14-bc99-b990f5fe1b74
+Path = /00000000-0000-0000-0000-000060683d75/1f527a9b-4bbe-4775-bfa1-48e13a133158
+Reference = R55;
+ValeurCmp = R-LOOP-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 47a01fca-5b32-44f4-bfd1-2e4edaf95192
+Path = /00000000-0000-0000-0000-000060683d75/9447cb19-9258-45c7-9119-792d920670bc
+Reference = R38;
+ValeurCmp = VUMASLR1;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 47a411c7-15d3-4976-b13c-c23bd2e0069f
+Path = /00000000-0000-0000-0000-000060683d75/fd0ec830-7e8e-49cd-922a-4b8cd1cad566
+Reference = R41;
+ValeurCmp = VUMASLR4;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 47b6c327-2162-4c0c-96ef-98821a101c5d
+Path = /00000000-0000-0000-0000-000060683d75/86218649-40a8-4477-8d14-02410c2e0b10
+Reference = R7;
+ValeurCmp = VUL1R7;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 49e45c9a-538b-43f8-82c6-7eb0da0788c0
+Path = /00000000-0000-0000-0000-000060683d75/c0125f91-2cdb-4610-95f3-fa2be348b79b
+Reference = R4;
+ValeurCmp = VUL1R4;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 4e6954a6-db8d-4cf5-ad4e-3be434e565fd
+Path = /00000000-0000-0000-0000-000060683d75/b50e175f-93e3-4d44-bc41-63b8e7b53a14
+Reference = R32;
+ValeurCmp = VUL3R3;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5401004b-63cf-4eee-b4a9-7de8c49c9a08
+Path = /00000000-0000-0000-0000-000060683d75/53f3a661-34b0-4994-95b4-f23e75414bfc
+Reference = R48;
+ValeurCmp = VUMASRR3;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5518fc58-39f6-4748-93b7-248ba31b9ef9
+Path = /00000000-0000-0000-0000-000060683d75/b2945ba5-fe32-4a2d-a915-7a6b96b4c472
+Reference = R27;
+ValeurCmp = RFX1-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5544602b-74d6-4825-af43-4d2ddde7ccf1
+Path = /00000000-0000-0000-0000-000060683d75/4ee9de30-fde8-43b6-8e77-559c9556360a
+Reference = R18;
+ValeurCmp = VUL2R5;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 555b0ffc-bbb5-49ee-a9f9-53eb1f9ee36c
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/36dfd4e4-2187-424f-a46a-2e3c312070f0
+Reference = NPR3;
+ValeurCmp = L-NP-FB_R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 578b5748-c226-4c4a-bc03-292432b8f20a
+Path = /00000000-0000-0000-0000-000060683d75/fa31e3c4-5ffa-421f-970d-13f475878f80
+Reference = R22;
+ValeurCmp = L1HP-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5aa0ef5c-a10d-4980-945e-dcf8bf903850
+Path = /00000000-0000-0000-0000-000060683d75/2bbc2935-402e-4ecd-befb-a84d58b68c30
+Reference = R13;
+ValeurCmp = LFX3R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5b0cfe8e-cda7-4ffd-b6a9-1239bd6050ff
+Path = /00000000-0000-0000-0000-000060683d75/8afd8641-c543-4138-909d-2b5db288d7fb
+Reference = R42;
+ValeurCmp = VUMASLR5;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 5c15a7fd-e28e-4818-a4c7-592d8ac665f2
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/6107c0ab-f01d-4f9c-8778-fb853a8da67f
+Reference = NPR2;
+ValeurCmp = R-NP-PADS_R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 61accfda-98c2-40d1-a630-54925f9908ac
+Path = /00000000-0000-0000-0000-000060683d75/a63396f8-11d5-4314-8759-de78c64d772e
+Reference = R17;
+ValeurCmp = VUL2R4;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 64281d6e-5cc1-4c5d-b699-893e5915dbbe
+Path = /00000000-0000-0000-0000-000060683d75/646856fe-d1b0-43da-9941-d067cda09444
+Reference = R40;
+ValeurCmp = VUMASLR3;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 68de8048-1d6e-4717-bd59-63de4ce78982
+Path = /00000000-0000-0000-0000-000060683d75/a5930f3b-dcbd-4edb-a82d-d6b81fac6704
+Reference = R44;
+ValeurCmp = VUMASLR7;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 6d3464b2-52c2-40e8-8601-8a3077754443
+Path = /00000000-0000-0000-0000-000060683d75/006c2769-5d35-4a97-ab2e-ae4fcf235c25
+Reference = R19;
+ValeurCmp = VUL2R6;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 6e6ea360-0f47-46df-b979-6024772b7ddc
+Path = /00000000-0000-0000-0000-000060683d75/81a11f28-52d2-4275-8187-36c52043390d
+Reference = R20;
+ValeurCmp = VUL2R7;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 6ed51aae-087b-4492-9478-a75673b4811d
+Path = /00000000-0000-0000-0000-000060683d75/19fe5663-23f5-4bcf-90dc-c9e4ba446192
+Reference = R54;
+ValeurCmp = L-LOOP-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 781ebb66-a66c-4d2a-af00-5078736ea11e
+Path = /00000000-0000-0000-0000-000060683d75/fe430b3e-baf8-418c-9003-9f160fe6a2db
+Reference = R31;
+ValeurCmp = VUL3R2;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 78b4c683-f9b6-49e5-9502-fe6db7d8253d
+Path = /00000000-0000-0000-0000-000060683d75/4b1c3c9e-35ed-4846-9014-3f309a70506f
+Reference = R33;
+ValeurCmp = VUL3R4;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 82170c48-7474-42b0-8c5b-2e265eba1161
+Path = /00000000-0000-0000-0000-000060683d75/32bd77e7-6955-44a1-8ba1-f84ada5fefcd
+Reference = R49;
+ValeurCmp = VUMASRR4;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 89158c9d-695f-49b3-93af-1f87a3cdb846
+Path = /27ec6e33-6a27-4865-8f8e-aab38be2398e/2e9bf44d-59d5-47da-9cae-7ece8504d321
+Reference = NPR4;
+ValeurCmp = R-NP-FB_R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 89524a10-4ee9-4d00-baa4-a1cdb2d46f9e
+Path = /00000000-0000-0000-0000-000060683d75/61ca2770-fe1a-4e5c-84b6-995777382b41
+Reference = R3;
+ValeurCmp = VUL1R3;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 8cb0c932-a856-4d1b-ba38-a3aea9d9d415
+Path = /00000000-0000-0000-0000-000060683d75/bd4b6734-0f3c-4507-ad68-2e645d9d4821
+Reference = R46;
+ValeurCmp = VUMASRR1;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 8fa93891-a4fc-4e61-8f8f-24de4cdc3201
+Path = /00000000-0000-0000-0000-000060683d75/acefa4d7-f4bc-492a-bd0b-c39290d7da59
+Reference = R16;
+ValeurCmp = VUL2R3;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 92d492df-187d-4a16-9487-c1716bf9d030
+Path = /00000000-0000-0000-0000-000060683d75/2659b5f9-e1e2-4492-9b05-8667721276d5
+Reference = R5;
+ValeurCmp = VUL1R5;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 9869e59d-b6a0-44b2-9600-89bca57b7080
+Path = /00000000-0000-0000-0000-000060683d75/859ea934-ef74-4291-ae89-3450d5eb9843
+Reference = R2;
+ValeurCmp = VUL1R2;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 98900729-43b8-45f7-a733-7040d29c6d8d
+Path = /00000000-0000-0000-0000-000060683d75/6acedf30-bc1e-4da0-90a1-72006ae2e5bd
+Reference = R53;
+ValeurCmp = VUMASRR8;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = 9e8c996a-1cf0-42ea-ac8d-120fc68f69c2
+Path = /00000000-0000-0000-0000-000060683d75/9e1ad5d9-c024-4e90-ba2a-1e4d8c1af0c1
+Reference = R30;
+ValeurCmp = VUL3R1;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = a5ac9c85-c8d5-4ada-b2d5-c14985e06f7e
+Path = /00000000-0000-0000-0000-000060683d75/0678d574-1cce-4fd4-b0a1-6421600558b7
+Reference = R6;
+ValeurCmp = VUL1R6;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = a680d82b-6cb3-4677-a884-1902ea2716b4
+Path = /00000000-0000-0000-0000-000060683d75/4a79a477-6758-4d5f-8566-4eb4b9512314
+Reference = R8;
+ValeurCmp = VUL1R8;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = a96c9663-951f-41ea-b9f9-5e2c7c3f7598
+Path = /00000000-0000-0000-0000-000060683d75/0f73b6a9-4eea-4343-8828-c36beb508fae
+Reference = R29;
+ValeurCmp = RFX3-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = b2cd25f7-d78d-4cba-984a-d315090db3e4
+Path = /00000000-0000-0000-0000-000060683d75/ec17a33c-ba28-4c13-a56e-a403e7e3e359
+Reference = R24;
+ValeurCmp = L3HP-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = b3579832-3ca1-42c8-bfed-5fdea28aa77c
+Path = /00000000-0000-0000-0000-000060683d75/80c64938-e24b-4e49-a979-f93291656ff9
+Reference = R15;
+ValeurCmp = VUL2R2;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = c2149ef1-d97c-413c-9da8-af1276206d96
+Path = /00000000-0000-0000-0000-000060683d75/906b92dc-8ad4-4c59-9d76-77c12796c96b
+Reference = R36;
+ValeurCmp = VUL3R7;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = c804af76-6cc4-4b5b-bbeb-8d81cf7a557c
+Path = /00000000-0000-0000-0000-000060683d75/cdba844a-daf4-4eff-b080-8ea9404e46e8
+Reference = R28;
+ValeurCmp = RFX2-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = c99ecdfd-6ccc-4add-b73c-d9bf31ffb797
+Path = /00000000-0000-0000-0000-000060683d75/cd8ba270-ad93-4664-a35a-2e73777b6b89
+Reference = R9;
+ValeurCmp = LPLAY-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = d252ebf0-64cd-475a-bb63-97d4ce298c5f
+Path = /00000000-0000-0000-0000-000060683d75/9aac8264-730a-4861-a394-d0e6b8646564
+Reference = R35;
+ValeurCmp = VUL3R6;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = d27f1862-3aec-434f-be7c-be6e967b0730
+Path = /00000000-0000-0000-0000-000060683d75/2656a6d5-495c-457e-8cbd-e55a0191d2d9
+Reference = R12;
+ValeurCmp = LFX2R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = d778d7d1-55df-425d-9897-c3ceb7d61936
+Path = /00000000-0000-0000-0000-000060683d75/26e481c1-c89e-44e6-8a69-e715ce65c4f0
+Reference = R10;
+ValeurCmp = LCUE-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = db3578b2-97e6-4e48-8738-94becae9e68d
+Path = /00000000-0000-0000-0000-000060683d75/5178a22a-881f-45bd-a60e-36617dc391f6
+Reference = R51;
+ValeurCmp = VUMASRR6;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = df9f4c27-857c-45ca-9056-a1a4ce196058
+Path = /00000000-0000-0000-0000-000060683d75/b92928b7-f004-40f9-99a0-e91c4332f980
+Reference = R47;
+ValeurCmp = VUMASRR2;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = e16c24d4-205d-4899-a8fb-0c835a631c44
+Path = /00000000-0000-0000-0000-000060683d75/c604bf1e-676e-4863-bec6-2d7a7e40a0f6
+Reference = R23;
+ValeurCmp = L2HP-R;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+BeginCmp
+TimeStamp = f23d590e-6291-4aa4-b2b2-e6898859de13
+Path = /00000000-0000-0000-0000-000060683d75/be48bd58-5e8b-4b43-816f-c446ef94e1fc
+Reference = R39;
+ValeurCmp = VUMASLR2;
+IdModule  = Library:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder;
+EndCmp
+
+EndListe

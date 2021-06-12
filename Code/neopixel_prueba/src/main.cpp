@@ -26,15 +26,14 @@ void loop()
     Npixel pixel(i, 1);
     npLeft.handleChange(pixel);
     delay(500);
+    npLeft.clear();
+    delay(500);
   }
-  npLeft.clear();
-  delay(500);
   for (size_t i = 0; i < nprTotal; i++)
   {
     Npixel pixel(i, 1);
     npRight.handleChange(pixel);
     delay(500);
+    npRight.clear();
   }
-  npRight.clear();
-  delay(500);
 }

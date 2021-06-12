@@ -1,6 +1,6 @@
 #include "NPKit.h"
 
-const byte BRIGHTNESS = 64;
+const byte BRIGHTNESS = 32;
 
 uint32_t CLEAR_COL  = Adafruit_NeoPixel::Color(0, 0, 0);
 uint32_t BLUE_COL   = Adafruit_NeoPixel::Color(0, 0, 255);

@@ -23,12 +23,12 @@ void loop()
 {
   for (size_t i = 0; i < nplTotal; i++)
   {
-    Npixel pixel(i, 1);
+    Npixel pixel(i, 6);
     npLeft.handleChange(pixel);
     delay(500);
   }
-  npLeft.clear();
   delay(500);
+  npRight.clear();
   for (size_t i = 0; i < nprTotal; i++)
   {
     Npixel pixel(i, 1);
@@ -36,5 +36,6 @@ void loop()
     delay(500);
   }
   npRight.clear();
+  npLeft.clear();
   delay(500);
 }

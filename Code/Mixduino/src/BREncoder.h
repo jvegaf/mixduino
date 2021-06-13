@@ -10,8 +10,9 @@ class BREncoder
 {
 	private:
 		long oldPosition;
+		Encoder* enc;
 	public:
-		BREncoder();
+		BREncoder(byte pin_a, byte pin_b);
 		void readEnc(void (*scc_func)(byte, byte, byte));
 };
 #endif

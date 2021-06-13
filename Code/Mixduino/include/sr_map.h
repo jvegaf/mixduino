@@ -85,20 +85,22 @@ const byte VUL3_7          = 39;
 
 ///////////////////////////////////
 // FB RIGHT
-const byte HP_L3           = 1;
-const byte PLAY_R          = 2;
-const byte CUE_R           = 3;
+const byte HP_L3           = 0;
+const byte PLAY_R          = 1;
+const byte CUE_R           = 2;
+const byte LOOP_R          = 3;
 const byte FX3_R           = 4;
 const byte FX2_R           = 5;
 const byte FX1_R           = 6;
 
 ////////////////////////////////////
 // FB LEFT
-const byte CUE_L           = 9;
-const byte PLAY_L          = 10;
-const byte FX1_L           = 11;
-const byte FX2_L           = 12;
-const byte FX3_L           = 13;
+const byte FX3_L           = 8;
+const byte FX2_L           = 9;
+const byte FX1_L           = 10;
+const byte PLAY_L          = 11;
+const byte CUE_L           = 12;
+const byte LOOP_L          = 13;
 const byte HP_L1           = 14;
 const byte HP_L2           = 15;
 

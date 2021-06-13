@@ -22,8 +22,10 @@ class MDCore
 
 	private:
 		void vuChange(byte number, byte value);
-		void npChange(Align al, byte position, byte value);
+		void npPadChange(Align al, byte position, byte value);
+		void npFBChange(Align al, byte position, byte value);
 		void setInitialDeckB();
+
 
 
 

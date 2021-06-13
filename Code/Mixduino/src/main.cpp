@@ -6,10 +6,11 @@
 #include "BREncoder.h"
 #include "BtnKit.h"
 #include "PotKit.h"
-
+// Rev5 version
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-BREncoder brEnc;
+BREncoder encL(L_BROWSER_A, L_BROWSER_B);
+BREncoder encR(R_BROWSER_A, R_BROWSER_B);
 BtnKit buttons;
 PotKit pots;
 MDCore mdCore;
@@ -93,8 +94,8 @@ void readPots()
 
 void readEncoder()
 {
-
-  brEnc.readEnc(sendMidiCC);
+  encL.readEnc(sendMidiCC);
+  encR.readEnc(sendMidiCC);
 }
 
 void sendMidiNote(byte number, byte value, byte channel)

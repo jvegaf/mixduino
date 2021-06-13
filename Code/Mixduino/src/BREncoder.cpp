@@ -1,16 +1,15 @@
 #include "BREncoder.h"
 
-Encoder enc(BROWSER_A, BROWSER_B);
-
-BREncoder::BREncoder()
+BREncoder::BREncoder(byte pin_a, byte pin_b)
 {
+  enc = new Encoder(pin_a, pin_b);
   oldPosition = -10;
 }
 
 void BREncoder::readEnc(void (*scc_func)(byte, byte, byte))
 {
 
-  int newPosition = enc.read();
+  int newPosition = enc->read();
 
   if (newPosition != oldPosition)
   {

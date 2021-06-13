@@ -6,6 +6,7 @@
 #include "BREncoder.h"
 #include "BtnKit.h"
 #include "PotKit.h"
+// Rev2 Version
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 

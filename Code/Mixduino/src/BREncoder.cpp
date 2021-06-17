@@ -1,21 +1,21 @@
 #include "BREncoder.h"
 
-Encoder enc(BROWSER_A, BROWSER_B);
+Encoder encL();
+int encodersTotal = 2;
+Encoder encoders[] = {Encoder(L_BROWSER_A, L_BROWSER_B), Encoder (R_BROWSER_A, R_BROWSER_B)};
+long oldPositions[] = { -999, -999 };
 
-BREncoder::BREncoder()
-{
-  oldPosition = -10;
-}
+BREncoder::BREncoder() { }
 
 void BREncoder::readEnc(void (*scc_func)(byte, byte, byte))
 {
-
-  int newPosition = enc.read();
-
-  if (newPosition != oldPosition)
+  for (int i = 0; i < encodersTotal; i++)
   {
+    long newPosition = encoders[i].read();
 
-    if ((newPosition - oldPosition) > 0)
+    if (newPosition == oldPositions[i]) { continue; }
+
+    if (newPosition - oldPositions[i] > 0)
     {
       scc_func(14, 127, 1);
     }
@@ -23,7 +23,6 @@ void BREncoder::readEnc(void (*scc_func)(byte, byte, byte))
     {
       scc_func(14, 1, 1);
     }
-
-    oldPosition = newPosition;
+    oldPositions[i] = newPosition;
   }
 }

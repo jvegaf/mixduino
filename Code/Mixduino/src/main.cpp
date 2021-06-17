@@ -40,8 +40,6 @@ void setup()
   buttons.begin();
   pots.begin();
   mdCore.begin();
-  // Set Deck B Focus
-  MIDI.sendNoteOn(1, 127, 9);
 
   /////////////////////////////////////////////
   // threads

@@ -3,7 +3,6 @@
 #define ARDUINO_MDCORE_H
 #include <Arduino.h>
 #include <Npixel.h>
-#include <Align.h>
 #include "SRKit.h"
 #include "NPKit.h"
 #include "pin_map.h"
@@ -22,10 +21,8 @@ class MDCore
 
 	private:
 		void vuChange(byte number, byte value);
-		void npChange(Align al, byte position, byte value);
+		void npChange(byte position, byte value);
 		void setInitialDeckB();
-
-
 
 };
 #endif

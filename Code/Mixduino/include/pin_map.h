@@ -40,13 +40,11 @@ byte const SWPADR_8       = 25;
 //////////////////////////////////////
 // LEFT BUTTONS
 
-byte const SWFXL_1        = 7;
-byte const SWFXL_2        = 6;
-byte const SWFXL_3        = 5;
-byte const SWRANGE_L      = 16;
-byte const SWSYNC_L       = 8;
-byte const SWCUE_L        = 22;
-byte const SWPLAY_L       = 18;
+byte const SWFXL_1           = 7;
+byte const SWRANGE_L         = 16;
+byte const SWSYNC_L          = 8;
+byte const SWCUE_L           = 22;
+byte const SWPLAY_L          = 18;
 
 //////////////////////////////////////
 // RIGHT BUTTONS
@@ -68,8 +66,10 @@ byte const SWPLAY_R       = 9;
 //////////////////////////////////////
 // BROWSER
 
-byte const BROWSER_B      = 34;
-byte const BROWSER_A      = 36;
+byte const L_BROWSER_A        = 5;
+byte const L_BROWSER_B        = 6;
+byte const R_BROWSER_B      = 34;
+byte const R_BROWSER_A      = 36;
 byte const SWBR_PREVIEW   = 30;
 byte const SWBR_BACK      = 38; //browser view
 byte const SW_BROWSER_L   = 10;

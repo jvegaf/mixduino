@@ -5,6 +5,7 @@
 
 #pragma once
 
+// mod: now are all together with only one data input
 
 //////////////////////////////////////
 // NEOPIXELS LEFT
@@ -24,17 +25,17 @@ byte const NP_SYNC_L        = 9;
 //////////////////////////////////////
 // NEOPIXELS RIGHT
 
-byte const NP_PADR_1       = 7;
-byte const NP_PADR_2       = 6;
-byte const NP_PADR_3       = 5;
-byte const NP_PADR_4       = 4;
-byte const NP_PADR_5       = 3;
-byte const NP_PADR_6       = 2;
-byte const NP_PADR_7       = 1;
-byte const NP_PADR_8       = 0;
-byte const NP_DECK_SEL     = 8;
-byte const NP_RANGE_R      = 9;
-byte const NP_SYNC_R       = 10;
+byte const NP_PADR_8       = 10;
+byte const NP_PADR_7       = 11;
+byte const NP_PADR_6       = 12;
+byte const NP_PADR_5       = 13;
+byte const NP_PADR_4       = 14;
+byte const NP_PADR_3       = 15;
+byte const NP_PADR_2       = 16;
+byte const NP_PADR_1       = 17;
+byte const NP_DECK_SEL     = 18;
+byte const NP_RANGE_R      = 19;
+byte const NP_SYNC_R       = 20;
 
 
 #endif

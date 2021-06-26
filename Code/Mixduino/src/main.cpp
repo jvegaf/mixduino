@@ -10,7 +10,7 @@
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-BREncoder brEnc;
+BREncoder enc;
 BtnKit buttons;
 PotKit pots;
 MDCore mdCore;
@@ -92,8 +92,7 @@ void readPots()
 
 void readEncoder()
 {
-
-  brEnc.readEnc(sendMidiCC);
+  enc.readEnc(sendMidiCC);
 }
 
 void sendMidiNote(byte number, byte value, byte channel)

@@ -3,6 +3,7 @@
 #define ARDUINO_BTNKIT_H
 #include <Arduino.h>
 #include <MIDI.h>
+#include "pin_map.h"
 
 class BtnKit  
 {

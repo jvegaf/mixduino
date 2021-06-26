@@ -1,7 +1,45 @@
 #include "BtnKit.h"
 
-const byte buttonPin[] = {3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 22, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 68};
-const byte nButtons = 41;
+const byte buttonPins[] = {
+    SWPADL_1,
+    SWPADL_2,
+    SWPADL_3,
+    SWPADL_4,
+    SWPADL_5,
+    SWPADL_6,
+    SWPADL_7,
+    SWPADL_8,
+    SWPADR_1,
+    SWPADR_2,
+    SWPADR_3,
+    SWPADR_4,
+    SWPADR_5,
+    SWPADR_6,
+    SWPADR_7,
+    SWPADR_8,
+    SWFXL_1,
+    SWRANGE_L,
+    SWSYNC_L,
+    SWCUE_L,
+    SWPLAY_L,
+    SWFXR_1,
+    SWFXR_2,
+    SWFXR_3,
+    SWRANGE_R,
+    SWSYNC_R,
+    SWCUE_R,
+    SWPLAY_R,
+    SW_PREVIEW,
+    SW_BACK,
+    SW_BROWSER_L,
+    SW_BROWSER_R,
+    DECK_SEL,
+    SWSHIFT,
+    SWPRECUE_L1,
+    SWPRECUE_L2,
+    SWPRECUE_L3,
+};
+const byte nButtons = 37;
 int buttonCState[nButtons] = {};
 int buttonPState[nButtons] = {};
 /////////////////////////////////////////////
@@ -13,7 +51,7 @@ void BtnKit::begin()
 {
     for (byte i = 0; i < nButtons; i++)
     {
-        pinMode(buttonPin[i], INPUT_PULLUP);
+        pinMode(buttonPins[i], INPUT_PULLUP);
     }
 }
 
@@ -22,7 +60,7 @@ void BtnKit::read(void (*func)(byte, byte, byte))
 {
     for (byte i = 0; i < nButtons; i++)
     {
-        buttonCState[i] = digitalRead(buttonPin[i]);
+        buttonCState[i] = digitalRead(buttonPins[i]);
     }
 
     for (byte i = 0; i < nButtons; i++)

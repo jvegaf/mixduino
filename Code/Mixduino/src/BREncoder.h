@@ -9,9 +9,7 @@
 class BREncoder  
 {
 	private:
-		long oldPositionL;
-		long oldPositionR;
-		void read();
+		
 	public:
 		BREncoder();
 		void readEnc(void (*scc_func)(byte, byte, byte));

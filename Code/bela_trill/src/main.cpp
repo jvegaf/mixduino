@@ -22,9 +22,9 @@ void loop() {
 
   if(trillSensor.getNumTouches() > 0) {
     for(int i = 0; i < trillSensor.getNumTouches(); i++) {
-        Serial.print(trillSensor.touchLocation(i));
-        Serial.print(" ");
-        Serial.print(trillSensor.touchSize(i));
+        Serial.print(trillSensor.touchLocation(i)/4);
+        // Serial.print(" ");
+        // Serial.print(trillSensor.touchSize(i));
         Serial.print(" ");
     }
     Serial.println("");

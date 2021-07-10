@@ -6,11 +6,13 @@
 #include "BREncoder.h"
 #include "BtnKit.h"
 #include "PotKit.h"
+#include "TouchKit.h"
 // Rev2 Version
 
 MIDI_CREATE_DEFAULT_INSTANCE();
 
 BREncoder enc;
+TouchKit touchBar;
 BtnKit buttons;
 PotKit pots;
 MDCore mdCore;
@@ -25,6 +27,7 @@ void handleNoteOff(byte channel, byte number, byte value);
 void readButtons();
 void readPots();
 void readEncoder();
+void readTouchBar();
 void sendMidiNote(byte number, byte value, byte channel);
 void sendMidiCC(byte number, byte value, byte channel);
 
@@ -37,6 +40,7 @@ void setup()
 
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
+  touchBar.begin();
   buttons.begin();
   pots.begin();
   mdCore.begin();
@@ -59,6 +63,7 @@ void loop()
   cpu.run();
   MIDI.read();
   readEncoder();
+  readTouchBar();
 }
 
 void handleControlChange(byte channel, byte number, byte value)
@@ -93,6 +98,11 @@ void readPots()
 void readEncoder()
 {
   enc.readEnc(sendMidiCC);
+}
+
+void readTouchBar()
+{
+  touchBar.touchRead(sendMidiCC);
 }
 
 void sendMidiNote(byte number, byte value, byte channel)

@@ -1,6 +1,7 @@
 #include "TouchKit.h"
 
-Trill trillSensor;
+Trill leftBar;
+Trill rightBar;
 
 TouchKit::TouchKit()
 {
@@ -8,20 +9,29 @@ TouchKit::TouchKit()
 
 void TouchKit::begin()
 {
-    trillSensor.setup(Trill::TRILL_BAR);
-    trillSensor.setScanSettings(0,9);
+    leftBar.setup(Trill::TRILL_BAR, 32);
+    leftBar.setScanSettings(0, 9);
+    rightBar.setup(Trill::TRILL_BAR, 33);
+    rightBar.setScanSettings(0, 9);
 }
 
 void TouchKit::touchRead(void (*scc_func)(byte, byte, byte))
 {
-    trillSensor.read();
+    leftBar.read();
 
-    if (trillSensor.getNumTouches() < 1)
+    if (leftBar.getNumTouches() > 0)
     {
-        return;
+        byte leftLoc = leftBar.touchLocation(0) / 25;
+
+        scc_func(14, leftLoc, 7);
     }
 
-    byte location = trillSensor.touchLocation(0)/25;
+    rightBar.read();
+    
+    if (rightBar.getNumTouches() > 0)
+    {
+        byte rightLoc = rightBar.touchLocation(0) / 25;
 
-    scc_func(14, location, 7);
+        scc_func(15, rightLoc, 7);
+    }
 }

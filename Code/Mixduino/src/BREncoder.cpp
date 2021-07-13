@@ -1,20 +1,19 @@
 #include "BREncoder.h"
 
-int encodersTotal = 2;
-Encoder encoders[] = {Encoder(L_BROWSER_A, L_BROWSER_B), Encoder(R_BROWSER_A, R_BROWSER_B)};
-long oldPositions[] = { -999, -999 };
+Encoder lEnc(L_BROWSER_A, L_BROWSER_B);
+Encoder rEnc(R_BROWSER_A, R_BROWSER_B);
+long oldLeft = -10;
+long oldRight = -20;
 
 BREncoder::BREncoder() {}
 
 void BREncoder::readEnc(void (*scc_func)(byte, byte, byte))
 {
-  for (int i = 0; i < encodersTotal; i++)
+  long newPLeft = lEnc.read();
+
+  if (newPLeft != oldLeft)
   {
-    long newPosition = encoders[i].read();
-
-    if (newPosition == oldPositions[i]) { return; }
-
-    if (newPosition - oldPositions[i] > 0)
+    if (newPLeft - oldLeft > 0)
     {
       scc_func(14, 127, 6);
     }
@@ -22,6 +21,22 @@ void BREncoder::readEnc(void (*scc_func)(byte, byte, byte))
     {
       scc_func(14, 1, 6);
     }
-    oldPositions[i] = newPosition;
+    oldLeft = newPLeft;
   }
+
+  long newPRight = rEnc.read();
+
+  if (newPRight != oldRight)
+  {
+    if (newPRight - oldRight > 0)
+    {
+      scc_func(15, 127, 6);
+    }
+    else
+    {
+      scc_func(15, 1, 6);
+    }
+    oldRight = newPRight;
+  }
+
 }

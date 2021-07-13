@@ -2,8 +2,8 @@
 
 Encoder lEnc(L_BROWSER_A, L_BROWSER_B);
 Encoder rEnc(R_BROWSER_A, R_BROWSER_B);
-long oldLeft = -10;
-long oldRight = -20;
+long oldLeft = -999;
+long oldRight = -999;
 
 BREncoder::BREncoder() {}
 
@@ -17,7 +17,7 @@ void BREncoder::readEnc(void (*scc_func)(byte, byte, byte))
     {
       scc_func(14, 127, 6);
     }
-    else
+    if (newPLeft - oldLeft < 0)
     {
       scc_func(14, 1, 6);
     }
@@ -32,7 +32,7 @@ void BREncoder::readEnc(void (*scc_func)(byte, byte, byte))
     {
       scc_func(15, 127, 6);
     }
-    else
+    if (newPRight - oldRight < 0)
     {
       scc_func(15, 1, 6);
     }

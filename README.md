@@ -12,7 +12,7 @@ An evolution of Open Source DJ MIDI Controllers
 ## Note
 This project actually are WIP.
 ## Previews
-![preview](https://github.com/jvegaf/mixduino/blob/master/docs/images/Mixduino_rev5_v26-render.png)
+![preview](https://github.com/jvegaf/mixduino/blob/master/docs/images/Mixduino_rev5.png)
 </br>
 ![preview](https://github.com/jvegaf/mixduino/blob/master/docs/images/Mixduino.png)
 </br>

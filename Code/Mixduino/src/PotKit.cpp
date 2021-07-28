@@ -19,31 +19,24 @@ const byte muxPotPin[] = {
     MID_C,
 };
 const byte nMuxPots = 16;
-const byte aPinPots[] = { //without pfx mounted
+
+const byte aPinPots[] = {
     GAIN_L3,
     GAIN_L2,
     GAIN_L1,
+    PFXL_3,
+    PFXL_2,
+    PFXL_1,
+    PFXR_3,
+    PFXR_2,
+    PFXR_1,
     TRE_L3,
     TRE_L2,
     TRE_L1,
-    PMASTER};
-// const byte aPinPots[] = { //Complete
-//     GAIN_L3,
-//     GAIN_L2,
-//     GAIN_L1,
-//     PFXL_3,
-//     PFXL_2,
-//     PFXL_1,
-//     PFXR_3,
-//     PFXR_2,
-//     PFXR_1,
-//     TRE_L3,
-//     TRE_L2,
-//     TRE_L1,
-//     PMASTER
-// };
+    PMASTER
+};
 
-const byte nAPinPots = 7; //remember CHANGE VALUE after uncomment complete set
+const byte nAPinPots = 13;
 
 const byte totalPots = nAPinPots + nMuxPots;
 

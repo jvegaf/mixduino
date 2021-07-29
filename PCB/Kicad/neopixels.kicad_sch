@@ -263,7 +263,7 @@
     (uuid 545f40e1-fb4c-45f5-82c1-d4a81f388cba)
   )
 
-  (text "NEOPIXELS" (at 114.3 24.13 0)
+  (text "NEOPIXELS" (at 122.555 34.925 0)
     (effects (font (size 4 4)) (justify left bottom))
     (uuid 924b6e1b-8fc3-45e4-a0a4-1e3c21ed41db)
   )

@@ -1,4 +1,4 @@
-19574059223840061
+19571854243252050
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -9695,6 +9695,13 @@ connector Hirose FH12 horizontal
 55
 54
 Connector_FFC-FPC
+Hirose_FH41-30S-0.5SH_1x30_1MP_1SH_P0.5mm_Horizontal
+Hirose FH41, FFC/FPC connector, FH41-30S-0.5SH, 30 Pins per row (https://www.hirose.com/fr/product/document?clcode=CL0580-2218-5-05&productname=FH41-30S-0.5SH(05)&series=FH41&documenttype=2DDrawing&lang=fr&documentid=0001001704)
+connector Hirose FH41 horizontal
+0
+38
+32
+Connector_FFC-FPC
 JAE_FF0825SA1_2Rows-25Pins_P0.40mm_Horizontal
 Molex JAE 0.2mm pitch, 1mm overall height FFC/FPC connector, FF0825SA1, 25 Circuits (http://www.jae.com/z-en/pdf_download_exec.cfm?param=SJ108178.pdf), generated with kicad-footprint-generator
 connector JAE  top entry
@@ -9736,6 +9743,13 @@ connector JAE  top entry
 0
 81
 81
+Connector_FFC-FPC
+Molex_52559-3652_2x18-1MP_P0.5mm_Vertical
+Molex 0.50mm Pitch Easy-On Type FFC/FPC, 52559-3652, 36 Circuits (https://www.molex.com/pdm_docs/sd/525593652_sd.pdf)
+connector Molex top entry
+0
+40
+37
 Connector_FFC-FPC
 Molex_54132-5033_1x50-1MP_P0.5mm_Horizontal
 Molex FFC/FPC connector, 50 bottom-side contacts, 0.5mm pitch, 2.0mm height, https://www.molex.com/pdm_docs/sd/541325033_sd.pdf
@@ -51954,6 +51968,13 @@ Fuseholder horizontal open 5x20 Stelvio-Kontek PTF/78
 2
 2
 Fuse
+Fuseholder_Cylinder-5x20mm_Wuerth_696103101002-SMD_Horizontal_Open
+Fuseholder horizontal open 5x20mm 250V 10A Würth 696103101002
+Fuseholder horizontal open 5x20mm 250V 10A
+0
+2
+2
+Fuse
 Fuseholder_Cylinder-6.3x32mm_Schurter_0031-8002_Horizontal_Open
 Fuseholder, horizontal, open, 6.3x32, Schurter, 0031.8002, https://www.schurter.com/en/datasheet/typ_OG__Holder__6.3x32.pdf
 Fuseholder horizontal open 6.3x32 Schurter 0031.8002
@@ -61460,6 +61481,20 @@ LFCSP NoLead
 59
 33
 Package_CSP
+LFCSP-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm
+LFCSP, 32 Pin (https://www.analog.com/media/en/technical-documentation/data-sheets/ADV7280.PDF#page=28), generated with kicad-footprint-generator ipc_noLead_generator.py
+LFCSP NoLead
+0
+37
+33
+Package_CSP
+LFCSP-32-1EP_5x5mm_P0.5mm_EP3.6x3.6mm_ThermalVias
+LFCSP, 32 Pin (https://www.analog.com/media/en/technical-documentation/data-sheets/ADV7280.PDF#page=28), generated with kicad-footprint-generator ipc_noLead_generator.py
+LFCSP NoLead
+0
+47
+33
+Package_CSP
 LFCSP-32-1EP_5x5mm_P0.5mm_EP3.25x3.25mm
 32-Lead Frame Chip Scale Package LFCSP (5mm x 5mm); (see http://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/lfcspcp/cp-32/CP_32_27.pdf
 LFCSP 0.5
@@ -68677,6 +68712,13 @@ HTSSOP SO
 21
 17
 Package_SO
+HTSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP2.74x3.86mm
+HTSSOP, 20 Pin (https://www.analog.com/media/en/technical-documentation/data-sheets/4011fb.pdf#page=24), generated with kicad-footprint-generator ipc_gullwing_generator.py
+HTSSOP SO
+0
+23
+21
+Package_SO
 HTSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP2.85x4mm
 HTSSOP, 20 Pin (https://pdfserv.maximintegrated.com/package_dwgs/21-0108.PDF U20E-1), generated with kicad-footprint-generator ipc_gullwing_generator.py
 HTSSOP SO
@@ -69074,6 +69116,20 @@ MSOP, 10 Pin (www.allegromicro.com/~/media/Files/Datasheets/A4952-3-Datasheet.as
 MSOP SO
 0
 20
+11
+Package_SO
+MSOP-10-1EP_3x3mm_P0.5mm_EP2.2x3.1mm_Mask1.83x1.89mm
+MSOP, 10 Pin (https://www.ti.com/lit/ds/symlink/xtr111.pdf#page=27), generated with kicad-footprint-generator ipc_gullwing_generator.py
+MSOP SO
+0
+16
+11
+Package_SO
+MSOP-10-1EP_3x3mm_P0.5mm_EP2.2x3.1mm_Mask1.83x1.89mm_ThermalVias
+MSOP, 10 Pin (https://www.ti.com/lit/ds/symlink/xtr111.pdf#page=27), generated with kicad-footprint-generator ipc_gullwing_generator.py
+MSOP SO
+0
+23
 11
 Package_SO
 MSOP-10_3x3mm_P0.5mm
@@ -77503,6 +77559,27 @@ rotary encoder
 0
 5
 4
+SamacSys_Parts
+NE555DR
+D (R-PDSO-G8)
+Integrated Circuit
+0
+8
+8
+SamacSys_Parts
+PTA60432215DPB103
+PTA6043-2215DPB103-3
+Variable Resistor
+0
+7
+7
+SamacSys_Parts
+SOIC127P1032X265-24N
+SOT137-1
+Integrated Circuit
+0
+24
+24
 Sensor
 Aosong_DHT11_5.5x12.0_P2.54mm
 Temperature and humidity module, http://akizukidenshi.com/download/ds/aosong/DHT11.pdf

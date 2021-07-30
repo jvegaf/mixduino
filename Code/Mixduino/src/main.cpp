@@ -24,6 +24,8 @@ Thread threadReadButtons; // thread para controlar os botoes
 void handleControlChange(byte channel, byte number, byte value);
 void handleNoteOn(byte channel, byte number, byte value);
 void handleNoteOff(byte channel, byte number, byte value);
+void midiSetup();
+void threadsSetup();
 void readButtons();
 void readPots();
 void readEncoder();
@@ -33,29 +35,12 @@ void sendMidiCC(byte number, byte value, byte channel);
 
 void setup()
 {
-  // Serial.begin(31250);
-  MIDI.setHandleControlChange(handleControlChange);
-  MIDI.setHandleNoteOn(handleNoteOn);
-  MIDI.setHandleNoteOff(handleNoteOff);
-
-  MIDI.begin(MIDI_CHANNEL_OMNI);
-  MIDI.turnThruOff();
+  midiSetup();
   touchBar.begin();
   buttons.begin();
   pots.begin();
   mdCore.begin();
-
-  /////////////////////////////////////////////
-  // threads
-  // pots
-  threadReadPots.setInterval(10);
-  threadReadPots.onRun(readPots);
-  cpu.add(&threadReadPots);
-
-  // buttons
-  threadReadButtons.setInterval(20);
-  threadReadButtons.onRun(readButtons);
-  cpu.add(&threadReadButtons);
+  threadsSetup();
 }
 
 void loop()
@@ -83,6 +68,29 @@ void handleNoteOn(byte channel, byte number, byte value)
 void handleNoteOff(byte channel, byte number, byte value)
 {
   mdCore.noteOff(channel, number, value);
+}
+
+void midiSetup()
+{
+  MIDI.setHandleControlChange(handleControlChange);
+  MIDI.setHandleNoteOn(handleNoteOn);
+  MIDI.setHandleNoteOff(handleNoteOff);
+
+  MIDI.begin(MIDI_CHANNEL_OMNI);
+  MIDI.turnThruOff();
+}
+
+void threadsSetup()
+{
+  // pots
+  threadReadPots.setInterval(10);
+  threadReadPots.onRun(readPots);
+  cpu.add(&threadReadPots);
+
+  // buttons
+  threadReadButtons.setInterval(20);
+  threadReadButtons.onRun(readButtons);
+  cpu.add(&threadReadButtons);
 }
 
 void readButtons()

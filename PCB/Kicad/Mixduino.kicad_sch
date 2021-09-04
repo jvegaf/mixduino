@@ -2288,9 +2288,9 @@
 
   (sheet (at 30.48 144.145) (size 49.53 13.335)
     (stroke (width 0.0006) (type solid) (color 0 0 0 0))
-    (fill (color 72 72 72 0.0000))
+    (fill (color 0 0 0 0.0000))
     (uuid 27ec6e33-6a27-4865-8f8e-aab38be2398e)
-    (property "Sheet name" "NeoPixelsSheet" (id 0) (at 30.48 143.5093 0)
+    (property "Sheet name" "NEOPIXELS" (id 0) (at 30.48 143.5093 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
     (property "Sheet file" "neopixels.kicad_sch" (id 1) (at 30.48 158.6237 0)
@@ -2300,7 +2300,7 @@
 
   (sheet (at 30.48 74.295) (size 49.53 13.335)
     (stroke (width 0) (type solid) (color 0 0 0 0))
-    (fill (color 72 72 72 0.0000))
+    (fill (color 0 0 0 0.0000))
     (uuid 00000000-0000-0000-0000-00006075470a)
     (property "Sheet name" "TOP POTS" (id 0) (at 30.48 73.7865 0)
       (effects (font (size 1.016 1.016)) (justify left bottom))
@@ -2330,11 +2330,11 @@
     (path "/18cba5ae-47fa-4a85-a9ce-5bc1978d3f88" (page "7"))
     (path "/27ec6e33-6a27-4865-8f8e-aab38be2398e" (page "7"))
     (path "/e43e7bae-0787-4a3c-8ec7-ad7b58132d1f" (page "12"))
-    (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b" (page ""))
-    (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989" (page ""))
-    (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913" (page ""))
-    (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43" (page ""))
-    (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540" (page ""))
+    (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b" (page "#"))
+    (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989" (page "#"))
+    (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913" (page "#"))
+    (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43" (page "#"))
+    (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540" (page "#"))
   )
 
   (symbol_instances

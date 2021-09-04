@@ -424,6 +424,7 @@
     "page_layout_descr_file": ""
   },
   "schematic": {
+    "annotate_start_num": 0,
     "drawing": {
       "default_bus_thickness": 12.0,
       "default_junction_size": 36.0,
@@ -437,16 +438,19 @@
       "intersheets_ref_show": false,
       "intersheets_ref_suffix": "",
       "junction_size_choice": 3,
+      "label_size_ratio": 0.3,
       "pin_symbol_size": 25.0,
       "text_offset_ratio": 0.3
     },
     "legacy_lib_dir": "",
     "legacy_lib_list": [],
     "meta": {
-      "version": 0
+      "version": 1
     },
     "net_format_name": "KiCad",
     "ngspice": {
+      "fix_include_paths": true,
+      "fix_passive_vals": false,
       "meta": {
         "version": 0
       },
@@ -467,27 +471,47 @@
     ],
     [
       "00000000-0000-0000-0000-000060683d75",
-      "LedsSheet"
+      "VU Leds"
     ],
     [
       "00000000-0000-0000-0000-00006075470a",
-      "PotenciometersSheet"
-    ],
-    [
-      "00000000-0000-0000-0000-0000607fe61a",
-      "SwitchersSheet"
+      "TOP POTS"
     ],
     [
       "00000000-0000-0000-0000-0000605d0bae",
-      "ShiftRegistersSheet"
+      "FEEDBACK Leds"
     ],
     [
       "18cba5ae-47fa-4a85-a9ce-5bc1978d3f88",
-      "MultiplexersSheet"
+      "MPX SW BTNS"
     ],
     [
       "27ec6e33-6a27-4865-8f8e-aab38be2398e",
       "NeoPixelsSheet"
+    ],
+    [
+      "e43e7bae-0787-4a3c-8ec7-ad7b58132d1f",
+      "BOTTOM POTS"
+    ],
+    [
+      "d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b",
+      "VU Line 1 Sheet"
+    ],
+    [
+      "352f359b-1f4d-4aa1-988c-1006e0038989",
+      "VU Line 2"
+    ],
+    [
+      "7e6c461e-b153-4f89-9fb9-2d3cd238f913",
+      "VU Line 3 "
+    ],
+    [
+      "2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43",
+      "VU Master Left"
+    ],
+    [
+      "52615418-7e59-480e-bc5e-b4080c51c540",
+      "VU Master Right"
     ]
   ],
   "text_variables": {}

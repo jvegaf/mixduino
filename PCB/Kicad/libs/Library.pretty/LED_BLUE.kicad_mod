@@ -1,5 +1,5 @@
 (footprint "LED_BLUE" (version 20210824) (generator pcbnew) (layer "F.Cu")
-  (tedit 61352B30)
+  (tedit 61354714)
   (descr "LED, diameter 3.0mm, 2 pins")
   (tags "LED diameter 3.0mm 2 pins")
   (attr through_hole)
@@ -26,8 +26,8 @@
   (fp_circle (center 1.27 0) (end 2.77 0) (layer "F.Fab") (width 0.1) (fill none) (tstamp c9722cef-1348-47b7-83d5-740ea3d10d5a))
   (pad "1" thru_hole rect locked (at 0 0) (size 1.8 1.8) (drill 0.9) (layers *.Cu *.Mask) (tstamp a1483d1b-de6b-4817-93da-b778615002a8))
   (pad "2" thru_hole circle locked (at 2.54 0) (size 1.8 1.8) (drill 0.9) (layers *.Cu *.Mask) (tstamp c079fc88-2037-4655-9db7-16781cd04932))
-  (model "${KICAD6_3DMODEL_DIR}/LED_THT.3dshapes/LED_D3.0mm.wrl"
-    (offset (xyz 0 0 0))
+  (model "${KIPRJMOD}/3d-models/LED D3 - Blue_cutted.step"
+    (offset (xyz 1.3 0 2))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
   )

@@ -1,4 +1,4 @@
-19683277962295097
+19686539966660335
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -56686,6 +56686,13 @@ ELAST_PAD_SQUARE_10MM_4X4WIDE
 2
 2
 Library
+JST_XHP_XH-A-1_1x04_P2.54mm_Horizontal
+JST XH series connector, S4B-XH-A-1 (http://www.jst-mfg.com/product/pdf/eng/eXH.pdf), generated with kicad-footprint-generator
+connector JST XH horizontal
+0
+4
+4
+Library
 LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder
 LED SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
 LED handsolder
@@ -56694,22 +56701,22 @@ LED handsolder
 2
 Library
 LED_BLUE
-LED_Rectangular, Rectangular,  Rectangular size 3.0x2.0mm^2, 2 pins, http://www.kingbright.com/attachments/file/psearch/000/00/00/L-169XCGDK(Ver.9B).pdf
-LED_Rectangular Rectangular  Rectangular size 3.0x2.0mm^2 2 pins
+LED, diameter 3.0mm, 2 pins
+LED diameter 3.0mm 2 pins
 0
 2
 2
 Library
 LED_GREEN
-LED_Rectangular, Rectangular,  Rectangular size 3.0x2.0mm^2, 2 pins, http://www.kingbright.com/attachments/file/psearch/000/00/00/L-169XCGDK(Ver.9B).pdf
-LED_Rectangular Rectangular  Rectangular size 3.0x2.0mm^2 2 pins
+LED, diameter 3.0mm, 2 pins
+LED diameter 3.0mm 2 pins
 0
 2
 2
 Library
 LED_RED
-LED_Rectangular, Rectangular,  Rectangular size 3.0x2.0mm^2, 2 pins, http://www.kingbright.com/attachments/file/psearch/000/00/00/L-169XCGDK(Ver.9B).pdf
-LED_Rectangular Rectangular  Rectangular size 3.0x2.0mm^2 2 pins
+LED, diameter 3.0mm, 2 pins
+LED diameter 3.0mm 2 pins
 0
 2
 2
@@ -56722,8 +56729,8 @@ LED RGB NeoPixel
 4
 Library
 LED_YELLOW
-LED_Rectangular, Rectangular,  Rectangular size 3.0x2.0mm^2, 2 pins, http://www.kingbright.com/attachments/file/psearch/000/00/00/L-169XCGDK(Ver.9B).pdf
-LED_Rectangular Rectangular  Rectangular size 3.0x2.0mm^2 2 pins
+LED, diameter 3.0mm, 2 pins
+LED diameter 3.0mm 2 pins
 0
 2
 2
@@ -56780,6 +56787,13 @@ Library
 SW_PUSH_6mm_H8mm
 tactile push button, 6x6mm e.g. PHAP33xx series, height=5mm
 tact sw push 6mm
+0
+4
+2
+Library
+SW_Push_1P1T_NO_6x6mm_H8mm
+tactile push button, 6x6mm e.g. PTS645xx series, height=9.5mm
+tact sw push 6mm smd
 0
 4
 2

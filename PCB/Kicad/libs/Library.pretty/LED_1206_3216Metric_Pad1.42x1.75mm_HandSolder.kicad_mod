@@ -1,5 +1,5 @@
 (footprint "LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" (version 20210824) (generator pcbnew) (layer "F.Cu")
-  (tedit 5F68FEF1)
+  (tedit 613406B6)
   (descr "LED SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator")
   (tags "LED handsolder")
   (attr smd)
@@ -30,6 +30,11 @@
   (pad "1" smd roundrect (at -1.4875 0) (size 1.425 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.175439) (tstamp dbba2275-1ed2-4a4d-9f9e-d1e9b83d6887))
   (pad "2" smd roundrect (at 1.4875 0) (size 1.425 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.175439) (tstamp 5b569f3d-3cc9-40b6-8302-386ce529ce56))
   (model "${KICAD6_3DMODEL_DIR}/LED_SMD.3dshapes/LED_1206_3216Metric.wrl"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
+  (model "${KIPRJMOD}/3d-models/Surface Mount Chip LED 3.2x1.6mm 2.stp"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

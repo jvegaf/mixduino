@@ -16,7 +16,9 @@ This project actually are WIP.
 </br>
 ![preview](https://github.com/jvegaf/mixduino/blob/tmp/docs/images/Mixduino.png)
 </br>
-![previewTop](https://github.com/jvegaf/mixduino/blob/tmp/docs/images/Mixduino-back.png)
+![previewTop](https://github.com/jvegaf/mixduino/blob/tmp/docs/images/Mixduino-top.png)
+</br>
+![previewBack](https://github.com/jvegaf/mixduino/blob/tmp/docs/images/Mixduino-back.png)
 </br>
 ![previewPCB](https://github.com/jvegaf/mixduino/blob/master/docs/images/Mixduino-pcb.png)
 

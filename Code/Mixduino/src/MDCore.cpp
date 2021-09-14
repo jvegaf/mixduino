@@ -1,16 +1,6 @@
 #include "MDCore.h"
 
-byte vuValues[] = {
-    B00000000,
-    B00000001,
-    B00000011,
-    B00000111,
-    B00001111,
-    B00011111,
-    B00111111,
-    B01111111,
-    B11111111,
-};
+
 byte regsVU[] = {0, 0, 0, 0, 0};
 int fbRegs = 0;
 byte noteSet[] = {0, MONITOR_CUE_C, PLAY_DECK_B, CUE_DECK_B, FX2_BTN_3, FX2_BTN_2, FX2_BTN_1, 0, 0, CUE_DECK_A, PLAY_DECK_A, FX1_BTN_1, FX1_BTN_2, FX1_BTN_3, MONITOR_CUE_A, MONITOR_CUE_B};

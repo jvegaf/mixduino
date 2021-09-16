@@ -123,10 +123,6 @@
         {
           "diameter": 0.0,
           "drill": 0.0
-        },
-        {
-          "diameter": 1.2,
-          "drill": 0.8
         }
       ],
       "zones_allow_external_fillets": false,
@@ -445,7 +441,7 @@
     "legacy_lib_dir": "",
     "legacy_lib_list": [],
     "meta": {
-      "version": 1
+      "version": 0
     },
     "net_format_name": "KiCad",
     "ngspice": {

@@ -1,4 +1,4 @@
-(kicad_sch (version 20210621) (generator eeschema)
+(kicad_sch (version 20210615) (generator eeschema)
 
   (uuid 98ff6372-fa01-4505-ae0c-0940606341ac)
 
@@ -298,7 +298,7 @@
     )
   )
 
-  (junction (at 133.35 118.11) (diameter 0) (color 0 0 0 0))
+  (junction (at 133.35 118.11) (diameter 0.9144) (color 0 0 0 0))
 
   (no_connect (at 161.29 97.155) (uuid 3968e206-6650-4b68-928f-cf0a556621f6))
   (no_connect (at 161.29 99.695) (uuid 24c61e18-7e41-4d03-8f4f-33085f4c3cf5))

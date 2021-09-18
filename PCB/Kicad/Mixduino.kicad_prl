@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 31,
+    "active_layer": 37,
     "active_layer_preset": "",
     "auto_track_width": false,
     "hidden_nets": [
@@ -14,7 +14,6 @@
       "Net-(D8-Pad2)",
       "Net-(D9-Pad2)",
       "Net-(D12-Pad1)",
-      "VCC",
       "Net-(D10-Pad2)",
       "Net-(D11-Pad2)",
       "Net-(D12-Pad2)",

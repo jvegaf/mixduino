@@ -2,9 +2,8 @@
 #include <MIDI.h>
 #include "SRManager.h"
 MIDI_CREATE_DEFAULT_INSTANCE();
-
-byte ccNumbers[2] = {12, 13}; 
-SRManager shiftManager(ccNumbers);
+ 
+SRManager shiftManager;
 
 
 /////////////////////////////////////////////
@@ -29,5 +28,7 @@ void loop() {
 }
 
 void handleControlChange(byte channel, byte number, byte value) {
-  shiftManager.handleChange(number, value);
+  if(channel == 2 && number == 0){
+    shiftManager.setLevel(value);
+  }
 }

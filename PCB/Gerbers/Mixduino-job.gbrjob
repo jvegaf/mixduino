@@ -3,9 +3,9 @@
     "GenerationSoftware": {
       "Vendor": "KiCad",
       "Application": "Pcbnew",
-      "Version": "(5.99.0-11071-g7fde05e8ee)"
+      "Version": "5.99.0-unknown-91e456113f~131~ubuntu20.04.1"
     },
-    "CreationDate": "2021-09-11T01:06:25+02:00"
+    "CreationDate": "2021-09-21T13:44:59+02:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
@@ -34,47 +34,47 @@
   ],
   "FilesAttributes": [
     {
-      "Path": "Mixduino-F_Cu.gbr",
+      "Path": "Mixduino-F_Cu.gtl",
       "FileFunction": "Copper,L1,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "Mixduino-B_Cu.gbr",
+      "Path": "Mixduino-B_Cu.gbl",
       "FileFunction": "Copper,L2,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "Mixduino-F_Paste.gbr",
+      "Path": "Mixduino-F_Paste.gtp",
       "FileFunction": "SolderPaste,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "Mixduino-B_Paste.gbr",
+      "Path": "Mixduino-B_Paste.gbp",
       "FileFunction": "SolderPaste,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "Mixduino-F_Silkscreen.gbr",
+      "Path": "Mixduino-F_Silkscreen.gto",
       "FileFunction": "Legend,Top",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "Mixduino-B_Silkscreen.gbr",
+      "Path": "Mixduino-B_Silkscreen.gbo",
       "FileFunction": "Legend,Bot",
       "FilePolarity": "Positive"
     },
     {
-      "Path": "Mixduino-F_Mask.gbr",
+      "Path": "Mixduino-F_Mask.gts",
       "FileFunction": "SolderMask,Top",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "Mixduino-B_Mask.gbr",
+      "Path": "Mixduino-B_Mask.gbs",
       "FileFunction": "SolderMask,Bot",
       "FilePolarity": "Negative"
     },
     {
-      "Path": "Mixduino-Edge_Cuts.gbr",
+      "Path": "Mixduino-Edge_Cuts.gm1",
       "FileFunction": "Profile",
       "FilePolarity": "Positive"
     }

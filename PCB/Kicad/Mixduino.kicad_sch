@@ -1,4 +1,4 @@
-(kicad_sch (version 20210615) (generator eeschema)
+(kicad_sch (version 20210621) (generator eeschema)
 
   (uuid fcfda24c-2f05-4fa7-b052-9a437ead5fa6)
 
@@ -2791,91 +2791,91 @@
       (reference "#PWR0148") (unit 1) (value "GND") (footprint "")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/2837d2f6-06d4-4a8e-9c5b-48b57f12492c"
-      (reference "D1") (unit 1) (value "D-PCUEL3") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D1") (unit 1) (value "D-PCUEL3") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/39640bc4-ecd6-48fb-bf94-36c92e6aa05f"
-      (reference "D2") (unit 1) (value "D-LOOP-R") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D2") (unit 1) (value "D-LOOP-R") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/3759a5f2-57ca-460f-a857-b887aa5e79ec"
-      (reference "D3") (unit 1) (value "D-FX3-R") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D3") (unit 1) (value "D-FX3-R") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/0a6c1687-f37b-4aa2-b1a4-c8e7ff343eae"
-      (reference "D4") (unit 1) (value "D-FX2-R") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D4") (unit 1) (value "D-FX2-R") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/2b6e2171-6f8b-4eda-87df-0ac00ab23248"
-      (reference "D5") (unit 1) (value "D-FX1-R") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D5") (unit 1) (value "D-FX1-R") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/f4cad8ec-43d6-4a13-8562-46d6929c47e0"
-      (reference "D6") (unit 1) (value "D-FX3-L") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D6") (unit 1) (value "D-FX3-L") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/27a70373-7421-45e5-99aa-28121c6d7d57"
-      (reference "D7") (unit 1) (value "D-FX2-L") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D7") (unit 1) (value "D-FX2-L") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/cf125e00-c5ab-4f99-a712-9c8bf404c180"
-      (reference "D8") (unit 1) (value "D-FX1-L") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D8") (unit 1) (value "D-FX1-L") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/e18850c4-c885-4ee4-9ba6-02f80b6b9321"
-      (reference "D9") (unit 1) (value "D-LOOP-L") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D9") (unit 1) (value "D-LOOP-L") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/542317b2-778e-408a-9a03-0d40a34cc380"
-      (reference "D10") (unit 1) (value "D-PCUE1") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D10") (unit 1) (value "D-PCUE1") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/b74d89d1-9e61-4a97-8109-7b5f6c34d9d7"
-      (reference "D11") (unit 1) (value "D-PCUE2") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D11") (unit 1) (value "D-PCUE2") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/d643743f-70df-4744-b7fb-8fe64636335e"
-      (reference "D12") (unit 1) (value "D-PLAYR") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D12") (unit 1) (value "D-PLAYR") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/7fb35109-6d94-41cb-9a78-6de10e4c7f98"
-      (reference "D13") (unit 1) (value "D-PLAYL") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D13") (unit 1) (value "D-PLAYL") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/13aab7ee-b0de-40a6-a5dd-e8ff6a223043"
-      (reference "D14") (unit 1) (value "D-PLAYR") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D14") (unit 1) (value "D-PLAYR") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/6f5f66ee-1ba6-4f9e-8df3-5bdea622b13b"
-      (reference "D15") (unit 1) (value "D-PLAYL") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D15") (unit 1) (value "D-PLAYL") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/93f1bd8c-3e1c-4978-a378-e2c4a3c6cdfd"
-      (reference "D16") (unit 1) (value "D-PLAYR") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D16") (unit 1) (value "D-PLAYR") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/bdcbea9f-27dd-41c7-82de-a52a754b0040"
-      (reference "D17") (unit 1) (value "D-PLAYL") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D17") (unit 1) (value "D-PLAYL") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/07ec9c39-7695-4da1-8ec3-d3ee5928e1f7"
-      (reference "D18") (unit 1) (value "D-CUER") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D18") (unit 1) (value "D-CUER") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/1f957d5f-0cf6-40a7-8d18-b76f58f6b630"
-      (reference "D19") (unit 1) (value "D-CUEL") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D19") (unit 1) (value "D-CUEL") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/56f17ad2-6495-45a0-974e-e9ddf1bb84dd"
-      (reference "D20") (unit 1) (value "D-CUER") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D20") (unit 1) (value "D-CUER") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/59d46589-a3be-4f50-8932-e2f7dd0c6c89"
-      (reference "D21") (unit 1) (value "D-CUEL") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D21") (unit 1) (value "D-CUEL") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/3347da50-4f22-4b39-9454-21fde12e7186"
-      (reference "D22") (unit 1) (value "D-CUER") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D22") (unit 1) (value "D-CUER") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-0000605d0bae/a17b208f-e4a5-4d06-9c00-e1bd622811e7"
-      (reference "D23") (unit 1) (value "D-CUEL") (footprint "Library:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
+      (reference "D23") (unit 1) (value "D-CUEL") (footprint "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/de42d3c5-74d5-40d6-af13-93ce8c4a215c"
-      (reference "D24") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
+      (reference "D24") (unit 1) (value "VUL1D1") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/9a6fa14e-a4d2-4a0b-9462-09a4c5b661c2"
-      (reference "D25") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
+      (reference "D25") (unit 1) (value "VUL1D1") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/9067ed39-eba6-4aad-abdd-590d71a40b8c"
-      (reference "D26") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
+      (reference "D26") (unit 1) (value "VUL1D1") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/23e638fc-14fe-4a65-b982-89f6c944681d"
-      (reference "D27") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
+      (reference "D27") (unit 1) (value "VUL1D1") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/934e6e3d-595a-499f-bdf0-4a3ca920cbb6"
-      (reference "D28") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
+      (reference "D28") (unit 1) (value "VUL1D1") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/6bfac6e7-06a5-42e6-846c-eaa98cb5a9ee"
-      (reference "D29") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
+      (reference "D29") (unit 1) (value "VUL1D1") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/80c50c6d-86cd-4f03-b5e8-8510f5806c2f"
       (reference "D30") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
@@ -2887,40 +2887,40 @@
       (reference "D32") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/438fac6f-0527-45f8-966e-55c751402480"
-      (reference "D33") (unit 1) (value "VUL1D1") (footprint "Library:LED_YELLOW")
+      (reference "D33") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/d0d5d90e-3419-44b4-955d-57183b034e98"
-      (reference "D34") (unit 1) (value "VUL1D1") (footprint "Library:LED_YELLOW")
+      (reference "D34") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/6fc078be-3c6c-41f8-9a8a-310024ffb00c"
-      (reference "D35") (unit 1) (value "VUL1D1") (footprint "Library:LED_YELLOW")
+      (reference "D35") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/f7dfca09-5068-4607-a018-164c9a652047"
-      (reference "D36") (unit 1) (value "VUL1D1") (footprint "Library:LED_YELLOW")
+      (reference "D36") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/04cb23c6-6eb6-456d-a627-169ee0bc94ec"
-      (reference "D37") (unit 1) (value "VUL1D1") (footprint "Library:LED_RED")
+      (reference "D37") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/d54ed4a7-12c1-43b6-aca6-0c0808e5cb0b/9a2267c3-49a7-42e2-8b92-c3e06a5470e7"
-      (reference "D38") (unit 1) (value "VUL1D1") (footprint "Library:LED_RED")
+      (reference "D38") (unit 1) (value "VUL1D1") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/584a037b-9cda-4ced-9200-7b9dfccbeef4"
-      (reference "D39") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
+      (reference "D39") (unit 1) (value "VUL2D") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/95488c44-de39-41e1-a6d7-735264ed846f"
-      (reference "D40") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
+      (reference "D40") (unit 1) (value "VUL2D") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/5e8f892b-63ec-4ced-9d53-f2bba0e6a375"
-      (reference "D41") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
+      (reference "D41") (unit 1) (value "VUL2D") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/fdf77094-26de-46d5-b067-330893389f2d"
-      (reference "D42") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
+      (reference "D42") (unit 1) (value "VUL2D") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/e24145ce-20e3-495e-ab2e-e09810a2cb49"
-      (reference "D43") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
+      (reference "D43") (unit 1) (value "VUL2D") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/e809719c-4499-4cb8-a734-bf16620a25dd"
-      (reference "D44") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
+      (reference "D44") (unit 1) (value "VUL2D") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/ce2f5487-c38e-43bd-8fc6-e7aafb08a7ec"
       (reference "D45") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
@@ -2932,40 +2932,40 @@
       (reference "D47") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/f4b548ee-c670-4c80-9520-0c254ffa86d0"
-      (reference "D48") (unit 1) (value "VUL2D") (footprint "Library:LED_YELLOW")
+      (reference "D48") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/15a5e513-7cd9-433e-85aa-75c684e1371e"
-      (reference "D49") (unit 1) (value "VUL2D") (footprint "Library:LED_YELLOW")
+      (reference "D49") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/3dc57c54-6035-400a-aadf-4e47f264a2b8"
-      (reference "D50") (unit 1) (value "VUL2D") (footprint "Library:LED_YELLOW")
+      (reference "D50") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/46333350-04f7-411a-a3a5-fd5747e9fd8f"
-      (reference "D51") (unit 1) (value "VUL2D") (footprint "Library:LED_YELLOW")
+      (reference "D51") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/71b0042b-592c-495f-9087-e45753c429f7"
-      (reference "D52") (unit 1) (value "VUL2D") (footprint "Library:LED_RED")
+      (reference "D52") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/352f359b-1f4d-4aa1-988c-1006e0038989/a09b3802-6388-4961-8447-0d9867b9ad8d"
-      (reference "D53") (unit 1) (value "VUL2D") (footprint "Library:LED_RED")
+      (reference "D53") (unit 1) (value "VUL2D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/f12b0e79-a547-48f1-a09b-9332476c7135"
-      (reference "D54") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
+      (reference "D54") (unit 1) (value "VUL3D") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/83d7691f-aae8-4aa4-a81d-c3ca6b22b6b8"
-      (reference "D55") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
+      (reference "D55") (unit 1) (value "VUL3D") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/6c8ce0de-1aee-49f1-a1e7-850786a50179"
-      (reference "D56") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
+      (reference "D56") (unit 1) (value "VUL3D") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/9f662517-82ae-408d-9f87-5892db027029"
-      (reference "D57") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
+      (reference "D57") (unit 1) (value "VUL3D") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/2641feae-23af-45fe-9299-44b7b03b29ec"
-      (reference "D58") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
+      (reference "D58") (unit 1) (value "VUL3D") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/3bf89ecc-2d33-4f5c-857f-3cda14c286d5"
-      (reference "D59") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
+      (reference "D59") (unit 1) (value "VUL3D") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/3d3f234f-3b9e-408b-b3e2-5fc26c414824"
       (reference "D60") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
@@ -2977,40 +2977,40 @@
       (reference "D62") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/57abe04a-f351-417d-97cc-1bc03f05c74c"
-      (reference "D63") (unit 1) (value "VUL3D") (footprint "Library:LED_YELLOW")
+      (reference "D63") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/302ac951-2e8f-4811-b547-832c13b211c0"
-      (reference "D64") (unit 1) (value "VUL3D") (footprint "Library:LED_YELLOW")
+      (reference "D64") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/720958ba-fa4a-4515-a95b-84c1674523f4"
-      (reference "D65") (unit 1) (value "VUL3D") (footprint "Library:LED_YELLOW")
+      (reference "D65") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/30e28dbe-d193-45c1-a0de-45eb8698136b"
-      (reference "D66") (unit 1) (value "VUL3D") (footprint "Library:LED_YELLOW")
+      (reference "D66") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/131b9371-ace7-4f23-b0b3-e886e923463c"
-      (reference "D67") (unit 1) (value "VUL3D") (footprint "Library:LED_RED")
+      (reference "D67") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/7e6c461e-b153-4f89-9fb9-2d3cd238f913/f4c5add9-2af2-47d2-8065-9aa72c084bd2"
-      (reference "D68") (unit 1) (value "VUL3D") (footprint "Library:LED_RED")
+      (reference "D68") (unit 1) (value "VUL3D") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/5985fc4b-432d-4aec-bec9-4b25495fa5b0"
-      (reference "D69") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
+      (reference "D69") (unit 1) (value "VUMLD") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/f80480de-58eb-4bdb-aaaa-f890963ba0c0"
-      (reference "D70") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
+      (reference "D70") (unit 1) (value "VUMLD") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/8b1c6c13-933b-4501-a7ba-76b8791715f0"
-      (reference "D71") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
+      (reference "D71") (unit 1) (value "VUMLD") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/37b8bf22-6efd-47de-9340-ce1ff561055a"
-      (reference "D72") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
+      (reference "D72") (unit 1) (value "VUMLD") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/a18e50a7-050d-449e-a688-67f43612d400"
-      (reference "D73") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
+      (reference "D73") (unit 1) (value "VUMLD") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/224f6058-24ae-47d8-b738-52b91a01f9d6"
-      (reference "D74") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
+      (reference "D74") (unit 1) (value "VUMLD") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/710e9f67-b437-47cd-8d2c-6bbaced5b005"
       (reference "D75") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
@@ -3022,40 +3022,40 @@
       (reference "D77") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/5129ba97-ee7c-4bc8-8265-bfa1aea8b09d"
-      (reference "D78") (unit 1) (value "VUMLD") (footprint "Library:LED_YELLOW")
+      (reference "D78") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/c0d2649e-6e7e-45bb-ac5a-863d9f758ee6"
-      (reference "D79") (unit 1) (value "VUMLD") (footprint "Library:LED_YELLOW")
+      (reference "D79") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/2b928917-5dd2-4319-af54-00283e2a6da2"
-      (reference "D80") (unit 1) (value "VUMLD") (footprint "Library:LED_YELLOW")
+      (reference "D80") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/1312c039-5e47-4005-bd15-8bc1d3df6f4c"
-      (reference "D81") (unit 1) (value "VUMLD") (footprint "Library:LED_YELLOW")
+      (reference "D81") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/4591a003-aba5-4f15-a6b8-cca663641dbe"
-      (reference "D82") (unit 1) (value "VUMLD") (footprint "Library:LED_RED")
+      (reference "D82") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/2bcf8ad1-ee6c-4efe-8bf4-67e1c2aaad43/a6a958f3-4af3-4726-8eba-50db94ae5183"
-      (reference "D83") (unit 1) (value "VUMLD") (footprint "Library:LED_RED")
+      (reference "D83") (unit 1) (value "VUMLD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/dd6c2604-7272-42a5-9442-39554bda07b7"
-      (reference "D84") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
+      (reference "D84") (unit 1) (value "VUMRD") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/a8715535-f53d-4352-bcf2-2477a7ec2dcf"
-      (reference "D85") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
+      (reference "D85") (unit 1) (value "VUMRD") (footprint "Library:LED_RED")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/8d2b6a72-64e7-4235-8134-02c245bcb2af"
-      (reference "D86") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
+      (reference "D86") (unit 1) (value "VUMRD") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/5d78bead-d6b9-4a78-b5e3-2fbf2da5d9fd"
-      (reference "D87") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
+      (reference "D87") (unit 1) (value "VUMRD") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/6c74fb6e-3eb3-40a0-8735-bd464b51f790"
-      (reference "D88") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
+      (reference "D88") (unit 1) (value "VUMRD") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/dde15e53-d30d-4739-acf2-49c761f1aa25"
-      (reference "D89") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
+      (reference "D89") (unit 1) (value "VUMRD") (footprint "Library:LED_YELLOW")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/da1db3ef-dee7-4527-bbf5-4cbf6efca7be"
       (reference "D90") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
@@ -3067,22 +3067,22 @@
       (reference "D92") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/be7c4934-370c-47b4-b28c-5348ea944160"
-      (reference "D93") (unit 1) (value "VUMRD") (footprint "Library:LED_YELLOW")
+      (reference "D93") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/cd20a2ce-608a-4288-b532-42a9d7cd1b1c"
-      (reference "D94") (unit 1) (value "VUMRD") (footprint "Library:LED_YELLOW")
+      (reference "D94") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/0511fa8a-3462-4aaa-b3b6-46f3ff261498"
-      (reference "D95") (unit 1) (value "VUMRD") (footprint "Library:LED_YELLOW")
+      (reference "D95") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/f435b3c9-6b70-4314-a252-20f9e45b3223"
-      (reference "D96") (unit 1) (value "VUMRD") (footprint "Library:LED_YELLOW")
+      (reference "D96") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/bac92f2b-170a-41c9-99f1-9adb60843777"
-      (reference "D97") (unit 1) (value "VUMRD") (footprint "Library:LED_RED")
+      (reference "D97") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-000060683d75/52615418-7e59-480e-bc5e-b4080c51c540/b050e66f-c859-40cc-8660-e8aea01ae302"
-      (reference "D98") (unit 1) (value "VUMRD") (footprint "Library:LED_RED")
+      (reference "D98") (unit 1) (value "VUMRD") (footprint "Library:LED_GREEN")
     )
     (path "/00000000-0000-0000-0000-00006075470a/39f78618-4091-48d0-a0fc-8c1ffb823544"
       (reference "IC-MPLEX-1") (unit 1) (value "MP-TOP-POTS") (footprint "Library:SOIC-24W_7.5x15.4mm_P1.27mm")

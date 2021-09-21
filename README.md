@@ -14,11 +14,11 @@ This project actually are WIP.
 ## Previews
 ![preview](https://github.com/jvegaf/mixduino/blob/master/docs/images/Mixduino_rev5.png)
 </br>
-![preview](https://github.com/jvegaf/mixduino/blob/tmp/docs/images/Mixduino.png)
+![preview](https://github.com/jvegaf/mixduino/blob/master/docs/images/Mixduino.png)
 </br>
-![previewTop](https://github.com/jvegaf/mixduino/blob/tmp/docs/images/Mixduino-top.png)
+![previewTop](https://github.com/jvegaf/mixduino/blob/master/docs/images/Mixduino-top.png)
 </br>
-![previewBack](https://github.com/jvegaf/mixduino/blob/tmp/docs/images/Mixduino-back.png)
+![previewBack](https://github.com/jvegaf/mixduino/blob/master/docs/images/Mixduino-back.png)
 </br>
 ![previewPCB](https://github.com/jvegaf/mixduino/blob/master/docs/images/Mixduino-pcb.png)
 

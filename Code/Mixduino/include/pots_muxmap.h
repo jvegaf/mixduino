@@ -32,6 +32,7 @@ const byte topMuxpotsSet[] = {
     TREL2,
     TREL3
 };
+const byte nTopMuxpots = 11;
 
 // BOTTOM POTS
 byte const FADER_L2 = 1;
@@ -69,5 +70,7 @@ const byte bottomMuxpotsSet[] = {
     PMIX_HP,
     FADER_L3
 };
+
+const byte nBottomMuxPots = 16;
 
 #endif

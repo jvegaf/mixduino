@@ -63,4 +63,11 @@ byte const MPLEX_A4       = A4;
 byte const PFXR_1         = A0;
 byte const PMASTER        = A14;
 
+const byte aPotsSet[] = {
+    PFXR_1,
+    PMASTER
+};
+
+const byte nAPots = 2;
+
 #endif

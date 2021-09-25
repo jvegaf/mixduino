@@ -4,14 +4,13 @@
 #include <Arduino.h>
 #include <Multiplexer4067.h>
 #include "pin_map.h"
-#include "pots_map.h"
+#include "pots_muxmap.h"
 
 class PotKit  
 {
 	private:
 
 	public:
-
 		void begin();
 		void read(void (*scc_func)(byte, byte, byte));
 

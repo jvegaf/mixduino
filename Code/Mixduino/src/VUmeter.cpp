@@ -1,6 +1,6 @@
 #include "VUmeter.h"
 
-int vuValues[] = {
+int dataValues[] = {
     0,
     1,
     3,
@@ -29,20 +29,17 @@ void VUmeter::begin() {
 	pinMode(data_pin, OUTPUT);
 	pinMode(latch_pin, OUTPUT);
 	pinMode(clock_pin, OUTPUT);
-    digitalWrite(clock_pin, LOW);
-    digitalWrite(latch_pin, LOW);
     this->clear();
 }
 
 void VUmeter::setLevel(uint8_t level)
 {
+    int dataLevel = dataValues[level];
     digitalWrite(latch_pin, LOW);
-    int levelData = vuValues[level];
-    shiftOut(data_pin, clock_pin, LSBFIRST, levelData);
-    if (levelData > 255)
-    {
-        shiftOut(data_pin, clock_pin, LSBFIRST, (levelData >> 8));
-    }
+    // shift out lowbyte
+    shiftOut(data_pin, clock_pin, LSBFIRST, dataLevel);
+    // shift out highbyte
+    shiftOut(data_pin, clock_pin, LSBFIRST, (dataLevel >> 8));
     digitalWrite(latch_pin, HIGH);
 }
 

@@ -54,4 +54,6 @@ const byte NPSet[] = {
     NP_SYNC_R
 };
 
+const byte nNP = 21;
+
 #endif

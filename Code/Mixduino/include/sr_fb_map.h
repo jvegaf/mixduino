@@ -2,19 +2,20 @@
 #ifndef ARDUINO_SR_FB_MAP_H
 #define ARDUINO_SR_FB_MAP_H
 #include <Arduino.h>
+#include "midi_map.h"
 
 #pragma once
 
 ////////////////////////////////////
 // FB RIGHT
 
-const byte PCUEL3 = 0;
-const byte CUE_R  = 1;
-const byte PLAY_R = 2;
-const byte LOOP_R = 3;
-const byte FX3_R  = 4;
-const byte FX2_R  = 5;
-const byte FX1_R  = 6;
+const byte PCUEL3 = MONITOR_CUE_C;
+const byte CUE_R  = CUE_DECK_B;
+const byte PLAY_R = PLAY_DECK_B;
+const byte LOOP_R = LOOP_DECK_B;
+const byte FX3_R  = FX2_BTN_3;
+const byte FX2_R  = FX2_BTN_2;
+const byte FX1_R  = FX2_BTN_1;
 
 const byte fbRightSet[] = {
     PCUEL3,
@@ -26,16 +27,18 @@ const byte fbRightSet[] = {
     FX1_R
 };
 
+const byte nFbRight = 7;
+
 ////////////////////////////////////
 // FB LEFT
-const byte FX3_L  = 0;
-const byte FX2_L  = 1;
-const byte FX1_L  = 2;
-const byte PLAY_L = 3;
-const byte CUE_L  = 4;
-const byte LOOP_L = 5;
-const byte PCUEL2 = 6;
-const byte PCUEL1 = 7;
+const byte FX3_L  = FX1_BTN_3;
+const byte FX2_L  = FX1_BTN_2;
+const byte FX1_L  = FX1_BTN_1;
+const byte PLAY_L = PLAY_DECK_A;
+const byte CUE_L  = CUE_DECK_A;
+const byte LOOP_L = LOOP_DECK_A;
+const byte PCUEL2 = MONITOR_CUE_B;
+const byte PCUEL1 = MONITOR_CUE_A;
 
 const byte fbLeftSet[] = {
     FX3_L,
@@ -47,5 +50,7 @@ const byte fbLeftSet[] = {
     PCUEL2,
     PCUEL1
 };
+
+const byte nFbLeft = 8;
 
 #endif

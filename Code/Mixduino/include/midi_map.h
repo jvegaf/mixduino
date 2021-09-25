@@ -2,7 +2,6 @@
 #ifndef ARDUINO_MIDI_MAP_H
 #define ARDUINO_MIDI_MAP_H
 #include <Arduino.h>
-#include "sr_map.h"
 
 #pragma once
 
@@ -26,6 +25,9 @@ const byte PLAY_DECK_B         = 49; // c#3     & DECK_C
 
 const byte CUE_DECK_A          = 50; // d3
 const byte CUE_DECK_B          = 51; // d#3     & DECK_C
+
+const byte LOOP_DECK_A          = 52; // e3
+const byte LOOP_DECK_B          = 53; // f3     & DECK_C
 
 // Control Changes
 
@@ -61,10 +63,10 @@ const byte TEMPO_MASTER_DK_B   = 11;
 
 // channel 3 
 
-const byte MASTER_OUT_L        = 4;
-const byte MASTER_OUT_R        = 3;
-const byte LEVEL_DECK_A        = 2;
+const byte LEVEL_DECK_A        = 0;
 const byte LEVEL_DECK_B        = 1;
-const byte LEVEL_DECK_C        = 0;
+const byte LEVEL_DECK_C        = 2;
+const byte MASTER_OUT_L        = 3;
+const byte MASTER_OUT_R        = 4;
 
 #endif

@@ -1,24 +1,27 @@
 #include "MDCore.h"
 
 
-byte regsVU[] = {0, 0, 0, 0, 0};
-int fbRegs = 0;
-byte noteSet[] = {0, MONITOR_CUE_C, PLAY_DECK_B, CUE_DECK_B, FX2_BTN_3, FX2_BTN_2, FX2_BTN_1, 0, 0, CUE_DECK_A, PLAY_DECK_A, FX1_BTN_1, FX1_BTN_2, FX1_BTN_3, MONITOR_CUE_A, MONITOR_CUE_B};
-byte nSetAmount = 16;
-SRKit vuSR(SF_CLOCK, VU_SF_DATA, VU_LATCH, 5);
-Shifter fbackSR(FB_SF_DATA, FB_LATCH, SF_CLOCK, 2);
-NPKit npLPads(NP_L_PADS_DATA, 8);
-NPKit npLFB(NP_L_FB_DATA, 2);
-NPKit npRPads(NP_R_PADS_DATA, 8);
-NPKit npRFB(NP_R_FB_DATA, 3);
+VUmeter vuL1 = VUmeter(L1VU_SIG, L1VU_LATCH, SRCLK);
+VUmeter vuL2 = VUmeter(L2VU_SIG, L2VU_LATCH, SRCLK);
+VUmeter vuL3 = VUmeter(L3VU_SIG, L3VU_LATCH, SRCLK);
+VUmeter vuML = VUmeter(MLVU_SIG, MLVU_LATCH, SRCLK);
+VUmeter vuMR = VUmeter(MRVU_SIG, MRVU_LATCH, SRCLK);
+
+VUmeter vuSet[] = {vuL1, vuL2, vuL3, vuML, vuMR};
+
+Shifter fbRight(FBR_SIG, FBR_LATCH, SRCLK, 1);
+Shifter fbLeft(FBL_SIG, FBL_LATCH, SRCLK, 1);
+
+NPKit npk(NP_DATA, nNP);
 
 void MDCore::begin()
 {
-    vuSR.begin();
-    npLPads.begin();
-    npLFB.begin();
-    npRPads.begin();
-    npRFB.begin();
+    vuL1.begin();
+    vuL2.begin();
+    vuL3.begin();
+    vuML.begin();
+    vuMR.begin();
+    npk.begin();
     setInitialDeckB();
 }
 
@@ -29,17 +32,8 @@ void MDCore::cChange(byte channel, byte number, byte value)
     case 1: // VU
         vuChange(number, value);
         break;
-    case 2: // npLPADS
-        npPadChange(Align::LEFT, number, value);
-        break;
-    case 3: // npRPADS
-        npPadChange(Align::RIGHT, number, value);
-        break;
-    case 4: // npLFB
-        npFBChange(Align::LEFT, number, value);
-        break;
-    case 5: // npRFB
-        npFBChange(Align::RIGHT, number, value);
+    case 2: // NPixels
+        npChange(number, value);
         break;
 
     default:
@@ -49,77 +43,62 @@ void MDCore::cChange(byte channel, byte number, byte value)
 
 void MDCore::noteOn(byte channel, byte number, byte value)
 {
-    for (int i = 0; i < nSetAmount; i++)
+    for (byte i = 0; i < nFbRight; i++)
     {
-        if (noteSet[i] != number)
+        if (fbRightSet[i] == number)
         {
-            continue;
+            fbRight.setPin(i, HIGH);
+            fbRight.write();
+            return;
         }
-        fbackSR.setPin(i, HIGH);
-        fbackSR.write();
+    }
+
+    for (byte i = 0; i < nFbLeft; i++)
+    {
+        if (fbLeftSet[i] == number)
+        {
+            fbLeft.setPin(i, HIGH);
+            fbLeft.write();
+            return;
+        }
     }
 }
 
 void MDCore::noteOff(byte channel, byte number, byte value)
 {
-    for (int i = 0; i < nSetAmount; i++)
+    for (byte i = 0; i < nFbRight; i++)
     {
-        if (noteSet[i] != number)
+        if (fbRightSet[i] == number)
         {
-            continue;
+            fbRight.setPin(i, LOW);
+            fbRight.write();
+            return;
         }
-        fbackSR.setPin(i, LOW);
-        fbackSR.write();
+    }
+
+    for (byte i = 0; i < nFbLeft; i++)
+    {
+        if (fbLeftSet[i] == number)
+        {
+            fbLeft.setPin(i, LOW);
+            fbLeft.write();
+            return;
+        }
     }
 }
 
 void MDCore::vuChange(byte number, byte value)
 {
-    if (regsVU[number] != vuValues[value])
-    {
-        regsVU[number] = vuValues[value];
-        vuSR.sendState(regsVU);
-    }
+    vuSet[number].setLevel(value);
 }
 
-void MDCore::npPadChange(Align al, byte position, byte value)
+void MDCore::npChange(byte position, byte value)
 {
     Npixel pix(position, value);
-    switch (al)
-    {
-    case Align::LEFT:
-        npLPads.handleChange(pix);
-        break;
-
-    case Align::RIGHT:
-        npRPads.handleChange(pix);
-        break;
-
-    default:
-        break;
-    }
-}
-
-void MDCore::npFBChange(Align al, byte position, byte value)
-{
-    Npixel pix(position, value);
-    switch (al)
-    {
-    case Align::LEFT:
-        npLFB.handleChange(pix);
-        break;
-
-    case Align::RIGHT:
-        npRFB.handleChange(pix);
-        break;
-
-    default:
-        break;
-    }
+    npk.handleChange(pix);
 }
 
 void MDCore::setInitialDeckB()
 {
-    Npixel pix(NP_DECK_SEL, 1);
-    npRPads.handleChange(pix);
+    this->npChange(NP_DECK_SEL, 1);
 }

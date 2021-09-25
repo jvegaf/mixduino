@@ -1,31 +1,56 @@
 #include "BtnKit.h"
 
-const byte buttonPin[] = {3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 22, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 68};
-const byte nButtons = 41;
-int buttonCState[nButtons] = {};
-int buttonPState[nButtons] = {};
+const byte totalButtons = nASw + nSwMuxLeft + nSwMuxRight;
+int buttonCState[totalButtons] = {};
+int buttonPState[totalButtons] = {};
+
+Multiplexer4067 mplexSwLeft = Multiplexer4067(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
+Multiplexer4067 mplexSwRight = Multiplexer4067(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
+
 /////////////////////////////////////////////
 // debounce
 unsigned long lastDebounceTime = 0;
 unsigned long debounceDelay = 5;
 
+int BtnKit::parseValue(int value) {
+	if (value > 100)
+    {
+        return HIGH;
+    }
+    return LOW;
+}
+
 void BtnKit::begin()
 {
-    for (byte i = 0; i < nButtons; i++)
+    mplexSwLeft.begin();
+    mplexSwRight.begin();
+    for (byte i = 0; i < nASw; i++)
     {
-        pinMode(buttonPin[i], INPUT_PULLUP);
+        pinMode(aSwSet[i], INPUT_PULLUP);
     }
 }
 
 
 void BtnKit::read(void (*func)(byte, byte, byte))
 {
-    for (byte i = 0; i < nButtons; i++)
+
+    for (byte i = 0; i < nSwMuxLeft; i++)
     {
-        buttonCState[i] = digitalRead(buttonPin[i]);
+        buttonCState[i] = this->parseValue(mplexSwLeft.readChannel(SwMuxLeftSet[i]));
     }
 
-    for (byte i = 0; i < nButtons; i++)
+    for (byte i = 0; i < nSwMuxRight; i++)
+    {
+        buttonCState[i + nSwMuxLeft] = this->parseValue(mplexSwRight.readChannel(SWMuxRightSet[i]));
+    }
+    
+
+    for (byte i = 0; i < nASw; i++)
+    {
+        buttonCState[i + nSwMuxLeft + nSwMuxRight] = digitalRead(aSwSet[i]);
+    }
+
+    for (byte i = 0; i < totalButtons; i++)
     {
 
         if ((millis() - lastDebounceTime) > debounceDelay)

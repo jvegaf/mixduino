@@ -25,6 +25,27 @@ byte const SWPADL6   = 14;
 byte const SWPADL1   = 15;
 byte const SWPADL5   = 16;
 
+const byte SwMuxLeftSet[] = {
+    SWPCUEL2,
+    SWPCUEL1,
+    SWSHIFT,
+    SWLOOP_L,
+    SWSYNC_L,
+    SWRANGE_L,
+    SWPLAY_L,
+    SWCUE_L,
+    SWPADL8,
+    SWPADL4,
+    SWPADL7,
+    SWPADL3,
+    SWPADL2,
+    SWPADL6,
+    SWPADL1,
+    SWPADL5};
+
+const byte nSwMuxLeft = 16;
+
+
 //////////////////////////////////////
 // MUX RIGHT BUTTONS
 
@@ -44,23 +65,6 @@ byte const SWPADR6    = 14;
 byte const SWPADR1    = 15;
 byte const SWPADR5    = 16;
 
-const byte SWMuxLeftSet[] = {
-    SWPCUEL2,
-    SWPCUEL1,
-    SWSHIFT,
-    SWLOOP_L,
-    SWSYNC_L,
-    SWRANGE_L,
-    SWPLAY_L,
-    SWCUE_L,
-    SWPADL8,
-    SWPADL4,
-    SWPADL7,
-    SWPADL3,
-    SWPADL2,
-    SWPADL6,
-    SWPADL1,
-    SWPADL5};
 
 const byte SWMuxRightSet[] = {
     SWCUE_R,
@@ -77,6 +81,9 @@ const byte SWMuxRightSet[] = {
     SWPADR2,
     SWPADR6,
     SWPADR1,
-    SWPADR5};
+    SWPADR5
+};
+
+const byte nSwMuxRight = 15;
 
 #endif

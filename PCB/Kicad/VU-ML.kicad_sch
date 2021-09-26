@@ -1,4 +1,4 @@
-(kicad_sch (version 20210621) (generator eeschema)
+(kicad_sch (version 20210615) (generator eeschema)
 
   (uuid 2cbf8be0-8121-4283-97c4-d6caa3eda7c2)
 
@@ -1400,7 +1400,7 @@
     (uuid 7aee821e-36bd-4e78-ac47-cbdeb5472da2)
     (property "Reference" "U7" (id 0) (at 75.565 61.595 0))
     (property "Value" "SR1-ML" (id 1) (at 75.565 92.075 0))
-    (property "Footprint" "Library:SO-16_3.9x9.9mm_P1.27mm" (id 2) (at 83.185 75.565 0)
+    (property "Footprint" "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" (id 2) (at 83.185 75.565 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" (id 3) (at 83.185 75.565 0)
@@ -1429,7 +1429,7 @@
     (uuid 86dab858-4afa-4de6-b474-4b33141b25d3)
     (property "Reference" "U8" (id 0) (at 75.565 120.65 0))
     (property "Value" "SR2-ML" (id 1) (at 75.565 151.13 0))
-    (property "Footprint" "Library:SO-16_3.9x9.9mm_P1.27mm" (id 2) (at 83.185 134.62 0)
+    (property "Footprint" "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" (id 2) (at 83.185 134.62 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "http://www.ti.com/lit/ds/symlink/sn74hc595.pdf" (id 3) (at 83.185 134.62 0)

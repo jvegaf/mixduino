@@ -1249,7 +1249,7 @@
     (uuid 39f78618-4091-48d0-a0fc-8c1ffb823544)
     (property "Reference" "IC-MPLEX-1" (id 0) (at 148.59 80.645 0))
     (property "Value" "MP-TOP-POTS" (id 1) (at 148.59 83.185 0))
-    (property "Footprint" "Library:SOIC-24W_7.5x15.4mm_P1.27mm" (id 2) (at 157.48 84.455 0)
+    (property "Footprint" "Package_SO:SOIC-24W_7.5x15.4mm_P1.27mm" (id 2) (at 157.48 84.455 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
     (property "Datasheet" "https://assets.nexperia.com/documents/data-sheet/74HC_HCT4067.pdf" (id 3) (at 157.48 86.995 0)

@@ -1,4 +1,4 @@
-19721859346823433
+19734795355638299
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -41131,6 +41131,13 @@ RJ45 Magjack
 0
 14
 13
+Connector_RJ
+RJ45_Kycon_G7LX-A88S7-BP-xx_Horizontal
+10/100Base-T RJ45 ethernet magnetic transformer connector horizontal with green/yellow LEDs http://www.kycon.com/Pub_Eng_Draw/G7LX-A88S7-BP-GY.pdf
+RJ45 ethernet magnetic
+0
+16
+15
 Connector_RJ
 RJ45_Molex_0855135013_Vertical
 1 Port, RJ45, Series 85513, vertical, SMD, https://www.molex.com/pdm_docs/sd/855135013_sd.pdf

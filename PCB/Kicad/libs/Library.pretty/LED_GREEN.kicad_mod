@@ -1,5 +1,5 @@
 (footprint "LED_GREEN" (version 20210824) (generator pcbnew) (layer "F.Cu")
-  (tedit 6135487B)
+  (tedit 614FB2A1)
   (descr "LED, diameter 3.0mm, 2 pins")
   (tags "LED diameter 3.0mm 2 pins")
   (attr through_hole)

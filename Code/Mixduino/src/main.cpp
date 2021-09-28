@@ -6,6 +6,7 @@
 #include "BREncoder.h"
 #include "BtnKit.h"
 #include "PotKit.h"
+#include "TouchKit.h"
 // Rev5 version
 MIDI_CREATE_DEFAULT_INSTANCE();
 
@@ -14,6 +15,7 @@ BREncoder encR(R_BROWSER_A, R_BROWSER_B);
 BtnKit buttons;
 PotKit pots;
 MDCore mdCore;
+TouchKit touchBars;
 
 ThreadController cpu;     //thread master, onde as outras vao ser adicionadas
 Thread threadReadPots;    // thread para controlar os pots
@@ -25,6 +27,7 @@ void handleNoteOff(byte channel, byte number, byte value);
 void readButtons();
 void readPots();
 void readEncoder();
+void readTouchBars();
 void sendMidiNote(byte number, byte value, byte channel);
 void sendMidiCC(byte number, byte value, byte channel);
 
@@ -40,6 +43,7 @@ void setup()
   buttons.begin();
   pots.begin();
   mdCore.begin();
+  touchBars.begin();
   // Set Deck B Focus
   MIDI.sendNoteOn(1, 127, 9);
 
@@ -61,6 +65,7 @@ void loop()
   cpu.run();
   MIDI.read();
   readEncoder();
+  readTouchBars();
 }
 
 void handleControlChange(byte channel, byte number, byte value)
@@ -96,6 +101,11 @@ void readEncoder()
 {
   encL.readEnc(sendMidiCC);
   encR.readEnc(sendMidiCC);
+}
+
+void readTouchBars()
+{
+  touchBars.touchRead(sendMidiCC);
 }
 
 void sendMidiNote(byte number, byte value, byte channel)

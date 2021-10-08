@@ -414,7 +414,7 @@
       "idf": "",
       "netlist": "",
       "specctra_dsn": "",
-      "step": "Mixduino.step",
+      "step": "../STEP/Mixduino.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""

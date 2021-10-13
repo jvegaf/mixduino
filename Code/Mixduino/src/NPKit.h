@@ -11,7 +11,7 @@ class NPKit
 	private:
 		Adafruit_NeoPixel np;
 	public:
-		NPKit(byte dataPin, byte nPixels);
+		NPKit(uint8_t dataPin, uint8_t nPixels);
 		void begin();
 		void clear();
 		void handleChange(Npixel npx);

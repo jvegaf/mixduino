@@ -17,7 +17,7 @@ Muxer::Muxer(uint8_t s0, uint8_t s1, uint8_t s2, uint8_t s3, uint8_t sig)
     muxSIG = sig;
 }
 
-void Muxer::begin(uint8_t *mPins, uint8_t nPins, uint8_t midiCh)
+void Muxer::begin(const uint8_t *mPins, const uint8_t nPins, uint8_t midiCh)
 {
     totalMuxPins = nPins;
     muxPins = new uint8_t[totalMuxPins];

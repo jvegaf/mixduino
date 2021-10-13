@@ -8,29 +8,29 @@
 //////////////////////////////////////
 // NEOPIXELS
 
-byte const NP_PADL1    = 0;
-byte const NP_PADL2    = 1;
-byte const NP_PADL3    = 2;
-byte const NP_PADL4    = 3;
-byte const NP_PADL5    = 4;
-byte const NP_PADL6    = 5;
-byte const NP_PADL7    = 6;
-byte const NP_PADL8    = 7;
-byte const NP_RANGE_L  = 8;
-byte const NP_SYNC_L   = 9;
-byte const NP_PADR_1   = 10;
-byte const NP_PADR_2   = 11;
-byte const NP_PADR_3   = 12;
-byte const NP_PADR_4   = 13;
-byte const NP_PADR_5   = 14;
-byte const NP_PADR_6   = 15;
-byte const NP_PADR_7   = 16;
-byte const NP_PADR_8   = 17;
-byte const NP_DECK_SEL = 18;
-byte const NP_RANGE_R  = 19;
-byte const NP_SYNC_R   = 20;
+uint8_t const NP_PADL1    = 0;
+uint8_t const NP_PADL2    = 1;
+uint8_t const NP_PADL3    = 2;
+uint8_t const NP_PADL4    = 3;
+uint8_t const NP_PADL5    = 4;
+uint8_t const NP_PADL6    = 5;
+uint8_t const NP_PADL7    = 6;
+uint8_t const NP_PADL8    = 7;
+uint8_t const NP_RANGE_L  = 8;
+uint8_t const NP_SYNC_L   = 9;
+uint8_t const NP_PADR_1   = 10;
+uint8_t const NP_PADR_2   = 11;
+uint8_t const NP_PADR_3   = 12;
+uint8_t const NP_PADR_4   = 13;
+uint8_t const NP_PADR_5   = 14;
+uint8_t const NP_PADR_6   = 15;
+uint8_t const NP_PADR_7   = 16;
+uint8_t const NP_PADR_8   = 17;
+uint8_t const NP_DECK_SEL = 18;
+uint8_t const NP_RANGE_R  = 19;
+uint8_t const NP_SYNC_R   = 20;
 
-const byte NPSet[] = {
+const uint8_t NPSet[] = {
     NP_PADL1,
     NP_PADL2,
     NP_PADL3,
@@ -54,6 +54,6 @@ const byte NPSet[] = {
     NP_SYNC_R
 };
 
-const byte nNP = 21;
+const uint8_t nNP = 21;
 
 #endif

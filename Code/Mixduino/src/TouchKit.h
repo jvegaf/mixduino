@@ -10,7 +10,7 @@ class TouchKit
 	public:
 		TouchKit();
 		void begin();
-		void touchRead(void (*scc_func)(byte, byte, byte));
+		void touchRead(void (*scc_func)(uint8_t, uint8_t, uint8_t));
 
 };
 #endif

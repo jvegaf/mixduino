@@ -26,16 +26,16 @@ ThreadController cpu;     //thread master, onde as outras vao ser adicionadas
 Thread threadReadPots;    // thread para controlar os pots
 Thread threadReadButtons; // thread para controlar os botoes
 
-void handleControlChange(byte channel, byte number, byte value);
-void handleNoteOn(byte channel, byte number, byte value);
-void handleNoteOff(byte channel, byte number, byte value);
+void handleControlChange(uint8_t channel, uint8_t number, uint8_t value);
+void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value);
+void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value);
 void readButtons();
 void readPots();
 void readEncoder();
 void readTouchBars();
-void sendMidiNoteOn(byte number, byte value, byte channel);
-void sendMidiNoteOff(byte number, byte value, byte channel);
-void sendMidiCC(byte number, byte value, byte channel);
+void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel);
+void sendMidiNoteOff(uint8_t number, uint8_t value, uint8_t channel);
+void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel);
 
 void setup()
 {
@@ -76,12 +76,12 @@ void loop()
   readTouchBars();
 }
 
-void handleControlChange(byte channel, byte number, byte value)
+void handleControlChange(uint8_t channel, uint8_t number, uint8_t value)
 {
   mdCore.cChange(channel, number, value);
 }
 
-void handleNoteOn(byte channel, byte number, byte value)
+void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
   if (value < 1U)
   {
@@ -91,7 +91,7 @@ void handleNoteOn(byte channel, byte number, byte value)
   mdCore.noteOn(channel, number, value);
 }
 
-void handleNoteOff(byte channel, byte number, byte value)
+void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 {
   mdCore.noteOff(channel, number, value);
 }
@@ -119,17 +119,17 @@ void readTouchBars()
   touchBars.touchRead(sendMidiCC);
 }
 
-void sendMidiNoteOn(byte number, byte value, byte channel)
+void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel)
 {
   MIDI.sendNoteOn(number, value, channel);
 }
 
-void sendMidiNoteOff(byte number, byte value, byte channel)
+void sendMidiNoteOff(uint8_t number, uint8_t value, uint8_t channel)
 {
   MIDI.sendNoteOff(number, value, channel);
 }
 
-void sendMidiCC(byte number, byte value, byte channel)
+void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel)
 {
   MIDI.sendControlChange(number, value, channel);
 }

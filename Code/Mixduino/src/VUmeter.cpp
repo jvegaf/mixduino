@@ -36,9 +36,9 @@ void VUmeter::setLevel(uint8_t level)
 {
     int dataLevel = dataValues[level];
     digitalWrite(latch_pin, LOW);
-    // shift out lowbyte
+    // shift out lowuint8_t
     shiftOut(data_pin, clock_pin, LSBFIRST, dataLevel);
-    // shift out highbyte
+    // shift out highuint8_t
     shiftOut(data_pin, clock_pin, LSBFIRST, (dataLevel >> 8));
     digitalWrite(latch_pin, HIGH);
 }

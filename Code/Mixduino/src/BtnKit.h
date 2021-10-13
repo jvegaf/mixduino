@@ -20,7 +20,7 @@ private:
 	unsigned long* lastdebouncetime;
 	unsigned long debouncedelay = 20;
 public:
-	BtnKit(uint8_t *arduinoPins, uint8_t tPins); 
+	BtnKit(const uint8_t* arduinoPins, const uint8_t tPins); 
 	void begin(uint8_t midiCh);
 	void read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
 };

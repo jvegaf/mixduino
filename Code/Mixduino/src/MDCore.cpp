@@ -25,7 +25,7 @@ void MDCore::begin()
     setInitialDeckB();
 }
 
-void MDCore::cChange(byte channel, byte number, byte value)
+void MDCore::cChange(uint8_t channel, uint8_t number, uint8_t value)
 {
     switch (channel)
     {
@@ -41,9 +41,9 @@ void MDCore::cChange(byte channel, byte number, byte value)
     }
 }
 
-void MDCore::noteOn(byte channel, byte number, byte value)
+void MDCore::noteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
-    for (byte i = 0; i < nFbRight; i++)
+    for (uint8_t i = 0; i < nFbRight; i++)
     {
         if (fbRightSet[i] == number)
         {
@@ -53,7 +53,7 @@ void MDCore::noteOn(byte channel, byte number, byte value)
         }
     }
 
-    for (byte i = 0; i < nFbLeft; i++)
+    for (uint8_t i = 0; i < nFbLeft; i++)
     {
         if (fbLeftSet[i] == number)
         {
@@ -64,9 +64,9 @@ void MDCore::noteOn(byte channel, byte number, byte value)
     }
 }
 
-void MDCore::noteOff(byte channel, byte number, byte value)
+void MDCore::noteOff(uint8_t channel, uint8_t number, uint8_t value)
 {
-    for (byte i = 0; i < nFbRight; i++)
+    for (uint8_t i = 0; i < nFbRight; i++)
     {
         if (fbRightSet[i] == number)
         {
@@ -76,7 +76,7 @@ void MDCore::noteOff(byte channel, byte number, byte value)
         }
     }
 
-    for (byte i = 0; i < nFbLeft; i++)
+    for (uint8_t i = 0; i < nFbLeft; i++)
     {
         if (fbLeftSet[i] == number)
         {
@@ -87,12 +87,12 @@ void MDCore::noteOff(byte channel, byte number, byte value)
     }
 }
 
-void MDCore::vuChange(byte number, byte value)
+void MDCore::vuChange(uint8_t number, uint8_t value)
 {
     vuSet[number].setLevel(value);
 }
 
-void MDCore::npChange(byte position, byte value)
+void MDCore::npChange(uint8_t position, uint8_t value)
 {
     Npixel pix(position, value);
     npk.handleChange(pix);

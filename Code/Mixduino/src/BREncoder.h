@@ -12,7 +12,7 @@ class BREncoder
 		long oldPosition;
 		Encoder* enc;
 	public:
-		BREncoder(byte pin_a, byte pin_b);
-		void readEnc(void (*scc_func)(byte, byte, byte));
+		BREncoder(uint8_t pin_a, uint8_t pin_b);
+		void readEnc(void (*scc_func)(uint8_t, uint8_t, uint8_t));
 };
 #endif

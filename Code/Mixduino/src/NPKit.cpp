@@ -1,6 +1,6 @@
 #include "NPKit.h"
 
-const byte BRIGHTNESS = 32;
+const uint8_t BRIGHTNESS = 32;
 
 uint32_t CLEAR_COL  = Adafruit_NeoPixel::Color(0, 0, 0);
 uint32_t BLUE_COL   = Adafruit_NeoPixel::Color(0, 0, 255);
@@ -23,7 +23,7 @@ uint32_t HCCols[] = {
     GREEN_COL       // loop
 };
 
-NPKit::NPKit(byte dataPin, byte nPixels)
+NPKit::NPKit(uint8_t dataPin, uint8_t nPixels)
 {
 	np = Adafruit_NeoPixel(nPixels, dataPin, NEO_GRB + NEO_KHZ800);
 }

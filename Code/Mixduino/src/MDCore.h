@@ -15,13 +15,13 @@ class MDCore
 {
 	public:
 		void begin();
-		void cChange(byte channel, byte number, byte value);
-		void noteOn(byte channel, byte number, byte value);
-		void noteOff(byte channel, byte number, byte value);
+		void cChange(uint8_t channel, uint8_t number, uint8_t value);
+		void noteOn(uint8_t channel, uint8_t number, uint8_t value);
+		void noteOff(uint8_t channel, uint8_t number, uint8_t value);
 
 	private:
-		void vuChange(byte number, byte value);
-		void npChange(byte position, byte value);
+		void vuChange(uint8_t number, uint8_t value);
+		void npChange(uint8_t position, uint8_t value);
 		void setInitialDeckB();
 };
 #endif

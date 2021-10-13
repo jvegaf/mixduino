@@ -8,24 +8,24 @@
 //////////////////////////////////////
 // MUX LEFT BUTTONS
 
-byte const SWPCUEL2  = 0;
-byte const SWPCUEL1  = 1;
-byte const SWSHIFT   = 2;
-byte const SWLOOP_L  = 3;
-byte const SWSYNC_L  = 4;
-byte const SWRANGE_L = 5;
-byte const SWPLAY_L  = 6;
-byte const SWCUE_L   = 7;
-byte const SWPADL8   = 8;
-byte const SWPADL4   = 9;
-byte const SWPADL7   = 10;
-byte const SWPADL3   = 11;
-byte const SWPADL2   = 12;
-byte const SWPADL6   = 13;
-byte const SWPADL1   = 14;
-byte const SWPADL5   = 15;
+uint8_t const SWPCUEL2  = 0;
+uint8_t const SWPCUEL1  = 1;
+uint8_t const SWSHIFT   = 2;
+uint8_t const SWLOOP_L  = 3;
+uint8_t const SWSYNC_L  = 4;
+uint8_t const SWRANGE_L = 5;
+uint8_t const SWPLAY_L  = 6;
+uint8_t const SWCUE_L   = 7;
+uint8_t const SWPADL8   = 8;
+uint8_t const SWPADL4   = 9;
+uint8_t const SWPADL7   = 10;
+uint8_t const SWPADL3   = 11;
+uint8_t const SWPADL2   = 12;
+uint8_t const SWPADL6   = 13;
+uint8_t const SWPADL1   = 14;
+uint8_t const SWPADL5   = 15;
 
-const byte SwMuxLeftSet[] = {
+const uint8_t SwMuxLeftSet[] = {
     SWPCUEL2,
     SWPCUEL1,
     SWSHIFT,
@@ -43,30 +43,30 @@ const byte SwMuxLeftSet[] = {
     SWPADL1,
     SWPADL5};
 
-const byte nSwMuxLeft = 16;
+const uint8_t nSwMuxLeft = 16;
 
 
 //////////////////////////////////////
 // MUX RIGHT BUTTONS
 
-byte const SWCUE_R    = 0;
-byte const SWPLAY_R   = 1;
-byte const SWRANGE_R  = 2;
-byte const SWLOOP_R   = 3;
-byte const SWPCUEL3   = 5;
-byte const SWSYNC_R   = 6;
-byte const SWDECK_SEL = 7;
-byte const SWPADR8    = 8;
-byte const SWPADR4    = 9;
-byte const SWPADR7    = 10;
-byte const SWPADR3    = 11;
-byte const SWPADR2    = 12;
-byte const SWPADR6    = 13;
-byte const SWPADR1    = 14;
-byte const SWPADR5    = 15;
+uint8_t const SWCUE_R    = 0;
+uint8_t const SWPLAY_R   = 1;
+uint8_t const SWRANGE_R  = 2;
+uint8_t const SWLOOP_R   = 3;
+uint8_t const SWPCUEL3   = 5;
+uint8_t const SWSYNC_R   = 6;
+uint8_t const SWDECK_SEL = 7;
+uint8_t const SWPADR8    = 8;
+uint8_t const SWPADR4    = 9;
+uint8_t const SWPADR7    = 10;
+uint8_t const SWPADR3    = 11;
+uint8_t const SWPADR2    = 12;
+uint8_t const SWPADR6    = 13;
+uint8_t const SWPADR1    = 14;
+uint8_t const SWPADR5    = 15;
 
 
-const byte SWMuxRightSet[] = {
+const uint8_t SWMuxRightSet[] = {
     SWCUE_R,
     SWPLAY_R,
     SWRANGE_R,
@@ -84,6 +84,6 @@ const byte SWMuxRightSet[] = {
     SWPADR5
 };
 
-const byte nSwMuxRight = 15;
+const uint8_t nSwMuxRight = 15;
 
 #endif

@@ -5,11 +5,11 @@
 class Npixel  
 {
 	private:
-		byte _position;
-		byte _value;
+		uint8_t _position;
+		uint8_t _value;
 	public:
-		Npixel(byte position, byte value);
-		byte position() const;
-		byte value() const;
+		Npixel(uint8_t position, uint8_t value);
+		uint8_t position() const;
+		uint8_t value() const;
 };
 #endif

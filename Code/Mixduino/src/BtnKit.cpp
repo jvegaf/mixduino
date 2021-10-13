@@ -1,6 +1,6 @@
 #include "BtnKit.h"
 
-BtnKit::BtnKit(uint8_t *arduinoPins, uint8_t tPins)
+BtnKit::BtnKit(const uint8_t* arduinoPins, const uint8_t tPins)
 {
     totalPins = tPins;
     pins = new uint8_t[totalPins];

@@ -7,17 +7,17 @@
 
 // top pots
 
-byte const PFX1L = 1;
-byte const PFX2L = 2;
-byte const PFX3L = 3;
-byte const PGAINL1 = 4;
-byte const PGAINL2 = 5;
-byte const PGAINL3 = 6;
-byte const PFX2R = 7;
-byte const PFX3R = 8;
-byte const TREL1 = 9;
-byte const TREL2 = 10;
-byte const TREL3 = 11;
+byte const PFX1L   = 0;
+byte const PFX2L   = 1;
+byte const PFX3L   = 2;
+byte const PGAINL1 = 3;
+byte const PGAINL2 = 4;
+byte const PGAINL3 = 5;
+byte const PFX2R   = 6;
+byte const PFX3R   = 7;
+byte const TREL1   = 8;
+byte const TREL2   = 9;
+byte const TREL3   = 10;
 
 const byte topMuxpotsSet[] = {
     PFX1L,
@@ -35,22 +35,22 @@ const byte topMuxpotsSet[] = {
 const byte nTopMuxpots = 11;
 
 // BOTTOM POTS
-byte const FADER_L2 = 1;
-byte const FADER_L1 = 2;
-byte const PITCH_R = 3;
-byte const FILTER_L3 = 4;
-byte const PVOL_HP = 5;
-byte const BAS_L1 = 6;
-byte const MID_L1 = 7;
-byte const BAS_L2 = 8;
-byte const MID_L2 = 9;
-byte const MID_L3 = 10;
-byte const BAS_L3 = 11;
-byte const FILTER_L2 = 12;
-byte const FILTER_L1 = 13;
-byte const PITCH_L = 14;
-byte const PMIX_HP = 15;
-byte const FADER_L3 = 16;
+byte const FADER_L2  = 0;
+byte const FADER_L1  = 1;
+byte const PITCH_R   = 2;
+byte const FILTER_L3 = 3;
+byte const PVOL_HP   = 4;
+byte const BAS_L1    = 5;
+byte const MID_L1    = 6;
+byte const BAS_L2    = 7;
+byte const MID_L2    = 8;
+byte const MID_L3    = 9;
+byte const BAS_L3    = 10;
+byte const FILTER_L2 = 11;
+byte const FILTER_L1 = 12;
+byte const PITCH_L   = 13;
+byte const PMIX_HP   = 14;
+byte const FADER_L3  = 15;
 
 const byte bottomMuxpotsSet[] = {
     FADER_L2,

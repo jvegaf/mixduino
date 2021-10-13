@@ -7,18 +7,18 @@
 
 //////////////////////////////////////
 // BUTTONS
-byte const SWFXR_2 = 4;
-byte const SWFXR_3 = 5;
-byte const SWFXL_1 = 8;
-byte const SW_BROWSER_R = 7;
-byte const SW_BROWSER_L = 10;
-byte const SWFXL_2 = 9;
-byte const SWFXL_3 = 11;
-byte const SWFXR_1 = 12;
-byte const SWBR_PREVIEW = 14;
-byte const SWBR_BACK = 15;
+uint8_t const SWFXR_2 = 4;
+uint8_t const SWFXR_3 = 5;
+uint8_t const SWFXL_1 = 8;
+uint8_t const SW_BROWSER_R = 7;
+uint8_t const SW_BROWSER_L = 10;
+uint8_t const SWFXL_2 = 9;
+uint8_t const SWFXL_3 = 11;
+uint8_t const SWFXR_1 = 12;
+uint8_t const SWBR_PREVIEW = 14;
+uint8_t const SWBR_BACK = 15;
 
-const byte aSwSet[] = {
+const uint8_t aSwSet[] = {
     SWFXR_2,
     SWFXR_3,
     SWFXL_1,
@@ -31,51 +31,51 @@ const byte aSwSet[] = {
     SWBR_BACK
 };
 
-const byte nASw = 10;
+const uint8_t nASw = 10;
 
-byte const L_BROWSER_A = 2;
-byte const L_BROWSER_B = 3;
-byte const NP_DATA = 6;
-byte const L1VU_LATCH = 16;
-byte const L1VU_SIG = 17;
-byte const R_BROWSER_B = 18;
-byte const R_BROWSER_A = 19;
-byte const MRVU_LATCH = 26;
-byte const MRVU_SIG = 28;
-byte const MLVU_LATCH = 30;
-byte const L2VU_SIG = 31;
-byte const MLVU_SIG = 32;
-byte const L3VU_SIG = 34;
-byte const L3VU_LATCH = 36;
-byte const FBL_LATCH = 37;
-byte const L2VU_LATCH = 38;
-byte const FBL_SIG = 39;
-byte const FBR_LATCH = 42;
-byte const FBR_SIG = 44;
-byte const SRCLK = 52;
+uint8_t const L_BROWSER_A = 2;
+uint8_t const L_BROWSER_B = 3;
+uint8_t const NP_DATA = 6;
+uint8_t const L1VU_LATCH = 16;
+uint8_t const L1VU_SIG = 17;
+uint8_t const R_BROWSER_B = 18;
+uint8_t const R_BROWSER_A = 19;
+uint8_t const MRVU_LATCH = 26;
+uint8_t const MRVU_SIG = 28;
+uint8_t const MLVU_LATCH = 30;
+uint8_t const L2VU_SIG = 31;
+uint8_t const MLVU_SIG = 32;
+uint8_t const L3VU_SIG = 34;
+uint8_t const L3VU_LATCH = 36;
+uint8_t const FBL_LATCH = 37;
+uint8_t const L2VU_LATCH = 38;
+uint8_t const FBL_SIG = 39;
+uint8_t const FBR_LATCH = 42;
+uint8_t const FBR_SIG = 44;
+uint8_t const SRCLK = 52;
 
 //////////////////////////////////////
 // MULTIPLEXER
 
-byte const MPLEX_S0 = 47;
-byte const MPLEX_S1 = 49;
-byte const MPLEX_S2 = 40;
-byte const MPLEX_S3 = 53;
-byte const MPLEX_A1 = A1;
-byte const MPLEX_A2 = A2;
-byte const MPLEX_A3 = A3;
-byte const MPLEX_A4 = A4;
+uint8_t const MPLEX_S0 = 47;
+uint8_t const MPLEX_S1 = 49;
+uint8_t const MPLEX_S2 = 40;
+uint8_t const MPLEX_S3 = 53;
+uint8_t const MPLEX_A1 = A1;
+uint8_t const MPLEX_A2 = A2;
+uint8_t const MPLEX_A3 = A3;
+uint8_t const MPLEX_A4 = A4;
 
 //////////////////////////////////////
 // POTS ANALOG PINS
 
-byte const PFXR_1 = A0;
-byte const PMASTER = A14;
+uint8_t const PFXR_1 = A0;
+uint8_t const PMASTER = A14;
 
-const byte aPotsSet[] = {
+const uint8_t aPotsSet[] = {
     PFXR_1,
     PMASTER};
 
-const byte nAPots = 2;
+const uint8_t nAPots = 2;
 
 #endif

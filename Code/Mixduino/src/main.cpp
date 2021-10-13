@@ -2,8 +2,10 @@
 #include <MIDI.h>
 #include <Thread.h>
 #include <ThreadController.h>
+#include "midi_map.h"
 #include "MDCore.h"
 #include "BREncoder.h"
+#include "Muxer.h"
 #include "BtnKit.h"
 #include "PotKit.h"
 #include "TouchKit.h"
@@ -12,8 +14,11 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 
 BREncoder encL(L_BROWSER_A, L_BROWSER_B);
 BREncoder encR(R_BROWSER_A, R_BROWSER_B);
-BtnKit buttons;
 PotKit pots;
+Muxer leftBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
+Muxer rightBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
+BtnKit btns(aSwSet, nASw);
+
 MDCore mdCore;
 TouchKit touchBars;
 
@@ -28,7 +33,8 @@ void readButtons();
 void readPots();
 void readEncoder();
 void readTouchBars();
-void sendMidiNote(byte number, byte value, byte channel);
+void sendMidiNoteOn(byte number, byte value, byte channel);
+void sendMidiNoteOff(byte number, byte value, byte channel);
 void sendMidiCC(byte number, byte value, byte channel);
 
 void setup()
@@ -40,12 +46,14 @@ void setup()
 
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
-  buttons.begin();
   pots.begin();
+  leftBtns.begin(SwMuxLeftSet, nSwMuxLeft, LEFT_BTNS_CH);
+  rightBtns.begin(SWMuxRightSet, nSwMuxRight, RIGHT_BTNS_CH);
+  btns.begin(ARDUINO_BTNS_CH);
   mdCore.begin();
   touchBars.begin();
   // Set Deck B Focus
-  MIDI.sendNoteOn(1, 127, 9);
+  // MIDI.sendNoteOn(1, 127, 9);
 
   /////////////////////////////////////////////
   // threads
@@ -82,6 +90,7 @@ void handleNoteOn(byte channel, byte number, byte value)
   }
   mdCore.noteOn(channel, number, value);
 }
+
 void handleNoteOff(byte channel, byte number, byte value)
 {
   mdCore.noteOff(channel, number, value);
@@ -89,7 +98,9 @@ void handleNoteOff(byte channel, byte number, byte value)
 
 void readButtons()
 {
-  buttons.read(sendMidiNote);
+  leftBtns.read(sendMidiNoteOn, sendMidiNoteOff);
+  rightBtns.read(sendMidiNoteOn, sendMidiNoteOff);
+  btns.read(sendMidiNoteOn, sendMidiNoteOff);
 }
 
 void readPots()
@@ -108,9 +119,14 @@ void readTouchBars()
   touchBars.touchRead(sendMidiCC);
 }
 
-void sendMidiNote(byte number, byte value, byte channel)
+void sendMidiNoteOn(byte number, byte value, byte channel)
 {
   MIDI.sendNoteOn(number, value, channel);
+}
+
+void sendMidiNoteOff(byte number, byte value, byte channel)
+{
+  MIDI.sendNoteOff(number, value, channel);
 }
 
 void sendMidiCC(byte number, byte value, byte channel)

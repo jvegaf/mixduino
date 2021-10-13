@@ -1,75 +1,56 @@
 #include "BtnKit.h"
 
-const byte totalButtons = nASw + nSwMuxLeft + nSwMuxRight;
-int buttonCState[totalButtons] = {};
-int buttonPState[totalButtons] = {};
-
-Multiplexer4067 mplexSwLeft = Multiplexer4067(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
-Multiplexer4067 mplexSwRight = Multiplexer4067(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
-
-/////////////////////////////////////////////
-// debounce
-unsigned long lastDebounceTime = 0;
-unsigned long debounceDelay = 5;
-
-int BtnKit::parseValue(int value) {
-	if (value > 100)
+BtnKit::BtnKit(uint8_t *arduinoPins, uint8_t tPins)
+{
+    totalPins = tPins;
+    pins = new uint8_t[totalPins];
+    for (uint8_t i = 0; i < totalPins; i++)
     {
-        return HIGH;
+        pins[i] = arduinoPins[i];
     }
-    return LOW;
+    pState = new int[totalPins]();
+    cState = new int[totalPins]();
+    lastdebouncetime = new unsigned long[totalPins]();
 }
 
-void BtnKit::begin()
+void BtnKit::begin(uint8_t midiCh)
 {
-    mplexSwLeft.begin();
-    mplexSwRight.begin();
-    for (byte i = 0; i < nASw; i++)
+    for (uint8_t i = 0; i < totalPins; i++)
     {
-        pinMode(aSwSet[i], INPUT_PULLUP);
+        pinMode(pins[i], INPUT_PULLUP);
     }
+
+    midiChannel = midiCh;
 }
 
-
-void BtnKit::read(void (*func)(byte, byte, byte))
+void BtnKit::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
 {
 
-    for (byte i = 0; i < nSwMuxLeft; i++)
+    for (uint8_t i = 0; i < totalPins; i++)
     {
-        buttonCState[i] = this->parseValue(mplexSwLeft.readChannel(SwMuxLeftSet[i]));
+        cState[i] = digitalRead(pins[i]);
     }
 
-    for (byte i = 0; i < nSwMuxRight; i++)
-    {
-        buttonCState[i + nSwMuxLeft] = this->parseValue(mplexSwRight.readChannel(SWMuxRightSet[i]));
-    }
-    
-
-    for (byte i = 0; i < nASw; i++)
-    {
-        buttonCState[i + nSwMuxLeft + nSwMuxRight] = digitalRead(aSwSet[i]);
-    }
-
-    for (byte i = 0; i < totalButtons; i++)
+    for (uint8_t i = 0; i < totalPins; i++)
     {
 
-        if ((millis() - lastDebounceTime) > debounceDelay)
+        if ((millis() - lastdebouncetime[i]) > debouncedelay)
         {
 
-            if (buttonCState[i] != buttonPState[i])
+            if (cState[i] != pState[i])
             {
-                lastDebounceTime = millis();
+                lastdebouncetime[i] = millis();
 
-                if (buttonCState[i] == LOW)
+                if (cState[i] == LOW)
                 {
-                    func(i,127,10); // envia NoteOn(nota, velocity, canal midi)
-                    buttonPState[i] = buttonCState[i];
+                    funcOn(i, 127, midiChannel); // envia NoteOn(nota, velocity, canal midi)
                 }
                 else
                 {
-                    func(i, 0, 10 );
-                    buttonPState[i] = buttonCState[i];
+                    funcOff(i, 127, midiChannel);
                 }
+
+                pState[i] = cState[i];
             }
         }
     }

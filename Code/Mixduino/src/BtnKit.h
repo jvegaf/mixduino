@@ -7,13 +7,21 @@
 #include "pin_map.h"
 #include "sw_muxmap.h"
 
-class BtnKit  
+class BtnKit
 {
-	private:
-		int parseValue(int value);
-	public:
-		void begin();
-		void read(void (*func)(byte, byte, byte));
+private:
+	uint8_t *pins;
+	uint8_t totalPins;
+	int *pState;
+	int *cState;
 
+	uint8_t midiChannel;
+
+	unsigned long* lastdebouncetime;
+	unsigned long debouncedelay = 20;
+public:
+	BtnKit(uint8_t *arduinoPins, uint8_t tPins); 
+	void begin(uint8_t midiCh);
+	void read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
 };
 #endif

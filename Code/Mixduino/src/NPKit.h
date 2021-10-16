@@ -9,11 +9,10 @@
 class NPKit  
 {
 	private:
-		Adafruit_NeoPixel np;
+		Adafruit_NeoPixel* np;
 	public:
 		NPKit(uint8_t dataPin, uint8_t nPixels);
 		void begin();
-		void clear();
 		void handleChange(Npixel npx);
 };
 #endif

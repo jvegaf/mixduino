@@ -36,6 +36,9 @@ const uint8_t CUE_DECK_B          = 51; // d#3     & DECK_C
 const uint8_t LOOP_DECK_A          = 52; // e3
 const uint8_t LOOP_DECK_B          = 53; // f3     & DECK_C
 
+
+
+
 // Control Changes
 
 // channel 1
@@ -48,25 +51,19 @@ const uint8_t HOTCUE_5T_DK_A      = 4;
 const uint8_t HOTCUE_6T_DK_A      = 5;
 const uint8_t HOTCUE_7T_DK_A      = 6;
 const uint8_t HOTCUE_8T_DK_A      = 7; 
-
 const uint8_t RANGE_SELECTOR_DK_A = 8; 
-const uint8_t TEMPO_MASTER_DK_A   = 9; 
-const uint8_t SYNC_ON_DECK_A      = 10;
-
-// channel 2
-
-const uint8_t HOTCUE_1T_DK_B      = 7;
-const uint8_t HOTCUE_2T_DK_B      = 6;
-const uint8_t HOTCUE_3T_DK_B      = 5;
-const uint8_t HOTCUE_4T_DK_B      = 4;
-const uint8_t HOTCUE_5T_DK_B      = 3;
-const uint8_t HOTCUE_6T_DK_B      = 2;
-const uint8_t HOTCUE_7T_DK_B      = 1;
-const uint8_t HOTCUE_8T_DK_B      = 0;
-const uint8_t DECK_B_C_SELECTION  = 8;
-const uint8_t RANGE_SELECTOR_DK_B = 9;
-const uint8_t SYNC_ON_DECK_B      = 10;
-const uint8_t TEMPO_MASTER_DK_B   = 11;
+const uint8_t SYNC_ON_DECK_A      = 9; 
+const uint8_t HOTCUE_1T_DK_B      = 10;
+const uint8_t HOTCUE_2T_DK_B      = 11;
+const uint8_t HOTCUE_3T_DK_B      = 12;
+const uint8_t HOTCUE_4T_DK_B      = 13;
+const uint8_t HOTCUE_5T_DK_B      = 14;
+const uint8_t HOTCUE_6T_DK_B      = 15;
+const uint8_t HOTCUE_7T_DK_B      = 16;
+const uint8_t HOTCUE_8T_DK_B      = 17;
+const uint8_t DECK_B_C_SELECTION  = 18;
+const uint8_t RANGE_SELECTOR_DK_B = 19;
+const uint8_t SYNC_ON_DECK_B      = 20;
 
 // channel 3 
 

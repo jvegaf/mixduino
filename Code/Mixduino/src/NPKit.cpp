@@ -20,29 +20,25 @@ uint32_t HCCols[] = {
     ORANGE_COL,     // fade out
     YELLOW_COL,        // load
     GRAY_COL,       // grid
-    GREEN_COL       // loop
+    GREEN_COL,       // loop
+    RED_COL,
+    PURPLE_COL
 };
 
 NPKit::NPKit(uint8_t dataPin, uint8_t nPixels)
 {
-	np = Adafruit_NeoPixel(nPixels, dataPin, NEO_GRB + NEO_KHZ800);
+	np = new Adafruit_NeoPixel(nPixels, dataPin, NEO_GRB + NEO_KHZ800);
 }
 
 void NPKit::begin() 
 {
-    np.setBrightness(BRIGHTNESS);
-    np.begin();
-    np.clear();
+    np->setBrightness(BRIGHTNESS);
+    np->begin();
+    np->clear();
 }
 
 void NPKit::handleChange(Npixel npx) 
 {
-    np.setPixelColor(npx.position(), HCCols[npx.value()]); 
-    np.show();
-}
-
-void NPKit::clear() 
-{
-    np.clear();
-    np.show();
+    np->setPixelColor(npx.position(), HCCols[npx.value()]); 
+    np->show();
 }

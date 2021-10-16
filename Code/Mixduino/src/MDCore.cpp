@@ -22,17 +22,16 @@ void MDCore::begin()
     vuML.begin();
     vuMR.begin();
     npk.begin();
-    setInitialDeckB();
 }
 
 void MDCore::cChange(uint8_t channel, uint8_t number, uint8_t value)
 {
     switch (channel)
     {
-    case 1: // VU
+    case 12: // VU
         vuChange(number, value);
         break;
-    case 2: // NPixels
+    case 14: // NPixels
         npChange(number, value);
         break;
 

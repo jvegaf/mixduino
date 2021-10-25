@@ -3,13 +3,11 @@
 #define ARDUINO_MDCORE_H
 #include <Arduino.h>
 #include <Shifter.h>
-#include <Npixel.h>
 #include <Align.h>
 #include "VUmeter.h"
 #include "NPKit.h"
 #include "pin_map.h"
 #include "np_map.h"
-#include "sr_fb_map.h"
 
 class MDCore  
 {
@@ -22,6 +20,5 @@ class MDCore
 	private:
 		void vuChange(uint8_t number, uint8_t value);
 		void npChange(uint8_t position, uint8_t value);
-		void setInitialDeckB();
 };
 #endif

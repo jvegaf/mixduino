@@ -66,6 +66,13 @@ uint8_t const MPLEX_A2 = A2;
 uint8_t const MPLEX_A3 = A3;
 uint8_t const MPLEX_A4 = A4;
 
+const uint8_t muxPins[] = {
+    MPLEX_S0,
+    MPLEX_S1,
+    MPLEX_S2,
+    MPLEX_S3
+};
+
 //////////////////////////////////////
 // POTS ANALOG PINS
 
@@ -74,7 +81,8 @@ uint8_t const PMASTER = A14;
 
 const uint8_t aPotsSet[] = {
     PFXR_1,
-    PMASTER};
+    PMASTER
+};
 
 const uint8_t nAPots = 2;
 

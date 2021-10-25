@@ -1,15 +1,17 @@
 #include "Npixel.h"  
 
-Npixel::Npixel(uint8_t position, uint8_t value)
+Npixel::Npixel(uint8_t pos)
 {
-	_position = position;
-    _value = value;
+	position = pos;
 }
 
-uint8_t Npixel::position() const {
-	return _position;
+void Npixel::setNPObject(Adafruit_NeoPixel aNp) {
+	np = aNp;
 }
 
-uint8_t Npixel::value() const {
-	return _value;
+void Npixel::setColor(uint32_t color) {
+	np->setPixelColor(position, color);
+	np->show();
 }
+
+

@@ -2,23 +2,15 @@
 
 void Muxer::setMuxChannel(uint8_t channel)
 {
-    digitalWrite(muxS0, bitRead(channel, 0));
-    digitalWrite(muxS1, bitRead(channel, 1));
-    digitalWrite(muxS2, bitRead(channel, 2));
-    digitalWrite(muxS3, bitRead(channel, 3));
+    digitalWrite(muxPins[0], bitRead(channel, 0));
+    digitalWrite(muxPins[1], bitRead(channel, 1));
+    digitalWrite(muxPins[2], bitRead(channel, 2));
+    digitalWrite(muxPins[3], bitRead(channel, 3));
 }
 
-Muxer::Muxer(uint8_t s0, uint8_t s1, uint8_t s2, uint8_t s3, uint8_t sig)
+Muxer::Muxer(uint8_t sig, const uint8_t* mPins, const uint8_t nPins, uint8_t midiCh)
 {
-    muxS0 = s0;
-    muxS1 = s1;
-    muxS2 = s2;
-    muxS3 = s3;
     muxSIG = sig;
-}
-
-void Muxer::begin(const uint8_t *mPins, const uint8_t nPins, uint8_t midiCh)
-{
     totalMuxPins = nPins;
     muxPins = new uint8_t[totalMuxPins];
     midiChannel = midiCh;
@@ -30,12 +22,15 @@ void Muxer::begin(const uint8_t *mPins, const uint8_t nPins, uint8_t midiCh)
     pState = new int[totalMuxPins]();
     cState = new int[totalMuxPins]();
     lastdebouncetime = new unsigned long[totalMuxPins]();
+}
 
+void Muxer::begin()
+{
     pinMode(muxSIG, INPUT_PULLUP);
-    pinMode(muxS0, OUTPUT);
-    pinMode(muxS1, OUTPUT);
-    pinMode(muxS2, OUTPUT);
-    pinMode(muxS3, OUTPUT);
+    pinMode(muxPins[0], OUTPUT);
+    pinMode(muxPins[1], OUTPUT);
+    pinMode(muxPins[2], OUTPUT);
+    pinMode(muxPins[3], OUTPUT);
 }
 
 void Muxer::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))

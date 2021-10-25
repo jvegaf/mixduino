@@ -15,8 +15,8 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 BREncoder encL(L_BROWSER_A, L_BROWSER_B);
 BREncoder encR(R_BROWSER_A, R_BROWSER_B);
 PotKit pots;
-Muxer leftBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
-Muxer rightBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
+Muxer leftBtns(MPLEX_A3, SwMuxLeftSet, nSwMuxLeft, LEFT_BTNS_CH);
+Muxer rightBtns(MPLEX_A2, SWMuxRightSet, nSwMuxRight, RIGHT_BTNS_CH);
 BtnKit btns(aSwSet, nASw);
 
 MDCore mdCore;
@@ -39,21 +39,21 @@ void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel);
 
 void setup()
 {
-  // Serial.begin(31250);
   MIDI.setHandleControlChange(handleControlChange);
   MIDI.setHandleNoteOn(handleNoteOn);
   MIDI.setHandleNoteOff(handleNoteOff);
 
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
+ 
   pots.begin();
-  leftBtns.begin(SwMuxLeftSet, nSwMuxLeft, LEFT_BTNS_CH);
-  rightBtns.begin(SWMuxRightSet, nSwMuxRight, RIGHT_BTNS_CH);
+  leftBtns.begin();
+  rightBtns.begin();
   btns.begin(ARDUINO_BTNS_CH);
   mdCore.begin();
   touchBars.begin();
-  // Set Deck B Focus
-  // MIDI.sendNoteOn(1, 127, 9);
+  // Send monitor state
+  MIDI.sendNoteOn(SEND_MON_STATE, 127, 1);
 
   /////////////////////////////////////////////
   // threads
@@ -94,6 +94,10 @@ void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 {
   mdCore.noteOff(channel, number, value);
+}
+
+void handleActiveSensing() {
+  MIDI.sendRealTime(midi::ActiveSensing);
 }
 
 void readButtons()

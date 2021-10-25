@@ -4,15 +4,15 @@
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
 #include "pin_map.h"
-#include <Npixel.h>
+#include "np_map.h"
 
 class NPKit  
 {
 	private:
-		Adafruit_NeoPixel* np;
+		Adafruit_NeoPixel* _npx;
 	public:
-		NPKit(uint8_t dataPin, uint8_t nPixels);
+		NPKit();
 		void begin();
-		void handleChange(Npixel npx);
+		Adafruit_NeoPixel getNPX();
 };
 #endif

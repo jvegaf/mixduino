@@ -23,18 +23,26 @@ void MuxBtn::begin()
     pinMode(muxPins[3], OUTPUT);
 }
 
-int MuxBtn::read()
+BtnState MuxBtn::read()
 {
     setMuxChannel(channel);
 
-        cState = digitalRead(signal);
-        if ((millis() - lastdebouncetime) > debouncedelay)
+        _cState = digitalRead(signal);
+        if ((millis() - _lastdebouncetime) > _debouncedelay)
         {
-            if (pState != cState)
+            if (_pState != _cState)
             {
                 lastdebouncetime = millis();
-                pState = cState;
+                _pState = _cState;
+                if (_cState == LOW)
+                {
+                    return BtnState::TURN_OFF;
+                }
+                else
+                {
+                    return BtnState::TURN_ON;
+                }
             }
-            return cState;
+            return BtnState::SAME;
         }
 }

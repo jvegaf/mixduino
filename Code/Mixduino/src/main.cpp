@@ -17,7 +17,7 @@ BREncoder encR(R_BROWSER_A, R_BROWSER_B);
 PotKit pots;
 Muxer leftBtns(MPLEX_A3, SwMuxLeftSet, nSwMuxLeft, LEFT_BTNS_CH);
 Muxer rightBtns(MPLEX_A2, SWMuxRightSet, nSwMuxRight, RIGHT_BTNS_CH);
-BtnKit btns(aSwSet, nASw);
+HWBtn btns(aSwSet, nASw);
 
 MDCore mdCore;
 TouchKit touchBars;

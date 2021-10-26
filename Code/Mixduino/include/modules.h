@@ -27,10 +27,9 @@ MuxBtn Pad6LeftBtn(MUXSW_LEFT_SIG, SWPADL6);
 MuxBtn Pad7LeftBtn(MUXSW_LEFT_SIG, SWPADL7);
 MuxBtn Pad8LeftBtn(MUXSW_LEFT_SIG, SWPADL8);
 
-const MuxBtn DeckLeftBtns[] = {
+MuxBtn deckLeftBtns[] = {
     CueLeftBtn,
     PlayLeftBtn,
-    ModeLeftBtn,
     SyncLeftBtn,
     LoopLeftBtn,
     ShiftBtn,
@@ -41,12 +40,23 @@ const MuxBtn DeckLeftBtns[] = {
     Pad5LeftBtn,
     Pad6LeftBtn,
     Pad7LeftBtn,
-    Pad8LeftBtn};
+    Pad8LeftBtn
+};
+
+int totalLeftBtns = 13;
 
 // OUTPUTS
 Led CueLeftLed(FEEDBACK_LEFT, OUT_CUE_DECK_A);
 Led PlayLeftLed(FEEDBACK_LEFT, OUT_PLAY_DECK_A);
 Led LoopLeftLed(FEEDBACK_LEFT, OUT_LOOP_DECK_A);
+
+const Led LeftLeds[] = {
+    CueLeftLed,
+    PlayLeftLed,
+    LoopLeftLed
+};
+
+int totalLeftLeds = 3;
 
 Npixel ModeLeftLed(NP_MODE_L);
 Npixel SyncLeftLed(NP_SYNC_L);
@@ -70,6 +80,8 @@ const Npixel DeckLeftNPs[] = {
     Pad6LeftLed,
     Pad7LeftLed,
     Pad8LeftLed};
+
+int totalLeftNpixels = 10;
 ///////////////////////////
 // DECK RIGHT
 // INPUTS
@@ -89,10 +101,35 @@ MuxBtn Pad6RightBtn(MUXSW_RIGHT_SIG, SWPADR6);
 MuxBtn Pad7RightBtn(MUXSW_RIGHT_SIG, SWPADR7);
 MuxBtn Pad8RightBtn(MUXSW_RIGHT_SIG, SWPADR8);
 
+const MuxBtn DeckRightBtns[] = {
+    CueRightBtn,
+    PlayRightBtn,
+    SyncRightBtn,
+    LoopRightBtn,
+    ShiftBtn,
+    Pad1RightBtn,
+    Pad2RightBtn,
+    Pad3RightBtn,
+    Pad4RightBtn,
+    Pad5RightBtn,
+    Pad6RightBtn,
+    Pad7RightBtn,
+    Pad8RightBtn};
+
+int totalRightBtns = 13;
+
 // OUTPUTS
 Led CueRightLed(FEEDBACK_RIGHT, OUT_CUE_DECK_A);
 Led PlayRightLed(FEEDBACK_RIGHT, OUT_PLAY_DECK_A);
 Led LoopRightLed(FEEDBACK_RIGHT, OUT_LOOP_DECK_A);
+
+const Led RightLeds[] = {
+    CueRightLed,
+    PlayRightLed,
+    LoopRightLed
+};
+
+int totalRightLeds = 3
 
 Npixel ModeRightLed(NP_MODE_R);
 Npixel SyncRightLed(NP_SYNC_R);
@@ -118,3 +155,5 @@ const Npixel DeckRightNPs[] = {
     Pad6RightLed,
     Pad7RightLed,
     Pad8RightLed};
+
+int totalRightNpixels = 11;

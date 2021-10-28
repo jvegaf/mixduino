@@ -9,7 +9,7 @@ VUmeter vuMR = VUmeter(MRVU_SIG, MRVU_LATCH, SRCLK);
 
 VUmeter vuSet[] = {vuL1, vuL2, vuL3, vuML, vuMR};
 
-NPKit npk(NP_DATA, nNP);
+NPKit npk;
 
 void MDCore::begin()
 {
@@ -54,5 +54,5 @@ void MDCore::vuChange(uint8_t number, uint8_t value)
 
 void MDCore::npChange(uint8_t position, uint8_t value)
 {
-    npk.handleChange(position, value);
+    // npk.handleChange(position, value);
 }

@@ -2,7 +2,7 @@
 #ifndef ARDUINO_MUXER_H
 #define ARDUINO_MUXER_H
 #include <Arduino.h>
-#include "pin_map.h"
+#include "md_pinmap.h"
 
 class Muxer
 {

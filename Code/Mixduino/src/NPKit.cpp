@@ -28,7 +28,7 @@ void NPKit::begin()
     _npx->clear();
 }
 
-Adafruit_NeoPixel NPKit::getNPX()
+Adafruit_NeoPixel* NPKit::getNPX()
 {
     return _npx;
 }

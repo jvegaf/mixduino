@@ -3,7 +3,7 @@
 #define ARDUINO_POTKIT_H
 #include <Arduino.h>
 #include <Multiplexer4067.h>
-#include "pin_map.h"
+#include "md_pinmap.h"
 #include "pots_muxmap.h"
 
 class PotKit  

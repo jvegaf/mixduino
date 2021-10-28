@@ -5,8 +5,6 @@
 #include "midi_map.h"
 #include "MDCore.h"
 #include "BREncoder.h"
-#include "Muxer.h"
-#include "BtnKit.h"
 #include "PotKit.h"
 #include "TouchKit.h"
 // Rev5 version
@@ -15,9 +13,9 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 BREncoder encL(L_BROWSER_A, L_BROWSER_B);
 BREncoder encR(R_BROWSER_A, R_BROWSER_B);
 PotKit pots;
-Muxer leftBtns(MPLEX_A3, SwMuxLeftSet, nSwMuxLeft, LEFT_BTNS_CH);
-Muxer rightBtns(MPLEX_A2, SWMuxRightSet, nSwMuxRight, RIGHT_BTNS_CH);
-HWBtn btns(aSwSet, nASw);
+// Muxer leftBtns(MPLEX_A3, SwMuxLeftSet, nSwMuxLeft, LEFT_BTNS_CH);
+// Muxer rightBtns(MPLEX_A2, SWMuxRightSet, nSwMuxRight, RIGHT_BTNS_CH);
+// HWBtn btns(aSwSet, nASw);
 
 MDCore mdCore;
 TouchKit touchBars;
@@ -47,13 +45,13 @@ void setup()
   MIDI.turnThruOff();
  
   pots.begin();
-  leftBtns.begin();
-  rightBtns.begin();
-  btns.begin(ARDUINO_BTNS_CH);
+  // leftBtns.begin();
+  // rightBtns.begin();
+  // btns.begin(ARDUINO_BTNS_CH);
   mdCore.begin();
   touchBars.begin();
   // Send monitor state
-  MIDI.sendNoteOn(SEND_MON_STATE, 127, 1);
+  // MIDI.sendNoteOn(SEND_MON_STATE, 127, 1);
 
   /////////////////////////////////////////////
   // threads
@@ -96,15 +94,15 @@ void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value)
   mdCore.noteOff(channel, number, value);
 }
 
-void handleActiveSensing() {
-  MIDI.sendRealTime(midi::ActiveSensing);
-}
+// void handleActiveSensing() {
+//   MIDI.sendRealTime(midi::ActiveSensing);
+// }
 
 void readButtons()
 {
-  leftBtns.read(sendMidiNoteOn, sendMidiNoteOff);
-  rightBtns.read(sendMidiNoteOn, sendMidiNoteOff);
-  btns.read(sendMidiNoteOn, sendMidiNoteOff);
+  // leftBtns.read(sendMidiNoteOn, sendMidiNoteOff);
+  // rightBtns.read(sendMidiNoteOn, sendMidiNoteOff);
+  // btns.read(sendMidiNoteOn, sendMidiNoteOff);
 }
 
 void readPots()

@@ -5,12 +5,12 @@ Npixel::Npixel(uint8_t pos)
 	position = pos;
 }
 
-void Npixel::setNPObject(Adafruit_NeoPixel aNp) {
+void Npixel::setNPObject(Adafruit_NeoPixel *aNp) {
 	np = aNp;
 }
 
-void Npixel::setColor(uint32_t color) {
-	np->setPixelColor(position, color);
+void Npixel::setTo(uint32_t state) {
+	np->setPixelColor(position, state);
 	np->show();
 }
 

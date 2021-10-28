@@ -6,8 +6,8 @@
 #include <Align.h>
 #include "VUmeter.h"
 #include "NPKit.h"
-#include "pin_map.h"
-#include "np_map.h"
+#include "md_pinmap.h"
+#include "feedback.h"
 
 class MDCore  
 {

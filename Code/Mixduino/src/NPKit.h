@@ -3,8 +3,8 @@
 #define ARDUINO_NPKIT_H
 #include <Arduino.h>
 #include <Adafruit_NeoPixel.h>
-#include "pin_map.h"
-#include "np_map.h"
+#include "md_pinmap.h"
+#include "feedback.h"
 
 class NPKit  
 {
@@ -13,6 +13,6 @@ class NPKit
 	public:
 		NPKit();
 		void begin();
-		Adafruit_NeoPixel getNPX();
+		Adafruit_NeoPixel* getNPX();
 };
 #endif

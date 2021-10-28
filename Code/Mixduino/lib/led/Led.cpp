@@ -1,13 +1,13 @@
 #include "Led.h"
 
-Led::Led(Shifter register, uint8_t position)
+Led::Led(Shifter shifter, uint8_t position)
 {
-    reg = register;
-    pos = position;
+    _reg = &shifter;
+    _pos = position;
 }
 
-void Led::setTo(int state)
+void Led::setTo(uint32_t state)
 {
-    reg->setPin(pos, state);
-    reg->write();
+    _reg->setPin(_pos, state);
+    _reg->write();
 }

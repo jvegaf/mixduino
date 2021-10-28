@@ -10,25 +10,25 @@ void HWBtn::begin()
     pinMode(_arduinoPin, INPUT_PULLUP);
 }
 
-BtnState HWBtn::read()
+MDState HWBtn::read()
 {
     _cState = digitalRead(_arduinoPin);
 
     if ((millis() - _lastdebouncetime) > _debouncedelay)
+    {
+        if (_pState != _cState)
         {
-            if (_pState != _cState)
+            _lastdebouncetime = millis();
+            _pState = _cState;
+            if (_cState == LOW)
             {
-                lastdebouncetime = millis();
-                _pState = _cState;
-                if (_cState == LOW)
-                {
-                    return BtnState::TURN_OFF;
-                }
-                else
-                {
-                    return BtnState::TURN_ON;
-                }
+                return MDState::TURN_OFF;
             }
-            return BtnState::SAME;
+            else
+            {
+                return MDState::TURN_ON;
+            }
         }
+    }
+    return MDState::SAME;
 }

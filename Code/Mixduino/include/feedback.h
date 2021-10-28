@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <Shifter.h>
 #include "midi_map.h"
-#include "pin_map.h"
+#include "md_pinmap.h"
 #include <NPKit.h>
 
 #pragma once

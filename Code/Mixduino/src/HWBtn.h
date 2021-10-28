@@ -2,17 +2,22 @@
 #ifndef ARDUINO_HWBTN_H
 #define ARDUINO_HWBTN_H
 #include <Arduino.h>
-#include "ButtonBase.h"
-#include "BtnState.h"
-#include "pin_map.h"
+#include "md_pinmap.h"
+#include "InputBase.h"
+#include "MDState.h"
 
-class HWBtn : public ButtonBase
+class HWBtn : public InputBase
 {
 private:
 	uint8_t _arduinoPin;
+	int _pState = 0;
+	int _cState;
+	unsigned long _lastdebouncetime;
+	unsigned long _debouncedelay = 20;
+
 public:
-	HWBtn(uint8_t ardPin); 
+	HWBtn(uint8_t ardPin);
 	void begin();
-	BtnState read();
+	MDState read();
 };
 #endif

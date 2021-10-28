@@ -3,7 +3,7 @@
 #define ARDUINO_BRENCODER_H
 #include <Arduino.h>
 #include <Encoder.h>
-#include "pin_map.h"
+#include "md_pinmap.h"
 
 
 class BREncoder  

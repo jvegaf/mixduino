@@ -1,6 +1,6 @@
 
-#ifndef ARDUINO_STATE_H
-#define ARDUINO_STATE_H
+#ifndef ARDUINO_MDSTATE_H
+#define ARDUINO_MDSTATE_H
 #include <Arduino.h>
 
 enum MDState

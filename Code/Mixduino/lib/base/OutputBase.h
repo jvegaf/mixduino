@@ -6,7 +6,8 @@
 class OutputBase  
 {
 	public:
-		virtual void setTo(uint32_t state);
+		virtual void clearAll() = 0;
+		void setTo(uint8_t pos, int value) const;
 
 };
 #endif

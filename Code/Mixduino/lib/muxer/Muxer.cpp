@@ -2,21 +2,20 @@
 
 void Muxer::setMuxChannel(uint8_t channel)
 {
-    digitalWrite(muxPins[0], bitRead(channel, 0));
-    digitalWrite(muxPins[1], bitRead(channel, 1));
-    digitalWrite(muxPins[2], bitRead(channel, 2));
-    digitalWrite(muxPins[3], bitRead(channel, 3));
+    digitalWrite(MUX_PINS[0], bitRead(channel, 0));
+    digitalWrite(MUX_PINS[1], bitRead(channel, 1));
+    digitalWrite(MUX_PINS[2], bitRead(channel, 2));
+    digitalWrite(MUX_PINS[3], bitRead(channel, 3));
 }
 
-Muxer::Muxer(uint8_t sig, const uint8_t* mPins, const uint8_t nPins, uint8_t midiCh)
+Muxer::Muxer(uint8_t sig, const uint8_t* mPins, const uint8_t nPins)
 {
     muxSIG = sig;
     totalMuxPins = nPins;
-    muxPins = new uint8_t[totalMuxPins];
-    midiChannel = midiCh;
+    MUX_PINS = new uint8_t[totalMuxPins];
     for (uint8_t i = 0; i < totalMuxPins; i++)
     {
-        muxPins[i] = mPins[i];
+        MUX_PINS[i] = mPins[i];
     }
 
     pState = new int[totalMuxPins]();
@@ -27,39 +26,39 @@ Muxer::Muxer(uint8_t sig, const uint8_t* mPins, const uint8_t nPins, uint8_t mid
 void Muxer::begin()
 {
     pinMode(muxSIG, INPUT_PULLUP);
-    pinMode(muxPins[0], OUTPUT);
-    pinMode(muxPins[1], OUTPUT);
-    pinMode(muxPins[2], OUTPUT);
-    pinMode(muxPins[3], OUTPUT);
+    pinMode(MUX_PINS[0], OUTPUT);
+    pinMode(MUX_PINS[1], OUTPUT);
+    pinMode(MUX_PINS[2], OUTPUT);
+    pinMode(MUX_PINS[3], OUTPUT);
 }
 
-void Muxer::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
+MDState Muxer::read(uint8_t input_pos)
 {
+    setMuxChannel(input_pos);
+    cState[input_pos] = digitalRead(muxSIG);
+    
     for (uint8_t i = 0; i <= totalMuxPins; i++)
     {
 
-        setMuxChannel(i);
 
-        cState[i] = digitalRead(muxSIG);
-        if ((millis() - lastdebouncetime[i]) > debouncedelay)
+        if ((millis() - lastdebouncetime[input_pos]) > debouncedelay)
         {
-            if (pState[i] != cState[i])
+            if (pState[input_pos] != cState[input_pos])
             {
-                lastdebouncetime[i] = millis();
+                lastdebouncetime[input_pos] = millis();
 
-                if (cState[i] == LOW)
+                if (cState[input_pos] == LOW)
                 {
-                    //MIDI.sendNoteOn(number , value(127) , channel);
-                    funcOn(i, 127U, midiChannel);
+                    pState[input_pos] = cState[input_pos];
+                    return MDState::TURN_OFF;
                 }
                 else
                 {
-                    funcOff(i, 127U, midiChannel);
-                    //MIDI.sendNoteOff(36 + i , 127 , 1);
+                    pState[input_pos] = cState[input_pos];
+                    return MDState::TURN_ON;
                 }
-
-                pState[i] = cState[i];
             }
+            return MDState::SAME;
         }
     }
 }

@@ -1,58 +1,45 @@
 #include "MDCore.h"
 
+Muxer muxLeft(MUXSW_LEFT_SIG, MUX_PINS, T_SW_MUX_LEFT);
+Muxer muxRight(MUXSW_RIGHT_SIG, MUX_PINS, T_SW_MUX_RIGHT);
+MDShifter mdsLeft(FBL_SIG, FBL_LATCH, SRCLK, 1);
+MDShifter mdsRight(FBR_SIG, FBR_LATCH, SRCLK, 1);
+NPKit npKit(T_NPIXELS, NP_DATA);
 
-VUmeter vuL1 = VUmeter(L1VU_SIG, L1VU_LATCH, SRCLK);
-VUmeter vuL2 = VUmeter(L2VU_SIG, L2VU_LATCH, SRCLK);
-VUmeter vuL3 = VUmeter(L3VU_SIG, L3VU_LATCH, SRCLK);
-VUmeter vuML = VUmeter(MLVU_SIG, MLVU_LATCH, SRCLK);
-VUmeter vuMR = VUmeter(MRVU_SIG, MRVU_LATCH, SRCLK);
 
-VUmeter vuSet[] = {vuL1, vuL2, vuL3, vuML, vuMR};
-
-NPKit npk;
-
-void MDCore::begin()
+void MDCore::begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
 {
-    vuL1.begin();
-    vuL2.begin();
-    vuL3.begin();
-    vuML.begin();
-    vuMR.begin();
-    npk.begin();
-}
+    muxLeft.begin();
+    muxRight.begin();
+    npKit.begin();
+    funcNoteOn = funcOn;
+    funcNoteOff = funcOff;
+};
 
-void MDCore::cChange(uint8_t channel, uint8_t number, uint8_t value)
+void MDCore::createLeftFuncs() {
+    MDFunc cueLeftFunc(&muxLeft, SWCUE_L, &mdsLeft, OUT_CUE_DECK_A);
+    MDFunc playLeftFunc(&muxLeft, SWPLAY_L, &mdsLeft, OUT_PLAY_DECK_A);
+    MDFunc loopLeftFunc(&muxLeft, SWLOOP_L, &mdsLeft, OUT_LOOP_DECK_A);
+    MDFunc syncLeftFunc(&muxLeft, SWSYNC_L, &npKit, NP_SYNC_L);
+    MDModeFunc modeLeftFunc(&muxLeft, SWMODE_L, &npKit, NP_MODE_L);
+    createPadFuncs(MuxPadLeftSet, npPadLeftSet, _leftPadFuncs, DECK_LEFT_PAD_FUNCS_MIDI_CH);
+};
+
+void MDCore::createRightFuncs() {
+	MDFunc cueRightFunc(&muxRight, SWCUE_R, &mdsRight, OUT_CUE_DECK_B);
+    MDFunc playRightFunc(&muxRight, SWPLAY_R, &mdsRight, OUT_PLAY_DECK_B);
+    MDFunc loopRightFunc(&muxRight, SWLOOP_R, &mdsRight, OUT_LOOP_DECK_B);
+    MDFunc syncRightFunc(&muxRight, SWSYNC_R, &npKit, NP_SYNC_R);
+    MDModeFunc modeRightFunc(&muxRight, SWMODE_R, &npKit, NP_MODE_R);
+    createPadFuncs(MuxPadRightSet, npPadRightSet, _rightPadFuncs, DECK_RIGHT_PAD_FUNCS_MIDI_CH);
+};
+
+void MDCore::createPadFuncs(uint8_t* swPads, uint8_t* npPads, MDPadFunc* pSet, uint8_t midiCh)
 {
-    switch (channel)
+    for (uint8_t i = 0; i < T_DECK_PADS; i++)
     {
-    case 12: // VU
-        vuChange(number, value);
-        break;
-    case 14: // NPixels
-        npChange(number, value);
-        break;
-
-    default:
-        break;
+        MDPadFunc padFunc(&muxLeft, swPads[i], &npKit, npPads[i]);
+        padFunc.setMidi(midiCh, i);
+        pSet[i] = padFunc;
     }
-}
-
-void MDCore::noteOn(uint8_t channel, uint8_t number, uint8_t value)
-{
-
-}
-
-void MDCore::noteOff(uint8_t channel, uint8_t number, uint8_t value)
-{
-
-}
-
-void MDCore::vuChange(uint8_t number, uint8_t value)
-{
-    vuSet[number].setLevel(value);
-}
-
-void MDCore::npChange(uint8_t position, uint8_t value)
-{
-    // npk.handleChange(position, value);
-}
+};

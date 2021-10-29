@@ -8,6 +8,6 @@ class InputBase
 {
 	public:
 		virtual void begin();
-		virtual MDState read();
+		virtual MDState read(uint8_t input_pos) = 0;
 };
 #endif

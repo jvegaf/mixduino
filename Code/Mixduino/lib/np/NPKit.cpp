@@ -16,19 +16,23 @@ const uint8_t BRIGHTNESS = 32;
 //     PURPLE_COL
 // };
 
-NPKit::NPKit()
+NPKit::NPKit(uint8_t totalPix, uint8_t dataPin)
 {
-    _npx = new Adafruit_NeoPixel(nNP, NP_DATA, NEO_GBR + NEO_KHZ800);
+    _npx = new Adafruit_NeoPixel(totalPix, dataPin, NEO_GBR + NEO_KHZ800);
 }
 
 void NPKit::begin()
 {
-    _npx->setBrightness(BRIGHTNESS);
     _npx->begin();
+    _npx->setBrightness(BRIGHTNESS);
     _npx->clear();
 }
 
-Adafruit_NeoPixel* NPKit::getNPX()
-{
-    return _npx;
+void NPKit::setTo(uint8_t pos, uint32_t color) {
+	this->_npx->setPixelColor(pos, color);
+    this->_npx->show();
+}
+
+void NPKit::clearAll() {
+	this->_npx->clear();
 }

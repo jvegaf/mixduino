@@ -9,8 +9,7 @@
 
 #pragma once
 
-const Shifter FEEDBACK_LEFT(FBL_SIG, FBL_LATCH, SRCLK, 1);
-const Shifter FEEDBACK_RIGHT(FBR_SIG, FBR_LATCH, SRCLK, 1);
+const uint8_t T_DECK_PADS = 8U;
 
 ////////////////////////////////////
 // FB LEFT
@@ -85,6 +84,28 @@ uint8_t const NP_DECK_SEL = 18;
 uint8_t const NP_MODE_R   = 19;
 uint8_t const NP_SYNC_R   = 20;
 
-const uint8_t nNP = 21;
+const uint8_t T_NPIXELS = 21;
+
+uint8_t npPadLeftSet[] = {
+    NP_PADL1,
+    NP_PADL2,
+    NP_PADL3,
+    NP_PADL4,
+    NP_PADL5,
+    NP_PADL6,
+    NP_PADL7,
+    NP_PADL8
+};
+
+uint8_t npPadRightSet[] = {
+    NP_PADR1,
+    NP_PADR2,
+    NP_PADR3,
+    NP_PADR4,
+    NP_PADR5,
+    NP_PADR6,
+    NP_PADR7,
+    NP_PADR8
+}
 
 #endif

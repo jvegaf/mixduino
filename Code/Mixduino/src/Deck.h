@@ -2,8 +2,8 @@
 #ifndef ARDUINO_DECK_H
 #define ARDUINO_DECK_H
 #include <Arduino.h>
-#include "modules.h"
-#include "Mode.h"
+#include <modules.h>
+#include <Mode.h>
 
 class Deck  
 {

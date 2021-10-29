@@ -13,8 +13,8 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 BREncoder encL(L_BROWSER_A, L_BROWSER_B);
 BREncoder encR(R_BROWSER_A, R_BROWSER_B);
 PotKit pots;
-// Muxer leftBtns(MPLEX_A3, SwMuxLeftSet, nSwMuxLeft, LEFT_BTNS_CH);
-// Muxer rightBtns(MPLEX_A2, SWMuxRightSet, nSwMuxRight, RIGHT_BTNS_CH);
+// Muxer leftBtns(MPLEX_A3, SwMuxLeftSet, T_SW_MUX_LEFT, LEFT_BTNS_CH);
+// Muxer rightBtns(MPLEX_A2, SWMuxRightSet, T_SW_MUX_RIGHT, RIGHT_BTNS_CH);
 // HWBtn btns(aSwSet, nASw);
 
 MDCore mdCore;

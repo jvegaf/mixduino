@@ -66,7 +66,7 @@ uint8_t const MPLEX_A2     = A2;
 uint8_t const MPLEX_A3     = A3;
 uint8_t const MPLEX_A4     = A4;
 
-const uint8_t muxPins[]    = {
+const uint8_t MUX_PINS[]    = {
     MPLEX_S0,
     MPLEX_S1,
     MPLEX_S2,

@@ -1,9 +1,9 @@
+#pragma once
 
-#ifndef ARDUINO_MD_PINMAP_H
-#define ARDUINO_MD_PINMAP_H
+#ifndef MD_PINMAP_H
+#define MD_PINMAP_H
 #include <Arduino.h>
 
-#pragma once
 
 //////////////////////////////////////
 // BUTTONS

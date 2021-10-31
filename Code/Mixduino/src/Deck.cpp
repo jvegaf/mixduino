@@ -1,65 +1,31 @@
 #include "Deck.h"
 
-Deck::Deck(DeckAggregate aggr)
+void Deck:: readPadMode()
 {
-    modeFunc = aggr.modeFunc;
-    dFuncs = aggr.deckFuncs;
-}
-
-void Deck::begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t), Adafruit_NeoPixel *aNP)
-{
-    funcNoteOn = funcOn;
-    funcNoteOff = funcOff;
-
-    modeFunc->in->begin();
-    static_cast<Npixel *>(modeFunc->out)->setNPObject(aNP);
-
-    for (uint8_t i = 0; i < T_DECK_FUNCS; i++)
+    MDState::StateType cState = this->modeFunc->read();
+    if (cState == MDState::StateType::TURN_ON)
     {
-        dFuncs[i].in->begin();
-    }
-
-    for (uint8_t i = 0; i < T_DECK_FUNCS_RGB; i++)
-    {
-        static_cast<Npixel *>(dFuncs[i].out)->setNPObject(aNP);
+        MDMode::ModeType nextMode = incrementMode(this->_deckMode);
+        this->padp->updateMode(nextMode);
+        this->_deckMode = nextMode;
     }
 }
 
-void Deck::read()
+MDMode::ModeType Deck::incrementMode(MDMode::ModeType pMode) 
 {
-}
-
-void Deck::onNoteOn(uint8_t channel, uint8_t number, uint8_t value)
-{
-}
-
-void Deck::onNoteOff(uint8_t channel, uint8_t number, uint8_t value)
-{
-}
-
-void Deck::readPadMode()
-{
-    MDState cState = modeFunc->in->read();
-    if (cState == MDState::TURN_ON)
+    switch (pMode)
     {
-        Mode nextMode = incrementMode(this->deckMode);
-        this->deckMode = nextMode;
-    }
-}
+    case   MDMode:: ModeType:: HOTCUE: 
+    return MDMode:: ModeType:: LOOP;
 
-Mode Deck::incrementMode(Mode pMode) {
-	switch (pMode)
-    {
-    case Mode::HOTCUE :
-        return Mode::LOOP;
+    case   MDMode:: ModeType:: LOOP: 
+    return MDMode:: ModeType:: FX;
 
-    case Mode::LOOP :
-        return Mode::FX;
-
-    case Mode::FX :
-        return Mode::HOTCUE;
+    case   MDMode:: ModeType:: FX: 
+    return MDMode:: ModeType:: HOTCUE;
     
-    default:
-        break;
-    }    
+           default: 
+    return MDMode:: ModeType:: HOTCUE;
+    }
 }
+

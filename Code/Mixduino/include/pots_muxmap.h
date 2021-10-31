@@ -1,9 +1,9 @@
+#pragma once
 
-#ifndef ARDUINO_POTS_MUXMAP_H
-#define ARDUINO_POTS_MUXMAP_H
+#ifndef POTS_MUXMAP_H
+#define POTS_MUXMAP_H
 #include <Arduino.h>
 
-#pragma once
 
 // top pots
 

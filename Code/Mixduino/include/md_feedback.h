@@ -1,15 +1,10 @@
-
-#ifndef ARDUINO_FEEDBACK_H
-#define ARDUINO_FEEDBACK_H
-#include <Arduino.h>
-#include <Shifter.h>
-#include "midi_map.h"
-#include "md_pinmap.h"
-#include <NPKit.h>
-
 #pragma once
+#ifndef MD_FEEDBACK_H
+#define MD_FEEDBACK_H
+#include <Arduino.h>
 
-const uint8_t T_DECK_PADS = 8U;
+const uint8_t T_DECK_PADS = 8;
+const uint8_t NPK_BRIGHTNESS = 32;
 
 ////////////////////////////////////
 // FB LEFT
@@ -23,18 +18,6 @@ const uint8_t OUT_LOOP_DECK_A   = 5;
 const uint8_t OUT_MONITOR_CUE_B = 6;
 const uint8_t OUT_MONITOR_CUE_A = 7;
 
-const uint8_t fbLeftSet[] = {
-    FX1_BTN_3,
-    FX1_BTN_2,
-    FX1_BTN_1,
-    PLAY_DECK_A,
-    CUE_DECK_A,
-    LOOP_DECK_A,
-    MONITOR_CUE_B,
-    MONITOR_CUE_A
-};
-
-const uint8_t nFbLeft = 8;
 
 ////////////////////////////////////
 // FB RIGHT
@@ -47,17 +30,6 @@ const uint8_t OUT_FX2_BTN_3     = 4;
 const uint8_t OUT_FX2_BTN_2     = 5;
 const uint8_t OUT_FX2_BTN_1     = 6;
 
-const uint8_t fbRightSet[] = {
-    MONITOR_CUE_C,
-    CUE_DECK_B,
-    PLAY_DECK_B,
-    LOOP_DECK_B,
-    FX2_BTN_3,
-    FX2_BTN_2,
-    FX2_BTN_1
-};
-
-const uint8_t nFbRight = 7;
 
 //////////////////////////////////////
 // NEOPIXELS
@@ -85,27 +57,5 @@ uint8_t const NP_MODE_R   = 19;
 uint8_t const NP_SYNC_R   = 20;
 
 const uint8_t T_NPIXELS = 21;
-
-uint8_t npPadLeftSet[] = {
-    NP_PADL1,
-    NP_PADL2,
-    NP_PADL3,
-    NP_PADL4,
-    NP_PADL5,
-    NP_PADL6,
-    NP_PADL7,
-    NP_PADL8
-};
-
-uint8_t npPadRightSet[] = {
-    NP_PADR1,
-    NP_PADR2,
-    NP_PADR3,
-    NP_PADR4,
-    NP_PADR5,
-    NP_PADR6,
-    NP_PADR7,
-    NP_PADR8
-}
 
 #endif

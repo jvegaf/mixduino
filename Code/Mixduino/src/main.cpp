@@ -1,125 +1,140 @@
+#include <MDCore.h>
 #include <Arduino.h>
-#include <MIDI.h>
 #include <Thread.h>
 #include <ThreadController.h>
-#include "midi_map.h"
-#include "MDCore.h"
-#include "BREncoder.h"
-#include "PotKit.h"
-#include "TouchKit.h"
-// Rev5 version
+#include <MIDI.h>
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-BREncoder encL(L_BROWSER_A, L_BROWSER_B);
-BREncoder encR(R_BROWSER_A, R_BROWSER_B);
-PotKit pots;
-// Muxer leftBtns(MPLEX_A3, SwMuxLeftSet, T_SW_MUX_LEFT, LEFT_BTNS_CH);
-// Muxer rightBtns(MPLEX_A2, SWMuxRightSet, T_SW_MUX_RIGHT, RIGHT_BTNS_CH);
-// HWBtn btns(aSwSet, nASw);
-
 MDCore mdCore;
-TouchKit touchBars;
+Deck* deckLeft;
+Deck* deckRight;
+Pad* padLeft;
+Pad* padRight;
+// TouchKit touchBars;
 
 ThreadController cpu;     //thread master, onde as outras vao ser adicionadas
-Thread threadReadPots;    // thread para controlar os pots
+// Thread threadReadPots;    // thread para controlar os pots
 Thread threadReadButtons; // thread para controlar os botoes
 
-void handleControlChange(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value);
-void readButtons();
-void readPots();
-void readEncoder();
-void readTouchBars();
+void readDecks();
+// void readPots();
+// void readEncoder();
+// void readTouchBars();
 void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel);
 void sendMidiNoteOff(uint8_t number, uint8_t value, uint8_t channel);
-void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel);
+// void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel);
 
 void setup()
 {
-  MIDI.setHandleControlChange(handleControlChange);
+  // MIDI.setHandleControlChange(handleControlChange);
   MIDI.setHandleNoteOn(handleNoteOn);
   MIDI.setHandleNoteOff(handleNoteOff);
 
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
  
-  pots.begin();
+  // pots.begin();
   // leftBtns.begin();
   // rightBtns.begin();
-  // btns.begin(ARDUINO_BTNS_CH);
-  mdCore.begin();
-  touchBars.begin();
+  // btns.begin(BTNS_CH);
+  mdCore.begin(sendMidiNoteOn, sendMidiNoteOff);
+  deckLeft = mdCore.getDeck(MDAlign::AlignType::LEFT_ALIGN);
+  deckRight = mdCore.getDeck(MDAlign::AlignType::RIGHT_ALIGN);
+  padLeft = mdCore.getPad(MDAlign::AlignType::LEFT_ALIGN);
+  padRight = mdCore.getPad(MDAlign::AlignType::RIGHT_ALIGN);
+  // touchBars.begin();
   // Send monitor state
   // MIDI.sendNoteOn(SEND_MON_STATE, 127, 1);
 
   /////////////////////////////////////////////
   // threads
   // pots
-  threadReadPots.setInterval(10);
-  threadReadPots.onRun(readPots);
-  cpu.add(&threadReadPots);
+  // threadReadPots.setInterval(10);
+  // threadReadPots.onRun(readPots);
+  // cpu.add(&threadReadPots);
 
-  // buttons
+  // // buttons
   threadReadButtons.setInterval(20);
-  threadReadButtons.onRun(readButtons);
+  threadReadButtons.onRun(readDecks);
   cpu.add(&threadReadButtons);
 }
 
 void loop()
 {
   cpu.run();
+  // readDecks();
   MIDI.read();
-  readEncoder();
-  readTouchBars();
 }
 
-void handleControlChange(uint8_t channel, uint8_t number, uint8_t value)
-{
-  mdCore.cChange(channel, number, value);
-}
 
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
-  if (value < 1U)
+  switch (channel)
   {
-    mdCore.noteOff(channel, number, value);
-    return;
+  case DECK_LEFT_FUNCS_MIDI_CH :
+    deckLeft->onNoteOn(number, value);
+    break;
+  case DECK_LEFT_PAD_FUNCS_MIDI_CH :
+    padLeft->onNoteOn(number, value);
+    break;
+  case DECK_RIGHT_FUNCS_MIDI_CH :
+    deckRight->onNoteOn(number, value);
+    break;
+  case DECK_RIGHT_PAD_FUNCS_MIDI_CH :
+    padRight->onNoteOn(number, value);
+    break;
+
+  default:
+    break;
   }
-  mdCore.noteOn(channel, number, value);
 }
 
 void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 {
-  mdCore.noteOff(channel, number, value);
+   switch (channel)
+  {
+  case DECK_LEFT_FUNCS_MIDI_CH :
+    deckLeft->onNoteOff(number, value);
+    break;
+  case DECK_LEFT_PAD_FUNCS_MIDI_CH :
+    padLeft->onNoteOff(number, value);
+    break;
+  case DECK_RIGHT_FUNCS_MIDI_CH :
+    deckRight->onNoteOff(number, value);
+    break;
+  case DECK_RIGHT_PAD_FUNCS_MIDI_CH :
+    padRight->onNoteOff(number, value);
+    break;
+
+  default:
+    break;
+  }
 }
 
-// void handleActiveSensing() {
-//   MIDI.sendRealTime(midi::ActiveSensing);
+void readDecks() {
+  deckLeft->read();
+  deckRight->read();
+  padLeft->read();
+  padRight->read();
+}
+
+// void readPots()
+// {
+//   pots.read(sendMidiCC);
 // }
 
-void readButtons()
-{
-  // leftBtns.read(sendMidiNoteOn, sendMidiNoteOff);
-  // rightBtns.read(sendMidiNoteOn, sendMidiNoteOff);
-  // btns.read(sendMidiNoteOn, sendMidiNoteOff);
-}
+// void readEncoder()
+// {
+//   encL.readEnc(sendMidiCC);
+//   encR.readEnc(sendMidiCC);
+// }
 
-void readPots()
-{
-  pots.read(sendMidiCC);
-}
-
-void readEncoder()
-{
-  encL.readEnc(sendMidiCC);
-  encR.readEnc(sendMidiCC);
-}
-
-void readTouchBars()
-{
-  touchBars.touchRead(sendMidiCC);
-}
+// void readTouchBars()
+// {
+//   touchBars.touchRead(sendMidiCC);
+// }
 
 void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel)
 {

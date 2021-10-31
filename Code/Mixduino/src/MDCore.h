@@ -1,31 +1,82 @@
 
-#ifndef ARDUINO_MDCORE_H
-#define ARDUINO_MDCORE_H
-#include <Arduino.h>
-#include <MDShifter.h>
-#include <Muxer.h>
-#include <MDFunc.h>
-#include <MDPadFunc.h>
-#include <MDModeFunc.h>
-#include "midi_map.h"
-#include "sw_muxmap.h"
-#include "md_pinmap.h"
-#include "feedback.h"
+#pragma once
+#ifndef MDCORE_H
+#define MDCORE_H
+
+#include <md_align.h>
+#include <muxer.h>
+#include <sw_muxmap.h>
+#include <md_shifter.h>
+#include <np_kit.h>
+#include <md_midi.h>
+#include <md_feedback.h>
+#include <Deck.h>
+
 
 class MDCore
 {
-public:
-	MDCore();
-	void begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
 
-private:
-	void (*funcNoteOn)(uint8_t, uint8_t, uint8_t); // number value channel
-	void (*funcNoteOff)(uint8_t, uint8_t, uint8_t);
-	MDPadFunc _leftPadFuncs[T_DECK_PADS];
-	MDPadFunc _rightPadFuncs[T_DECK_PADS];
-	void createLeftFuncs();
-	void createRightFuncs();
+	private: 
+		Deck deckLeft;
+		Deck deckRight;
+		Pad padLeft;
+		Pad padRight;
+		Muxer muxLeft;
+		Muxer muxRight;
+		MDShifter mdsLeft;
+		MDShifter mdsRight;
+		NPKit npKit;
+		void (*funcNoteOn)(uint8_t, uint8_t, uint8_t); // number value channel
+		void (*funcNoteOff)(uint8_t, uint8_t, uint8_t);
+		MDPadFunc* leftPadFuncs;
+		MDPadFunc* rightPadFuncs;
+		Pad createLeftPad();
+		Pad createRightPad();
+		Deck createLeftDeck(Pad lpad);
+		Deck createRightDeck(Pad rpad);
+		MDPadFunc* createPadFuncs(uint8_t* inputSet, uint8_t* outputSet, uint8_t midiCh);
 
-	void createPadFuncs(uint8_t* swPads, uint8_t* npPads, MDPadFunc* pSet, uint8_t midiCh);
+	public: 
+		MDCore()
+		{
+			 muxLeft  = Muxer(MUXSW_LEFT_SIG, MUX_PINS, T_SW_MUX_LEFT);
+			 muxRight = Muxer(MUXSW_RIGHT_SIG, MUX_PINS, T_SW_MUX_RIGHT);
+			 mdsLeft  = MDShifter(FBL_SIG, FBL_LATCH, SRCLK, 1);
+			 mdsRight = MDShifter(FBR_SIG, FBR_LATCH, SRCLK, 1);
+			 npKit    = NPKit(T_NPIXELS, NP_DATA, NPK_BRIGHTNESS);
+		}
+
+		void begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
+		{
+		    muxLeft.begin();
+		    muxRight.begin();
+		    npKit.begin();
+		    funcNoteOn  = funcOn;
+		    funcNoteOff = funcOff;
+		    padLeft     = createLeftPad();
+		    padRight    = createRightPad();
+		    deckLeft    = createLeftDeck(padLeft);
+		    deckRight   = createRightDeck(padRight);
+		};
+
+		Deck* getDeck(MDAlign::AlignType al) {
+			if (al == MDAlign::AlignType::LEFT_ALIGN)
+		    {
+		        return &deckLeft;
+		    }
+		    return &deckRight;
+		}
+
+		Pad* getPad(MDAlign::AlignType al) {
+			if (al == MDAlign::AlignType::LEFT_ALIGN)
+		    {
+		        return &padLeft;
+		    }
+
+		    return &padRight;
+		}
+
 };
-#endif
+
+
+#endif // MDCORE_H

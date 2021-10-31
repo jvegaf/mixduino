@@ -1,9 +1,9 @@
-
-#ifndef ARDUINO_SW_MUXMAP_H
-#define ARDUINO_SW_MUXMAP_H
-#include <Arduino.h>
-
 #pragma once
+
+#ifndef SW_MUXMAP_H
+#define SW_MUXMAP_H
+#include <md_pinmap.h>
+
 
 //////////////////////////////////////
 // MUX LEFT BUTTONS
@@ -26,16 +26,6 @@ uint8_t const SWPADL2   = 12;
 uint8_t const SWPADL6   = 13;
 uint8_t const SWPADL1   = 14;
 uint8_t const SWPADL5   = 15;
-
-uint8_t MuxPadLeftSet[] = {
-    SWPADL1,
-    SWPADL2,
-    SWPADL3,
-    SWPADL4,
-    SWPADL5,
-    SWPADL6,
-    SWPADL7,
-    SWPADL8};
 
 const uint8_t T_SW_MUX_LEFT = 16U;
 
@@ -61,16 +51,7 @@ uint8_t const SWPADR1    = 14;
 uint8_t const SWPADR5    = 15;
 
 
-uint8_t MuxPadRightSet[] = {
-    SWPADR1,
-    SWPADR2,
-    SWPADR3,
-    SWPADR4,
-    SWPADR5,
-    SWPADR6,
-    SWPADR7,
-    SWPADR8
-};
+
 
 const uint8_t T_SW_MUX_RIGHT = 15U;
 

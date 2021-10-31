@@ -1,6 +1,6 @@
 
-#ifndef ARDUINO_VUMETER_H
-#define ARDUINO_VUMETER_H
+#ifndef VUMETER_H
+#define VUMETER_H
 #include <Arduino.h>
 
 class VUmeter  

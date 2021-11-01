@@ -6,13 +6,10 @@
 class Muxer
 {
 private:
-	uint8_t muxS0;
-	uint8_t muxS1;
-	uint8_t muxS2;
-	uint8_t muxS3;
-	uint8_t muxSIG;
-	uint8_t* muxPins;
-	uint8_t totalMuxPins;
+	uint8_t _mxSigPin;
+	const uint8_t* _mxPins;
+	uint8_t* muxSwPositions;
+	uint8_t _tMxSwitches;
 	int* pState;
 	int* cState;
 
@@ -23,8 +20,8 @@ private:
 	void setMuxChannel(uint8_t channel);
 
 public:
-	Muxer(uint8_t s0, uint8_t s1, uint8_t s2, uint8_t s3, uint8_t sig);
-	void begin(const uint8_t* mPins, const uint8_t nPins, uint8_t midiCh);
+	Muxer(const uint8_t* mxPins, uint8_t sig);
+	void begin(const uint8_t* swPositions, const uint8_t nPins, uint8_t midiCh);
 	void read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
 };
 #endif

@@ -1,7 +1,7 @@
 #include "MDCore.h"
 
-Muxer leftBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
-Muxer rightBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
+Muxer leftBtns(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
+Muxer rightBtns(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
 BtnKit btns(aSwSet, nASw);
 
 VUmeter vuL1 = VUmeter(L1VU_SIG, L1VU_LATCH, SRCLK);

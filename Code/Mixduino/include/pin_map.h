@@ -18,7 +18,7 @@ uint8_t const SWFXR_1      = 12;
 uint8_t const SWBR_PREVIEW = 14;
 uint8_t const SWBR_BACK    = 15;
 
-const uint8_t aSwSet[] = {
+const uint8_t ARD_SW_BUNDLE[] = {
     SWFXR_2,
     SWFXR_3,
     SWFXL_1,
@@ -31,7 +31,7 @@ const uint8_t aSwSet[] = {
     SWBR_BACK
 };
 
-const uint8_t nASw = 10;
+uint8_t const T_ARD_SW    = 10;
 
 uint8_t const L_BROWSER_A = 2;
 uint8_t const L_BROWSER_B = 3;
@@ -79,10 +79,10 @@ const uint8_t MUXPIN_BUNDLE[] = {
 uint8_t const PFXR_1  = A0;
 uint8_t const PMASTER = A14;
 
-const uint8_t aPotsSet[] = {
+const uint8_t ARD_POTS_BUNDLE[] = {
     PFXR_1,
     PMASTER};
 
-const uint8_t nAPots = 2;
+uint8_t const T_ARD_POTS = 2;
 
 #endif

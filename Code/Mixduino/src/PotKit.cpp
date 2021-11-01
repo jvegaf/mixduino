@@ -1,7 +1,7 @@
 #include "PotKit.h"
 
 
-const uint8_t totalPots = nAPots + nTopMuxpots + nBottomMuxPots;
+const uint8_t totalPots = T_ARD_POTS + nTopMuxpots + nBottomMuxPots;
 
 int potCState[totalPots] = {}; // current state
 int potPState[totalPots] = {}; // previous state
@@ -35,9 +35,9 @@ void PotKit::read(void (*scc_func)(uint8_t, uint8_t, uint8_t))
         potCState[i + nTopMuxpots] = mplexBottomPots.readChannel(bottomMuxpotsSet[i]);
     }
 
-    for (uint8_t i = 0; i < nAPots; i++)
+    for (uint8_t i = 0; i < T_ARD_POTS; i++)
     {
-        potCState[i + nTopMuxpots + nBottomMuxPots] = analogRead(aPotsSet[i]);
+        potCState[i + nTopMuxpots + nBottomMuxPots] = analogRead(ARD_POTS_BUNDLE[i]);
     }
 
     for (uint8_t i = 0; i < totalPots; i++)

@@ -3,7 +3,6 @@
 #define ARDUINO_MDCORE_H
 #include <Arduino.h>
 #include <Shifter.h>
-#include <Npixel.h>
 #include "Muxer.h"
 #include "BtnKit.h"
 #include "VUmeter.h"

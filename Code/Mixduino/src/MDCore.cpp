@@ -2,15 +2,17 @@
 
 Muxer leftBtns(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
 Muxer rightBtns(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
-BtnKit btns(aSwSet, nASw);
+BtnKit btns(ARD_SW_BUNDLE, T_ARD_SW);
 
-VUmeter vuL1 = VUmeter(L1VU_SIG, L1VU_LATCH, SRCLK);
-VUmeter vuL2 = VUmeter(L2VU_SIG, L2VU_LATCH, SRCLK);
-VUmeter vuL3 = VUmeter(L3VU_SIG, L3VU_LATCH, SRCLK);
-VUmeter vuML = VUmeter(MLVU_SIG, MLVU_LATCH, SRCLK);
-VUmeter vuMR = VUmeter(MRVU_SIG, MRVU_LATCH, SRCLK);
+VUmeter vuSet[] = {
+    VUmeter(L1VU_SIG, L1VU_LATCH, SRCLK),
+    VUmeter(L2VU_SIG, L2VU_LATCH, SRCLK),
+    VUmeter(L3VU_SIG, L3VU_LATCH, SRCLK),
+    VUmeter(MLVU_SIG, MLVU_LATCH, SRCLK),
+    VUmeter(MRVU_SIG, MRVU_LATCH, SRCLK)
+};
 
-VUmeter vuSet[] = {vuL1, vuL2, vuL3, vuML, vuMR};
+uint8_t t_VUSet = 5;
 
 Shifter fbRight(FBR_SIG, FBR_LATCH, SRCLK, 1);
 Shifter fbLeft(FBL_SIG, FBL_LATCH, SRCLK, 1);
@@ -24,11 +26,10 @@ void MDCore::begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(ui
     leftBtns.begin(MUX_SW_BUNDLE_L, T_MUX_SW_L, LEFT_BTNS_CH);
     rightBtns.begin(MUX_SW_BUNDLE_R, T_MUX_SW_R, RIGHT_BTNS_CH);
     btns.begin(ARDUINO_BTNS_CH);
-    vuL1.begin();
-    vuL2.begin();
-    vuL3.begin();
-    vuML.begin();
-    vuMR.begin();
+    for (uint8_t i = 0; i < t_VUSet; i++)
+    {
+        vuSet[i].begin();
+    }
     npk.begin();
 }
 
@@ -108,8 +109,7 @@ void MDCore::vuChange(uint8_t number, uint8_t value)
 
 void MDCore::npChange(uint8_t position, uint8_t value)
 {
-    Npixel pix(position, value);
-    npk.handleChange(pix);
+    npk.handleChange(position, value);
 }
 
 void MDCore::setInitialDeckB()

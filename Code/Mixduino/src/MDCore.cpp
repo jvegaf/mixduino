@@ -1,5 +1,8 @@
 #include "MDCore.h"
 
+Muxer leftBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
+Muxer rightBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
+BtnKit btns(aSwSet, nASw);
 
 VUmeter vuL1 = VUmeter(L1VU_SIG, L1VU_LATCH, SRCLK);
 VUmeter vuL2 = VUmeter(L2VU_SIG, L2VU_LATCH, SRCLK);
@@ -14,8 +17,13 @@ Shifter fbLeft(FBL_SIG, FBL_LATCH, SRCLK, 1);
 
 NPKit npk(NP_DATA, nNP);
 
-void MDCore::begin()
+void MDCore::begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
 {
+    fnon = funcOn;
+    fnoff = funcOff;
+    leftBtns.begin(MUX_SW_BUNDLE_L, T_MUX_SW_L, LEFT_BTNS_CH);
+    rightBtns.begin(MUX_SW_BUNDLE_R, T_MUX_SW_R, RIGHT_BTNS_CH);
+    btns.begin(ARDUINO_BTNS_CH);
     vuL1.begin();
     vuL2.begin();
     vuL3.begin();
@@ -24,7 +32,7 @@ void MDCore::begin()
     npk.begin();
 }
 
-void MDCore::cChange(uint8_t channel, uint8_t number, uint8_t value)
+void MDCore::onCChange(uint8_t channel, uint8_t number, uint8_t value)
 {
     switch (channel)
     {
@@ -40,7 +48,7 @@ void MDCore::cChange(uint8_t channel, uint8_t number, uint8_t value)
     }
 }
 
-void MDCore::noteOn(uint8_t channel, uint8_t number, uint8_t value)
+void MDCore::onNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
     for (uint8_t i = 0; i < nFbRight; i++)
     {
@@ -63,7 +71,7 @@ void MDCore::noteOn(uint8_t channel, uint8_t number, uint8_t value)
     }
 }
 
-void MDCore::noteOff(uint8_t channel, uint8_t number, uint8_t value)
+void MDCore::onNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 {
     for (uint8_t i = 0; i < nFbRight; i++)
     {
@@ -84,6 +92,13 @@ void MDCore::noteOff(uint8_t channel, uint8_t number, uint8_t value)
             return;
         }
     }
+}
+
+void MDCore::readButtons()
+{
+    leftBtns.read(fnon, fnoff);
+    rightBtns.read(fnon, fnoff);
+    btns.read(fnon, fnoff);
 }
 
 void MDCore::vuChange(uint8_t number, uint8_t value)

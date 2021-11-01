@@ -5,8 +5,6 @@
 #include "midi_map.h"
 #include "MDCore.h"
 #include "BREncoder.h"
-#include "Muxer.h"
-#include "BtnKit.h"
 #include "PotKit.h"
 #include "TouchKit.h"
 // Rev5 version
@@ -15,9 +13,7 @@ MIDI_CREATE_DEFAULT_INSTANCE();
 BREncoder encL(L_BROWSER_A, L_BROWSER_B);
 BREncoder encR(R_BROWSER_A, R_BROWSER_B);
 PotKit pots;
-Muxer leftBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
-Muxer rightBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
-BtnKit btns(aSwSet, nASw);
+
 
 MDCore mdCore;
 TouchKit touchBars;
@@ -47,10 +43,7 @@ void setup()
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
   pots.begin();
-  leftBtns.begin(SwMuxLeftSet, nSwMuxLeft, LEFT_BTNS_CH);
-  rightBtns.begin(SWMuxRightSet, nSwMuxRight, RIGHT_BTNS_CH);
-  btns.begin(ARDUINO_BTNS_CH);
-  mdCore.begin();
+  mdCore.begin(sendMidiNoteOn, sendMidiNoteOff);
   touchBars.begin();
   // Set Deck B Focus
   // MIDI.sendNoteOn(1, 127, 9);
@@ -78,29 +71,27 @@ void loop()
 
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value)
 {
-  mdCore.cChange(channel, number, value);
+  mdCore.onCChange(channel, number, value);
 }
 
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
   if (value < 1U)
   {
-    mdCore.noteOff(channel, number, value);
+    mdCore.onNoteOff(channel, number, value);
     return;
   }
-  mdCore.noteOn(channel, number, value);
+  mdCore.onNoteOn(channel, number, value);
 }
 
 void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 {
-  mdCore.noteOff(channel, number, value);
+  mdCore.onNoteOff(channel, number, value);
 }
 
 void readButtons()
 {
-  leftBtns.read(sendMidiNoteOn, sendMidiNoteOff);
-  rightBtns.read(sendMidiNoteOn, sendMidiNoteOff);
-  btns.read(sendMidiNoteOn, sendMidiNoteOff);
+  mdCore.readButtons();
 }
 
 void readPots()

@@ -27,13 +27,17 @@ uint8_t const SWPADL5   = 15;
 
 const uint8_t MUX_SW_BUNDLE_L[] = {
     SWSHIFT,
-    SWMODE_L,
     SWPLAY_L,
     SWCUE_L,
     SWSYNC_L,
     SWLOOP_L,
     SWPCUEL2,
     SWPCUEL1,
+    };
+
+const uint8_t T_MUX_SW_L = 7;
+
+const uint8_t SW_PADL_BUNDLE[] = {
     SWPADL1,
     SWPADL2,
     SWPADL3,
@@ -42,17 +46,14 @@ const uint8_t MUX_SW_BUNDLE_L[] = {
     SWPADL6,
     SWPADL7,
     SWPADL8
-    };
-
-const uint8_t T_MUX_SW_L = 16;
-
+};
 
 //////////////////////////////////////
 // MUX RIGHT BUTTONS
 
 uint8_t const SWCUE_R    = 0;
 uint8_t const SWPLAY_R   = 1;
-uint8_t const SWMODE_R  = 2;
+uint8_t const SWMODE_R   = 2;
 uint8_t const SWLOOP_R   = 3;
 uint8_t const SWPCUEL3   = 5;
 uint8_t const SWSYNC_R   = 6;
@@ -69,12 +70,16 @@ uint8_t const SWPADR5    = 15;
 
 const uint8_t MUX_SW_BUNDLE_R[] = {
     SWDECK_SEL,
-    SWMODE_R,
     SWPLAY_R,
     SWCUE_R,
     SWSYNC_R,
     SWLOOP_R,
-    SWPCUEL3,
+    SWPCUEL3
+};
+
+const uint8_t T_MUX_SW_R = 6;
+
+const uint8_t SW_PADR_BUNDLE[] = {
     SWPADR1,
     SWPADR2,
     SWPADR3,
@@ -85,6 +90,6 @@ const uint8_t MUX_SW_BUNDLE_R[] = {
     SWPADR8,
 };
 
-const uint8_t T_MUX_SW_R = 15;
+uint8_t const T_DECK_PADS = 8;
 
 #endif

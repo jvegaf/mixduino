@@ -10,8 +10,10 @@
 // INPUTS
 
 const uint8_t LEFT_BTNS_CH    = 5;
-const uint8_t RIGHT_BTNS_CH   = 6;
-const uint8_t ARDUINO_BTNS_CH = 7;
+const uint8_t LEFT_PAD_CH     = 6;
+const uint8_t RIGHT_BTNS_CH   = 7;
+const uint8_t RIGHT_PAD_CH    = 8;
+const uint8_t ARDUINO_BTNS_CH = 9;
 
 /////////////////////////////////////////
 // OUTS

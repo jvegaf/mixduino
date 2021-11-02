@@ -1,9 +1,11 @@
 
-#ifndef ARDUINO_MUXER_H
-#define ARDUINO_MUXER_H
+#pragma once
+#ifndef MUXERPAD_H
+#define MUXERPAD_H
+
 #include <Arduino.h>
 
-class Muxer
+class MuxerPad
 {
 private:
 	uint8_t _mxSigPin;
@@ -17,11 +19,15 @@ private:
 	unsigned long debouncedelay = 20;
 	
 	uint8_t _midiChannel;
+	uint8_t _firstNumber;
 	void setMuxChannel(uint8_t channel);
 
 public:
-	Muxer(const uint8_t* mxPins, uint8_t sig);
+	MuxerPad(const uint8_t* mxPins, uint8_t sig);
 	void begin(const uint8_t* swPositions, const uint8_t nPins, uint8_t midiCh);
+	void setNoteNum(uint8_t number);
 	void read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
 };
-#endif
+
+
+#endif // MUXERPAD_H

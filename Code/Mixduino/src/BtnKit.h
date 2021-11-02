@@ -5,7 +5,6 @@
 #include <MIDI.h>
 #include <Multiplexer4067.h>
 #include "pin_map.h"
-#include "sw_muxmap.h"
 
 class BtnKit
 {

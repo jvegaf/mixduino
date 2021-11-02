@@ -16,7 +16,7 @@ uint8_t const NP_PADL5    = 4;
 uint8_t const NP_PADL6    = 5;
 uint8_t const NP_PADL7    = 6;
 uint8_t const NP_PADL8    = 7;
-uint8_t const NP_RANGE_L  = 8;
+uint8_t const NP_MODE_L   = 8;
 uint8_t const NP_SYNC_L   = 9;
 uint8_t const NP_PADR_1   = 10;
 uint8_t const NP_PADR_2   = 11;
@@ -27,7 +27,7 @@ uint8_t const NP_PADR_6   = 15;
 uint8_t const NP_PADR_7   = 16;
 uint8_t const NP_PADR_8   = 17;
 uint8_t const NP_DECK_SEL = 18;
-uint8_t const NP_RANGE_R  = 19;
+uint8_t const NP_MODE_R   = 19;
 uint8_t const NP_SYNC_R   = 20;
 
 const uint8_t NPSet[] = {
@@ -39,7 +39,7 @@ const uint8_t NPSet[] = {
     NP_PADL6,
     NP_PADL7,
     NP_PADL8,
-    NP_RANGE_L,
+    NP_MODE_L,
     NP_SYNC_L,
     NP_PADR_1,
     NP_PADR_2,
@@ -50,7 +50,7 @@ const uint8_t NPSet[] = {
     NP_PADR_7,
     NP_PADR_8,
     NP_DECK_SEL,
-    NP_RANGE_R,
+    NP_MODE_R,
     NP_SYNC_R
 };
 

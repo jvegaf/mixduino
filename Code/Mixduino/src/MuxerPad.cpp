@@ -1,6 +1,6 @@
-#include "Muxer.h"
+#include "MuxerPad.h"
 
-void Muxer::setMuxChannel(uint8_t channel)
+void MuxerPad::setMuxChannel(uint8_t channel)
 {
     digitalWrite(_mxPins[0], bitRead(channel, 0));
     digitalWrite(_mxPins[1], bitRead(channel, 1));
@@ -8,13 +8,13 @@ void Muxer::setMuxChannel(uint8_t channel)
     digitalWrite(_mxPins[3], bitRead(channel, 3));
 }
 
-Muxer::Muxer(const uint8_t* mxPins, uint8_t sig)
+MuxerPad::MuxerPad(const uint8_t* mxPins, uint8_t sig)
 {
     _mxPins = mxPins;
     _mxSigPin = sig;
 }
 
-void Muxer::begin(const uint8_t *mPins, const uint8_t tPins, uint8_t midiCh)
+void MuxerPad::begin(const uint8_t *mPins, const uint8_t tPins, uint8_t midiCh)
 {
     _tMxSwitches = tPins;
     _swPositions = mPins;
@@ -31,7 +31,11 @@ void Muxer::begin(const uint8_t *mPins, const uint8_t tPins, uint8_t midiCh)
     pinMode(_mxPins[3], OUTPUT);
 }
 
-void Muxer::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
+void MuxerPad::setNoteNum(uint8_t number) {
+	_firstNumber = number;
+}
+
+void MuxerPad::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
 {
     for (uint8_t i = 0; i <= _tMxSwitches; i++)
     {
@@ -48,11 +52,11 @@ void Muxer::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint
                 if (cState[i] == LOW)
                 {
                     //MIDI.sendNoteOn(number , value(127) , channel);
-                    funcOn(i, 127U, _midiChannel);
+                    funcOn(i + _firstNumber, 127U, _midiChannel);
                 }
                 else
                 {
-                    funcOff(i, 127U, _midiChannel);
+                    funcOff(i + _firstNumber, 127U, _midiChannel);
                     //MIDI.sendNoteOff(36 + i , 127 , 1);
                 }
 

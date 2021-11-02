@@ -3,11 +3,7 @@
 BtnKit::BtnKit(const uint8_t* arduinoPins, const uint8_t tPins)
 {
     totalPins = tPins;
-    pins = new uint8_t[totalPins];
-    for (uint8_t i = 0; i < totalPins; i++)
-    {
-        pins[i] = arduinoPins[i];
-    }
+    pins = arduinoPins;
     pState = new int[totalPins]();
     cState = new int[totalPins]();
     lastdebouncetime = new unsigned long[totalPins]();

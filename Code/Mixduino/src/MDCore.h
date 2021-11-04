@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include <Shifter.h>
 #include "MDMode.h"
+#include "md_align.h"
 #include "sw_muxmap.h"
 #include "BtnKit.h"
 #include "MuxerPad.h"
@@ -23,9 +24,11 @@ class MDCore
 		void npChange(uint8_t position, uint8_t value);
 		void setInitialDeckB();
 
-		void npSetDeckMode(uint8_t position, uint8_t mode);
+		void npSetDeckMode(MDAlign::Align al, uint8_t modeColorValue);
 
 		void readDecksMode();
+
+		void setPadColors(uint8_t* padAggr, uint8_t mode);
 	
 	public:
 		void incDeckMode(uint8_t al);

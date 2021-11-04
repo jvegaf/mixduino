@@ -1,10 +1,33 @@
 #include "MDCore.h"
 
+uint8_t npLeftPad[] = {
+    NP_PADL1,
+    NP_PADL2,
+    NP_PADL3,
+    NP_PADL4,
+    NP_PADL5,
+    NP_PADL6,
+    NP_PADL7,
+    NP_PADL8
+};
+
+uint8_t npRightPad[] = {
+    NP_PADR_1,
+    NP_PADR_2,
+    NP_PADR_3,
+    NP_PADR_4,
+    NP_PADR_5,
+    NP_PADR_6,
+    NP_PADR_7,
+    NP_PADR_8
+};
+
 MDMode deckLeftMode = MDMode(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWMODE_L);
 MDMode deckRightMode = MDMode(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWMODE_R);
 
 MuxerPad leftPadBtns(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
 MuxerPad rightPadBtns(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
+
 Muxer leftBtns(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
 Muxer rightBtns(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
 
@@ -40,8 +63,8 @@ void MDCore::begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(ui
         vuSet[i].begin();
     }
     npk.begin();
-    npSetDeckMode(NP_MODE_L, deckLeftMode.getModeColor());
-    npSetDeckMode(NP_MODE_R, deckRightMode.getModeColor());
+    npSetDeckMode(MDAlign::Align::LEFT, deckLeftMode.getModeColor());
+    npSetDeckMode(MDAlign::Align::RIGHT, deckRightMode.getModeColor());
 }
 
 void MDCore::onCChange(uint8_t channel, uint8_t number, uint8_t value)
@@ -135,13 +158,49 @@ void MDCore::setInitialDeckB()
 
 void MDCore::readDecksMode() {
     deckLeftMode.read();
-    npSetDeckMode(NP_MODE_L, deckLeftMode.getModeColor());
+    npSetDeckMode(MDAlign::Align::LEFT, deckLeftMode.getModeColor());
     deckRightMode.read();
-    npSetDeckMode(NP_MODE_R, deckRightMode.getModeColor());
+    npSetDeckMode(MDAlign::Align::RIGHT, deckRightMode.getModeColor());
 
 }
 
-void MDCore::npSetDeckMode(uint8_t position, uint8_t mode)
+void MDCore::setPadColors(uint8_t* padAggr, uint8_t mode) {
+    switch (mode)
+    {
+    case MDMode::deckMode::HOTCUE_MODE :
+        npk.fill(0, padAggr, 8);
+        break;
+    
+    case MDMode::deckMode::LOOP_MODE :
+        npk.fill(MDMode::deckModeColor::LOOP_MODE_COLOR, padAggr, 8);
+        break;
+    
+    case MDMode::deckMode::FX_MODE :
+        npk.fill(MDMode::deckModeColor::FX_MODE_COLOR, padAggr, 8);
+        break;
+    
+    default:
+        break;
+    }
+}
+
+void MDCore::npSetDeckMode(MDAlign::Align al, uint8_t modeColorValue)
 {
-    npChange(position, mode);
+
+    switch (al)
+    {
+    case MDAlign::Align::LEFT :
+        npk.handleChange(NP_MODE_L, deckLeftMode.getModeColor());
+        setPadColors(npLeftPad, modeColorValue);
+        break;
+    
+    case MDAlign::Align::RIGHT :
+        npk.handleChange(NP_MODE_R, deckRightMode.getModeColor());
+        setPadColors(npRightPad, modeColorValue);
+        break;
+    
+    default:
+        break;
+    }
+    
 }

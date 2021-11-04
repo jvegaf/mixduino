@@ -6,13 +6,6 @@
 class MDMode
 {
 	public: 
-		MDMode(const uint8_t* mxPins, uint8_t sig, uint8_t position);
-		void begin();
-		void read();
-		uint8_t getMode();
-		uint8_t getModeColor();
-
-     private: 
 	 	enum deckModeColor {
 				HOTCUE_MODE_COLOR = 1,
 				LOOP_MODE_COLOR   = 2,
@@ -23,6 +16,13 @@ class MDMode
 			LOOP_MODE   = 8,
 			FX_MODE     = 16
 		};
+		MDMode(const uint8_t* mxPins, uint8_t sig, uint8_t position);
+		void begin();
+		void read();
+		uint8_t getMode();
+		uint8_t getModeColor();
+
+     private: 
 		uint8_t _mxSigPin;
 		const uint8_t *_mxPins;
 		uint8_t _position;

@@ -23,8 +23,8 @@ private:
 	void setMuxChannel(uint8_t channel);
 
 public:
-	MuxerPad(const uint8_t* mxPins, uint8_t sig);
-	void begin(const uint8_t* swPositions, const uint8_t nPins, uint8_t midiCh);
+	MuxerPad(const uint8_t* mxPins, uint8_t sigPin);
+	void begin(const uint8_t* swPositions, const uint8_t totalSw, uint8_t midiCh);
 	void setNoteNum(uint8_t number);
 	void read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
 };

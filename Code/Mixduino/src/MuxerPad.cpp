@@ -14,10 +14,10 @@ MuxerPad::MuxerPad(const uint8_t* mxPins, uint8_t sig)
     _mxSigPin = sig;
 }
 
-void MuxerPad::begin(const uint8_t *mPins, const uint8_t tPins, uint8_t midiCh)
+void MuxerPad::begin(const uint8_t *swPositions, const uint8_t totalSw, uint8_t midiCh)
 {
-    _tMxSwitches = tPins;
-    _swPositions = mPins;
+    _swPositions = swPositions;
+    _tMxSwitches = totalSw;
     _midiChannel = midiCh;
 
     pState = new int[_tMxSwitches]();
@@ -52,11 +52,11 @@ void MuxerPad::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(u
                 if (cState[i] == LOW)
                 {
                     //MIDI.sendNoteOn(number , value(127) , channel);
-                    funcOn(i + _firstNumber, 127U, _midiChannel);
+                    funcOn(_firstNumber + i, 127U, _midiChannel);
                 }
                 else
                 {
-                    funcOff(i + _firstNumber, 127U, _midiChannel);
+                    funcOff(_firstNumber + i, 127U, _midiChannel);
                     //MIDI.sendNoteOff(36 + i , 127 , 1);
                 }
 

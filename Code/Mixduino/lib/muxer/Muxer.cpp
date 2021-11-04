@@ -14,10 +14,10 @@ Muxer::Muxer(const uint8_t* mxPins, uint8_t sig)
     _mxSigPin = sig;
 }
 
-void Muxer::begin(const uint8_t *mPins, const uint8_t tPins, uint8_t midiCh)
+void Muxer::begin(const uint8_t* swPositions, const uint8_t totalSw, uint8_t midiCh)
 {
-    _tMxSwitches = tPins;
-    _swPositions = mPins;
+    _swPositions = swPositions;
+    _tMxSwitches = totalSw;
     _midiChannel = midiCh;
 
     pState = new int[_tMxSwitches]();

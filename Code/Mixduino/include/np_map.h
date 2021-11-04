@@ -30,30 +30,6 @@ uint8_t const NP_DECK_SEL = 18;
 uint8_t const NP_MODE_R   = 19;
 uint8_t const NP_SYNC_R   = 20;
 
-const uint8_t NPSet[] = {
-    NP_PADL1,
-    NP_PADL2,
-    NP_PADL3,
-    NP_PADL4,
-    NP_PADL5,
-    NP_PADL6,
-    NP_PADL7,
-    NP_PADL8,
-    NP_MODE_L,
-    NP_SYNC_L,
-    NP_PADR_1,
-    NP_PADR_2,
-    NP_PADR_3,
-    NP_PADR_4,
-    NP_PADR_5,
-    NP_PADR_6,
-    NP_PADR_7,
-    NP_PADR_8,
-    NP_DECK_SEL,
-    NP_MODE_R,
-    NP_SYNC_R
-};
-
 const uint8_t nNP = 21;
 
 #endif

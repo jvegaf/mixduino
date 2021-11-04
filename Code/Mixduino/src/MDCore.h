@@ -4,7 +4,6 @@
 #include <Arduino.h>
 #include <Shifter.h>
 #include "MDMode.h"
-#include "md_align.h"
 #include "sw_muxmap.h"
 #include "BtnKit.h"
 #include "MuxerPad.h"
@@ -17,6 +16,15 @@
 
 class MDCore  
 {
+	public:
+		enum Align { LEFT, RIGHT };
+		void incDeckMode(uint8_t al);
+		void begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
+		void onCChange(uint8_t channel, uint8_t number, uint8_t value);
+		void onNoteOn(uint8_t channel, uint8_t number, uint8_t value);
+		void onNoteOff(uint8_t channel, uint8_t number, uint8_t value);
+		void readButtons();
+
 	private:
 		void (*fnon)(uint8_t, uint8_t, uint8_t);
 		void (*fnoff)(uint8_t, uint8_t, uint8_t);
@@ -24,19 +32,12 @@ class MDCore
 		void npChange(uint8_t position, uint8_t value);
 		void setInitialDeckB();
 
-		void npSetDeckMode(MDAlign::Align al, uint8_t modeColorValue);
+		void npSetDeckMode(Align al);
 
 		void readDecksMode();
 
 		void setPadColors(uint8_t* padAggr, uint8_t mode);
 	
-	public:
-		void incDeckMode(uint8_t al);
-		void begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
-		void onCChange(uint8_t channel, uint8_t number, uint8_t value);
-		void onNoteOn(uint8_t channel, uint8_t number, uint8_t value);
-		void onNoteOff(uint8_t channel, uint8_t number, uint8_t value);
-		void readButtons();
 
 };
 #endif

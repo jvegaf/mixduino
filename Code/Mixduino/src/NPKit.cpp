@@ -45,15 +45,6 @@ void NPKit::handleChange(uint8_t pos, uint8_t value)
     _np->show();
 }
 
-void NPKit::fill(uint8_t colorValue, uint8_t* pixAggr, uint8_t count) {
-	
-    for (uint8_t i = 0; i < count; i++)
-    {
-        _np->setPixelColor(pixAggr[i], HCCols[colorValue]);
-    }
-    _np->show();
-}
-
 void NPKit::allOFF()
 {
     _np->clear();

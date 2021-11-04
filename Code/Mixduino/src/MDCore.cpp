@@ -63,8 +63,8 @@ void MDCore::begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(ui
         vuSet[i].begin();
     }
     npk.begin();
-    npSetDeckMode(MDAlign::Align::LEFT, deckLeftMode.getModeColor());
-    npSetDeckMode(MDAlign::Align::RIGHT, deckRightMode.getModeColor());
+    npSetDeckMode(Align::LEFT);
+    npSetDeckMode(Align::RIGHT);
 }
 
 void MDCore::onCChange(uint8_t channel, uint8_t number, uint8_t value)
@@ -158,9 +158,9 @@ void MDCore::setInitialDeckB()
 
 void MDCore::readDecksMode() {
     deckLeftMode.read();
-    npSetDeckMode(MDAlign::Align::LEFT, deckLeftMode.getModeColor());
+    npSetDeckMode(Align::LEFT);
     deckRightMode.read();
-    npSetDeckMode(MDAlign::Align::RIGHT, deckRightMode.getModeColor());
+    npSetDeckMode(Align::RIGHT);
 
 }
 
@@ -168,15 +168,24 @@ void MDCore::setPadColors(uint8_t* padAggr, uint8_t mode) {
     switch (mode)
     {
     case MDMode::deckMode::HOTCUE_MODE :
-        npk.fill(0, padAggr, 8);
+        for (uint8_t i = 0; i < 8; i++)
+        {
+            npk.handleChange(padAggr[i], MDMode::deckModeColor::HOTCUE_MODE_COLOR);
+        }
         break;
     
     case MDMode::deckMode::LOOP_MODE :
-        npk.fill(MDMode::deckModeColor::LOOP_MODE_COLOR, padAggr, 8);
+        for (uint8_t i = 0; i < 8; i++)
+        {
+            npk.handleChange(padAggr[i], MDMode::deckModeColor::LOOP_MODE_COLOR);
+        }
         break;
     
     case MDMode::deckMode::FX_MODE :
-        npk.fill(MDMode::deckModeColor::FX_MODE_COLOR, padAggr, 8);
+        for (uint8_t i = 0; i < 8; i++)
+        {
+            npk.handleChange(padAggr[i], MDMode::deckModeColor::FX_MODE_COLOR);
+        }
         break;
     
     default:
@@ -184,19 +193,19 @@ void MDCore::setPadColors(uint8_t* padAggr, uint8_t mode) {
     }
 }
 
-void MDCore::npSetDeckMode(MDAlign::Align al, uint8_t modeColorValue)
+void MDCore::npSetDeckMode(Align al)
 {
 
     switch (al)
     {
-    case MDAlign::Align::LEFT :
+    case Align::LEFT :
         npk.handleChange(NP_MODE_L, deckLeftMode.getModeColor());
-        setPadColors(npLeftPad, modeColorValue);
+        setPadColors(npLeftPad, deckLeftMode.getMode());
         break;
     
-    case MDAlign::Align::RIGHT :
+    case Align::RIGHT :
         npk.handleChange(NP_MODE_R, deckRightMode.getModeColor());
-        setPadColors(npRightPad, modeColorValue);
+        setPadColors(npRightPad, deckRightMode.getMode());
         break;
     
     default:

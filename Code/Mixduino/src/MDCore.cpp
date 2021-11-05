@@ -154,11 +154,30 @@ void MDCore::checkDeckMode(Align al)
     case Align::LEFT:
         _npkit->handleChange(NP_MODE_L, _deckLeftMode->getSelectorModeColor());
         _pgLeftPad->setAll(_deckLeftMode->getModeColor());
+        if (_deckLeftMode->getMode() == deckMode::HOTCUE_MODE)
+        {
+            if (!_deckLeftMode->getCheck())
+            {
+                fnon(SEND_MON_STATE, 127, GENERAL_CH);
+                _deckLeftMode->markChecked();
+                fnoff(SEND_MON_STATE, 127, GENERAL_CH);
+            }
+        }
+
         break;
 
     case Align::RIGHT:
         _npkit->handleChange(NP_MODE_R, _deckRightMode->getSelectorModeColor());
         _pgRightPad->setAll(_deckRightMode->getModeColor());
+        if (_deckRightMode->getMode() == deckMode::HOTCUE_MODE)
+        {
+            if (!_deckRightMode->getCheck())
+            {
+                fnon(SEND_MON_STATE, 127, GENERAL_CH);
+                _deckRightMode->markChecked();
+                fnoff(SEND_MON_STATE, 127, GENERAL_CH);
+            }
+        }
         break;
 
     default:

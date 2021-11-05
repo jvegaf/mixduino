@@ -21,6 +21,8 @@ public:
 	uint8_t getModeNote();
 	uint8_t getModeColor();
 	uint8_t getSelectorModeColor();
+	boolean getCheck();
+	void markChecked();
 
 private:
 	uint8_t _mxSigPin;
@@ -33,6 +35,7 @@ private:
 	deckMode _dMode;
 	uint8_t _modeNote;
 	uint8_t _modeColor;
+	boolean _checked;
 
 	void setMuxChannel(uint8_t channel);
 	void incrementMode();

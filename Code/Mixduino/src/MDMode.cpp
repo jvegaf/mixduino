@@ -8,29 +8,32 @@ void MDMode::setMuxChannel(uint8_t channel)
     digitalWrite(_mxPins[3], bitRead(channel, 3));
 }
 
-void MDMode::incrementMode() {
-	switch (_dMode)
+void MDMode::incrementMode()
+{
+    switch (_dMode)
     {
-    case deckMode::HOTCUE_MODE :
-        _dMode = LOOP_MODE;
-        _dmColor = LOOP_MODE_COLOR;
+    case deckMode::HOTCUE_MODE:
+        _dMode = deckMode::LOOP_MODE;
+        _modeColor = LOOP_MODE_COLOR;
+        _modeNote = 8;
         break;
 
     case deckMode::LOOP_MODE:
-        _dMode = FX_MODE;
-        _dmColor = FX_MODE_COLOR;
+        _dMode = deckMode::FX_MODE;
+        _modeColor = FX_MODE_COLOR;
+        _modeNote = 16;
         break;
 
     case deckMode::FX_MODE:
-        _dMode = HOTCUE_MODE;
-        _dmColor = HOTCUE_MODE_COLOR;
+        _dMode = deckMode::HOTCUE_MODE;
+        _modeColor = HOTCUE_MODE_COLOR;
+        _modeNote = 0;
         break;
 
     default:
         break;
     }
 }
-
 
 MDMode::MDMode(const uint8_t *mxPins, uint8_t sig, uint8_t position)
 {
@@ -44,35 +47,40 @@ MDMode::MDMode(const uint8_t *mxPins, uint8_t sig, uint8_t position)
 void MDMode::begin()
 {
     _dMode = deckMode::HOTCUE_MODE;
-    _dmColor = deckModeColor::HOTCUE_MODE_COLOR;
+    _modeColor = HOTCUE_MODE_COLOR;
+    _modeNote = 0;
     _pState = LOW;
 }
-
 
 void MDMode::read()
 {
     setMuxChannel(_position);
     _cState = digitalRead(_mxSigPin);
     if ((millis() - _lastdebouncetime) > debouncedelay)
+    {
+        if (_pState != _cState)
         {
-            if (_pState != _cState)
+            _lastdebouncetime = millis();
+
+            if (_cState == LOW)
             {
-                _lastdebouncetime = millis();
-
-                if (_cState == LOW)
-                {
-                    incrementMode();
-                }
-
-                _pState = _cState;
+                incrementMode();
             }
-        }
-}
 
-uint8_t MDMode::getMode() {
-	return _dMode;
+            _pState = _cState;
+        }
+    }
 }
 
 uint8_t MDMode::getModeColor() {
-	return _dmColor;
+	return _modeColor;
+}
+
+uint8_t MDMode::getModeNote() {
+    return _modeNote;
+}
+
+deckMode MDMode::getMode()
+{
+    return _dMode;
 }

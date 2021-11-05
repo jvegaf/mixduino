@@ -1,35 +1,6 @@
 #include "MDCore.h"
 
-uint8_t npLeftPad[] = {
-    NP_PADL1,
-    NP_PADL2,
-    NP_PADL3,
-    NP_PADL4,
-    NP_PADL5,
-    NP_PADL6,
-    NP_PADL7,
-    NP_PADL8
-};
-
-uint8_t npRightPad[] = {
-    NP_PADR_1,
-    NP_PADR_2,
-    NP_PADR_3,
-    NP_PADR_4,
-    NP_PADR_5,
-    NP_PADR_6,
-    NP_PADR_7,
-    NP_PADR_8
-};
-
-MDMode deckLeftMode = MDMode(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWMODE_L);
-MDMode deckRightMode = MDMode(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWMODE_R);
-
-MuxerPad leftPadBtns(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
-MuxerPad rightPadBtns(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
-
-Muxer leftBtns(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
-Muxer rightBtns(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
+uint8_t const T_NP_PAD = 8;
 
 BtnKit btns(ARD_SW_BUNDLE, T_ARD_SW);
 
@@ -45,26 +16,35 @@ uint8_t t_VUSet = 5;
 Shifter fbRight(FBR_SIG, FBR_LATCH, SRCLK, 1);
 Shifter fbLeft(FBL_SIG, FBL_LATCH, SRCLK, 1);
 
-NPKit npk(NP_DATA, nNP);
+MDCore::MDCore()
+{
+    _npkit = new NPKit(NP_DATA, T_NP);
+    _pgLeftPad = new PixGroup(PIXLS_PAD_L, T_NP_PAD, _npkit);
+    _pgRightPad = new PixGroup(PIXLS_PAD_R, T_NP_PAD, _npkit);
+    _deckLeftMode = new MDMode(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWMODE_L);
+    _deckRightMode = new MDMode(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWMODE_R);
+    _leftPadBtns = new MuxerPad(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
+    _rightPadBtns = new MuxerPad(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
+    _leftBtns = new Muxer(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
+    _rightBtns = new Muxer(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
+}
 
 void MDCore::begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
 {
     fnon = funcOn;
     fnoff = funcOff;
-    deckLeftMode.begin();
-    deckRightMode.begin();
-    leftBtns.begin(MUX_SW_BUNDLE_L, T_MUX_SW_L, LEFT_BTNS_CH);
-    rightBtns.begin(MUX_SW_BUNDLE_R, T_MUX_SW_R, RIGHT_BTNS_CH);
-    leftPadBtns.begin(SW_PADL_BUNDLE, T_DECK_PADS, LEFT_PAD_CH);
-    rightPadBtns.begin(SW_PADR_BUNDLE, T_DECK_PADS, RIGHT_PAD_CH);
+    _deckLeftMode->begin();
+    _deckRightMode->begin();
+    _leftBtns->begin(MUX_SW_BUNDLE_L, T_MUX_SW_L, LEFT_BTNS_CH);
+    _rightBtns->begin(MUX_SW_BUNDLE_R, T_MUX_SW_R, RIGHT_BTNS_CH);
+    _leftPadBtns->begin(SW_PADL_BUNDLE, T_DECK_PADS, LEFT_PAD_CH);
+    _rightPadBtns->begin(SW_PADR_BUNDLE, T_DECK_PADS, RIGHT_PAD_CH);
     btns.begin(ARDUINO_BTNS_CH);
     for (uint8_t i = 0; i < t_VUSet; i++)
     {
         vuSet[i].begin();
     }
-    npk.begin();
-    npSetDeckMode(Align::LEFT);
-    npSetDeckMode(Align::RIGHT);
+    _npkit->begin();
 }
 
 void MDCore::onCChange(uint8_t channel, uint8_t number, uint8_t value)
@@ -132,12 +112,12 @@ void MDCore::onNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 void MDCore::readButtons()
 {
     readDecksMode();
-    leftPadBtns.setNoteNum(deckLeftMode.getMode());
-    rightPadBtns.setNoteNum(deckRightMode.getMode());
-    leftPadBtns.read(fnon,fnoff);
-    rightPadBtns.read(fnon, fnoff);
-    leftBtns.read(fnon, fnoff);
-    rightBtns.read(fnon, fnoff);
+    _leftPadBtns->setNoteNum(_deckLeftMode->getModeNote());
+    _rightPadBtns->setNoteNum(_deckRightMode->getModeNote());
+    _leftPadBtns->read(fnon, fnoff);
+    _rightPadBtns->read(fnon, fnoff);
+    _leftBtns->read(fnon, fnoff);
+    _rightBtns->read(fnon, fnoff);
     btns.read(fnon, fnoff);
 }
 
@@ -148,7 +128,7 @@ void MDCore::vuChange(uint8_t number, uint8_t value)
 
 void MDCore::npChange(uint8_t position, uint8_t value)
 {
-    npk.handleChange(position, value);
+    _npkit->handleChange(position, value);
 }
 
 void MDCore::setInitialDeckB()
@@ -156,60 +136,30 @@ void MDCore::setInitialDeckB()
     this->npChange(NP_DECK_SEL, 1);
 }
 
-void MDCore::readDecksMode() {
-    deckLeftMode.read();
-    npSetDeckMode(Align::LEFT);
-    deckRightMode.read();
-    npSetDeckMode(Align::RIGHT);
-
+void MDCore::readDecksMode()
+{
+    _deckLeftMode->read();
+    checkDeckMode(Align::LEFT);
+    _deckRightMode->read();
+    checkDeckMode(Align::RIGHT);
 }
 
-void MDCore::setPadColors(uint8_t* padAggr, uint8_t mode) {
-    switch (mode)
-    {
-    case MDMode::deckMode::HOTCUE_MODE :
-        for (uint8_t i = 0; i < 8; i++)
-        {
-            npk.handleChange(padAggr[i], MDMode::deckModeColor::HOTCUE_MODE_COLOR);
-        }
-        break;
-    
-    case MDMode::deckMode::LOOP_MODE :
-        for (uint8_t i = 0; i < 8; i++)
-        {
-            npk.handleChange(padAggr[i], MDMode::deckModeColor::LOOP_MODE_COLOR);
-        }
-        break;
-    
-    case MDMode::deckMode::FX_MODE :
-        for (uint8_t i = 0; i < 8; i++)
-        {
-            npk.handleChange(padAggr[i], MDMode::deckModeColor::FX_MODE_COLOR);
-        }
-        break;
-    
-    default:
-        break;
-    }
-}
-
-void MDCore::npSetDeckMode(Align al)
+void MDCore::checkDeckMode(Align al)
 {
 
     switch (al)
     {
-    case Align::LEFT :
-        npk.handleChange(NP_MODE_L, deckLeftMode.getModeColor());
-        setPadColors(npLeftPad, deckLeftMode.getMode());
+    case Align::LEFT:
+        _npkit->handleChange(NP_MODE_L, _deckLeftMode->getModeColor());
+        _pgLeftPad->setAll(_deckLeftMode->getModeColor());
         break;
-    
-    case Align::RIGHT :
-        npk.handleChange(NP_MODE_R, deckRightMode.getModeColor());
-        setPadColors(npRightPad, deckRightMode.getMode());
+
+    case Align::RIGHT:
+        _npkit->handleChange(NP_MODE_R, _deckRightMode->getModeColor());
+        _pgRightPad->setAll(_deckRightMode->getModeColor());
         break;
-    
+
     default:
         break;
     }
-    
 }

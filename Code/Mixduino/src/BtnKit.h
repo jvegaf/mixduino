@@ -9,7 +9,7 @@
 class BtnKit
 {
 private:
-	uint8_t *pins;
+	const uint8_t *pins;
 	uint8_t totalPins;
 	int *pState;
 	int *cState;

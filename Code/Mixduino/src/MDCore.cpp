@@ -68,19 +68,19 @@ void MDCore::onNoteOn(uint8_t channel, uint8_t number, uint8_t value)
     case LEFT_BTNS_CH:
         _leftFB->setTo(number, HIGH);
         break;
-    
+
     case RIGHT_BTNS_CH:
         _rightFB->setTo(number, HIGH);
         break;
-    
+
     case LEFT_PAD_CH:
-        _pgLeftPad->setPixel(number, value);
+        handlePadNoteChange(HIGH, _deckLeftMode, _pgLeftPad, number, value);
         break;
-    
+
     case RIGHT_PAD_CH:
-        _pgRightPad->setPixel(number, value);
+        handlePadNoteChange(HIGH, _deckRightMode, _pgRightPad, number, value);
         break;
-    
+
     default:
         break;
     }
@@ -88,7 +88,27 @@ void MDCore::onNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 
 void MDCore::onNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 {
+    switch (channel)
+    {
+    case LEFT_BTNS_CH:
+        _leftFB->setTo(number, LOW);
+        break;
 
+    case RIGHT_BTNS_CH:
+        _rightFB->setTo(number, LOW);
+        break;
+
+    case LEFT_PAD_CH:
+        handlePadNoteChange(LOW, _deckLeftMode, _pgLeftPad, number, value);
+        break;
+
+    case RIGHT_PAD_CH:
+        handlePadNoteChange(LOW, _deckRightMode, _pgRightPad, number, value);
+        break;
+
+    default:
+        break;
+    }
 }
 
 void MDCore::readButtons()
@@ -144,4 +164,19 @@ void MDCore::checkDeckMode(Align al)
     default:
         break;
     }
+}
+
+void MDCore::handlePadNoteChange(boolean nState, MDMode *deckMD, PixGroup *group, uint8_t number, uint8_t value)
+{
+    if (deckMD->getMode() != deckMode::HOTCUE_MODE)
+    {
+        return;
+    }
+
+    if (nState == LOW)
+    {
+        group->setPixel(number, 0);
+    }
+
+    group->setPixel(number, value);
 }

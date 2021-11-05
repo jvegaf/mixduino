@@ -2,7 +2,7 @@
 #ifndef MDMODEFUNC_H
 #define MDMODEFUNC_H
 #include <Arduino.h>
-#include <md_state.h>
+#include <md_defs.h>
 #include <md_func.h>
 
 class MDModeFunc : public MDFunc
@@ -13,7 +13,7 @@ class MDModeFunc : public MDFunc
 		{
 			
 		}
-		MDState::StateType read() {
+		State read() {
 			return this->input->read(this->inputPos);
 		} 
 };

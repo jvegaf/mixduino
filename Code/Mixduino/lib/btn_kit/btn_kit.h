@@ -6,69 +6,73 @@
 #include <Arduino.h>
 #include <MIDI.h>
 #include <Multiplexer4067.h>
-#include <md_state.h>
+#include <md_defs.h>
+#include "input_base.h"
 #include <md_pinmap.h>
 #include <sw_muxmap.h>
 
-class BtnKit
+class BtnKit : public InputBase
 {
-	public:
-		BtnKit(const uint8_t* arduinoPins, const uint8_t tPins)
+public:
+	BtnKit(const uint8_t *arduinoPins, const uint8_t tPins)
+	{
+		totalPins = tPins;
+		pins = new uint8_t[totalPins];
+		for (uint8_t i = 0; i < totalPins; i++)
 		{
-		    totalPins = tPins;
-		    pins = new uint8_t[totalPins];
-		    for (uint8_t i = 0; i < totalPins; i++)
-		    {
-		        pins[i] = arduinoPins[i];
-		    }
-		    pState = new int[totalPins]();
-		    cState = new int[totalPins]();
-		    lastdebouncetime = new unsigned long[totalPins]();
+			pins[i] = arduinoPins[i];
 		}
+		pState = new int[totalPins]();
+		cState = new int[totalPins]();
+		lastdebouncetime = new unsigned long[totalPins]();
+	}
 
-		BtnKit() = default;
-
-		void begin()
+	void begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t), uint8_t midCh)
+	{
+		fnon = funcOn;
+		fnoff = funcOff;
+		_midiChannel = midCh;
+		for (uint8_t i = 0; i < totalPins; i++)
 		{
-		    for (uint8_t i = 0; i < totalPins; i++)
-		    {
-		        pinMode(pins[i], INPUT_PULLUP);
-		    }
+			pinMode(pins[i], INPUT_PULLUP);
 		}
-		
-		MDState::StateType read(uint8_t input_pos)
+	}
+
+	void read(uint8_t input_pos, uint8_t noteIndex)
+	{
+
+		cState[input_pos] = digitalRead(pins[input_pos]);
+
+		if ((millis() - lastdebouncetime[input_pos]) > debouncedelay)
 		{
+			if (cState[input_pos] != pState[input_pos])
+			{
+				lastdebouncetime[input_pos] = millis();
 
-		    cState[input_pos] = digitalRead(pins[input_pos]);
-
-		    if ((millis() - lastdebouncetime[input_pos]) > debouncedelay)
-		    {
-		        if (cState[input_pos] != pState[input_pos])
-		        {
-		            lastdebouncetime[input_pos] = millis();
-
-		            if (cState[input_pos] == LOW)
-		            {
-		                pState[input_pos] = cState[input_pos];
-		                return MDState::StateType::TURN_OFF; // envia NoteOn(nota, velocity, canal midi)
-		            }
-		            else
-		            {
-		                pState[input_pos] = cState[input_pos];
-		                return MDState::StateType::TURN_ON;
-		            }
-		        }
-		        return MDState::StateType::SAME_STATE;
-		    }
+				if (cState[input_pos] == LOW)
+				{
+					fnon(noteIndex, 127, _midiChannel);
+				}
+				else
+				{
+					fnoff(noteIndex, 127, _midiChannel);
+				}
+				pState[input_pos] = cState[input_pos];
+			}
 		}
-	private:
-		uint8_t *pins;
-		uint8_t totalPins;
-		int *pState;
-		int *cState;
+	}
 
-		unsigned long* lastdebouncetime;
-		unsigned long debouncedelay = 20;
+private:
+	uint8_t *pins;
+	uint8_t totalPins;
+	int *pState;
+	int *cState;
+	uint8_t _midiChannel;
+	void (*fnon)(uint8_t, uint8_t, uint8_t);
+	void (*fnoff)(uint8_t, uint8_t, uint8_t);
+
+	unsigned long *lastdebouncetime;
+	unsigned long debouncedelay = 20;
 };
 
 #endif // BTN_KIT_H

@@ -2,10 +2,9 @@
 #ifndef MDFUNC_H
 #define MDFUNC_H
 #include <Arduino.h>
-#include <input_base.h>
-#include <output_base.h>
-#include <md_state.h>
-#include <md_mode.h>
+#include "input_base.h"
+#include "output_base.h"
+#include "md_defs.h"
 
 #pragma once
 
@@ -39,24 +38,24 @@ class MDFunc
 
 		void read(void (*funcNoteOn)(uint8_t, uint8_t, uint8_t),void (*funcNoteOff)(uint8_t, uint8_t, uint8_t))
 		{
-			MDState::StateType state = this->input->read(this->inputPos);
-			if (state == MDState::StateType::TURN_ON)
+			State state = this->input->read(this->inputPos);
+			if (state == State::STATE_HIGH)
 			{
 				funcNoteOn(this->noteNumber, 127, this->midiCh);
 			}
-			else if (state == MDState::StateType::TURN_OFF)
+			if (state == State::STATE_LOW)
 			{
 				funcNoteOff(this->noteNumber, 127, this->midiCh);
 			}
 		}
 
-		void onChange(MDState::StateType nState)
+		void onChange(State nState)
 		{
-			if (nState == MDState::StateType::TURN_ON)
+			if (nState == State::STATE_HIGH)
 			{
 				this->output->setTo((OutDTO){this->outputPos, HIGH, 0});
 			}
-			else if (nState == MDState::StateType::TURN_OFF)
+			else if (nState == State::STATE_LOW)
 			{
 				this->output->setTo((OutDTO){this->outputPos, LOW, 0});
 			}

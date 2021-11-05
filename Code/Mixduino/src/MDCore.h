@@ -3,7 +3,6 @@
 #ifndef MDCORE_H
 #define MDCORE_H
 
-#include <md_align.h>
 #include <muxer.h>
 #include <sw_muxmap.h>
 #include <md_shifter.h>

@@ -23,18 +23,18 @@ class MDPadFunc : public MDFunc
 		    this->_prevNoteNumber = noteNum;
 		}
 
-		void setMode(MDMode::ModeType m) {
+		void setMode(DeckMode m) {
 			switch (m)
 		    {
-		    case MDMode::ModeType::HOTCUE :
+		    case DeckMode::MODE_HOTCUE :
 		        this->noteNumber = _prevNoteNumber;
 		        break;
 		    
-		    case MDMode::ModeType::LOOP :
+		    case DeckMode::MODE_LOOP :
 		        this->noteNumber = _prevNoteNumber + 8U;
 		        break;
 		    
-		    case MDMode::ModeType::FX :
+		    case DeckMode::MODE_FX :
 		        this->noteNumber = _prevNoteNumber + 16U;
 		        break;
 		    

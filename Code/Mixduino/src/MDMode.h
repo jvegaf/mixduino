@@ -20,6 +20,7 @@ public:
 	deckMode getMode();
 	uint8_t getModeNote();
 	uint8_t getModeColor();
+	uint8_t getSelectorModeColor();
 
 private:
 	uint8_t _mxSigPin;

@@ -12,8 +12,7 @@
 #include "pin_map.h"
 #include "sr_fb_map.h"
 #include "sw_muxmap.h"
-#include <Arduino.h>
-#include <Shifter.h>
+#include "Feedback.h"
 
 class MDCore
 {
@@ -32,15 +31,19 @@ public:
 	void readButtons();
 
 private:
-	NPKit *_npkit;
-	PixGroup *_pgLeftPad;
-	PixGroup *_pgRightPad;
-	MDMode *_deckLeftMode;
-	MDMode *_deckRightMode;
-	MuxerPad *_leftPadBtns;
-	MuxerPad *_rightPadBtns;
+	Shifter* _shfLeft;
+	Shifter* _shfRight;
+	NPKit* _npkit;
+	PixGroup* _pgLeftPad;
+	PixGroup* _pgRightPad;
+	MDMode* _deckLeftMode;
+	MDMode* _deckRightMode;
+	MuxerPad* _leftPadBtns;
+	MuxerPad* _rightPadBtns;
 	Muxer* _leftBtns;
+	Feedback* _leftFB;
 	Muxer* _rightBtns;
+	Feedback* _rightFB;
 	void (*fnon)(uint8_t, uint8_t, uint8_t);
 	void (*fnoff)(uint8_t, uint8_t, uint8_t);
 	void vuChange(uint8_t number, uint8_t value);

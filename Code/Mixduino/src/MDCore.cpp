@@ -13,11 +13,10 @@ VUmeter vuSet[] = {
 
 uint8_t t_VUSet = 5;
 
-Shifter fbRight(FBR_SIG, FBR_LATCH, SRCLK, 1);
-Shifter fbLeft(FBL_SIG, FBL_LATCH, SRCLK, 1);
-
 MDCore::MDCore()
 {
+    _shfLeft = new Shifter(FBL_SIG, FBL_LATCH, SRCLK, 1);
+    _shfRight = new Shifter(FBR_SIG, FBR_LATCH, SRCLK, 1);
     _npkit = new NPKit(NP_DATA, T_NP);
     _pgLeftPad = new PixGroup(PIXLS_PAD_L, T_NP_PAD, _npkit);
     _pgRightPad = new PixGroup(PIXLS_PAD_R, T_NP_PAD, _npkit);
@@ -26,7 +25,9 @@ MDCore::MDCore()
     _leftPadBtns = new MuxerPad(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
     _rightPadBtns = new MuxerPad(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
     _leftBtns = new Muxer(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
+    _leftFB = new Feedback(_shfLeft, FB_LED_BUNDLE_L, T_FB_BDL_L);
     _rightBtns = new Muxer(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
+    _rightFB = new Feedback(_shfRight, FB_LED_BUNDLE_R, T_FB_BDL_R);
 }
 
 void MDCore::begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
@@ -54,9 +55,6 @@ void MDCore::onCChange(uint8_t channel, uint8_t number, uint8_t value)
     case 12: // VU
         vuChange(number, value);
         break;
-    case 14: // NPixels
-        npChange(number, value);
-        break;
 
     default:
         break;
@@ -65,48 +63,32 @@ void MDCore::onCChange(uint8_t channel, uint8_t number, uint8_t value)
 
 void MDCore::onNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
-    for (uint8_t i = 0; i < nFbRight; i++)
+    switch (channel)
     {
-        if (fbRightSet[i] == number)
-        {
-            fbRight.setPin(i, HIGH);
-            fbRight.write();
-            return;
-        }
-    }
-
-    for (uint8_t i = 0; i < nFbLeft; i++)
-    {
-        if (fbLeftSet[i] == number)
-        {
-            fbLeft.setPin(i, HIGH);
-            fbLeft.write();
-            return;
-        }
+    case LEFT_BTNS_CH:
+        _leftFB->setTo(number, HIGH);
+        break;
+    
+    case RIGHT_BTNS_CH:
+        _rightFB->setTo(number, HIGH);
+        break;
+    
+    case LEFT_PAD_CH:
+        _pgLeftPad->setPixel(number, value);
+        break;
+    
+    case RIGHT_PAD_CH:
+        _pgRightPad->setPixel(number, value);
+        break;
+    
+    default:
+        break;
     }
 }
 
 void MDCore::onNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 {
-    for (uint8_t i = 0; i < nFbRight; i++)
-    {
-        if (fbRightSet[i] == number)
-        {
-            fbRight.setPin(i, LOW);
-            fbRight.write();
-            return;
-        }
-    }
 
-    for (uint8_t i = 0; i < nFbLeft; i++)
-    {
-        if (fbLeftSet[i] == number)
-        {
-            fbLeft.setPin(i, LOW);
-            fbLeft.write();
-            return;
-        }
-    }
 }
 
 void MDCore::readButtons()
@@ -150,12 +132,12 @@ void MDCore::checkDeckMode(Align al)
     switch (al)
     {
     case Align::LEFT:
-        _npkit->handleChange(NP_MODE_L, _deckLeftMode->getModeColor());
+        _npkit->handleChange(NP_MODE_L, _deckLeftMode->getSelectorModeColor());
         _pgLeftPad->setAll(_deckLeftMode->getModeColor());
         break;
 
     case Align::RIGHT:
-        _npkit->handleChange(NP_MODE_R, _deckRightMode->getModeColor());
+        _npkit->handleChange(NP_MODE_R, _deckRightMode->getSelectorModeColor());
         _pgRightPad->setAll(_deckRightMode->getModeColor());
         break;
 

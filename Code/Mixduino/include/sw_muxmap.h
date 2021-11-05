@@ -26,16 +26,14 @@ uint8_t const SWPADL1   = 14;
 uint8_t const SWPADL5   = 15;
 
 const uint8_t MUX_SW_BUNDLE_L[] = {
-    SWSHIFT,
     SWPLAY_L,
     SWCUE_L,
-    SWSYNC_L,
     SWLOOP_L,
     SWPCUEL2,
-    SWPCUEL1,
+    SWPCUEL1
     };
 
-const uint8_t T_MUX_SW_L = 7;
+const uint8_t T_MUX_SW_L = 5;
 
 const uint8_t SW_PADL_BUNDLE[] = {
     SWPADL1,
@@ -69,15 +67,13 @@ uint8_t const SWPADR5    = 15;
 
 
 const uint8_t MUX_SW_BUNDLE_R[] = {
-    SWDECK_SEL,
     SWPLAY_R,
     SWCUE_R,
-    SWSYNC_R,
     SWLOOP_R,
     SWPCUEL3
 };
 
-const uint8_t T_MUX_SW_R = 6;
+const uint8_t T_MUX_SW_R = 4;
 
 const uint8_t SW_PADR_BUNDLE[] = {
     SWPADR1,

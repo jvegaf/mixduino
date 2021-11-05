@@ -72,11 +72,22 @@ void MDMode::read()
     }
 }
 
-uint8_t MDMode::getModeColor() {
-	return _modeColor;
+uint8_t MDMode::getModeColor()
+{
+    return _modeColor;
 }
 
-uint8_t MDMode::getModeNote() {
+uint8_t MDMode::getSelectorModeColor()
+{
+    if (_modeColor == HOTCUE_MODE_COLOR)
+    {
+        return 1; // BLUE COLOR
+    }
+    return _modeColor;
+}
+
+uint8_t MDMode::getModeNote()
+{
     return _modeNote;
 }
 

@@ -170,7 +170,7 @@ FuncPad* FuncFactory::createFuncPads(Input **inAggr, OutputBase **outAggr, uint8
     FuncPad funcSet[t_funcs];
     for (uint8_t i = 0; i < t_funcs; i++)
     {
-        funcSet[i] = Func(inAggr[i], outAggr[i], midiCh, i);
+        funcSet[i] = FuncPad(inAggr[i], outAggr[i], midiCh, i);
     }
     return funcSet;
 }

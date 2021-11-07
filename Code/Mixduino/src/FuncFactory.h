@@ -20,15 +20,27 @@ class FuncFactory
 {
 public:
     FuncFactory(NPKit* npkit, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
-
     void begin();
+
+    FuncBase* blindFuncs() const { return this->_blindFuncs; }
+
+    Func* getFuncs() const { return this->_funcs; }
+
+    FuncPad* getLeftFuncPads() const { return this->_leftFuncPads; }
+
+    FuncPad* getRightFuncPads() const { return this->_rightFuncPads; }
+    
 
 private:
     NPKit* _npkit;
     Shifter* _shfLeft;
 	Shifter* _shfRight;
     FuncMode* _funcModeLeft; 
-    FuncMode* _funcModeRight; 
+    FuncMode* _funcModeRight;
+    FuncBase* _blindFuncs;
+    Func* _funcs;
+    FuncPad* _leftFuncPads;
+    FuncPad* _rightFuncPads; 
     void (*fOn)(uint8_t, uint8_t, uint8_t); 
     void (*fOff)(uint8_t, uint8_t, uint8_t);
 
@@ -38,17 +50,11 @@ private:
     Input **createInputPads(const uint8_t* mxPinBundle, uint8_t sigPin, const uint8_t* positions, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
 
     OutputBase** createOutputPads(NPKit* npk, const uint8_t* positions);
-
     FuncMode* createLeftModeFunc();
-
     FuncMode* createRightModeFunc();
-
     Input** createBlindInputs();
-
     Func* createFuncs(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, const uint8_t *notesAggr, uint8_t t_funcs);
-
     FuncBase* createFuncsBase(Input **inAggr, uint8_t midiCh, const uint8_t *notesAggr, uint8_t t_funcs);
-
     FuncPad* createFuncPads(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, uint8_t t_funcs);
 
     

@@ -12,16 +12,19 @@ FuncFactory::FuncFactory(NPKit *npkit, void (*funcOn)(uint8_t, uint8_t, uint8_t)
 void FuncFactory::begin()
 {
     Input** blindIns = createBlindInputs();
+    _blindFuncs = createFuncsBase(blindIns, IN_ONLY_CH, blindMidiSet, T_MIDI_BLIND_SET);
+    
     Input** ins = createInputs();
     OutputBase** outs = createOutputs();
-    FuncBase* baseFuncs = createFuncsBase(blindIns, IN_ONLY_CH, blindMidiSet, T_MIDI_BLIND_SET);
-    Func* funcs = createFuncs(ins, outs, IN_OUT_CH, midiSet, T_MIDI_SET);
+    _funcs = createFuncs(ins, outs, IN_OUT_CH, midiSet, T_MIDI_SET);
+    
     Input** leftInPads = createInputPads(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SW_PADL_BUNDLE, fOn, fOff);
-    Input** rightInPads = createInputPads(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SW_PADR_BUNDLE, fOn, fOff);
     OutputBase** leftOutPads = createOutputPads(_npkit, PIXLS_PAD_L);
+    _leftFuncPads = createFuncPads(leftInPads, leftOutPads, LEFT_PAD_CH, T_DECK_PADS);
+    
+    Input** rightInPads = createInputPads(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SW_PADR_BUNDLE, fOn, fOff);
     OutputBase** rightOutPads = createOutputPads(_npkit, PIXLS_PAD_R);
-    FuncPad* leftFuncPads = createFuncPads(leftInPads, leftOutPads, LEFT_PAD_CH, T_DECK_PADS);
-    FuncPad* rightFuncPads = createFuncPads(rightInPads, rightOutPads, RIGHT_PAD_CH, T_DECK_PADS);
+    _rightFuncPads = createFuncPads(rightInPads, rightOutPads, RIGHT_PAD_CH, T_DECK_PADS);
 
 }
 

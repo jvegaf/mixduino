@@ -4,23 +4,12 @@
 #define MUXERPAD_H
 
 #include <Arduino.h>
+#include "Muxer.h"
 
-class MuxerPad
+class MuxerPad : public Muxer
 {
 private:
-	uint8_t _mxSigPin;
-	const uint8_t* _mxPins;
-	const uint8_t* _swPositions;
-	uint8_t _tMxSwitches;
-	int* pState;
-	int* cState;
-
-	unsigned long* lastdebouncetime;
-	unsigned long debouncedelay = 20;
-	
-	uint8_t _midiChannel;
 	uint8_t _firstNumber;
-	void setMuxChannel(uint8_t channel);
 
 public:
 	MuxerPad(const uint8_t* mxPins, uint8_t sigPin);

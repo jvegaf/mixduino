@@ -44,7 +44,6 @@ private:
 	Feedback* _leftFB;
 	Muxer* _rightBtns;
 	Feedback* _rightFB;
-	private:
 	
 	void handlePadNoteChange(boolean nState, MDMode* deckMD, PixGroup* group, uint8_t number, uint8_t value);
 	void (*fnon)(uint8_t, uint8_t, uint8_t);

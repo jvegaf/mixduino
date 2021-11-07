@@ -5,7 +5,7 @@
 
 class Muxer
 {
-private:
+protected:
 	uint8_t _mxSigPin;
 	const uint8_t* _mxPins;
 	const uint8_t* _swPositions;

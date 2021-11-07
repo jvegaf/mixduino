@@ -15,8 +15,6 @@ uint8_t t_VUSet = 5;
 
 MDCore::MDCore()
 {
-    _shfLeft = new Shifter(FBL_SIG, FBL_LATCH, SRCLK, 1);
-    _shfRight = new Shifter(FBR_SIG, FBR_LATCH, SRCLK, 1);
     _npkit = new NPKit(NP_DATA, T_NP);
     _pgLeftPad = new PixGroup(PIXLS_PAD_L, T_NP_PAD, _npkit);
     _pgRightPad = new PixGroup(PIXLS_PAD_R, T_NP_PAD, _npkit);
@@ -156,10 +154,10 @@ void MDCore::checkDeckMode(Align al)
         _pgLeftPad->setAll(_deckLeftMode->getModeColor());
         if (_deckLeftMode->getMode() == deckMode::HOTCUE_MODE)
         {
-            if (!_deckLeftMode->getCheck())
+            if (!_deckLeftMode->isDisposed())
             {
                 fnon(SEND_MON_STATE, 127, GENERAL_CH);
-                _deckLeftMode->markChecked();
+                _deckLeftMode->dispose();
                 fnoff(SEND_MON_STATE, 127, GENERAL_CH);
             }
         }
@@ -171,10 +169,10 @@ void MDCore::checkDeckMode(Align al)
         _pgRightPad->setAll(_deckRightMode->getModeColor());
         if (_deckRightMode->getMode() == deckMode::HOTCUE_MODE)
         {
-            if (!_deckRightMode->getCheck())
+            if (!_deckRightMode->isDisposed())
             {
                 fnon(SEND_MON_STATE, 127, GENERAL_CH);
-                _deckRightMode->markChecked();
+                _deckRightMode->dispose();
                 fnoff(SEND_MON_STATE, 127, GENERAL_CH);
             }
         }

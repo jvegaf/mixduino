@@ -1,17 +1,10 @@
 #include "MuxerPad.h"
 
-void MuxerPad::setMuxChannel(uint8_t channel)
-{
-    digitalWrite(_mxPins[0], bitRead(channel, 0));
-    digitalWrite(_mxPins[1], bitRead(channel, 1));
-    digitalWrite(_mxPins[2], bitRead(channel, 2));
-    digitalWrite(_mxPins[3], bitRead(channel, 3));
-}
 
 MuxerPad::MuxerPad(const uint8_t* mxPins, uint8_t sig)
+: Muxer(mxPins, sig)
 {
-    _mxPins = mxPins;
-    _mxSigPin = sig;
+    
 }
 
 void MuxerPad::begin(const uint8_t *swPositions, const uint8_t totalSw, uint8_t midiCh)

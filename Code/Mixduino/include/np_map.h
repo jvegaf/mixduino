@@ -32,10 +32,6 @@ uint8_t const NP_SYNC_R   = 20;
 
 uint8_t const T_NP = 21;
 
-uint8_t const HOTCUE_MODE_COLOR     = 0;
-uint8_t const LOOP_MODE_COLOR       = 5;
-uint8_t const FX_MODE_COLOR         = 7;
-
 const uint8_t PIXLS_PAD_L[] = {
     NP_PADL1,
     NP_PADL2,

@@ -16,21 +16,21 @@ void MDMode::incrementMode()
         _dMode = deckMode::LOOP_MODE;
         _modeColor = LOOP_MODE_COLOR;
         _modeNote = 8;
-        _checked = false;
+        _disposed = false;
         break;
 
     case deckMode::LOOP_MODE:
         _dMode = deckMode::FX_MODE;
         _modeColor = FX_MODE_COLOR;
         _modeNote = 16;
-        _checked = false;
+        _disposed = false;
         break;
 
     case deckMode::FX_MODE:
         _dMode = deckMode::HOTCUE_MODE;
         _modeColor = HOTCUE_MODE_COLOR;
         _modeNote = 0;
-        _checked = false;
+        _disposed = false;
         break;
 
     default:
@@ -45,7 +45,7 @@ MDMode::MDMode(const uint8_t *mxPins, uint8_t sig, uint8_t position)
     _position = position;
     _pState = 0;
     _cState = 0;
-    _checked = false;
+    _disposed = false;
 }
 
 void MDMode::begin()
@@ -100,12 +100,12 @@ deckMode MDMode::getMode()
     return _dMode;
 }
 
-boolean MDMode::getCheck()
+boolean MDMode::isDisposed()
 {
-    return _checked;
+    return _disposed;
 }
 
-void MDMode::markChecked()
+void MDMode::dispose()
 {
-    _checked = true;
+    _disposed = true;
 }

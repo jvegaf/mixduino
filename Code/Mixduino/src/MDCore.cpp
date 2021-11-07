@@ -1,9 +1,5 @@
 #include "MDCore.h"
 
-uint8_t const T_NP_PAD = 8;
-
-BtnKit btns(ARD_SW_BUNDLE, T_ARD_SW);
-
 VUmeter vuSet[] = {
     VUmeter(L1VU_SIG, L1VU_LATCH, SRCLK),
     VUmeter(L2VU_SIG, L2VU_LATCH, SRCLK),
@@ -16,33 +12,12 @@ uint8_t t_VUSet = 5;
 MDCore::MDCore()
 {
     _npkit = new NPKit(NP_DATA, T_NP);
-    _pgLeftPad = new PixGroup(PIXLS_PAD_L, T_NP_PAD, _npkit);
-    _pgRightPad = new PixGroup(PIXLS_PAD_R, T_NP_PAD, _npkit);
-    _deckLeftMode = new MDMode(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWMODE_L);
-    _deckRightMode = new MDMode(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWMODE_R);
-    _leftPadBtns = new MuxerPad(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
-    _rightPadBtns = new MuxerPad(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
-    _leftBtns = new Muxer(MUXPIN_BUNDLE, LEFT_SWMUX_SIG);
-    _leftFB = new Feedback(_shfLeft, FB_LED_BUNDLE_L, T_FB_BDL_L);
-    _rightBtns = new Muxer(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);
-    _rightFB = new Feedback(_shfRight, FB_LED_BUNDLE_R, T_FB_BDL_R);
 }
 
 void MDCore::begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
 {
     fnon = funcOn;
     fnoff = funcOff;
-    _deckLeftMode->begin();
-    _deckRightMode->begin();
-    _leftBtns->begin(MUX_SW_BUNDLE_L, T_MUX_SW_L, LEFT_BTNS_CH);
-    _rightBtns->begin(MUX_SW_BUNDLE_R, T_MUX_SW_R, RIGHT_BTNS_CH);
-    _leftPadBtns->begin(SW_PADL_BUNDLE, T_DECK_PADS, LEFT_PAD_CH);
-    _rightPadBtns->begin(SW_PADR_BUNDLE, T_DECK_PADS, RIGHT_PAD_CH);
-    btns.begin(ARDUINO_BTNS_CH);
-    for (uint8_t i = 0; i < t_VUSet; i++)
-    {
-        vuSet[i].begin();
-    }
     _npkit->begin();
 }
 
@@ -50,7 +25,7 @@ void MDCore::onCChange(uint8_t channel, uint8_t number, uint8_t value)
 {
     switch (channel)
     {
-    case 12: // VU
+    case VUMETERS_CH: // VU
         vuChange(number, value);
         break;
 
@@ -63,20 +38,17 @@ void MDCore::onNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
     switch (channel)
     {
-    case LEFT_BTNS_CH:
-        _leftFB->setTo(number, HIGH);
-        break;
 
-    case RIGHT_BTNS_CH:
-        _rightFB->setTo(number, HIGH);
+    case IN_OUT_CH:
+        _funcs[number].setTo(value);
         break;
 
     case LEFT_PAD_CH:
-        handlePadNoteChange(HIGH, _deckLeftMode, _pgLeftPad, number, value);
+        handlePadNoteChange(State::STATE_ON, _leftFuncMode, _leftPad, number, value);
         break;
 
     case RIGHT_PAD_CH:
-        handlePadNoteChange(HIGH, _deckRightMode, _pgRightPad, number, value);
+        handlePadNoteChange(State::STATE_ON, _rightFuncMode, _rightPad, number, value);
         break;
 
     default:
@@ -88,20 +60,16 @@ void MDCore::onNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 {
     switch (channel)
     {
-    case LEFT_BTNS_CH:
-        _leftFB->setTo(number, LOW);
-        break;
-
-    case RIGHT_BTNS_CH:
-        _rightFB->setTo(number, LOW);
+    case IN_OUT_CH:
+        _funcs[number].setTo(LOW); 
         break;
 
     case LEFT_PAD_CH:
-        handlePadNoteChange(LOW, _deckLeftMode, _pgLeftPad, number, value);
+        handlePadNoteChange(State::STATE_OFF, _leftFuncMode, _leftPad, number, value);
         break;
 
     case RIGHT_PAD_CH:
-        handlePadNoteChange(LOW, _deckRightMode, _pgRightPad, number, value);
+        handlePadNoteChange(State::STATE_OFF, _rightFuncMode, _rightPad, number, value);
         break;
 
     default:
@@ -112,13 +80,10 @@ void MDCore::onNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 void MDCore::readButtons()
 {
     readDecksMode();
-    _leftPadBtns->setNoteNum(_deckLeftMode->getModeNote());
-    _rightPadBtns->setNoteNum(_deckRightMode->getModeNote());
-    _leftPadBtns->read(fnon, fnoff);
-    _rightPadBtns->read(fnon, fnoff);
-    _leftBtns->read(fnon, fnoff);
-    _rightBtns->read(fnon, fnoff);
-    btns.read(fnon, fnoff);
+    _blindFuncs->read();
+    _funcs->read();
+    _leftPad->read();
+    _rightPad->read();
 }
 
 void MDCore::vuChange(uint8_t number, uint8_t value)
@@ -126,74 +91,36 @@ void MDCore::vuChange(uint8_t number, uint8_t value)
     vuSet[number].setLevel(value);
 }
 
-void MDCore::npChange(uint8_t position, uint8_t value)
-{
-    _npkit->handleChange(position, value);
-}
-
-void MDCore::setInitialDeckB()
-{
-    this->npChange(NP_DECK_SEL, 1);
-}
-
 void MDCore::readDecksMode()
 {
-    _deckLeftMode->read();
-    checkDeckMode(Align::LEFT);
-    _deckRightMode->read();
-    checkDeckMode(Align::RIGHT);
+    _leftFuncMode->read();
+    _rightFuncMode->read();
+    checkDeckMode(_leftFuncMode, _leftPad);
+    checkDeckMode(_rightFuncMode, _rightPad);
 }
 
-void MDCore::checkDeckMode(Align al)
+void MDCore::checkDeckMode(FuncMode *fm, Pad *p)
 {
-
-    switch (al)
+    if (!fm->isDisposed())
     {
-    case Align::LEFT:
-        _npkit->handleChange(NP_MODE_L, _deckLeftMode->getSelectorModeColor());
-        _pgLeftPad->setAll(_deckLeftMode->getModeColor());
-        if (_deckLeftMode->getMode() == deckMode::HOTCUE_MODE)
-        {
-            if (!_deckLeftMode->isDisposed())
-            {
-                fnon(SEND_MON_STATE, 127, GENERAL_CH);
-                _deckLeftMode->dispose();
-                fnoff(SEND_MON_STATE, 127, GENERAL_CH);
-            }
-        }
-
-        break;
-
-    case Align::RIGHT:
-        _npkit->handleChange(NP_MODE_R, _deckRightMode->getSelectorModeColor());
-        _pgRightPad->setAll(_deckRightMode->getModeColor());
-        if (_deckRightMode->getMode() == deckMode::HOTCUE_MODE)
-        {
-            if (!_deckRightMode->isDisposed())
-            {
-                fnon(SEND_MON_STATE, 127, GENERAL_CH);
-                _deckRightMode->dispose();
-                fnoff(SEND_MON_STATE, 127, GENERAL_CH);
-            }
-        }
-        break;
-
-    default:
-        break;
+        p->setNote(fm->getModeNote());
+        p->setTo(fm->getModeColor());
+        fm->dispose();
     }
 }
 
-void MDCore::handlePadNoteChange(boolean nState, MDMode *deckMD, PixGroup *group, uint8_t number, uint8_t value)
+void MDCore::handlePadNoteChange(State nState, FuncMode *deckMD, Pad *pad, uint8_t number, uint8_t value)
 {
-    if (deckMD->getMode() != deckMode::HOTCUE_MODE)
+    if (deckMD->getMode() != deckMode::MODE_HOTCUE)
     {
         return;
     }
 
-    if (nState == LOW)
+    if (nState == State::STATE_OFF)
     {
-        group->setPixel(number, 0);
+        pad->setTo(number, 0);
+        return;
     }
 
-    group->setPixel(number, value);
+    pad->setTo(number, value);
 }

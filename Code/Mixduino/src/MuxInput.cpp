@@ -26,11 +26,11 @@ void MuxInput::read(uint8_t midiCh, uint8_t note)
 
             if (_cState == LOW)
             {
-                funOn(note, 127, midiCh);
+                _funOn(note, 127, midiCh);
             }
             else
             {
-                funOff(note, 127, midiCh);
+                _funOff(note, 127, midiCh);
             }
 
             _pState = _cState;

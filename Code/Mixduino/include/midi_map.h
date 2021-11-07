@@ -26,7 +26,7 @@ uint8_t const FX1_BTN_1 = 42;      // f#1
 uint8_t const FX1_BTN_2 = 43;      // g1
 uint8_t const FX1_BTN_3 = 44;      // g#1
 uint8_t const FX2_BTN_1 = 45;      // a1
-uint8_t const FX2_BTN_1 = 46;      // a#1
+uint8_t const FX2_BTN_2 = 46;      // a#1
 uint8_t const FX2_BTN_3 = 47;      // b1
 uint8_t const PLAY_DK_A = 48;      // c2
 uint8_t const PLAY_DK_B = 49;      // c#2     & DECK_C
@@ -51,7 +51,7 @@ const uint8_t midiSet[] = {
     FX1_BTN_2,
     FX1_BTN_3,
     FX2_BTN_1,
-    FX2_BTN_1,
+    FX2_BTN_2,
     FX2_BTN_3,
     PLAY_DK_A,
     PLAY_DK_B,

@@ -1,18 +1,12 @@
 
 #ifndef ARDUINO_MDCORE_H
 #define ARDUINO_MDCORE_H
-#include "BtnKit.h"
-#include "MDMode.h"
-#include "Muxer.h"
-#include "MuxerPad.h"
 #include "NPKit.h"
-#include "PixGroup.h"
 #include "VUmeter.h"
-#include "np_map.h"
-#include "pin_map.h"
-#include "sr_fb_map.h"
-#include "sw_muxmap.h"
-#include "Feedback.h"
+#include "FuncFactory.h"
+#include "FuncMode.h"
+#include "Pad.h"
+#include "md_defs.h"
 
 class MDCore
 {
@@ -31,28 +25,20 @@ public:
 	void readButtons();
 
 private:
-	Shifter* _shfLeft;
-	Shifter* _shfRight;
 	NPKit* _npkit;
-	PixGroup* _pgLeftPad;
-	PixGroup* _pgRightPad;
-	MDMode* _deckLeftMode;
-	MDMode* _deckRightMode;
-	MuxerPad* _leftPadBtns;
-	MuxerPad* _rightPadBtns;
-	Muxer* _leftBtns;
-	Feedback* _leftFB;
-	Muxer* _rightBtns;
-	Feedback* _rightFB;
-	
-	void handlePadNoteChange(boolean nState, MDMode* deckMD, PixGroup* group, uint8_t number, uint8_t value);
+	FuncMode* _leftFuncMode;
+	FuncMode* _rightFuncMode;
+	Pad* _leftPad;
+	Pad* _rightPad;
+	Func* _funcs;
+	FuncBase* _blindFuncs;
+	void handlePadNoteChange(State nState, FuncMode *deckMD, Pad* pad, uint8_t number, uint8_t value);
 	void (*fnon)(uint8_t, uint8_t, uint8_t);
 	void (*fnoff)(uint8_t, uint8_t, uint8_t);
 	void vuChange(uint8_t number, uint8_t value);
-	void npChange(uint8_t position, uint8_t value);
-	void setInitialDeckB();
-
-	void checkDeckMode(Align al);
 	void readDecksMode();
+	void checkDeckMode(FuncMode* fm, Pad* p);
+	void onNoteChange(uint8_t channel, uint8_t number, uint8_t value);
+	// void setInitialDeckB();
 };
 #endif

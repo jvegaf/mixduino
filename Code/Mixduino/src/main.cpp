@@ -76,11 +76,6 @@ void handleControlChange(uint8_t channel, uint8_t number, uint8_t value)
 
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
-  if (value < 1U)
-  {
-    mdCore.onNoteOff(channel, number, value);
-    return;
-  }
   mdCore.onNoteOn(channel, number, value);
 }
 

@@ -9,7 +9,7 @@
 // BUTTONS
 uint8_t const SWFXR_2      = 4;
 uint8_t const SWFXR_3      = 5;
-uint8_t const SWFXL_1      = 8;
+uint8_t const   SWFXL_1      = 8;
 uint8_t const SW_BROWSER_R = 7;
 uint8_t const SW_BROWSER_L = 10;
 uint8_t const SWFXL_2      = 9;
@@ -18,20 +18,16 @@ uint8_t const SWFXR_1      = 12;
 uint8_t const SWBR_PREVIEW = 14;
 uint8_t const SWBR_BACK    = 15;
 
-const uint8_t ARD_SW_BUNDLE[] = {
-    SWFXR_2,
-    SWFXR_3,
+const uint8_t FX_SW_BUNDLE[] = {
     SWFXL_1,
-    SW_BROWSER_R,
-    SW_BROWSER_L,
     SWFXL_2,
     SWFXL_3,
     SWFXR_1,
-    SWBR_PREVIEW,
-    SWBR_BACK
+    SWFXR_2,
+    SWFXR_3
 };
 
-uint8_t const T_ARD_SW    = 10;
+uint8_t const T_FX_SW    = 6;
 
 uint8_t const L_BROWSER_A = 2;
 uint8_t const L_BROWSER_B = 3;

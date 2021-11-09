@@ -1,5 +1,10 @@
 #include "Func.h"  
 
+Func::Func(OutputBase* output)
+{
+	_output = output;
+}
+
 Func::Func(Input* input, OutputBase* output)
 	: FuncBase(input)
 {

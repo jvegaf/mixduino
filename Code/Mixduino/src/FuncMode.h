@@ -1,10 +1,10 @@
 #pragma once
 #ifndef FUNCMODE_H
 #define FUNCMODE_H
-#include "Func.h"
-#include "ModeInput.h"
-#include "md_defs.h"
 #include <Arduino.h>
+#include "ModeInput.h"
+#include "OutputBase.h"
+#include "md_defs.h"
 
 enum class deckMode
 {
@@ -13,25 +13,29 @@ enum class deckMode
 	MODE_FX
 };
 
-class FuncMode : public Func
+
+class FuncMode 
 {
 public:
+	typedef void (*CallBack)();
+	CallBack cb;
 	FuncMode(ModeInput *input, OutputBase *output);
-	void read();
 	deckMode getMode();
 	uint8_t getModeNote();
 	uint8_t getModeColor();
 	uint8_t getSelectorModeColor();
 	boolean isDisposed();
 	void dispose();
+	void incrementMode();
+	void read();
 
 private:
 	ModeInput* _in;
+	OutputBase* _out;
 	deckMode _dMode;
 	uint8_t _modeNote;
 	uint8_t _modeColor;
 	boolean _disposed;
 
-	void incrementMode();
 };
 #endif

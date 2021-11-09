@@ -12,6 +12,7 @@ class VUmeter
 		void clear();
 	public:
 		VUmeter(uint8_t p_data, uint8_t p_latch, uint8_t p_clock);
+		VUmeter() = default;
 		void begin();
 		void setLevel(uint8_t level);
 

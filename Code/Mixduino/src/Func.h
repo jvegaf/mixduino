@@ -11,6 +11,7 @@ class Func : public FuncBase
 		OutputBase* _output;
 
 	public:
+		Func(OutputBase* output);
 		Func(Input* input, OutputBase* output);
 		Func(Input* input, OutputBase* output, uint8_t midiCh, uint8_t note);
 		Func() = default;

@@ -1,16 +1,15 @@
 #include "FuncFactory.h"
 
-FuncFactory::FuncFactory(NPKit *npkit, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
+void FuncFactory::begin(NPKit *npkit, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
 {
     _npkit = npkit;
     fOn = funcOn;
     fOff = funcOff;
     _shfLeft = new Shifter(FBL_SIG, FBL_LATCH, SRCLK, 1);
     _shfRight = new Shifter(FBR_SIG, FBR_LATCH, SRCLK, 1);
-}
+    _funcModeLeft = createLeftModeFunc();
+    _funcModeRight = createRightModeFunc();
 
-void FuncFactory::begin()
-{
     Input** blindIns = createBlindInputs();
     _blindFuncs = createFuncsBase(blindIns, IN_ONLY_CH, blindMidiSet, T_MIDI_BLIND_SET);
     
@@ -31,14 +30,14 @@ void FuncFactory::begin()
 FuncMode *FuncFactory::createLeftModeFunc()
 {
     ModeInput *modeLIn = new ModeInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWMODE_L);
-    FBPixel *modeLOut = new FBPixel(_npkit, NP_MODE_L);
+    OutputBase *modeLOut = new FBPixel(_npkit, NP_MODE_L);
     return new FuncMode(modeLIn, modeLOut);
 }
 
 FuncMode *FuncFactory::createRightModeFunc()
 {
     ModeInput *modeRIn = new ModeInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWMODE_R);
-    FBPixel *modeROut = new FBPixel(_npkit, NP_MODE_R);
+    OutputBase *modeROut = new FBPixel(_npkit, NP_MODE_R);
     return new FuncMode(modeRIn, modeROut);
 }
 
@@ -64,82 +63,60 @@ Func *FuncFactory::createFuncs(Input **inAggr, OutputBase **outAggr, uint8_t mid
 
 Input **FuncFactory::createBlindInputs()
 {
-    Input *shiftIn = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWSHIFT, fOn, fOff);
-    Input *brwsLIn = new ArduInput(SW_BROWSER_L, fOn, fOff);
-    Input *brwsRIn = new ArduInput(SW_BROWSER_R, fOn, fOff);
-    Input *prevIn = new ArduInput(SWBR_PREVIEW, fOn, fOff);
-    Input *backIn = new ArduInput(SWBR_BACK, fOn, fOff);
-    Input* res[] = {
-        shiftIn,
-        brwsLIn,
-        brwsRIn,
-        prevIn,
-        backIn
-    };
+    Input** res = new Input*[T_MIDI_BLIND_SET];
+    res[0] = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWSHIFT, fOn, fOff);
+    res[1] = new ArduInput(SW_BROWSER_L, fOn, fOff);
+    res[2] = new ArduInput(SW_BROWSER_R, fOn, fOff);
+    res[3] = new ArduInput(SWBR_PREVIEW, fOn, fOff);
+    res[4] = new ArduInput(SWBR_BACK, fOn, fOff);
     return res;
 }
 
 Input **FuncFactory::createInputs()
 {
-    Input *playLIn = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWPLAY_L, fOn, fOff);
-    Input *cueLIn = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWCUE_L, fOn, fOff);
-    Input *loopLIn = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWLOOP_L, fOn, fOff);
-    Input *syncLIn = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWSYNC_L, fOn, fOff);
-    Input *playRIn = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWPLAY_R, fOn, fOff);
-    Input *cueRIn = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWCUE_R, fOn, fOff);
-    Input *loopRIn = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWLOOP_R, fOn, fOff);
-    Input *syncRIn = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWSYNC_R, fOn, fOff);
-    Input *deckSelIn = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWDECK_SEL, fOn, fOff);
-    Input *cueL1In = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWPCUEL1, fOn, fOff);
-    Input *cueL2In = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWPCUEL2, fOn, fOff);
-    Input *cueL3In = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWPCUEL3, fOn, fOff);
-    Input *fx1LIn = new ArduInput(SWFXL_1, fOn, fOff);
-    Input *fx2LIn = new ArduInput(SWFXL_2, fOn, fOff);
-    Input *fx3LIn = new ArduInput(SWFXL_3, fOn, fOff);
-    Input *fx1RIn = new ArduInput(SWFXR_1, fOn, fOff);
-    Input *fx2RIn = new ArduInput(SWFXR_2, fOn, fOff);
-    Input *fx3RIn = new ArduInput(SWFXR_3, fOn, fOff);
-    Input *res[] = {
-        playLIn,cueLIn,loopLIn,syncLIn,playRIn,cueRIn,
-        loopRIn,syncRIn,deckSelIn,cueL1In,cueL2In,cueL3In,
-        fx1LIn,fx2LIn,fx3LIn,fx1RIn,fx2RIn,fx3RIn};
+    Input **res = new Input*[T_MIDI_SET]; 
+    res[0] = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWDECK_SEL, fOn, fOff);
+    res[1] = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWSYNC_L, fOn, fOff);
+    res[2] = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWSYNC_R, fOn, fOff);
+    res[3] = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWPLAY_L, fOn, fOff);
+    res[4] = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWCUE_L, fOn, fOff);
+    res[5] = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWLOOP_L, fOn, fOff);
+    res[6] = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWPLAY_R, fOn, fOff);
+    res[7] = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWCUE_R, fOn, fOff);
+    res[8] = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWLOOP_R, fOn, fOff);
+    res[9] = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWPCUEL1, fOn, fOff);
+    res[10] = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWPCUEL2, fOn, fOff);
+    res[11] = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWPCUEL3, fOn, fOff);
+    res[12] = new ArduInput(SWFXL_1, fOn, fOff);
+    res[13] = new ArduInput(SWFXL_2, fOn, fOff);
+    res[14] = new ArduInput(SWFXL_3, fOn, fOff);
+    res[15] = new ArduInput(SWFXR_1, fOn, fOff);
+    res[16] = new ArduInput(SWFXR_2, fOn, fOff);
+    res[17] = new ArduInput(SWFXR_3, fOn, fOff);
     return res;
 }
 
 OutputBase **FuncFactory::createOutputs()
 {
-    OutputBase *playLOut = new FBLed(_shfLeft, OUT_PLAY_L);
-    OutputBase *syncLOut = new FBPixel(_npkit, NP_SYNC_L);
-    OutputBase *syncROut = new FBPixel(_npkit, NP_SYNC_R);
-    OutputBase *deckSelOut = new FBPixel(_npkit, NP_DECK_SEL);
-    OutputBase *cueLOut = new FBLed(_shfLeft, OUT_CUE_L);
-    OutputBase *loopLOut = new FBLed(_shfLeft, OUT_LOOP_L);
-    OutputBase *fx1LOut = new FBLed(_shfLeft, OUT_FX1_L);
-    OutputBase *fx2LOut = new FBLed(_shfLeft, OUT_FX2_L);
-    OutputBase *fx3LOut = new FBLed(_shfLeft, OUT_FX3_L);
-    OutputBase *playROut = new FBLed(_shfRight, OUT_PLAY_R);
-    OutputBase *cueROut = new FBLed(_shfRight, OUT_CUE_R);
-    OutputBase *loopROut = new FBLed(_shfRight, OUT_LOOP_R);
-    OutputBase *fx1ROut = new FBLed(_shfRight, OUT_FX1_R);
-    OutputBase *fx2ROut = new FBLed(_shfRight, OUT_FX2_R);
-    OutputBase *fx3ROut = new FBLed(_shfRight, OUT_FX3_R);
-    OutputBase* res[] = {
-        playLOut,
-        syncLOut,
-        syncROut,
-        deckSelOut,
-        cueLOut,
-        loopLOut,
-        fx1LOut,
-        fx2LOut,
-        fx3LOut,
-        playROut,
-        cueROut,
-        loopROut,
-        fx1ROut,
-        fx2ROut,
-        fx3ROut
-    };
+    OutputBase** res= new OutputBase*[T_MIDI_SET];
+    res[0] = new FBPixel(_npkit, NP_DECK_SEL);
+    res[1] = new FBPixel(_npkit, NP_SYNC_L);
+    res[2] = new FBPixel(_npkit, NP_SYNC_R);
+    res[3] = new FBLed(_shfLeft, OUT_PLAY_L);
+    res[4] = new FBLed(_shfLeft, OUT_CUE_L);
+    res[5] = new FBLed(_shfLeft, OUT_LOOP_L);
+    res[6] = new FBLed(_shfRight, OUT_PLAY_R);
+    res[7] = new FBLed(_shfRight, OUT_CUE_R);
+    res[8] = new FBLed(_shfRight, OUT_LOOP_R);
+    res[9] = new FBLed(_shfLeft, OUT_PCUEL1);
+    res[10] = new FBLed(_shfLeft, OUT_PCUEL2);
+    res[11] = new FBLed(_shfRight, OUT_PCUEL3);
+    res[12] = new FBLed(_shfLeft, OUT_FX1_L);
+    res[13] = new FBLed(_shfLeft, OUT_FX2_L);
+    res[14] = new FBLed(_shfLeft, OUT_FX3_L);
+    res[15] = new FBLed(_shfRight, OUT_FX1_R);
+    res[16] = new FBLed(_shfRight, OUT_FX2_R);
+    res[17] = new FBLed(_shfRight, OUT_FX3_R);
     return res;
 }
 
@@ -159,15 +136,15 @@ Input **FuncFactory::createInputPads(const uint8_t *mxPinBundle, uint8_t sigPin,
     Input **muxInPads = new Input*[T_DECK_PADS];
     for (uint8_t i = 0; i < T_DECK_PADS; i++)
     {
-        MuxInput *mux = new MuxInput(mxPinBundle, sigPin, positions[i], funcOn, funcOff);
-        muxInPads[i] = mux;
+        Input* inp = new MuxInput(mxPinBundle, sigPin, positions[i], funcOn, funcOff);
+        muxInPads[i] = inp;
     }
     return muxInPads;
 }
 
 FuncPad* FuncFactory::createFuncPads(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, uint8_t t_funcs)
 {
-    FuncPad funcSet[t_funcs];
+    FuncPad* funcSet = new FuncPad[t_funcs];
     for (uint8_t i = 0; i < t_funcs; i++)
     {
         funcSet[i] = FuncPad(inAggr[i], outAggr[i], midiCh, i);

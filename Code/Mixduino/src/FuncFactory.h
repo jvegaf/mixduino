@@ -19,16 +19,19 @@
 class FuncFactory
 {
 public:
-    FuncFactory(NPKit* npkit, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
-    void begin();
+    void begin(NPKit* npkit, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
 
-    FuncBase* blindFuncs() const { return this->_blindFuncs; }
+    FuncBase* getBlindFuncs() const { return this->_blindFuncs; }
 
     Func* getFuncs() const { return this->_funcs; }
 
     FuncPad* getLeftFuncPads() const { return this->_leftFuncPads; }
 
     FuncPad* getRightFuncPads() const { return this->_rightFuncPads; }
+
+    FuncMode* getFuncModeLeft() const { return this->_funcModeLeft; }
+
+    FuncMode* getFuncModeRight() const { return this->_funcModeRight; }
     
 
 private:

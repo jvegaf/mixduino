@@ -117,7 +117,7 @@ private:
 	Func* _funcs;
 	FuncBase* _blindFuncs;
 
-
+        void initPins();
 	void handlePadNoteChange(State nState, FuncMode *deckMD, Pad* pad, uint8_t number, uint8_t value);
 	void vuChange(uint8_t number, uint8_t value);
 	void readDecksMode();

@@ -86,6 +86,4 @@ const uint8_t SW_PADR_BUNDLE[] = {
     SWPADR8,
 };
 
-uint8_t const T_DECK_PADS = 8;
-
 #endif

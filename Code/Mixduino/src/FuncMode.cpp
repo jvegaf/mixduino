@@ -1,11 +1,12 @@
 #include "FuncMode.h"
 
-FuncMode::FuncMode(ModeInput *input, OutputBase *output)
+FuncMode::FuncMode(const uint8_t *mxPins, uint8_t muxSig, uint8_t inPos, OutputBase *output)
 {
-    _in = input;
+    _mxPins = mxPins;
+    _muxSig = muxSig;
+    _inPos = inPos;
     _out = output;
 
-    cb = &FuncMode::incrementMode;
     _dMode = deckMode::MODE_HOTCUE;
     _modeNote = 0;
     _modeColor = HOTCUE_MODE_COLOR;
@@ -82,5 +83,28 @@ void FuncMode::incrementMode()
 
 void FuncMode::read()
 {
-    _in->read(cb);
+    setMuxChannel(_inPos);
+	    _cState = digitalRead(_muxSig);
+	    if ((millis() - _lastdebouncetime) > DEBOUNCE_DELAY)
+	    {
+	        if (_pState != _cState)
+	        {
+	            _lastdebouncetime = millis();
+
+	            if (_cState == LOW)
+	            {
+	                incrementMode();
+	            }
+
+	            _pState = _cState;
+	        }
+	    }
+}
+
+void FuncMode::setMuxChannel(uint8_t channel)
+{
+    digitalWrite(_mxPins[0], bitRead(channel, 0));
+    digitalWrite(_mxPins[1], bitRead(channel, 1));
+    digitalWrite(_mxPins[2], bitRead(channel, 2));
+    digitalWrite(_mxPins[3], bitRead(channel, 3));
 }

@@ -11,13 +11,9 @@ class MuxInput : public Input
 {
 
 public:
-	MuxInput(const uint8_t *mxPins, uint8_t sig, uint8_t inputIndex)
-	{
-	    _mxPins = mxPins;
-	    _mxSigPin = sig;
-	}
 
 	MuxInput(const uint8_t *mxPins, uint8_t sig, uint8_t inputIndex, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
+	: Input(inputIndex, funcOn, funcOff)
 	{
 	    _mxPins = mxPins;
 	    _mxSigPin = sig;

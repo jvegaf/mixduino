@@ -11,37 +11,39 @@ void FuncFactory::begin(NPKit *npkit, void (*funcOn)(uint8_t, uint8_t, uint8_t),
     _funcModeRight = createRightModeFunc();
 
     Input** blindIns = createBlindInputs();
-    _blindFuncs = createFuncsBase(blindIns, IN_ONLY_CH, blindMidiSet, T_MIDI_BLIND_SET);
+    FuncBase* _bFuncs = createBlindFuncs(blindIns, IN_ONLY_CH, blindMidiSet, T_MIDI_BLIND_SET);
+    _blindFuncs = new FuncsBlind(_bFuncs, T_MIDI_BLIND_SET);
     
     Input** ins = createInputs();
     OutputBase** outs = createOutputs();
-    _funcs = createFuncs(ins, outs, IN_OUT_CH, midiSet, T_MIDI_SET);
+    Func* _fncs = createFuncs(ins, outs, IN_OUT_CH, midiSet, T_MIDI_SET);
+    _funcs = new Funcs(_fncs, T_MIDI_SET);
     
     Input** leftInPads = createInputPads(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SW_PADL_BUNDLE, fOn, fOff);
     OutputBase** leftOutPads = createOutputPads(_npkit, PIXLS_PAD_L);
-    _leftFuncPads = createFuncPads(leftInPads, leftOutPads, LEFT_PAD_CH, T_DECK_PADS);
+    FuncPad* _leftFuncPads = createFuncPads(leftInPads, leftOutPads, LEFT_PAD_CH, T_DECK_PADS);
+    _leftPad = new Pad(_leftFuncPads);
     
     Input** rightInPads = createInputPads(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SW_PADR_BUNDLE, fOn, fOff);
     OutputBase** rightOutPads = createOutputPads(_npkit, PIXLS_PAD_R);
-    _rightFuncPads = createFuncPads(rightInPads, rightOutPads, RIGHT_PAD_CH, T_DECK_PADS);
+    FuncPad* _rightFuncPads = createFuncPads(rightInPads, rightOutPads, RIGHT_PAD_CH, T_DECK_PADS);
+    _rightPad = new Pad(_rightFuncPads);
 
 }
 
 FuncMode *FuncFactory::createLeftModeFunc()
 {
-    ModeInput *modeLIn = new ModeInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWMODE_L);
     OutputBase *modeLOut = new FBPixel(_npkit, NP_MODE_L);
-    return new FuncMode(modeLIn, modeLOut);
+    return new FuncMode(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWMODE_L, modeLOut);
 }
 
 FuncMode *FuncFactory::createRightModeFunc()
 {
-    ModeInput *modeRIn = new ModeInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWMODE_R);
     OutputBase *modeROut = new FBPixel(_npkit, NP_MODE_R);
-    return new FuncMode(modeRIn, modeROut);
+    return new FuncMode(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWMODE_R, modeROut);
 }
 
-FuncBase *FuncFactory::createFuncsBase(Input **inAggr, uint8_t midiCh, const uint8_t *notesAggr, uint8_t t_funcs)
+FuncBase *FuncFactory::createBlindFuncs(Input **inAggr, uint8_t midiCh, const uint8_t *notesAggr, uint8_t t_funcs)
 {
     FuncBase *funcSet = new FuncBase[t_funcs];
     for (uint8_t i = 0; i < t_funcs; i++)

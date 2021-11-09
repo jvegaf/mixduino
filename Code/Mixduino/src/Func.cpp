@@ -5,12 +5,6 @@ Func::Func(OutputBase* output)
 	_output = output;
 }
 
-Func::Func(Input* input, OutputBase* output)
-	: FuncBase(input)
-{
-	_output = output;
-}
-
 Func::Func(Input* input, OutputBase* output, uint8_t midiCh, uint8_t note)
 	: FuncBase(input, midiCh, note)
 {

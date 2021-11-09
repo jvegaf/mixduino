@@ -76,12 +76,12 @@ void handleControlChange(uint8_t channel, uint8_t number, uint8_t value)
 
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
-  mdCore.onNoteOn(channel, number, value);
+  mdCore.onNoteChange(State::STATE_ON, channel, number, value);
 }
 
 void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 {
-  mdCore.onNoteOff(channel, number, value);
+  mdCore.onNoteChange(State::STATE_OFF, channel, number, value);
 }
 
 void readButtons()

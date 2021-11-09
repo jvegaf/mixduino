@@ -3,10 +3,13 @@
 
 void MDCore::initPins()
 {
-    for(uint8_t i=0;i < 4;i++) {
+    for(uint8_t i=0;i < T_MUXPIN_BUNDLE;i++) {
         pinMode(MUXPIN_BUNDLE[i], OUTPUT);
     }
-    // continuar con los inputpullup
+    for (uint8_t i = 0; i < T_ARD_SW_BUNDLE; i++)
+    {
+        pinMode(ARD_SW_BUNDLE[i], INPUT_PULLUP);
+    }
 }
 
 void MDCore::vuChange(uint8_t number, uint8_t value)

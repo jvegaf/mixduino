@@ -3,6 +3,7 @@
 #define MD_PAD_H
 #include <Arduino.h>
 #include "FuncPad.h"
+#include "md_defs.h"
 
 class Pad  
 {

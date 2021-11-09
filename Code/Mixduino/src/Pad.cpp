@@ -6,9 +6,9 @@ Pad::Pad(FuncPad* funcpads)
 }
 
 void Pad::setNote(uint8_t note) {
-	for (uint8_t i = 0; i < 8; i++)
+	for (uint8_t i = 0; i < T_DECK_PADS; i++)
     {
-        _funcPads[i].setNote(note);
+        _funcPads[i].setNote(note + i);
     }
 }
 

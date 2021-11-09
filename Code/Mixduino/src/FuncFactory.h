@@ -7,13 +7,16 @@
 #include "np_map.h"
 #include "sr_fb_map.h"
 #include "midi_map.h"
-#include "ModeInput.h"
+#include "MuxInput.h"
 #include "FuncMode.h"
 #include "FuncPad.h"
 #include "ArduInput.h"
 #include "sw_muxmap.h"
 #include "FBLed.h"
 #include "FBPixel.h"
+#include "Pad.h"
+#include "Funcs.h"
+#include "FuncsBlind.h"
 
 
 class FuncFactory
@@ -21,13 +24,13 @@ class FuncFactory
 public:
     void begin(NPKit* npkit, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
 
-    FuncBase* getBlindFuncs() const { return this->_blindFuncs; }
+    FuncsBlind* getBlindFuncs() const { return this->_blindFuncs; }
 
-    Func* getFuncs() const { return this->_funcs; }
+    Funcs* getFuncs() const { return this->_funcs; }
 
-    FuncPad* getLeftFuncPads() const { return this->_leftFuncPads; }
+    Pad* getLeftPad() const { return this->_leftPad; }
 
-    FuncPad* getRightFuncPads() const { return this->_rightFuncPads; }
+    Pad* getRightPad() const { return this->_rightPad; }
 
     FuncMode* getFuncModeLeft() const { return this->_funcModeLeft; }
 
@@ -40,10 +43,10 @@ private:
 	Shifter* _shfRight;
     FuncMode* _funcModeLeft; 
     FuncMode* _funcModeRight;
-    FuncBase* _blindFuncs;
-    Func* _funcs;
-    FuncPad* _leftFuncPads;
-    FuncPad* _rightFuncPads; 
+    Funcs* _funcs;
+    FuncsBlind* _blindFuncs;
+    Pad* _leftPad;
+    Pad* _rightPad; 
     void (*fOn)(uint8_t, uint8_t, uint8_t); 
     void (*fOff)(uint8_t, uint8_t, uint8_t);
 
@@ -57,7 +60,7 @@ private:
     FuncMode* createRightModeFunc();
     Input** createBlindInputs();
     Func* createFuncs(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, const uint8_t *notesAggr, uint8_t t_funcs);
-    FuncBase* createFuncsBase(Input **inAggr, uint8_t midiCh, const uint8_t *notesAggr, uint8_t t_funcs);
+    FuncBase* createBlindFuncs(Input **inAggr, uint8_t midiCh, const uint8_t *notesAggr, uint8_t t_funcs);
     FuncPad* createFuncPads(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, uint8_t t_funcs);
 
     

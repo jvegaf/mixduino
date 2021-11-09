@@ -69,6 +69,26 @@ const uint8_t MUXPIN_BUNDLE[] = {
     MPLEX_S3
 };
 
+uint8_t const T_MUXPIN_BUNDLE = 4;
+
+
+const uint8_t ARD_SW_BUNDLE[] = {
+    SW_BROWSER_L,
+    SW_BROWSER_R,
+    SWBR_PREVIEW,
+    SWBR_BACK,
+    SWFXL_1,
+    SWFXL_2,
+    SWFXL_3,
+    SWFXR_1,
+    SWFXR_2,
+    SWFXR_3,
+    LEFT_SWMUX_SIG,
+    RIGHT_SWMUX_SIG
+};
+
+uint8_t const T_ARD_SW_BUNDLE = 12;
+
 //////////////////////////////////////
 // POTS ANALOG PINS
 

@@ -9,7 +9,7 @@
 // BUTTONS
 uint8_t const SWFXR_2      = 4;
 uint8_t const SWFXR_3      = 5;
-uint8_t const   SWFXL_1      = 8;
+uint8_t const SWFXL_1      = 8;
 uint8_t const SW_BROWSER_R = 7;
 uint8_t const SW_BROWSER_L = 10;
 uint8_t const SWFXL_2      = 9;

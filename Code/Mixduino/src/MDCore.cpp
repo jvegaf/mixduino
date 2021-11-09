@@ -1,5 +1,14 @@
 #include "MDCore.h"
 
+
+void MDCore::initPins()
+{
+    for(uint8_t i=0;i < 4;i++) {
+        pinMode(MUXPIN_BUNDLE[i], OUTPUT);
+    }
+    // continuar con los inputpullup
+}
+
 void MDCore::vuChange(uint8_t number, uint8_t value)
 {
     _vuSet[number].setLevel(value);

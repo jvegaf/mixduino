@@ -4,10 +4,10 @@
 #include "Func.h"
 #include "FuncFactory.h"
 #include "FuncMode.h"
-#include "NPKit.h"
-#include "Pad.h"
 #include "Funcs.h"
 #include "FuncsBlind.h"
+#include "NPKit.h"
+#include "Pad.h"
 #include "VUmeter.h"
 #include "md_defs.h"
 #include <Arduino.h>
@@ -23,7 +23,6 @@ uint8_t const t_VUSet = 5;
 class MDCore
 {
 public:
-
 	MDCore()
 	{
 		_factory = new FuncFactory();
@@ -54,6 +53,7 @@ public:
 		_rightPad = _factory->getRightPad();
 		checkDeckMode(_leftFuncMode, _leftPad);
 		checkDeckMode(_rightFuncMode, _rightPad);
+		setInitialDeckB();
 	}
 
 	void readButtons()
@@ -77,28 +77,46 @@ public:
 			break;
 		}
 	}
-	void onNoteChange(State state, uint8_t channel, uint8_t number, uint8_t value)
+
+	void onNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 	{
 		switch (channel)
 		{
 
 		case IN_OUT_CH:
-			if (state == State::STATE_ON)
-			{
-				_funcs->setTo(number, value);
-			}
-			if (state == State::STATE_OFF)
-			{
-				_funcs->setTo(number, LOW);
-			}
+			_funcs->setTo(number, value);
+
 			break;
 
 		case LEFT_PAD_CH:
-			handlePadNoteChange(state, _leftFuncMode, _leftPad, number, value);
+			handlePadNoteChange(State::STATE_ON, _leftFuncMode, _leftPad, number, value);
 			break;
 
 		case RIGHT_PAD_CH:
-			handlePadNoteChange(state, _rightFuncMode, _rightPad, number, value);
+			handlePadNoteChange(State::STATE_ON, _rightFuncMode, _rightPad, number, value);
+			break;
+
+		default:
+			break;
+		}
+	}
+	void onNoteOff(uint8_t channel, uint8_t number, uint8_t value)
+	{
+		switch (channel)
+		{
+
+		case IN_OUT_CH:
+
+			_funcs->setTo(number, LOW);
+
+			break;
+
+		case LEFT_PAD_CH:
+			handlePadNoteChange(State::STATE_OFF, _leftFuncMode, _leftPad, number, value);
+			break;
+
+		case RIGHT_PAD_CH:
+			handlePadNoteChange(State::STATE_OFF, _rightFuncMode, _rightPad, number, value);
 			break;
 
 		default:
@@ -114,14 +132,14 @@ private:
 	FuncMode *_rightFuncMode;
 	Pad *_leftPad;
 	Pad *_rightPad;
-	Funcs* _funcs;
-	FuncsBlind* _funcsBlind;
+	Funcs *_funcs;
+	FuncsBlind *_funcsBlind;
 
 	void initPins();
 	void handlePadNoteChange(State nState, FuncMode *deckMD, Pad *pad, uint8_t number, uint8_t value);
 	void vuChange(uint8_t number, uint8_t value);
 	void readDecksMode();
 	void checkDeckMode(FuncMode *fm, Pad *p);
-	// void setInitialDeckB();
+	void setInitialDeckB();
 };
 #endif

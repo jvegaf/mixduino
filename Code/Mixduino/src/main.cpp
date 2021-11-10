@@ -1,19 +1,18 @@
+#include "BREncoder.h"
+#include "MDCore.h"
+#include "PotKit.h"
+#include "TouchKit.h"
+#include "midi_map.h"
 #include <Arduino.h>
 #include <MIDI.h>
 #include <Thread.h>
 #include <ThreadController.h>
-#include "midi_map.h"
-#include "MDCore.h"
-#include "BREncoder.h"
-#include "PotKit.h"
-#include "TouchKit.h"
 // Rev5 version
 MIDI_CREATE_DEFAULT_INSTANCE();
 
 BREncoder encL(L_BROWSER_A, L_BROWSER_B);
 BREncoder encR(R_BROWSER_A, R_BROWSER_B);
 PotKit pots;
-
 
 MDCore mdCore;
 TouchKit touchBars;
@@ -76,12 +75,12 @@ void handleControlChange(uint8_t channel, uint8_t number, uint8_t value)
 
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
-  mdCore.onNoteChange(State::STATE_ON, channel, number, value);
+  mdCore.onNoteOn(channel, number, value);
 }
 
 void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 {
-  mdCore.onNoteChange(State::STATE_OFF, channel, number, value);
+  mdCore.onNoteOff(channel, number, value);
 }
 
 void readButtons()

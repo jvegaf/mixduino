@@ -18,11 +18,11 @@ uint32_t const MAROON_COL = Adafruit_NeoPixel::Color(128, 0, 0);
 uint32_t const HCCols[] = {
     CLEAR_COL,  // no hotcue
     BLUE_COL,   // cue
-    ORANGE_COL, // fade in/out
-    YELLOW_COL, // load
-    GRAY_COL,   // grid
+    ORANGE_COL, // fade in
+    YELLOW_COL, // fade out
+    RED_COL,    // load
+    GRAY_COL,   // Grid
     GREEN_COL,  // loop
-    RED_COL,
     PURPLE_COL,
     MAGENTA_COL,
     MAROON_COL};

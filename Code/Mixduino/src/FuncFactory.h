@@ -59,8 +59,8 @@ private:
     FuncMode* createLeftModeFunc();
     FuncMode* createRightModeFunc();
     Input** createBlindInputs();
-    Func* createFuncs(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, const uint8_t *notesAggr, uint8_t t_funcs);
-    FuncBase* createBlindFuncs(Input **inAggr, uint8_t midiCh, const uint8_t *notesAggr, uint8_t t_funcs);
+    Func* createFuncs(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, uint8_t t_funcs);
+    FuncBase* createBlindFuncs(Input **inAggr, uint8_t midiCh, uint8_t t_funcs);
     FuncPad* createFuncPads(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, uint8_t t_funcs);
 
     

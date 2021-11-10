@@ -32,9 +32,18 @@ void MDCore::checkDeckMode(FuncMode *fm, Pad *p)
         p->setNote(fm->getModeNote());
         p->setTo(fm->getModeColor());
         fm->dispose();
+        if (fm->getMode() == deckMode::MODE_HOTCUE)
+        {
+            sendMonState();
+        }
     }
 }
 
 void MDCore::setInitialDeckB() {
 	_funcs->setTo(0, 1);
+}
+
+void MDCore::sendMonState() {
+	fnOn(SEND_MON_STATE, 127, 3);
+	fnOff(SEND_MON_STATE, 127, 3);
 }

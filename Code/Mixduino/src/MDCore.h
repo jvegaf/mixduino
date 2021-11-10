@@ -40,6 +40,8 @@ public:
 		_npkit->begin();
 		initPins();
 		_factory->begin(_npkit, funcOn, funcOff);
+		fnOn = funcOn;
+		fnOff = funcOff;
 		for (uint8_t i = 0; i < t_VUSet; i++)
 		{
 			_vuSet[i].begin();
@@ -69,6 +71,15 @@ public:
 	{
 		switch (channel)
 		{
+		
+		case LEFT_PAD_CH:
+			_leftPad->setTo(number, value);
+			break;
+
+		case RIGHT_PAD_CH:
+			_rightPad->setTo(number, value);
+			break;
+
 		case VUMETERS_CH: // VU
 			vuChange(number, value);
 			break;
@@ -88,14 +99,6 @@ public:
 
 			break;
 
-		case LEFT_PAD_CH:
-			_leftPad->setTo(number, value);
-			break;
-
-		case RIGHT_PAD_CH:
-			_rightPad->setTo(number, value);
-			break;
-
 		default:
 			break;
 		}
@@ -111,20 +114,14 @@ public:
 
 			break;
 
-		case LEFT_PAD_CH:
-			_leftPad->setTo(number, value);
-			break;
-
-		case RIGHT_PAD_CH:
-			_rightPad->setTo(number, value);
-			break;
-
 		default:
 			break;
 		}
 	}
 
 private:
+	void (*fnOn)(uint8_t, uint8_t, uint8_t); 
+	void (*fnOff)(uint8_t, uint8_t, uint8_t);
 	VUmeter *_vuSet;
 	FuncFactory *_factory;
 	NPKit *_npkit;
@@ -140,5 +137,6 @@ private:
 	void readDecksMode();
 	void checkDeckMode(FuncMode *fm, Pad *p);
 	void setInitialDeckB();
+	void sendMonState();
 };
 #endif

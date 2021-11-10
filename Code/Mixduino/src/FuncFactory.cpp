@@ -11,12 +11,12 @@ void FuncFactory::begin(NPKit *npkit, void (*funcOn)(uint8_t, uint8_t, uint8_t),
     _funcModeRight = createRightModeFunc();
 
     Input** blindIns = createBlindInputs();
-    FuncBase* _bFuncs = createBlindFuncs(blindIns, IN_ONLY_CH, blindMidiSet, T_MIDI_BLIND_SET);
+    FuncBase* _bFuncs = createBlindFuncs(blindIns, IN_ONLY_CH, T_MIDI_BLIND_SET);
     _blindFuncs = new FuncsBlind(_bFuncs, T_MIDI_BLIND_SET);
     
     Input** ins = createInputs();
     OutputBase** outs = createOutputs();
-    Func* _fncs = createFuncs(ins, outs, IN_OUT_CH, midiSet, T_MIDI_SET);
+    Func* _fncs = createFuncs(ins, outs, IN_OUT_CH, T_MIDI_SET);
     _funcs = new Funcs(_fncs, T_MIDI_SET);
     
     Input** leftInPads = createInputPads(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SW_PADL_BUNDLE, fOn, fOff);

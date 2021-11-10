@@ -44,6 +44,15 @@ uint8_t const BRW_BACK = 60;       // c3
 uint8_t const SHIFT_FN = 61;       // c#3
 
 const uint8_t midiSet[] = {
+    DECK_B_C_SEL,
+    SYNC_DECK_A,
+    SYNC_DECK_B,
+    PLAY_DK_A,
+    CUE_DK_A,
+    LOOP_DK_A,
+    PLAY_DK_B,
+    CUE_DK_B,
+    LOOP_DK_B,
     MON_CUE_A,
     MON_CUE_B,
     MON_CUE_C,
@@ -52,16 +61,8 @@ const uint8_t midiSet[] = {
     FX1_BTN_3,
     FX2_BTN_1,
     FX2_BTN_2,
-    FX2_BTN_3,
-    PLAY_DK_A,
-    PLAY_DK_B,
-    CUE_DK_A,
-    CUE_DK_B,
-    LOOP_DK_A,
-    LOOP_DK_B,
-    SYNC_DECK_A,
-    SYNC_DECK_B,
-    DECK_B_C_SEL};
+    FX2_BTN_3
+   };
 
 uint8_t const T_MIDI_SET = 18;
 

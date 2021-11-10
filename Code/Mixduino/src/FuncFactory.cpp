@@ -43,22 +43,22 @@ FuncMode *FuncFactory::createRightModeFunc()
     return new FuncMode(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWMODE_R, modeROut);
 }
 
-FuncBase *FuncFactory::createBlindFuncs(Input **inAggr, uint8_t midiCh, const uint8_t *notesAggr, uint8_t t_funcs)
+FuncBase *FuncFactory::createBlindFuncs(Input **inAggr, uint8_t midiCh, uint8_t t_funcs)
 {
     FuncBase *funcSet = new FuncBase[t_funcs];
     for (uint8_t i = 0; i < t_funcs; i++)
     {
-        funcSet[i] = FuncBase(inAggr[i], midiCh, notesAggr[i]);
+        funcSet[i] = FuncBase(inAggr[i], midiCh, i );
     }
     return funcSet;
 }
 
-Func *FuncFactory::createFuncs(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, const uint8_t *notesAggr, uint8_t t_funcs)
+Func *FuncFactory::createFuncs(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, uint8_t t_funcs)
 {
     Func *funcSet = new Func[t_funcs];
     for (uint8_t i = 0; i < t_funcs; i++)
     {
-        funcSet[i] = Func(inAggr[i], outAggr[i], midiCh, notesAggr[i]);
+        funcSet[i] = Func(inAggr[i], outAggr[i], midiCh, i );
     }
     return funcSet;
 }

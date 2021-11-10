@@ -89,11 +89,11 @@ public:
 			break;
 
 		case LEFT_PAD_CH:
-			handlePadNoteChange(State::STATE_ON, _leftFuncMode, _leftPad, number, value);
+			_leftPad->setTo(number, value);
 			break;
 
 		case RIGHT_PAD_CH:
-			handlePadNoteChange(State::STATE_ON, _rightFuncMode, _rightPad, number, value);
+			_rightPad->setTo(number, value);
 			break;
 
 		default:
@@ -112,11 +112,11 @@ public:
 			break;
 
 		case LEFT_PAD_CH:
-			handlePadNoteChange(State::STATE_OFF, _leftFuncMode, _leftPad, number, value);
+			_leftPad->setTo(number, value);
 			break;
 
 		case RIGHT_PAD_CH:
-			handlePadNoteChange(State::STATE_OFF, _rightFuncMode, _rightPad, number, value);
+			_rightPad->setTo(number, value);
 			break;
 
 		default:
@@ -136,7 +136,6 @@ private:
 	FuncsBlind *_funcsBlind;
 
 	void initPins();
-	void handlePadNoteChange(State nState, FuncMode *deckMD, Pad *pad, uint8_t number, uint8_t value);
 	void vuChange(uint8_t number, uint8_t value);
 	void readDecksMode();
 	void checkDeckMode(FuncMode *fm, Pad *p);

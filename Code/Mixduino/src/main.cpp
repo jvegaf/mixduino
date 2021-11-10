@@ -2,7 +2,6 @@
 #include "MDCore.h"
 #include "PotKit.h"
 #include "TouchKit.h"
-#include "midi_map.h"
 #include <Arduino.h>
 #include <MIDI.h>
 #include <Thread.h>

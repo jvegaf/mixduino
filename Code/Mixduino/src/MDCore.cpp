@@ -38,19 +38,3 @@ void MDCore::checkDeckMode(FuncMode *fm, Pad *p)
 void MDCore::setInitialDeckB() {
 	_funcs->setTo(0, 1);
 }
-
-void MDCore::handlePadNoteChange(State nState, FuncMode *deckMD, Pad *pad, uint8_t number, uint8_t value)
-{
-    if (deckMD->getMode() != deckMode::MODE_HOTCUE)
-    {
-        return;
-    }
-
-    if (nState == State::STATE_OFF)
-    {
-        pad->setTo(number, 0);
-        return;
-    }
-
-    pad->setTo(number, value);
-}

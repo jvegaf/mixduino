@@ -1,7 +1,7 @@
 #pragma once
 #ifndef FUNCFACTORY_H
 #define FUNCFACTORY_H
-#include "NPKit.h"
+#include "..\lib\npkit\NPKit.h"
 #include <Shifter.h>
 #include "pin_map.h"
 #include "np_map.h"
@@ -51,17 +51,17 @@ private:
     void (*fOff)(uint8_t, uint8_t, uint8_t);
 
     Input** createInputs();
-    OutputBase **createOutputs();
+    Output **createOutputs();
 
     Input **createInputPads(const uint8_t* mxPinBundle, uint8_t sigPin, const uint8_t* positions, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
 
-    OutputBase** createOutputPads(NPKit* npk, const uint8_t* positions);
+    Output** createOutputPads(NPKit* npk, const uint8_t* positions);
     FuncMode* createLeftModeFunc();
     FuncMode* createRightModeFunc();
     Input** createBlindInputs();
-    Func* createFuncs(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, uint8_t t_funcs);
+    Func* createFuncs(Input **inAggr, Output **outAggr, uint8_t midiCh, uint8_t t_funcs);
     FuncBase* createBlindFuncs(Input **inAggr, uint8_t midiCh, uint8_t t_funcs);
-    FuncPad* createFuncPads(Input **inAggr, OutputBase **outAggr, uint8_t midiCh, uint8_t t_funcs);
+    FuncPad* createFuncPads(Input **inAggr, Output **outAggr, uint8_t midiCh, uint8_t t_funcs);
 
     
 };

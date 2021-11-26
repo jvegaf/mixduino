@@ -3,18 +3,19 @@
 #define MD_OUTPUT_H
 #include <Arduino.h>
 
-class OutputBase
+class Output
 {
-protected:
-    uint8_t _outPos;
-
 public:
-    OutputBase(uint8_t outPosition)
+    Output(uint8_t outPosition)
     {
         _outPos = outPosition;
     }
-    OutputBase() = default;
+    Output() = default;
     virtual void setTo(uint8_t value) = 0;
+
+protected:
+    uint8_t _outPos;
+
 };
 
 

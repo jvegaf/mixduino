@@ -2,10 +2,10 @@
 #ifndef FBLED_H
 #define FBLED_H
 #include <Arduino.h>
-#include "OutputBase.h"
+#include "Output.h"
 #include <Shifter.h>
 
-class FBLed : public OutputBase
+class FBLed : public Output
 {
 	private:
 		Shifter* _shft;

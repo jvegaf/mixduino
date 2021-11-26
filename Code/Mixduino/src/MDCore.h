@@ -6,7 +6,7 @@
 #include "FuncMode.h"
 #include "Funcs.h"
 #include "FuncsBlind.h"
-#include "NPKit.h"
+#include "..\lib\npkit\NPKit.h"
 #include "Pad.h"
 #include "VUmeter.h"
 #include "md_defs.h"
@@ -72,11 +72,11 @@ public:
 		switch (channel)
 		{
 		
-		case LEFT_PAD_CH:
+		case PAD_DECK_A_CH:
 			_leftPad->setTo(number, value);
 			break;
 
-		case RIGHT_PAD_CH:
+		case PAD_DECK_B_CH:
 			_rightPad->setTo(number, value);
 			break;
 

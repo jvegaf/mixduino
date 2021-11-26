@@ -1,6 +1,6 @@
 #include "FuncMode.h"
 
-FuncMode::FuncMode(const uint8_t *mxPins, uint8_t muxSig, uint8_t inPos, OutputBase *output)
+FuncMode::FuncMode(const uint8_t *mxPins, uint8_t muxSig, uint8_t inPos, Output *output)
 {
     _mxPins = mxPins;
     _muxSig = muxSig;

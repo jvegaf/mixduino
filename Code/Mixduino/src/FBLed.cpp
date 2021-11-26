@@ -2,7 +2,7 @@
 
 
 FBLed::FBLed(Shifter* shf, uint8_t outPos)
-	: OutputBase(outPos)
+	: Output(outPos)
 {
 	_shft = shf;
 }

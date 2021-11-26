@@ -2,7 +2,7 @@
 #ifndef FUNCMODE_H
 #define FUNCMODE_H
 #include <Arduino.h>
-#include "OutputBase.h"
+#include "Output.h"
 #include "md_defs.h"
 
 enum class deckMode
@@ -16,7 +16,7 @@ enum class deckMode
 class FuncMode 
 {
 public:
-	FuncMode(const uint8_t *mxPins, uint8_t muxSig, uint8_t inPos, OutputBase *output);
+	FuncMode(const uint8_t *mxPins, uint8_t muxSig, uint8_t inPos, Output *output);
 	deckMode getMode();
 	uint8_t getModeNote();
 	uint8_t getModeColor();
@@ -34,7 +34,7 @@ private:
     int _cState;
     unsigned long _lastdebouncetime;
 	const unsigned long DEBOUNCE_DELAY = 20;
-	OutputBase* _out;
+	Output* _out;
 	deckMode _dMode;
 	uint8_t _modeNote;
 	uint8_t _modeColor;

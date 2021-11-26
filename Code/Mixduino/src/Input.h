@@ -1,29 +1,27 @@
-
-
 #pragma once
 #ifndef MD_INPUT_H
 #define MD_INPUT_H
+#include "input_str.h"
 
-#include "InputBase.h"
-#include <Arduino.h>
-
-class Input : public InputBase
+class Input
 {
 
 public:
-	Input(uint8_t inputIndex, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
-	: InputBase(inputIndex)
-	{
-		_funOn = funcOn;
-	    _funOff = funcOff;
-	}
-	Input() = default;
-
-	virtual void read(uint8_t midiCh, uint8_t note)=0;
+    Input(uint8_t inputPos)
+    {
+        _pState = LOW;
+        _inPos = inputPos;
+    }
+    Input() = default;
+    virtual void read(inputStr_t in)=0;
 
 protected:
-	void (*_funOn)(uint8_t, uint8_t, uint8_t);
-	void (*_funOff)(uint8_t, uint8_t, uint8_t);
+    uint16_t _pState;
+    uint16_t _cState;
+    uint32_t _lastdebouncetime;
+	const uint32_t DEBOUNCE_DELAY = 20;
+    uint8_t _inPos;
 };
 
-#endif // MD_INPUT_H
+
+#endif // MDINPUT_H

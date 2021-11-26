@@ -5,15 +5,14 @@
 #define MUXINPUT_H
 
 #include "Input.h"
-#include <Arduino.h>
 
 class MuxInput : public Input
 {
 
 public:
 
-	MuxInput(const uint8_t *mxPins, uint8_t sig, uint8_t inputIndex, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
-	: Input(inputIndex, funcOn, funcOff)
+	MuxInput(const uint8_t *mxPins, uint8_t sig, uint8_t inputIndex)
+	: Input(inputIndex)
 	{
 	    _mxPins = mxPins;
 	    _mxSigPin = sig;
@@ -29,7 +28,7 @@ public:
 	    digitalWrite(_mxPins[3], bitRead(channel, 3));
 	}
 	
-	void read(uint8_t midiCh, uint8_t note)
+	void read(inputStr_t in) override
 	{
 	    setMuxChannel(_inPos);
 	    _cState = digitalRead(_mxSigPin);
@@ -41,11 +40,11 @@ public:
 
 	            if (_cState == LOW)
 	            {
-	                _funOn(note, 127, midiCh);
+					in.funOn(in.midiNote, 127, in.midiChannel);
 	            }
 	            else
 	            {
-	                _funOff(note, 127, midiCh);
+	                in.funOff(in.midiNote, 127, in.midiChannel);
 	            }
 
 	            _pState = _cState;

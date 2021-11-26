@@ -10,9 +10,9 @@
 
 uint8_t const IN_ONLY_CH    = 4;
 uint8_t const IN_OUT_CH     = 5;
-uint8_t const LEFT_PAD_CH   = 6;
-uint8_t const RIGHT_PAD_CH  = 7;
-uint8_t const BR_ENCODER_CH = 8;
+uint8_t const PAD_DECK_A_CH = 6;
+uint8_t const PAD_DECK_B_CH = 7;
+uint8_t const PAD_DECK_C_CH = 8;
 uint8_t const VUMETERS_CH   = 12;
 
 /////////////////////////////////////////

@@ -3,17 +3,17 @@
 #define MD_FUNC_H
 #include <Arduino.h>
 #include "FuncBase.h"
-#include "OutputBase.h"
+#include "Output.h"
 
 class Func : public FuncBase
 {
 	protected:
-		OutputBase* _output;
+		Output* _output;
 
 	public:
-		Func(OutputBase* output);
-		Func(Input* input, OutputBase* output);
-		Func(Input* input, OutputBase* output, uint8_t midiCh, uint8_t note);
+		Func(Output* output);
+		Func(Input* input, Output* output);
+		Func(Input* input, Output* output, uint8_t midiCh, uint8_t note);
 		Func() = default;
 		void read();
 		void setTo(uint8_t value);

@@ -1,20 +1,20 @@
 #pragma once
 #ifndef MD_BUTTON_H
 #define MD_BUTTON_H
-#include "Input.h"
+#include "DigitalInput.h"
 #include "Output.h"
 
 class Button  
 {
 	public:
 
-		Button(Input* input, Output* output)
+		Button(DigitalInput* input, Output* output)
 		{
 			_input = input;
 			_output = output;
 		}
 
-		Button(Input* input)
+		Button(DigitalInput* input)
 		{
 			_input = input;
 			_output = NULL;
@@ -32,7 +32,7 @@ class Button
 
 	protected:
 
-		Input* _input;
+		DigitalInput* _input;
 		Output* _output;
 };
 #endif

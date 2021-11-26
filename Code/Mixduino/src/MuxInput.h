@@ -4,15 +4,15 @@
 #ifndef MUXINPUT_H
 #define MUXINPUT_H
 
-#include "Input.h"
+#include "DigitalInput.h"
 
-class MuxInput : public Input
+class MuxInput : public DigitalInput
 {
 
 public:
 
 	MuxInput(const uint8_t *mxPins, uint8_t sig, uint8_t inputIndex)
-	: Input(inputIndex)
+	: DigitalInput(inputIndex)
 	{
 	    _mxPins = mxPins;
 	    _mxSigPin = sig;
@@ -40,11 +40,11 @@ public:
 
 	            if (_cState == LOW)
 	            {
-					in.funOn(in.midiNote, 127, in.midiChannel);
+					in.funOn(in.midiNumber, 127, in.midiChannel);
 	            }
 	            else
 	            {
-	                in.funOff(in.midiNote, 127, in.midiChannel);
+	                in.funOff(in.midiNumber, 127, in.midiChannel);
 	            }
 
 	            _pState = _cState;

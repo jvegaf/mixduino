@@ -10,7 +10,7 @@
 #include "MuxInput.h"
 #include "FuncMode.h"
 #include "FuncPad.h"
-#include "ArduInput.h"
+#include "DirectDigitalInput.h"
 #include "sw_muxmap.h"
 #include "FBLed.h"
 #include "FBPixel.h"
@@ -50,18 +50,18 @@ private:
     void (*fOn)(uint8_t, uint8_t, uint8_t); 
     void (*fOff)(uint8_t, uint8_t, uint8_t);
 
-    Input** createInputs();
+    DigitalInput** createInputs();
     Output **createOutputs();
 
-    Input **createInputPads(const uint8_t* mxPinBundle, uint8_t sigPin, const uint8_t* positions, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
+    DigitalInput **createInputPads(const uint8_t* mxPinBundle, uint8_t sigPin, const uint8_t* positions, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t));
 
     Output** createOutputPads(NPKit* npk, const uint8_t* positions);
     FuncMode* createLeftModeFunc();
     FuncMode* createRightModeFunc();
-    Input** createBlindInputs();
-    Func* createFuncs(Input **inAggr, Output **outAggr, uint8_t midiCh, uint8_t t_funcs);
-    FuncBase* createBlindFuncs(Input **inAggr, uint8_t midiCh, uint8_t t_funcs);
-    FuncPad* createFuncPads(Input **inAggr, Output **outAggr, uint8_t midiCh, uint8_t t_funcs);
+    DigitalInput** createBlindInputs();
+    Func* createFuncs(DigitalInput **inAggr, Output **outAggr, uint8_t midiCh, uint8_t t_funcs);
+    FuncBase* createBlindFuncs(DigitalInput **inAggr, uint8_t midiCh, uint8_t t_funcs);
+    FuncPad* createFuncPads(DigitalInput **inAggr, Output **outAggr, uint8_t midiCh, uint8_t t_funcs);
 
     
 };

@@ -9,7 +9,7 @@ class ButtonFunc : public Button
 public:
 
     ButtonFunc(
-        Input* input, 
+        DigitalInput* input, 
         Output* output, 
         uint8_t midiChannel, 
         uint8_t midiNote,
@@ -30,7 +30,7 @@ public:
         inStr.funOn = _fnOn;
         inStr.funOff = _fnOff;
         inStr.midiChannel = _midiChannel;
-        inStr.midiNote = _midiNote;
+        inStr.midiNumber = _midiNote;
         _input->read(inStr);
     }
 

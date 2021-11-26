@@ -23,6 +23,7 @@ Thread threadReadButtons; // thread para controlar os botoes
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value);
+void onChangeSelectedDeck();
 void readButtons();
 void readPots();
 void readEncoder();
@@ -116,4 +117,9 @@ void sendMidiNoteOff(uint8_t number, uint8_t value, uint8_t channel)
 void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel)
 {
   MIDI.sendControlChange(number, value, channel);
+}
+
+void onChangeSelectedDeck()
+{
+  
 }

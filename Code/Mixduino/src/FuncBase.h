@@ -1,17 +1,17 @@
 #pragma once
 #ifndef FUNCBASE_H
 #define FUNCBASE_H
-#include "Input.h"
+#include "DigitalInput.h"
 class FuncBase
 {
 protected:
-    Input* _input;
+    DigitalInput* _input;
     uint8_t _midiCh;
     uint8_t _note;
 
 public:
 
-    FuncBase(Input *input, uint8_t midiCh, uint8_t note)
+    FuncBase(DigitalInput *input, uint8_t midiCh, uint8_t note)
     {
         _input = input;
         _midiCh = midiCh;

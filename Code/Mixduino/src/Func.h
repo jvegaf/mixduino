@@ -12,8 +12,8 @@ class Func : public FuncBase
 
 	public:
 		Func(Output* output);
-		Func(Input* input, Output* output);
-		Func(Input* input, Output* output, uint8_t midiCh, uint8_t note);
+		Func(DigitalInput* input, Output* output);
+		Func(DigitalInput* input, Output* output, uint8_t midiCh, uint8_t note);
 		Func() = default;
 		void read();
 		void setTo(uint8_t value);

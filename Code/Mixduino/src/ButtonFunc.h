@@ -9,7 +9,7 @@ class ButtonFunc : public Button
 public:
 
     ButtonFunc(
-        Input* input, 
+        DigitalInput* input, 
         Output* output, 
         void (*funcOn)(uint8_t, uint8_t, uint8_t))
     : Button(input, output)

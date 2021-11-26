@@ -9,7 +9,7 @@ class ButtonPad : public ButtonFunc
 public:
 
     ButtonPad(
-        Input* input, 
+        DigitalInput* input, 
         Output* output, 
         uint8_t midiChannel, 
         uint8_t midiNote,

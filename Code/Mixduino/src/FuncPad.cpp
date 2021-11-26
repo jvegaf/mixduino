@@ -1,6 +1,6 @@
 #include "FuncPad.h"  
 
-FuncPad::FuncPad(Input* input, Output* output, uint8_t midiCh, uint8_t note)
+FuncPad::FuncPad(DigitalInput* input, Output* output, uint8_t midiCh, uint8_t note)
 	: Func(input, output, midiCh, note)
 {
 	

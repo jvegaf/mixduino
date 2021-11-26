@@ -9,7 +9,7 @@ class FuncPad : Func
 	private:
 
 	public:
-		FuncPad(Input* input, Output* output, uint8_t midiCh, uint8_t note);
+		FuncPad(DigitalInput* input, Output* output, uint8_t midiCh, uint8_t note);
 		FuncPad() = default;
 		void setNote(uint8_t note);
 		void read();

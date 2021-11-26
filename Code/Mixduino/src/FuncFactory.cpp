@@ -10,21 +10,21 @@ void FuncFactory::begin(NPKit *npkit, void (*funcOn)(uint8_t, uint8_t, uint8_t),
     _funcModeLeft = createLeftModeFunc();
     _funcModeRight = createRightModeFunc();
 
-    Input** blindIns = createBlindInputs();
+    DigitalInput** blindIns = createBlindInputs();
     FuncBase* _bFuncs = createBlindFuncs(blindIns, IN_ONLY_CH, T_MIDI_BLIND_SET);
     _blindFuncs = new FuncsBlind(_bFuncs, T_MIDI_BLIND_SET);
     
-    Input** ins = createInputs();
+    DigitalInput** ins = createInputs();
     Output** outs = createOutputs();
     Func* _fncs = createFuncs(ins, outs, IN_OUT_CH, T_MIDI_SET);
     _funcs = new Funcs(_fncs, T_MIDI_SET);
     
-    Input** leftInPads = createInputPads(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SW_PADL_BUNDLE, fOn, fOff);
+    DigitalInput** leftInPads = createInputPads(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SW_PADL_BUNDLE, fOn, fOff);
     Output** leftOutPads = createOutputPads(_npkit, PIXLS_PAD_L);
     FuncPad* _leftFuncPads = createFuncPads(leftInPads, leftOutPads, PAD_DECK_A_CH, T_DECK_PADS);
     _leftPad = new Pad(_leftFuncPads);
     
-    Input** rightInPads = createInputPads(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SW_PADR_BUNDLE, fOn, fOff);
+    DigitalInput** rightInPads = createInputPads(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SW_PADR_BUNDLE, fOn, fOff);
     Output** rightOutPads = createOutputPads(_npkit, PIXLS_PAD_R);
     FuncPad* _rightFuncPads = createFuncPads(rightInPads, rightOutPads, PAD_DECK_B_CH, T_DECK_PADS);
     _rightPad = new Pad(_rightFuncPads);
@@ -43,7 +43,7 @@ FuncMode *FuncFactory::createRightModeFunc()
     return new FuncMode(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWMODE_R, modeROut);
 }
 
-FuncBase *FuncFactory::createBlindFuncs(Input **inAggr, uint8_t midiCh, uint8_t t_funcs)
+FuncBase *FuncFactory::createBlindFuncs(DigitalInput **inAggr, uint8_t midiCh, uint8_t t_funcs)
 {
     FuncBase *funcSet = new FuncBase[t_funcs];
     for (uint8_t i = 0; i < t_funcs; i++)
@@ -53,7 +53,7 @@ FuncBase *FuncFactory::createBlindFuncs(Input **inAggr, uint8_t midiCh, uint8_t 
     return funcSet;
 }
 
-Func *FuncFactory::createFuncs(Input **inAggr, Output **outAggr, uint8_t midiCh, uint8_t t_funcs)
+Func *FuncFactory::createFuncs(DigitalInput **inAggr, Output **outAggr, uint8_t midiCh, uint8_t t_funcs)
 {
     Func *funcSet = new Func[t_funcs];
     for (uint8_t i = 0; i < t_funcs; i++)
@@ -63,20 +63,20 @@ Func *FuncFactory::createFuncs(Input **inAggr, Output **outAggr, uint8_t midiCh,
     return funcSet;
 }
 
-Input **FuncFactory::createBlindInputs()
+DigitalInput **FuncFactory::createBlindInputs()
 {
-    Input** res = new Input*[T_MIDI_BLIND_SET];
+    DigitalInput** res = new DigitalInput*[T_MIDI_BLIND_SET];
     res[0] = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWSHIFT);
-    res[1] = new ArduInput(SW_BROWSER_L);
-    res[2] = new ArduInput(SW_BROWSER_R);
-    res[3] = new ArduInput(SWBR_PREVIEW);
-    res[4] = new ArduInput(SWBR_BACK);
+    res[1] = new DirectDigitalInput(SW_BROWSER_L);
+    res[2] = new DirectDigitalInput(SW_BROWSER_R);
+    res[3] = new DirectDigitalInput(SWBR_PREVIEW);
+    res[4] = new DirectDigitalInput(SWBR_BACK);
     return res;
 }
 
-Input **FuncFactory::createInputs()
+DigitalInput **FuncFactory::createInputs()
 {
-    Input **res = new Input*[T_MIDI_SET]; 
+    DigitalInput **res = new DigitalInput*[T_MIDI_SET]; 
     res[0] = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWDECK_SEL);
     res[1] = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWSYNC_L);
     res[2] = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWSYNC_R);
@@ -89,12 +89,12 @@ Input **FuncFactory::createInputs()
     res[9] = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWPCUEL1);
     res[10] = new MuxInput(MUXPIN_BUNDLE, LEFT_SWMUX_SIG, SWPCUEL2);
     res[11] = new MuxInput(MUXPIN_BUNDLE, RIGHT_SWMUX_SIG, SWPCUEL3);
-    res[12] = new ArduInput(SWFXL_1);
-    res[13] = new ArduInput(SWFXL_2);
-    res[14] = new ArduInput(SWFXL_3);
-    res[15] = new ArduInput(SWFXR_1);
-    res[16] = new ArduInput(SWFXR_2);
-    res[17] = new ArduInput(SWFXR_3);
+    res[12] = new DirectDigitalInput(SWFXL_1);
+    res[13] = new DirectDigitalInput(SWFXL_2);
+    res[14] = new DirectDigitalInput(SWFXL_3);
+    res[15] = new DirectDigitalInput(SWFXR_1);
+    res[16] = new DirectDigitalInput(SWFXR_2);
+    res[17] = new DirectDigitalInput(SWFXR_3);
     return res;
 }
 
@@ -133,18 +133,18 @@ Output** FuncFactory::createOutputPads(NPKit *npk, const uint8_t *positions)
     return outPads;
 }
 
-Input **FuncFactory::createInputPads(const uint8_t *mxPinBundle, uint8_t sigPin, const uint8_t *positions, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
+DigitalInput **FuncFactory::createInputPads(const uint8_t *mxPinBundle, uint8_t sigPin, const uint8_t *positions, void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
 {
-    Input **muxInPads = new Input*[T_DECK_PADS];
+    DigitalInput **muxInPads = new DigitalInput*[T_DECK_PADS];
     for (uint8_t i = 0; i < T_DECK_PADS; i++)
     {
-        Input* inp = new MuxInput(mxPinBundle, sigPin, positions[i]);
+        DigitalInput* inp = new MuxInput(mxPinBundle, sigPin, positions[i]);
         muxInPads[i] = inp;
     }
     return muxInPads;
 }
 
-FuncPad* FuncFactory::createFuncPads(Input **inAggr, Output **outAggr, uint8_t midiCh, uint8_t t_funcs)
+FuncPad* FuncFactory::createFuncPads(DigitalInput **inAggr, Output **outAggr, uint8_t midiCh, uint8_t t_funcs)
 {
     FuncPad* funcSet = new FuncPad[t_funcs];
     for (uint8_t i = 0; i < t_funcs; i++)

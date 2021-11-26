@@ -2,13 +2,13 @@
 #ifndef ARDUINPUT_H
 #define ARDUINPUT_H
 #include <Arduino.h>
-#include "Input.h"
+#include "DigitalInput.h"
 
-class ArduInput : public Input  
+class DirectDigitalInput : public DigitalInput  
 {
 	public:
-		ArduInput(uint8_t inputIndex)
-		: Input(inputIndex)
+		DirectDigitalInput(uint8_t inputIndex)
+		: DigitalInput(inputIndex)
 		{
 		}
 
@@ -24,11 +24,11 @@ class ArduInput : public Input
 
 		            if (_cState == LOW)
 		            {
-						in.funOn(in.midiNote, 127, in.midiChannel); // envia NoteOn(nota, velocity, canal midi)
+						in.funOn(in.midiNumber, 127, in.midiChannel); // envia NoteOn(nota, velocity, canal midi)
 		            }
 		            else
 		            {
-		                in.funOff(in.midiNote, 127, in.midiChannel); // envia NoteOff(nota, velocity, canal midi)
+		                in.funOff(in.midiNumber, 127, in.midiChannel); // envia NoteOff(nota, velocity, canal midi)
 		            }
 
 		            _pState = _cState;

@@ -6,9 +6,10 @@
 struct inputStr
 {
     uint8_t midiChannel;
-    uint8_t midiNote;
+    uint8_t midiNumber;
     void (*funOn)(uint8_t, uint8_t, uint8_t);
 	void (*funOff)(uint8_t, uint8_t, uint8_t);
+    void (*funCC)(uint8_t, uint8_t, uint8_t);
     void (*calbackFun)();
 };
 

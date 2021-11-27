@@ -20,6 +20,8 @@ class Button
 			_output = NULL;
 		}
 
+		Button() = default;
+
 		virtual void read() = 0;
 
 		void setTo(uint8_t value)

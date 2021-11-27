@@ -1,14 +1,12 @@
 
 #ifndef ARDUINO_MDCORE_H
 #define ARDUINO_MDCORE_H
-#include "Func.h"
-#include "FuncFactory.h"
-#include "FuncMode.h"
-#include "Funcs.h"
-#include "FuncsBlind.h"
 #include "..\lib\npkit\NPKit.h"
-#include "Pad.h"
-#include "VUmeter.h"
+#include "Browser.h"
+#include "Controller.h"
+#include "FXUnit.h"
+#include "FuncFactory.h"
+#include "Mixer.h"
 #include "md_defs.h"
 #include <Arduino.h>
 
@@ -23,65 +21,74 @@ uint8_t const t_VUSet = 5;
 class MDCore
 {
 public:
-	MDCore()
+	MDCore(
+		void (*funcOn)(uint8_t, uint8_t, uint8_t),
+		void (*funcOff)(uint8_t, uint8_t, uint8_t),
+		void (*funcCC)(uint8_t, uint8_t, uint8_t),
+		void (*cbModeFunc)(uint8_t),
+		void (*cbSelDeck)())
+		: m_funcOn{funcOn},
+		  m_funcOff{funcOff},
+		  m_funcCC{funcCC},
+		  m_cbModeFunc{cbModeFunc},
+		  m_cbSelDeck{cbSelDeck}
 	{
-		_factory = new FuncFactory();
-		_npkit = new NPKit(NP_DATA, T_NP);
-		_vuSet = new VUmeter[t_VUSet];
-		_vuSet[0] = VUmeter(L1VU_SIG, L1VU_LATCH, SRCLK);
-		_vuSet[1] = VUmeter(L2VU_SIG, L2VU_LATCH, SRCLK);
-		_vuSet[2] = VUmeter(L3VU_SIG, L3VU_LATCH, SRCLK);
-		_vuSet[3] = VUmeter(MLVU_SIG, MLVU_LATCH, SRCLK);
-		_vuSet[4] = VUmeter(MRVU_SIG, MRVU_LATCH, SRCLK);
+		m_factory = new FuncFactory();
+		m_npkit = new NPKit(NP_DATA, T_NP);
 	}
 
-	void begin(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
+	void begin()
 	{
-		_npkit->begin();
+		m_npkit->begin();
 		initPins();
-		_factory->begin(_npkit, funcOn, funcOff);
-		fnOn = funcOn;
-		fnOff = funcOff;
-		for (uint8_t i = 0; i < t_VUSet; i++)
-		{
-			_vuSet[i].begin();
-		}
+		m_factory->begin(m_npkit, m_funcOn, m_funcOff, m_funcCC, m_cbModeFunc, m_cbSelDeck);
 
-		_leftFuncMode = _factory->getFuncModeLeft();
-		_rightFuncMode = _factory->getFuncModeRight();
-		_funcsBlind = _factory->getBlindFuncs();
-		_funcs = _factory->getFuncs();
-		_leftPad = _factory->getLeftPad();
-		_rightPad = _factory->getRightPad();
-		checkDeckMode(_leftFuncMode, _leftPad);
-		checkDeckMode(_rightFuncMode, _rightPad);
-		setInitialDeckB();
+		m_deckSelBtn = m_factory->getDeckSelBtn();
+		m_mixer = m_factory->getMixer();
+		m_leftController = m_factory->getLeftController();
+		m_rightController = m_factory->getRightController();
+		m_browser = m_factory->getBrowser();
+		m_fxUnits = m_factory->getFxUnits();
+	}
+
+	void changeSelectedDeck() {
+
+	}
+
+	void changeMode(uint8_t align)
+	{
+
 	}
 
 	void readButtons()
 	{
 		readDecksMode();
-		_funcsBlind->read();
-		_funcs->read();
-		_leftPad->read();
-		_rightPad->read();
+	}
+
+	void readPots() 
+	{
+
 	}
 
 	void onCChange(uint8_t channel, uint8_t number, uint8_t value)
 	{
 		switch (channel)
 		{
-		
-		case PAD_DECK_A_CH:
-			_leftPad->setTo(number, value);
+
+		case DECK_A_CH:
+			// m_leftPad->setTo(number, value);
 			break;
 
-		case PAD_DECK_B_CH:
-			_rightPad->setTo(number, value);
+		case DECK_B_CH:
+			// m_rightPad->setTo(number, value);
 			break;
 
-		case VUMETERS_CH: // VU
-			vuChange(number, value);
+		case DECK_C_CH:
+			// m_rightPad->setTo(number, value);
+			break;
+
+		case MIXER_CH: // VU
+			// vuChange(number, value);
 			break;
 
 		default:
@@ -94,24 +101,28 @@ public:
 		switch (channel)
 		{
 
-		case IN_OUT_CH:
-			_funcs->setTo(number, value);
-
+		case FX1_CH:
+			// _funcs->setTo(number, value);
 			break;
 
-		default:
+		case FX2_CH:
+			// _funcs->setTo(number, value);
 			break;
-		}
-	}
-	void onNoteOff(uint8_t channel, uint8_t number, uint8_t value)
-	{
-		switch (channel)
-		{
 
-		case IN_OUT_CH:
+		case DECK_A_CH:
+			// _funcs->setTo(number, value);
+			break;
 
-			_funcs->setTo(number, LOW);
+		case DECK_B_CH:
+			// _funcs->setTo(number, value);
+			break;
 
+		case DECK_C_CH:
+			// _funcs->setTo(number, value);
+			break;
+
+		case MIXER_CH:
+			// _funcs->setTo(number, value);
 			break;
 
 		default:
@@ -120,23 +131,22 @@ public:
 	}
 
 private:
-	void (*fnOn)(uint8_t, uint8_t, uint8_t); 
-	void (*fnOff)(uint8_t, uint8_t, uint8_t);
-	VUmeter *_vuSet;
-	FuncFactory *_factory;
-	NPKit *_npkit;
-	FuncMode *_leftFuncMode;
-	FuncMode *_rightFuncMode;
-	Pad *_leftPad;
-	Pad *_rightPad;
-	Funcs *_funcs;
-	FuncsBlind *_funcsBlind;
+	void (*m_funcOn)(uint8_t, uint8_t, uint8_t);
+	void (*m_funcOff)(uint8_t, uint8_t, uint8_t);
+	void (*m_funcCC)(uint8_t, uint8_t, uint8_t);
+	void (*m_cbModeFunc)(uint8_t);
+	void (*m_cbSelDeck)();
+	Controller *m_leftController;
+	Controller *m_rightController;
+	Mixer *m_mixer;
+	Browser *m_browser;
+	FXUnit *m_fxUnits;
+	ButtonFunc *m_deckSelBtn;
+	FuncFactory *m_factory;
+	NPKit *m_npkit;
 
 	void initPins();
 	void vuChange(uint8_t number, uint8_t value);
 	void readDecksMode();
-	void checkDeckMode(FuncMode *fm, Pad *p);
-	void setInitialDeckB();
-	void sendMonState();
 };
 #endif

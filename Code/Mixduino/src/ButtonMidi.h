@@ -3,12 +3,12 @@
 #define MD_BUTTONMIDI_H
 #include "Button.h"
 
-class ButtonFunc : public Button
+class ButtonMidi : public Button
 {
 
 public:
 
-    ButtonFunc(
+    ButtonMidi(
         DigitalInput* input, 
         Output* output, 
         uint8_t midiChannel, 
@@ -16,13 +16,21 @@ public:
         void (*funcOn)(uint8_t, uint8_t, uint8_t), 
         void (*funcOff)(uint8_t, uint8_t, uint8_t) 
     )
-    : Button(input, output)
+    : Button(input, output), _midiChannel{midiChannel}, _midiNote{midiNote}, _fnOn{funcOn}, _fnOff{funcOff}
     {
-        _midiChannel = midiChannel;
-        _midiNote = midiNote;
-        _fnOn = funcOn;
-        _fnOff = funcOff;
     }
+
+    ButtonMidi(
+        DigitalInput* input, 
+        uint8_t midiChannel, 
+        uint8_t midiNote,
+        void (*funcOn)(uint8_t, uint8_t, uint8_t), 
+        void (*funcOff)(uint8_t, uint8_t, uint8_t)
+    ) : Button(input), _midiChannel{midiChannel}, _midiNote{midiNote}, _fnOn{funcOn}, _fnOff{funcOff}
+    {
+    }
+
+    ButtonMidi() = default;
 
     void read() override
     {
@@ -32,6 +40,16 @@ public:
         inStr.midiChannel = _midiChannel;
         inStr.midiNumber = _midiNote;
         _input->read(inStr);
+    }
+
+    void setMidiChannel(uint8_t midiChannel)
+    {
+        _midiChannel = midiChannel;
+    }
+
+    void setMidiNote(uint8_t midiNote)
+    {
+        _midiNote = midiNote;
     }
 
 protected:

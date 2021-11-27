@@ -11,21 +11,37 @@ public:
     ButtonFunc(
         DigitalInput* input, 
         Output* output, 
-        void (*funcOn)(uint8_t, uint8_t, uint8_t))
-    : Button(input, output)
+        void (*cbackFun)())
+    : Button(input, output), _cbackFun{cbackFun}
     {
-        _fnOn = funcOn;
+    }
+
+    ButtonFunc(
+        DigitalInput* input, 
+        Output* output, 
+        void (*cbackFun)(uint8_t))
+    : Button(input, output), _cbackMode{cbackFun}
+    {
     }
 
     void read() override
     {
         inputStr_t inStr;
-        inStr.funOn = _fnOn;
+        if(_cbackFun != nullptr)
+        {
+            inStr.cbackFun = _cbackFun;
+        }
+        if(_cbackMode != nullptr)
+        {
+            inStr.cbackMode = _cbackMode;
+        }
+        
         _input->read(inStr);
     }
 
 protected:
-    void (*_fnOn)(uint8_t, uint8_t, uint8_t);
+    void (*_cbackFun)() { nullptr };
+    void (*_cbackMode)(uint8_t) { nullptr };
 };
 
 #endif

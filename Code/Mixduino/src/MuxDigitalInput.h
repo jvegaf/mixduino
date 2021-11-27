@@ -1,24 +1,24 @@
 
 
 #pragma once
-#ifndef MUXINPUT_H
-#define MUXINPUT_H
+#ifndef MUX_DIGITAL_INPUT_H
+#define MUX_DIGITAL_INPUT_H
 
 #include "DigitalInput.h"
 
-class MuxInput : public DigitalInput
+class MuxDigitalInput : public DigitalInput
 {
 
 public:
 
-	MuxInput(const uint8_t *mxPins, uint8_t sig, uint8_t inputIndex)
+	MuxDigitalInput(const uint8_t *mxPins, uint8_t sig, uint8_t inputIndex)
 	: DigitalInput(inputIndex)
 	{
 	    _mxPins = mxPins;
 	    _mxSigPin = sig;
 	}
 
-	MuxInput() = default;
+	MuxDigitalInput() = default;
 	
 	void setMuxChannel(uint8_t channel)
 	{

@@ -14,36 +14,14 @@ void MDCore::initPins()
 
 void MDCore::vuChange(uint8_t number, uint8_t value)
 {
-    _vuSet[number].setLevel(value);
+    // _vuSet[number].setLevel(value);
 }
 
 void MDCore::readDecksMode()
 {
-    _leftFuncMode->read();
-    _rightFuncMode->read();
-    checkDeckMode(_leftFuncMode, _leftPad);
-    checkDeckMode(_rightFuncMode, _rightPad);
+    // _leftFuncMode->read();
+    // _rightFuncMode->read();
+    // checkDeckMode(_leftFuncMode, m_leftPad);
+    // checkDeckMode(_rightFuncMode, m_rightPad);
 }
 
-void MDCore::checkDeckMode(FuncMode *fm, Pad *p)
-{
-    if (!fm->isDisposed())
-    {
-        p->setNote(fm->getModeNote());
-        p->setTo(fm->getModeColor());
-        fm->dispose();
-        if (fm->getMode() == deckMode::MODE_HOTCUE)
-        {
-            sendMonState();
-        }
-    }
-}
-
-void MDCore::setInitialDeckB() {
-	_funcs->setTo(0, 1);
-}
-
-void MDCore::sendMonState() {
-	fnOn(SEND_MON_STATE, 127, 3);
-	fnOff(SEND_MON_STATE, 127, 3);
-}

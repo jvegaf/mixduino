@@ -10,7 +10,8 @@ struct inputStr
     void (*funOn)(uint8_t, uint8_t, uint8_t);
 	void (*funOff)(uint8_t, uint8_t, uint8_t);
     void (*funCC)(uint8_t, uint8_t, uint8_t);
-    void (*calbackFun)();
+    void (*cbackFun)();
+    void (*cbackMode)(uint8_t);
 };
 
 typedef struct inputStr inputStr_t;

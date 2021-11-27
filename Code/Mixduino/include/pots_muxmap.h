@@ -71,6 +71,54 @@ const uint8_t bottomMuxpotsSet[] = {
     FADER_L3
 };
 
-const uint8_t nBottomMuxPots = 16;
+uint8_t MIXER_TOP_MUX_SET[] = 
+{
+    PGAINL1,
+    PGAINL2,
+    PGAINL3,
+    TREL1,
+    TREL2,
+    TREL3
+};
+
+uint8_t const T_MIXER_TOP_MUX = 6;
+
+uint8_t MIXER_BOTTOM_MUX_SET[] = 
+{
+    MID_L1,
+    MID_L2,
+    MID_L3,
+    BAS_L1,
+    BAS_L2,
+    BAS_L3,
+    FILTER_L1,
+    FILTER_L2,
+    FILTER_L3,
+    FADER_L1,
+    FADER_L2,
+    FADER_L3,
+    PVOL_HP,
+    PMIX_HP
+};
+
+uint8_t const T_MIXER_BOTTOM_MUX = 14;
+
+uint8_t const nBottomMuxPots = 16;
+
+uint8_t const T_MIXER_MUXPOTS = 19;
+
+uint8_t FX1_POTS_SET[] = 
+{
+    PFX1L,
+    PFX2L,
+    PFX3L
+};
+
+uint8_t FX2_POTS_SET[] = 
+{
+    PFX2R,
+    PFX3R
+};
+
 
 #endif

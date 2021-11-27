@@ -12,6 +12,8 @@ class DirectDigitalInput : public DigitalInput
 		{
 		}
 
+		DirectDigitalInput() = default;
+
 		void read(inputStr_t in) override
 		{
 		    _cState = digitalRead(_inPos);

@@ -1,35 +1,45 @@
 #pragma once
 #ifndef MD_PAD_H
 #define MD_PAD_H
-#include "ButtonPad.h"
+#include "ButtonMidi.h"
+#include "ButtonFunc.h"
 #include "md_defs.h"
-#include <Arduino.h>
 
 class Pad
 {
 public:
-	Pad(ButtonPad *btnPads)
+	Pad(ButtonMidi *btnPads, ButtonFunc *btnMode)
 	{
+		_btnMode = btnMode;
 		_btnPads = btnPads;
+	}
+
+	void setMidiChannel(uint8_t channel)
+	{
+		for (uint8_t i = 0; i < T_DECK_PADS; i++)
+		{
+			_btnPads[i].setMidiChannel(channel);
+		}
 	}
 
 	void setNote(uint8_t note)
 	{
 		for (uint8_t i = 0; i < T_DECK_PADS; i++)
 		{
-			_btnPads[i].setNote(note + i);
+			_btnPads[i].setMidiNote(note + i);
 		}
 	}
 
 	void read()
 	{
+		_btnMode->read();
 		for (uint8_t i = 0; i < T_DECK_PADS; i++)
 		{
 			_btnPads[i].read();
 		}
 	}
 
-	void setTo(uint8_t value)
+	void setAllTo(uint8_t value)
 	{
 		for (uint8_t i = 0; i < T_DECK_PADS; i++)
 		{
@@ -42,7 +52,7 @@ public:
 		_btnPads[position].setTo(value);
 	}
 
-	void setTo(uint8_t* values)
+	void setTo(uint8_t *values)
 	{
 		for (uint8_t i = 0; i < T_DECK_PADS; i++)
 		{
@@ -51,6 +61,7 @@ public:
 	}
 
 private:
-	ButtonPad *_btnPads;
+	ButtonMidi *_btnPads;
+	ButtonFunc* _btnMode;
 };
 #endif

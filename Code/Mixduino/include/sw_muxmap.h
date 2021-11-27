@@ -25,15 +25,21 @@ uint8_t const SWPADL6   = 13;
 uint8_t const SWPADL1   = 14;
 uint8_t const SWPADL5   = 15;
 
-const uint8_t MUX_SW_BUNDLE_L[] = {
+uint8_t MUX_SW_PLAYER_BUNDLE_L[] = {
     SWPLAY_L,
     SWCUE_L,
-    SWLOOP_L,
-    SWPCUEL2,
-    SWPCUEL1
+    SWSYNC_L,
+    SWLOOP_L
     };
 
-const uint8_t T_MUX_SW_L = 5;
+uint8_t MUX_SW_PLAYER_BUNDLE_R[] = {
+    SWPLAY_R,
+    SWCUE_R,
+    SWSYNC_R,
+    SWLOOP_R
+    };
+
+uint8_t const T_MUX_SW_PLAYER = 4;
 
 const uint8_t SW_PADL_BUNDLE[] = {
     SWPADL1,

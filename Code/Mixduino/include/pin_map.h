@@ -62,7 +62,7 @@ uint8_t const RIGHT_SWMUX_SIG   = A2;
 uint8_t const LEFT_SWMUX_SIG    = A3;
 uint8_t const BOTTOM_POTMUX_SIG = A4;
 
-const uint8_t MUXPIN_BUNDLE[] = {
+uint8_t MUXPIN_BUNDLE[] = {
     MPLEX_S0,
     MPLEX_S1,
     MPLEX_S2,

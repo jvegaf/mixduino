@@ -13,6 +13,7 @@ class BREncoder
 		Encoder* enc;
 	public:
 		BREncoder(uint8_t pin_a, uint8_t pin_b);
+		BREncoder() = default;
 		void readEnc(void (*scc_func)(uint8_t, uint8_t, uint8_t));
 };
 #endif

@@ -1,7 +1,4 @@
-#include "BREncoder.h"
 #include "MDCore.h"
-#include "PotKit.h"
-#include "TouchKit.h"
 #include <Arduino.h>
 #include <MIDI.h>
 #include <Thread.h>
@@ -9,12 +6,7 @@
 // Rev5 version
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-BREncoder encL(L_BROWSER_A, L_BROWSER_B);
-BREncoder encR(R_BROWSER_A, R_BROWSER_B);
-PotKit pots;
-
-MDCore mdCore;
-TouchKit touchBars;
+MDCore* mdCore { nullptr };
 
 ThreadController cpu;     //thread master, onde as outras vao ser adicionadas
 Thread threadReadPots;    // thread para controlar os pots
@@ -22,8 +14,8 @@ Thread threadReadButtons; // thread para controlar os botoes
 
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value);
-void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value);
-void onChangeSelectedDeck();
+void onChangeSelectDeck();
+void onChangePadMode(uint8_t align);
 void readButtons();
 void readPots();
 void readEncoder();
@@ -34,18 +26,21 @@ void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel);
 
 void setup()
 {
-  // Serial.begin(31250);
   MIDI.setHandleControlChange(handleControlChange);
   MIDI.setHandleNoteOn(handleNoteOn);
-  MIDI.setHandleNoteOff(handleNoteOff);
+
+  mdCore = new MDCore(
+    sendMidiNoteOn,
+    sendMidiNoteOff,
+    sendMidiCC,
+    onChangePadMode,
+    onChangeSelectDeck
+  );
+
 
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
-  pots.begin();
-  mdCore.begin(sendMidiNoteOn, sendMidiNoteOff);
-  touchBars.begin();
-  // Set Deck B Focus
-  // MIDI.sendNoteOn(1, 127, 9);
+  mdCore->begin();
 
   /////////////////////////////////////////////
   // threads
@@ -70,38 +65,32 @@ void loop()
 
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value)
 {
-  mdCore.onCChange(channel, number, value);
+  mdCore->onCChange(channel, number, value);
 }
 
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
-  mdCore.onNoteOn(channel, number, value);
-}
-
-void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value)
-{
-  mdCore.onNoteOff(channel, number, value);
+  mdCore->onNoteOn(channel, number, value);
 }
 
 void readButtons()
 {
-  mdCore.readButtons();
+  mdCore->readButtons();
 }
 
 void readPots()
 {
-  pots.read(sendMidiCC);
+  mdCore->readPots();
 }
 
 void readEncoder()
 {
-  encL.readEnc(sendMidiCC);
-  encR.readEnc(sendMidiCC);
+  
 }
 
 void readTouchBars()
 {
-  touchBars.touchRead(sendMidiCC);
+  
 }
 
 void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel)
@@ -119,7 +108,7 @@ void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel)
   MIDI.sendControlChange(number, value, channel);
 }
 
-void onChangeSelectedDeck()
+void onChangeSelectDeck()
 {
   
 }

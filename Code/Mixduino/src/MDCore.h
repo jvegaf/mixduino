@@ -10,13 +10,18 @@
 #include "md_defs.h"
 #include <Arduino.h>
 
-enum class State
+enum class DeckSelector
 {
-	STATE_ON,
-	STATE_OFF
+	DECK_B,
+	DECK_C
 };
 
-uint8_t const t_VUSet = 5;
+enum class ModeSelector
+{
+	HOTCUE_MODE,
+	LOOP_MODE,
+	FX_MODE,
+};
 
 class MDCore
 {
@@ -62,7 +67,7 @@ public:
 
 	void readButtons()
 	{
-		readDecksMode();
+		// readDecksMode();	
 	}
 
 	void readPots() 
@@ -76,7 +81,7 @@ public:
 		{
 
 		case DECK_A_CH:
-			// m_leftPad->setTo(number, value);
+			m_leftController->padSetTo(number, value);
 			break;
 
 		case DECK_B_CH:
@@ -87,8 +92,8 @@ public:
 			// m_rightPad->setTo(number, value);
 			break;
 
-		case MIXER_CH: // VU
-			// vuChange(number, value);
+		case MIXER_CH: 
+			m_mixer->setLevel(number, value);
 			break;
 
 		default:
@@ -102,15 +107,15 @@ public:
 		{
 
 		case FX1_CH:
-			// _funcs->setTo(number, value);
+			m_fxUnits[0].setTo(number, value);
 			break;
 
 		case FX2_CH:
-			// _funcs->setTo(number, value);
+			m_fxUnits[1].setTo(number, value);
 			break;
 
 		case DECK_A_CH:
-			// _funcs->setTo(number, value);
+			m_leftController->playerSetTo(number, value);
 			break;
 
 		case DECK_B_CH:
@@ -147,6 +152,7 @@ private:
 
 	void initPins();
 	void vuChange(uint8_t number, uint8_t value);
-	void readDecksMode();
+	ModeSelector incrementPadMode(ModeSelector mode);
+	
 };
 #endif

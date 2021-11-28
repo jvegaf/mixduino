@@ -32,6 +32,11 @@ public:
         }
     }
 
+    void setTo(uint8_t number, uint8_t value)
+    {
+        _playerBtns[number].setTo(value);
+    }
+
 private:
     Pot* const  _tempoPot { nullptr };
     ButtonMidi* const  _playerBtns { nullptr };

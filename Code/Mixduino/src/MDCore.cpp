@@ -17,11 +17,20 @@ void MDCore::vuChange(uint8_t number, uint8_t value)
     // _vuSet[number].setLevel(value);
 }
 
-void MDCore::readDecksMode()
-{
-    // _leftFuncMode->read();
-    // _rightFuncMode->read();
-    // checkDeckMode(_leftFuncMode, m_leftPad);
-    // checkDeckMode(_rightFuncMode, m_rightPad);
+ModeSelector MDCore::incrementPadMode(ModeSelector mode) {
+	switch (mode)
+    {
+    case ModeSelector::HOTCUE_MODE:
+        return ModeSelector::LOOP_MODE;
+
+    case ModeSelector::LOOP_MODE:
+        return ModeSelector::FX_MODE;
+
+    case ModeSelector::FX_MODE:
+        return ModeSelector::HOTCUE_MODE;
+    
+    default:
+        return ModeSelector::HOTCUE_MODE;
+    }
 }
 

@@ -17,8 +17,28 @@ class Controller
 
 		Controller() = default;
 
+		void readButtons()
+		{
+			
+		}
+
+		void readPots()
+		{
+			
+		}
+
+		void playerSetTo(uint8_t number, uint8_t value)
+		{
+			_player->setTo(number, value);
+		}
+
+		void padSetTo(uint8_t number, uint8_t value)
+		{
+			//  y ahora que ???	
+		}
+
 	private:
-		const Player* _player { nullptr };
-		const Pad* _pad { nullptr };
+		Player* _player { nullptr };
+		Pad* _pad { nullptr };
 };
 #endif

@@ -110,5 +110,9 @@ void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel)
 
 void onChangeSelectDeck()
 {
-  
+  mdCore->changeSelectedDeck();
+}
+
+void onChangePadMode(uint8_t align) {
+  mdCore->changeMode(align);  
 }

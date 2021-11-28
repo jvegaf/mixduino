@@ -14,10 +14,32 @@ public:
     {
     }
 
+    void readButtons() {
+        for (uint8_t i = 0; i < T_MIDI_MIXER_BTNS; i++) {
+            m_moncue_btns[i].read();
+        }
+    }
+
+    void readPots() {
+        for (uint8_t i = 0; i < T_MIDI_MIXER_POTS; i++) {
+            m_mixer_pots[i].read();
+        }
+    }
+
+    void setLevel(uint8_t number, uint8_t value)
+    {
+        m_vumeters[number].setLevel(value);
+    }
+
+    void setTo(uint8_t number, uint8_t value)
+    {
+        m_moncue_btns[number].setTo(value);
+    }
+
 private:
-    const ButtonMidi *m_moncue_btns{nullptr};
-    const Pot *m_mixer_pots{nullptr};
-    const VUmeter *m_vumeters{nullptr};
+    ButtonMidi *m_moncue_btns{nullptr};
+    Pot *m_mixer_pots{nullptr};
+    VUmeter *m_vumeters{nullptr};
 };
 
 #endif

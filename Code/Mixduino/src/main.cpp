@@ -2,6 +2,7 @@
 #include <MIDI.h>
 #include <Thread.h>
 #include <ThreadController.h>
+#include <EventManager.h>
 #include "midi_map.h"
 #include "MDCore.hpp"
 #include "BREncoder.hpp"
@@ -11,6 +12,8 @@
 #include "TouchKit.hpp"
 // Rev5 version
 MIDI_CREATE_DEFAULT_INSTANCE();
+
+EventManager gEM;
 
 browser::BREncoder encL(L_BROWSER_A, L_BROWSER_B);
 browser::BREncoder encR(R_BROWSER_A, R_BROWSER_B);
@@ -33,6 +36,9 @@ void readButtons();
 void readPots();
 void readEncoder();
 void readTouchBars();
+void btnPressedListener(int event, int param);
+void btnReleasedListener(int event, int param);
+void potMovedListener(int event, int param);
 void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel);
 void sendMidiNoteOff(uint8_t number, uint8_t value, uint8_t channel);
 void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel);
@@ -46,10 +52,15 @@ void setup()
 
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
+
+  gEM.addListener(EventManager::kEventKeyPress, btnPressedListener);
+  gEM.addListener(EventManager::kEventKeyRelease, btnReleasedListener);
+  gEM.addListener(EventManager::kEventAnalog0, potMovedListener);
+
   pots.begin();
   leftBtns.begin(SwMuxLeftSet, nSwMuxLeft, LEFT_BTNS_CH);
   rightBtns.begin(SWMuxRightSet, nSwMuxRight, RIGHT_BTNS_CH);
-  btns.begin(ARDUINO_BTNS_CH);
+  btns.begin();
   mdCore.begin();
   touchBars.begin();
   // Set Deck B Focus
@@ -100,7 +111,7 @@ void readButtons()
 {
   leftBtns.read(sendMidiNoteOn, sendMidiNoteOff);
   rightBtns.read(sendMidiNoteOn, sendMidiNoteOff);
-  btns.read(sendMidiNoteOn, sendMidiNoteOff);
+  btns.read(gEM);
 }
 
 void readPots()
@@ -132,4 +143,18 @@ void sendMidiNoteOff(uint8_t number, uint8_t value, uint8_t channel)
 void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel)
 {
   MIDI.sendControlChange(number, value, channel);
+}
+
+void btnPressedListener(int event, int param)
+{
+  //
+}
+
+void btnReleasedListener(int event, int param)
+{
+  //
+}
+void potMovedListener(int event, int param)
+{
+  //
 }

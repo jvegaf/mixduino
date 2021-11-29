@@ -16,17 +16,15 @@ namespace input
         lastdebouncetime = new unsigned long[totalPins]();
     }
 
-    void BtnKit::begin(uint8_t midiCh)
+    void BtnKit::begin()
     {
         for (uint8_t i = 0; i < totalPins; i++)
         {
             pinMode(pins[i], INPUT_PULLUP);
         }
-
-        midiChannel = midiCh;
     }
 
-    void BtnKit::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
+    void BtnKit::read(EventManager &em)
     {
 
         for (uint8_t i = 0; i < totalPins; i++)
@@ -46,11 +44,13 @@ namespace input
 
                     if (cState[i] == LOW)
                     {
-                        funcOn(i, 127, midiChannel); // envia NoteOn(nota, velocity, canal midi)
+                        em.queueEvent(EventManager::kEventKeyPress, i);
+                        //funcOn(i, 127, midiChannel); // envia NoteOn(nota, velocity, canal midi)
                     }
                     else
                     {
-                        funcOff(i, 127, midiChannel);
+                        em.queueEvent(EventManager::kEventKeyRelease, i);
+                        // funcOff(i, 127, midiChannel);
                     }
 
                     pState[i] = cState[i];

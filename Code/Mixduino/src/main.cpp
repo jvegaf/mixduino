@@ -3,24 +3,24 @@
 #include <Thread.h>
 #include <ThreadController.h>
 #include "midi_map.h"
-#include "MDCore.h"
-#include "BREncoder.h"
+#include "MDCore.hpp"
+#include "BREncoder.hpp"
 #include "Muxer.h"
-#include "BtnKit.h"
-#include "PotKit.h"
-#include "TouchKit.h"
+#include "BtnKit.hpp"
+#include "PotKit.hpp"
+#include "TouchKit.hpp"
 // Rev5 version
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-BREncoder encL(L_BROWSER_A, L_BROWSER_B);
-BREncoder encR(R_BROWSER_A, R_BROWSER_B);
-PotKit pots;
+browser::BREncoder encL(L_BROWSER_A, L_BROWSER_B);
+browser::BREncoder encR(R_BROWSER_A, R_BROWSER_B);
+input::PotKit pots;
 Muxer leftBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
 Muxer rightBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
-BtnKit btns(aSwSet, nASw);
+input::BtnKit btns(aSwSet, nASw);
 
-MDCore mdCore;
-TouchKit touchBars;
+mdcore::Core mdCore;
+input::TouchKit touchBars;
 
 ThreadController cpu;     //thread master, onde as outras vao ser adicionadas
 Thread threadReadPots;    // thread para controlar os pots

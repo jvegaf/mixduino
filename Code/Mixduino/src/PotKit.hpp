@@ -1,18 +1,17 @@
-
-#ifndef ARDUINO_POTKIT_H
-#define ARDUINO_POTKIT_H
-#include <Arduino.h>
-#include <Multiplexer4067.h>
+#pragma once
 #include "pin_map.h"
 #include "pots_muxmap.h"
+#include <Arduino.h>
+#include <Multiplexer4067.h>
 
-class PotKit  
+namespace input
 {
+	class PotKit
+	{
 	private:
-
 	public:
 		void begin();
 		void read(void (*scc_func)(uint8_t, uint8_t, uint8_t));
+	};
 
-};
-#endif
+} // namespace input

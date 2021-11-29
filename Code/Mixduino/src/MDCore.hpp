@@ -1,18 +1,20 @@
 
-#ifndef ARDUINO_MDCORE_H
-#define ARDUINO_MDCORE_H
-#include <Arduino.h>
-#include <Shifter.h>
-#include <Npixel.h>
-#include <Align.h>
-#include "VUmeter.h"
-#include "NPKit.h"
-#include "pin_map.h"
+#pragma once
+#include "NPKit.hpp"
+#include "VUmeter.hpp"
 #include "np_map.h"
+#include "pin_map.h"
 #include "sr_fb_map.h"
+#include <Align.h>
+#include <Arduino.h>
+#include <Npixel.h>
+#include <Shifter.h>
 
-class MDCore  
+namespace mdcore
 {
+
+	class Core
+	{
 	public:
 		void begin();
 		void cChange(uint8_t channel, uint8_t number, uint8_t value);
@@ -23,5 +25,5 @@ class MDCore
 		void vuChange(uint8_t number, uint8_t value);
 		void npChange(uint8_t position, uint8_t value);
 		void setInitialDeckB();
-};
-#endif
+	};
+} // namespace mdcore

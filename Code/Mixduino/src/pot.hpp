@@ -7,7 +7,7 @@ class Pot {
 
 public:
   Pot(uint8_t* positions, uint8_t tPositions);
-  void read(EventManager &em, uint8_t firstkey);
+  void read(EventManager &em, uint8_t key);
 
 private:
   const uint8_t m_tPositions{0};

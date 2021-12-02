@@ -15,7 +15,7 @@ void TouchBar::read(EventManager &em, uint8_t key) {
 
   if (m_trill->getNumTouches() > 0) {
     uint8_t location = m_trill->touchLocation(0) / 25;
-    uint16_t result = key & location;
+    uint16_t result = key << 8 | location;
     em.queueEvent(EventManager::kEventUser0, result);
   }
 }

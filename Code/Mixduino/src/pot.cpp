@@ -15,7 +15,7 @@ Pot::Pot(uint8_t* positions, uint8_t tPositions)
 
 }
 
-void Pot::read(EventManager &em, uint8_t firstkey) {
+void Pot::read(EventManager &em, uint8_t key) {
   for (uint8_t i = 0; i < m_tPositions; i++) {
     m_cState[i] = analogRead(m_positions[i]);
   }
@@ -36,8 +36,8 @@ void Pot::read(EventManager &em, uint8_t firstkey) {
 
     if (potMoving == true) {
       uint8_t ccValue = map(m_cState[i], 0, 1023, 0, 127);
-      uint8_t key = firstkey + i;
-      uint16_t result = key & ccValue;
+      uint8_t finalkey = key + i;
+      uint16_t result = finalkey << 8 | ccValue;
       em.queueEvent(EventManager::kEventAnalog0, result);
       m_pState[i] = m_cState[i];
     }

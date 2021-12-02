@@ -10,7 +10,7 @@ public:
   MuxPot(uint8_t *muxPins, uint8_t sigPin, uint8_t *positions,
       uint8_t totalPositions);
   void begin();
-  void read(EventManager &em, uint8_t firstkey);
+  void read(EventManager &em, uint8_t key);
 
 private:
   Multiplexer4067 *m_mplex{nullptr};

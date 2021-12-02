@@ -5,19 +5,19 @@
 #include <EventManager.h>
 #include "midi_map.h"
 #include "MDCore.hpp"
-#include "BREncoder.hpp"
-#include "Muxer.h"
-#include "BtnKit.hpp"
-#include "PotKit.hpp"
-#include "TouchKit.hpp"
+#include "encoder.hpp"
+#include "button_mux.hpp"
+#include "button.hpp"
+#include "pot_mux.hpp"
+#include "touchbar.hpp"
 // Rev5 version
 MIDI_CREATE_DEFAULT_INSTANCE();
 
 EventManager gEM;
 
-browser::BREncoder encL(L_BROWSER_A, L_BROWSER_B);
-browser::BREncoder encR(R_BROWSER_A, R_BROWSER_B);
-input::PotKit pots;
+mixduino::MDEncoder encL(L_BROWSER_A, L_BROWSER_B);
+mixduino::MDEncoder encR(R_BROWSER_A, R_BROWSER_B);
+mixduino::PotKit pots;
 Muxer leftBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
 Muxer rightBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
 input::BtnKit btns(aSwSet, nASw);
@@ -25,7 +25,7 @@ input::BtnKit btns(aSwSet, nASw);
 mdcore::Core mdCore;
 input::TouchKit touchBars;
 
-ThreadController cpu;     //thread master, onde as outras vao ser adicionadas
+ThreadController cpu;     // thread master, onde as outras vao ser adicionadas
 Thread threadReadPots;    // thread para controlar os pots
 Thread threadReadButtons; // thread para controlar os botoes
 

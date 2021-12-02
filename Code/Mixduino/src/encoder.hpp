@@ -1,6 +1,7 @@
 #pragma once
 #include <Arduino.h>
 #include <Encoder.h>
+#include <EventManager.h>
 
 namespace mixduino
 {

@@ -1,20 +1,20 @@
-#include "MDCore.hpp"
+#include "mdcore.hpp"
 
 namespace mdcore
 {
 
-    feedback::VUmeter vuL1 = feedback::VUmeter(L1VU_SIG, L1VU_LATCH, SRCLK);
-    feedback::VUmeter vuL2 = feedback::VUmeter(L2VU_SIG, L2VU_LATCH, SRCLK);
-    feedback::VUmeter vuL3 = feedback::VUmeter(L3VU_SIG, L3VU_LATCH, SRCLK);
-    feedback::VUmeter vuML = feedback::VUmeter(MLVU_SIG, MLVU_LATCH, SRCLK);
-    feedback::VUmeter vuMR = feedback::VUmeter(MRVU_SIG, MRVU_LATCH, SRCLK);
+    mixduino::VUmeter vuL1 = mixduino::VUmeter(L1VU_SIG, L1VU_LATCH, SRCLK);
+    mixduino::VUmeter vuL2 = mixduino::VUmeter(L2VU_SIG, L2VU_LATCH, SRCLK);
+    mixduino::VUmeter vuL3 = mixduino::VUmeter(L3VU_SIG, L3VU_LATCH, SRCLK);
+    mixduino::VUmeter vuML = mixduino::VUmeter(MLVU_SIG, MLVU_LATCH, SRCLK);
+    mixduino::VUmeter vuMR = mixduino::VUmeter(MRVU_SIG, MRVU_LATCH, SRCLK);
 
-    feedback::VUmeter vuSet[] = {vuL1, vuL2, vuL3, vuML, vuMR};
+    mixduino::VUmeter vuSet[] = {vuL1, vuL2, vuL3, vuML, vuMR};
 
     Shifter fbRight(FBR_SIG, FBR_LATCH, SRCLK, 1);
     Shifter fbLeft(FBL_SIG, FBL_LATCH, SRCLK, 1);
 
-    feedback::NPKit npk(NP_DATA, nNP);
+    mixduino::NPixel npk(NP_DATA, nNP);
 
     void Core::begin()
     {
@@ -95,8 +95,7 @@ namespace mdcore
 
     void Core::npChange(uint8_t position, uint8_t value)
     {
-        Npixel pix(position, value);
-        npk.handleChange(pix);
+        npk.handleChange(position, value);
     }
 
     void Core::setInitialDeckB()

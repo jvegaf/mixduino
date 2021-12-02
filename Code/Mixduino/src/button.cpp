@@ -13,15 +13,7 @@ namespace mixduino
         m_lastDebounceTime = new uint32_t[m_tPins]();
     }
 
-    void Button::begin()
-    {
-        for (uint8_t i = 0; i < m_tPins; i++)
-        {
-            pinMode(m_pins[i], INPUT_PULLUP);
-        }
-    }
-
-    void Button::read(EventManager &em)
+    void Button::read(EventManager &em, const uint16_t *evkeys)
     {
 
         for (uint8_t i = 0; i < m_tPins; i++)
@@ -41,11 +33,11 @@ namespace mixduino
 
                     if (m_cState[i] == LOW)
                     {
-                        em.queueEvent(EventManager::kEventKeyPress, i);
+                        em.queueEvent(EventManager::kEventKeyPress, evkeys[i]);
                     }
                     else
                     {
-                        em.queueEvent(EventManager::kEventKeyRelease, i);
+                        em.queueEvent(EventManager::kEventKeyRelease, evkeys[i]);
                     }
 
                     m_pState[i] = m_cState[i];

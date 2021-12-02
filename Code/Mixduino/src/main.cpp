@@ -3,11 +3,16 @@
 #include <Thread.h>
 #include <ThreadController.h>
 #include <EventManager.h>
+#include "constants.h"
+#include "board.h"
+#include "board_map.h"
+#include "str_reqs.h"
 #include "midi_map.h"
-#include "MDCore.hpp"
+#include "mdcore.hpp"
 #include "encoder.hpp"
 #include "button_mux.hpp"
 #include "button.hpp"
+#include "pot.hpp"
 #include "pot_mux.hpp"
 #include "touchbar.hpp"
 // Rev5 version
@@ -17,13 +22,16 @@ EventManager gEM;
 
 mixduino::MDEncoder encL(L_BROWSER_A, L_BROWSER_B);
 mixduino::MDEncoder encR(R_BROWSER_A, R_BROWSER_B);
-mixduino::PotKit pots;
-Muxer leftBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
-Muxer rightBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
-input::BtnKit btns(aSwSet, nASw);
+mixduino::Pot pots(kPotsBundle, kTPotsBndl);
+mixduino::MuxPot topMuxPots(mixduino::topMPotsReqs);
+mixduino::MuxPot btmMuxPots(mixduino::btMPotsReqs);
+mixduino::MuxButton leftBtns(mixduino::lMBtnsReqs);
+mixduino::MuxButton rightBtns(mixduino::rMBtnsReqs);
+mixduino::Button btns(aSwSet, nASw);
 
 mdcore::Core mdCore;
-input::TouchKit touchBars;
+mixduino::TouchBar leftTBar(mixduino::kTouchLeftAddr);
+mixduino::TouchBar rightTBar(mixduino::kTouchRightAddr);
 
 ThreadController cpu;     // thread master, onde as outras vao ser adicionadas
 Thread threadReadPots;    // thread para controlar os pots
@@ -39,9 +47,11 @@ void readTouchBars();
 void btnPressedListener(int event, int param);
 void btnReleasedListener(int event, int param);
 void potMovedListener(int event, int param);
+void touchEventListener(int event, int param);
 void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel);
 void sendMidiNoteOff(uint8_t number, uint8_t value, uint8_t channel);
 void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel);
+void initializePins();
 
 void setup()
 {
@@ -53,16 +63,19 @@ void setup()
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
 
+  initializePins();
+
   gEM.addListener(EventManager::kEventKeyPress, btnPressedListener);
   gEM.addListener(EventManager::kEventKeyRelease, btnReleasedListener);
   gEM.addListener(EventManager::kEventAnalog0, potMovedListener);
+  gEM.addListener(EventManager::kEventUser0, touchEventListener);
 
-  pots.begin();
-  leftBtns.begin(SwMuxLeftSet, nSwMuxLeft, LEFT_BTNS_CH);
-  rightBtns.begin(SWMuxRightSet, nSwMuxRight, RIGHT_BTNS_CH);
-  btns.begin();
+  topMuxPots.begin();
+  btmMuxPots.begin();
+
   mdCore.begin();
-  touchBars.begin();
+  leftTBar.begin();
+  rightTBar.begin();
   // Set Deck B Focus
   // MIDI.sendNoteOn(1, 127, 9);
 
@@ -109,25 +122,28 @@ void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value)
 
 void readButtons()
 {
-  leftBtns.read(sendMidiNoteOn, sendMidiNoteOff);
-  rightBtns.read(sendMidiNoteOn, sendMidiNoteOff);
-  btns.read(gEM);
+  leftBtns.read(gEM, mixduino::leftMuxBtnEvents);
+  rightBtns.read(gEM, mixduino::rightMuxBtnEvents);
+  btns.read(gEM, mixduino::buttonsEvents);
 }
 
 void readPots()
 {
-  pots.read(sendMidiCC);
+  topMuxPots.read(gEM, mixduino::topMuxPotsEvents);
+  btmMuxPots.read(gEM, mixduino::bottomMuxPotsEvents);
+  pots.read(gEM, mixduino::potsEvents);
 }
 
 void readEncoder()
 {
-  encL.readEnc(sendMidiCC);
-  encR.readEnc(sendMidiCC);
+  encL.read(gEM);
+  encR.read(gEM);
 }
 
 void readTouchBars()
 {
-  touchBars.touchRead(sendMidiCC);
+  leftTBar.read(gEM, mixduino::Board::Event::evTouchBarLeft);
+  rightTBar.read(gEM, mixduino::Board::Event::evTouchBarRight);
 }
 
 void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel)
@@ -157,4 +173,22 @@ void btnReleasedListener(int event, int param)
 void potMovedListener(int event, int param)
 {
   //
+}
+
+void touchEventListener(int event, int param)
+{
+  //
+}
+
+void initializePins ()
+{
+  for (uint8_t i = 0; i < ktOutputPins; i++)
+  {
+    pinMode(kOutputPins[i], OUTPUT);
+  }
+
+for (uint8_t i = 0; i < ktBtnInputPinsBndl; i++)
+  {
+    pinMode(kBtnInputPinsBndl[i], INPUT_PULLUP);
+  }
 }

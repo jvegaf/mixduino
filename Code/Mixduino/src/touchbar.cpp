@@ -10,7 +10,7 @@ void TouchBar::begin() {
   m_trill->setScanSettings(kScanSpeed, kScanNumBits);
 }
 
-void TouchBar::read(EventManager &em, uint8_t key) {
+void TouchBar::read(EventManager &em, uint16_t key) {
   m_trill->read();
 
   if (m_trill->getNumTouches() > 0) {

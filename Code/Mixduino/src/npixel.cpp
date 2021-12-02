@@ -1,6 +1,6 @@
-#include "NPKit.hpp"
+#include "npixel.hpp"
 
-namespace feedback
+namespace mixduino
 {
     const uint8_t BRIGHTNESS = 32;
 
@@ -26,21 +26,21 @@ namespace feedback
         RED_COL,
         PURPLE_COL};
 
-    NPKit::NPKit(uint8_t dataPin, uint8_t nPixels)
+    NPixel::NPixel(uint8_t dataPin, uint8_t nPixels)
+    : m_np { new Adafruit_NeoPixel(nPixels, dataPin, NEO_GRB + NEO_KHZ800) }
     {
-        np = new Adafruit_NeoPixel(nPixels, dataPin, NEO_GRB + NEO_KHZ800);
     }
 
-    void NPKit::begin()
+    void NPixel::begin()
     {
-        np->setBrightness(BRIGHTNESS);
-        np->begin();
-        np->clear();
+        m_np->setBrightness(BRIGHTNESS);
+        m_np->begin();
+        m_np->clear();
     }
 
-    void NPKit::handleChange(Npixel npx)
+    void NPixel::handleChange(uint8_t position, uint8_t value)
     {
-        np->setPixelColor(npx.position(), HCCols[npx.value()]);
-        np->show();
+        m_np->setPixelColor(position, HCCols[value]);
+        m_np->show();
     }
 } // namespace feedba

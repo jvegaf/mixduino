@@ -6,8 +6,8 @@ namespace mixduino {
 class Pot {
 
 public:
-  Pot(uint8_t* positions, uint8_t tPositions);
-  void read(EventManager &em, uint8_t key);
+  Pot(const uint8_t* positions, const uint8_t tPositions);
+  void read(EventManager &em, const uint16_t *evKeys);
 
 private:
   const uint8_t m_tPositions{0};

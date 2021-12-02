@@ -13,12 +13,12 @@ void MuxButton::setMuxChannel(uint8_t channel)
     digitalWrite(m_muxPins[3], bitRead(channel, 3));
 }
 
-MuxButton::MuxButton(const uint8_t* muxPins, const uint8_t sigPin, const uint8_t* positions, const uint8_t tPositions)
-: 
-m_muxPins { muxPins}, 
-m_sigPin { sigPin }, 
-m_positions { positions }, 
-m_tPositions { tPositions }, 
+MuxButton::MuxButton(const muxreqs_t reqs)
+:
+m_muxPins { reqs.muxPins},
+m_sigPin { reqs.sigPin },
+m_positions { reqs.positions },
+m_tPositions { reqs.totalPositions },
 m_pState { new uint16_t[m_tPositions]() },
 m_cState { new uint16_t[m_tPositions]() },
 m_lastDebounceTime { new uint32_t[m_tPositions]()}
@@ -26,7 +26,7 @@ m_lastDebounceTime { new uint32_t[m_tPositions]()}
 
 }
 
-void MuxButton::read(EventManager &em, const uint8_t firstKey)
+void MuxButton::read(EventManager &em, const uint16_t *evKeys)
 {
     for (uint8_t i = 0; i <= m_tPositions; i++)
     {
@@ -43,11 +43,11 @@ void MuxButton::read(EventManager &em, const uint8_t firstKey)
                 if (m_cState[i] == LOW)
                 {
                     //MIDI.sendNoteOn(number , value(127) , channel);
-                    em.queueEvent(EventManager::kEventKeyPress, firstKey + i);
+                    em.queueEvent(EventManager::kEventKeyPress, evKeys[i]);
                 }
                 else
                 {
-                    em.queueEvent(EventManager::kEventKeyRelease, firstKey + i);
+                    em.queueEvent(EventManager::kEventKeyRelease, evKeys[i]);
                     //MIDI.sendNoteOff(36 + i , 127 , 1);
                 }
 

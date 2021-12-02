@@ -1,4 +1,5 @@
 #pragma once
+#include "md_str.h"
 #include <Arduino.h>
 #include <EventManager.h>
 
@@ -8,8 +9,8 @@ class MuxButton
 {
 
 public:
-  MuxButton(const uint8_t* muxPins, const uint8_t sigPin, const uint8_t* positions, const uint8_t tPositions);
-  void read(EventManager &em, const uint8_t firstKey);
+  MuxButton(const muxreqs_t reqs);
+  void read(EventManager &em, const uint16_t *evKeys);
 
 private:
   const uint8_t* m_muxPins { nullptr };

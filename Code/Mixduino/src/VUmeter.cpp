@@ -1,6 +1,6 @@
-#include "VUmeter.hpp"
+#include "vumeter.hpp"
 
-namespace feedback
+namespace mixduino
 {
 
     uint8_t dataValues[][2] = {
@@ -22,18 +22,15 @@ namespace feedback
         {B01111111, B11111111},
         {B11111111, B11111111}};
 
-    VUmeter::VUmeter(uint8_t p_data, uint8_t p_latch, uint8_t p_clock)
+    VUmeter::VUmeter(uint8_t pinData, uint8_t pinLatch, uint8_t pinClock)
     {
-        data_pin = p_data;
-        latch_pin = p_latch;
-        clock_pin = p_clock;
+        m_pData = pinData;
+        m_pLatch = pinLatch;
+        m_pClock = pinClock;
     }
 
     void VUmeter::begin()
     {
-        pinMode(data_pin, OUTPUT);
-        pinMode(latch_pin, OUTPUT);
-        pinMode(clock_pin, OUTPUT);
         this->clear();
     }
 
@@ -41,16 +38,16 @@ namespace feedback
     {
         uint8_t highData = dataValues[level][0];
         uint8_t lowData = dataValues[level][1];
-        digitalWrite(latch_pin, LOW);
+        digitalWrite(m_pLatch, LOW);
         // shift out lowuint8_t
-        shiftOut(data_pin, clock_pin, LSBFIRST, lowData);
+        shiftOut(m_pData, m_pClock, LSBFIRST, lowData);
         // shift out highuint8_t
-        shiftOut(data_pin, clock_pin, LSBFIRST, highData);
-        digitalWrite(latch_pin, HIGH);
+        shiftOut(m_pData, m_pClock, LSBFIRST, highData);
+        digitalWrite(m_pLatch, HIGH);
     }
 
     void VUmeter::clear()
     {
         this->setLevel(0);
     }
-} // namespace feedback
+} // namespace mixduino

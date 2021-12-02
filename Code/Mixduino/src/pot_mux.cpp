@@ -3,19 +3,18 @@
 
 namespace mixduino {
 
-MuxPot::MuxPot(uint8_t *muxPins, uint8_t sigPin, uint8_t *positions,
-         uint8_t totalPositions)
-    : m_mplex{new Multiplexer4067(muxPins[0], muxPins[1], muxPins[2],
-                                  muxPins[3], sigPin)},
-      m_positions{positions},
-      m_tPositions{totalPositions}, m_pState{new uint16_t[totalPositions]()},
-      m_cState{new uint16_t[totalPositions]()},
-      m_pTime{new uint32_t[totalPositions]()},
-      m_timer{new uint32_t[totalPositions]()} {}
+MuxPot::MuxPot(const muxreqs_t reqs)
+    : m_mplex{new Multiplexer4067(reqs.muxPins[0], reqs.muxPins[1], reqs.muxPins[2],
+                                  reqs.muxPins[3], reqs.sigPin)},
+      m_positions{reqs.positions},
+      m_tPositions{reqs.totalPositions}, m_pState{new uint16_t[reqs.totalPositions]()},
+      m_cState{new uint16_t[reqs.totalPositions]()},
+      m_pTime{new uint32_t[reqs.totalPositions]()},
+      m_timer{new uint32_t[reqs.totalPositions]()} {}
 
 void MuxPot::begin() { m_mplex->begin(); }
 
-void MuxPot::read(EventManager &em, uint8_t key) {
+void MuxPot::read(EventManager &em,  const uint16_t *evKeys) {
   for (uint8_t i = 0; i < m_tPositions; i++) {
     m_cState[i] = m_mplex->readChannel(m_positions[i]);
   }
@@ -36,8 +35,8 @@ void MuxPot::read(EventManager &em, uint8_t key) {
 
     if (potMoving == true) {
       uint8_t ccValue = map(m_cState[i], 0, 1023, 0, 127);
-      uint8_t finalkey = key + i;
-      uint16_t result = finalkey << 8 | ccValue;
+
+      uint16_t result = evKeys[i] << 8 | ccValue;
       em.queueEvent(EventManager::kEventAnalog0, result);
       m_pState[i] = m_cState[i];
     }

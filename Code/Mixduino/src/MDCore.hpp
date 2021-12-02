@@ -1,13 +1,12 @@
 
 #pragma once
-#include "NPKit.hpp"
-#include "VUmeter.hpp"
+#include "npixel.hpp"
+#include "vumeter.hpp"
 #include "np_map.h"
 #include "pin_map.h"
 #include "sr_fb_map.h"
 #include <Align.h>
 #include <Arduino.h>
-#include <Npixel.h>
 #include <Shifter.h>
 
 namespace mdcore

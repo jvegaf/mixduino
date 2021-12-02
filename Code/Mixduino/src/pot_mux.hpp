@@ -1,4 +1,5 @@
 #pragma once
+#include "md_str.h"
 #include <Arduino.h>
 #include <EventManager.h>
 #include <Multiplexer4067.h>
@@ -7,10 +8,9 @@
 namespace mixduino {
 class MuxPot {
 public:
-  MuxPot(uint8_t *muxPins, uint8_t sigPin, uint8_t *positions,
-      uint8_t totalPositions);
+  MuxPot(const muxreqs_t reqs);
   void begin();
-  void read(EventManager &em, uint8_t key);
+  void read(EventManager &em, const uint16_t *evKeys);
 
 private:
   Multiplexer4067 *m_mplex{nullptr};

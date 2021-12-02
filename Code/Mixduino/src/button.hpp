@@ -9,8 +9,7 @@ class Button
 
 public:
   Button(const uint8_t *pins, const uint8_t tPins);
-  void begin();
-  void read(EventManager &em);
+  void read(EventManager &em, const uint16_t *evKeys);
 
 private:
   const uint8_t *m_pins { nullptr };

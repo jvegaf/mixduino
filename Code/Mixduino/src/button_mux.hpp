@@ -1,5 +1,6 @@
 #pragma once
 #include <Arduino.h>
+#include <EventManager.h>
 
 namespace mixduino
 {
@@ -19,7 +20,7 @@ private:
   uint16_t* m_cState { nullptr };
 
   uint32_t* m_lastDebounceTime { nullptr };
-  
+
   void setMuxChannel(uint8_t channel);
 };
 } // namespace mixduino

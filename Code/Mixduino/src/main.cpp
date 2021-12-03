@@ -142,8 +142,8 @@ void readEncoder()
 
 void readTouchBars()
 {
-  leftTBar.read(gEM, mixduino::Board::Event::evTouchBarLeft);
-  rightTBar.read(gEM, mixduino::Board::Event::evTouchBarRight);
+  leftTBar.read(gEM, mixduino::Board::Event::TouchBarLeft);
+  rightTBar.read(gEM, mixduino::Board::Event::TouchBarRight);
 }
 
 void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel)
@@ -163,16 +163,19 @@ void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel)
 
 void btnPressedListener(int event, int param)
 {
-  //
+  //test
+  sendMidiNoteOn(param<<8, param, 8);
 }
 
 void btnReleasedListener(int event, int param)
 {
-  //
+  //test
+  sendMidiNoteOff(param<<8, param, 8);
 }
 void potMovedListener(int event, int param)
 {
-  //
+  // test
+  sendMidiCC(param<<8, param, 9);
 }
 
 void touchEventListener(int event, int param)

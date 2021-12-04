@@ -12,4 +12,7 @@ namespace mixduino
 
     static const uint16_t kTouchLeftAddr  = 32;
     static const uint16_t kTouchRightAddr = 33;
+
+    static const uint8_t kTotalVUes = 5;
+    static const uint8_t kTotalShifters = 2;
 } // namespace mixduino

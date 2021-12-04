@@ -8,7 +8,7 @@
 #include "board_map.h"
 #include "str_reqs.h"
 #include "midi_map.h"
-#include "mdcore.hpp"
+#include "core.hpp"
 #include "encoder.hpp"
 #include "button_mux.hpp"
 #include "button.hpp"
@@ -29,7 +29,7 @@ mixduino::MuxButton leftBtns(mixduino::lMBtnsReqs);
 mixduino::MuxButton rightBtns(mixduino::rMBtnsReqs);
 mixduino::Button btns(aSwSet, nASw);
 
-mdcore::Core mdCore;
+mixduino::Core mdCore;
 mixduino::TouchBar leftTBar(mixduino::kTouchLeftAddr);
 mixduino::TouchBar rightTBar(mixduino::kTouchRightAddr);
 
@@ -39,7 +39,6 @@ Thread threadReadButtons; // thread para controlar os botoes
 
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value);
-void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value);
 void readButtons();
 void readPots();
 void readEncoder();
@@ -58,7 +57,6 @@ void setup()
   // Serial.begin(31250);
   MIDI.setHandleControlChange(handleControlChange);
   MIDI.setHandleNoteOn(handleNoteOn);
-  MIDI.setHandleNoteOff(handleNoteOff);
 
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
@@ -107,17 +105,7 @@ void handleControlChange(uint8_t channel, uint8_t number, uint8_t value)
 
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
-  if (value < 1U)
-  {
-    mdCore.noteOff(channel, number, value);
-    return;
-  }
   mdCore.noteOn(channel, number, value);
-}
-
-void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value)
-{
-  mdCore.noteOff(channel, number, value);
 }
 
 void readButtons()

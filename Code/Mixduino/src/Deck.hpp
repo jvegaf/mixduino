@@ -4,10 +4,10 @@
 
 namespace MD
 {
-  class Controller
+  class Deck
   {
   public:
-    Controller(Player* player, Pad* pad);
+    Deck(Player* player, Pad* pad);
     void setMidiCh(uint8_t midiCh);
     void read();
     void onNoteOn(uint8_t number, uint8_t value);

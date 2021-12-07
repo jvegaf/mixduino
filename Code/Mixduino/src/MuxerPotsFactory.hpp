@@ -1,14 +1,23 @@
 #pragma once
 
-#include "Multiplexer4067.h"
+#include "MuxerPots.hpp"
+
+namespace MD
+{
 
 class MuxerPotsFactory
 {
 public:
   MuxerPotsFactory();
-  Multiplexer4067* getTopMuxer();
-  Multiplexer4067* getBottomMuxer();
+  MuxerPots* getTopMuxer();
+  MuxerPots* getBottomMuxer();
 private:
-  Multiplexer4067* m_topMuxer { nullptr };
-  Multiplexer4067* m_bottomMuxer { nullptr };
+  Multiplexer4067* m_top4067 { nullptr };
+  Multiplexer4067* m_bottom4067 { nullptr };
+  MuxerPots* m_topMuxer{nullptr};
+  MuxerPots* m_bottomMuxer{nullptr};
+
+  MuxerPots* makeMuxerPots(Multiplexer4067* m, const uint8_t* muxPositions, const uint8_t totalPots);
 };
+  
+} // namespace MD

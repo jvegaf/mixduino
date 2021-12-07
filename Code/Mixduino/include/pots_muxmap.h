@@ -19,7 +19,7 @@ static const uint8_t TREL1   = 8;
 static const uint8_t TREL2   = 9;
 static const uint8_t TREL3   = 10;
 
-const uint8_t topMuxpotsSet[] = {
+static const uint8_t topMuxpotsSet[] = {
     PFX1L,
     PFX2L,
     PFX3L,
@@ -32,7 +32,7 @@ const uint8_t topMuxpotsSet[] = {
     TREL2,
     TREL3
 };
-const uint8_t nTopMuxpots = 11;
+static const uint8_t nTopMuxpots = 11;
 
 // BOTTOM POTS
 static const uint8_t FADER_L2  = 0;
@@ -52,7 +52,7 @@ static const uint8_t PITCH_L   = 13;
 static const uint8_t PMIX_HP   = 14;
 static const uint8_t FADER_L3  = 15;
 
-const uint8_t bottomMuxpotsSet[] = {
+static const uint8_t bottomMuxpotsSet[] = {
     FADER_L2,
     FADER_L1,
     PITCH_R,
@@ -71,6 +71,6 @@ const uint8_t bottomMuxpotsSet[] = {
     FADER_L3
 };
 
-const uint8_t nBottomMuxPots = 16;
+static const uint8_t nBottomMuxPots = 16;
 
 #endif

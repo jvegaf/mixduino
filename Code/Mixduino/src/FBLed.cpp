@@ -1,13 +1,18 @@
 #include "FBLed.h"  
 
-
-FBLed::FBLed(Shifter* shf, uint8_t outPos)
-	: OutputBase(outPos)
+namespace MD
 {
-	_shft = shf;
+
+FBLed::FBLed(Shifter* shf)
+: m_shft{shf}
+{
+
 }
 
-void FBLed::setTo(uint8_t value) {
-	_shft->setPin(_outPos, value);
-    _shft->write();
+void FBLed::setTo(uint8_t pos, uint8_t value) {
+  m_shft->setPin(pos, value);
+  m_shft->write();
 }
+
+} // namespace MD
+

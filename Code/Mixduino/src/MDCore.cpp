@@ -25,7 +25,7 @@ void MDCore::readDecksMode()
     checkDeckMode(_rightFuncMode, _rightPad);
 }
 
-void MDCore::checkDeckMode(FuncMode *fm, Pad *p)
+void MDCore::checkDeckMode(FuncMode *fm, PadContainer *p)
 {
     if (!fm->isDisposed())
     {

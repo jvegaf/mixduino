@@ -1,4 +1,5 @@
 #include "BREncoder.h"
+#include "pin_map.h"
 #include "MDCore.h"
 #include "PotKit.h"
 #include "TouchKit.h"
@@ -20,6 +21,7 @@ ThreadController cpu;     //thread master, onde as outras vao ser adicionadas
 Thread threadReadPots;    // thread para controlar os pots
 Thread threadReadButtons; // thread para controlar os botoes
 
+void initializePins();
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value);
@@ -33,6 +35,7 @@ void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel);
 
 void setup()
 {
+  initializePins();
   // Serial.begin(31250);
   MIDI.setHandleControlChange(handleControlChange);
   MIDI.setHandleNoteOn(handleNoteOn);
@@ -65,6 +68,17 @@ void loop()
   MIDI.read();
   readEncoder();
   readTouchBars();
+}
+
+inline void initializePins() {
+  for (auto i = 0; i < T_MUXPIN_BUNDLE; i++)
+  {
+    pinMode(MUXPIN_BUNDLE[i], OUTPUT);
+  }
+  for (auto i = 0; i < T_ARD_SW_BUNDLE; i++)
+  {
+    pinMode(ARD_SW_BUNDLE[i], INPUT_PULLUP);
+  }
 }
 
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value)

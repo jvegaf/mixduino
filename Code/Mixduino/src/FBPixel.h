@@ -1,23 +1,20 @@
 
 #pragma once
-#ifndef FBPIXEL_H
-#define FBPIXEL_H
 
-#include <Arduino.h>
-#include "OutputBase.h"
-#include "NPKit.h"
+#include "Output.h"
+#include <Adafruit_NeoPixel.h>
 
-class FBPixel : public OutputBase
+namespace MD
 {
-	private:
-		NPKit* _npkit;
 
-	public:
-		FBPixel(NPKit* npkit, uint8_t outPos);
-		FBPixel() = default;
-		void setTo(uint8_t value);
-		
+class FBPixel : public Output
+{
+  private:
+    Adafruit_NeoPixel* m_np;
+
+  public:
+    FBPixel();
+    void setTo(uint8_t pos, uint8_t value) override;
 
 };
-
-#endif // FBPIXEL_H
+} // namespace MD

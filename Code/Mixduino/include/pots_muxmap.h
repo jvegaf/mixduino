@@ -7,17 +7,17 @@
 
 // top pots
 
-uint8_t const PFX1L   = 0;
-uint8_t const PFX2L   = 1;
-uint8_t const PFX3L   = 2;
-uint8_t const PGAINL1 = 3;
-uint8_t const PGAINL2 = 4;
-uint8_t const PGAINL3 = 5;
-uint8_t const PFX2R   = 6;
-uint8_t const PFX3R   = 7;
-uint8_t const TREL1   = 8;
-uint8_t const TREL2   = 9;
-uint8_t const TREL3   = 10;
+static const uint8_t PFX1L   = 0;
+static const uint8_t PFX2L   = 1;
+static const uint8_t PFX3L   = 2;
+static const uint8_t PGAINL1 = 3;
+static const uint8_t PGAINL2 = 4;
+static const uint8_t PGAINL3 = 5;
+static const uint8_t PFX2R   = 6;
+static const uint8_t PFX3R   = 7;
+static const uint8_t TREL1   = 8;
+static const uint8_t TREL2   = 9;
+static const uint8_t TREL3   = 10;
 
 const uint8_t topMuxpotsSet[] = {
     PFX1L,
@@ -35,22 +35,22 @@ const uint8_t topMuxpotsSet[] = {
 const uint8_t nTopMuxpots = 11;
 
 // BOTTOM POTS
-uint8_t const FADER_L2  = 0;
-uint8_t const FADER_L1  = 1;
-uint8_t const PITCH_R   = 2;
-uint8_t const FILTER_L3 = 3;
-uint8_t const PVOL_HP   = 4;
-uint8_t const BAS_L1    = 5;
-uint8_t const MID_L1    = 6;
-uint8_t const BAS_L2    = 7;
-uint8_t const MID_L2    = 8;
-uint8_t const MID_L3    = 9;
-uint8_t const BAS_L3    = 10;
-uint8_t const FILTER_L2 = 11;
-uint8_t const FILTER_L1 = 12;
-uint8_t const PITCH_L   = 13;
-uint8_t const PMIX_HP   = 14;
-uint8_t const FADER_L3  = 15;
+static const uint8_t FADER_L2  = 0;
+static const uint8_t FADER_L1  = 1;
+static const uint8_t PITCH_R   = 2;
+static const uint8_t FILTER_L3 = 3;
+static const uint8_t PVOL_HP   = 4;
+static const uint8_t BAS_L1    = 5;
+static const uint8_t MID_L1    = 6;
+static const uint8_t BAS_L2    = 7;
+static const uint8_t MID_L2    = 8;
+static const uint8_t MID_L3    = 9;
+static const uint8_t BAS_L3    = 10;
+static const uint8_t FILTER_L2 = 11;
+static const uint8_t FILTER_L1 = 12;
+static const uint8_t PITCH_L   = 13;
+static const uint8_t PMIX_HP   = 14;
+static const uint8_t FADER_L3  = 15;
 
 const uint8_t bottomMuxpotsSet[] = {
     FADER_L2,

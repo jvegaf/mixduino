@@ -1,20 +1,20 @@
 #pragma once
-#ifndef FBLED_H
-#define FBLED_H
-#include <Arduino.h>
-#include "OutputBase.h"
+
+#include "Output.h"
 #include <Shifter.h>
 
-class FBLed : public OutputBase
+namespace MD
 {
-	private:
-		Shifter* _shft;
 
-	public:
+class FBLed : public Output
+{
+  public:
+    FBLed(Shifter* shf);
+    FBLed() = default;
+    void setTo(uint8_t pos, uint8_t value);
 
-		FBLed(Shifter* shf, uint8_t outPos);
-		FBLed() = default;
-		void setTo(uint8_t value);
-
+  private:
+    Shifter* m_shft;
 };
-#endif
+  
+} // namespace MD

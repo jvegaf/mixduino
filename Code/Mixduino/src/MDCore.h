@@ -7,7 +7,7 @@
 #include "Funcs.h"
 #include "FuncsBlind.h"
 #include "NPKit.h"
-#include "Pad.h"
+#include "Pad.hpp"
 #include "VUmeter.h"
 #include "md_defs.h"
 #include <Arduino.h>
@@ -18,7 +18,7 @@ enum class State
 	STATE_OFF
 };
 
-uint8_t const t_VUSet = 5;
+static const uint8_t t_VUSet = 5;
 
 class MDCore
 {
@@ -127,15 +127,15 @@ private:
 	NPKit *_npkit;
 	FuncMode *_leftFuncMode;
 	FuncMode *_rightFuncMode;
-	Pad *_leftPad;
-	Pad *_rightPad;
+	PadContainer *_leftPad;
+	PadContainer *_rightPad;
 	Funcs *_funcs;
 	FuncsBlind *_funcsBlind;
 
 	void initPins();
 	void vuChange(uint8_t number, uint8_t value);
 	void readDecksMode();
-	void checkDeckMode(FuncMode *fm, Pad *p);
+	void checkDeckMode(FuncMode *fm, PadContainer *p);
 	void setInitialDeckB();
 	void sendMonState();
 };

@@ -7,18 +7,18 @@
 
 //////////////////////////////////////
 // BUTTONS
-uint8_t const SWFXR_2      = 4;
-uint8_t const SWFXR_3      = 5;
-uint8_t const SWFXL_1      = 8;
-uint8_t const SW_BROWSER_R = 7;
-uint8_t const SW_BROWSER_L = 10;
-uint8_t const SWFXL_2      = 9;
-uint8_t const SWFXL_3      = 11;
-uint8_t const SWFXR_1      = 12;
-uint8_t const SWBR_PREVIEW = 14;
-uint8_t const SWBR_BACK    = 15;
+static const uint8_t SWFXR_2      = 4;
+static const uint8_t SWFXR_3      = 5;
+static const uint8_t SWFXL_1      = 8;
+static const uint8_t SW_BROWSER_R = 7;
+static const uint8_t SW_BROWSER_L = 10;
+static const uint8_t SWFXL_2      = 9;
+static const uint8_t SWFXL_3      = 11;
+static const uint8_t SWFXR_1      = 12;
+static const uint8_t SWBR_PREVIEW = 14;
+static const uint8_t SWBR_BACK    = 15;
 
-const uint8_t FX_SW_BUNDLE[] = {
+static const uint8_t FX_SW_BUNDLE[] = {
     SWFXL_1,
     SWFXL_2,
     SWFXL_3,
@@ -27,52 +27,52 @@ const uint8_t FX_SW_BUNDLE[] = {
     SWFXR_3
 };
 
-uint8_t const T_FX_SW    = 6;
+static const uint8_t T_FX_SW    = 6;
 
-uint8_t const L_BROWSER_A = 2;
-uint8_t const L_BROWSER_B = 3;
-uint8_t const NP_DATA     = 6;
-uint8_t const L1VU_LATCH  = 16;
-uint8_t const L1VU_SIG    = 17;
-uint8_t const R_BROWSER_B = 18;
-uint8_t const R_BROWSER_A = 19;
-uint8_t const MRVU_LATCH  = 26;
-uint8_t const MRVU_SIG    = 28;
-uint8_t const MLVU_LATCH  = 30;
-uint8_t const L2VU_SIG    = 31;
-uint8_t const MLVU_SIG    = 32;
-uint8_t const L3VU_SIG    = 34;
-uint8_t const L3VU_LATCH  = 36;
-uint8_t const FBL_LATCH   = 37;
-uint8_t const L2VU_LATCH  = 38;
-uint8_t const FBL_SIG     = 39;
-uint8_t const FBR_LATCH   = 42;
-uint8_t const FBR_SIG     = 44;
-uint8_t const SRCLK       = 52;
+static const uint8_t L_BROWSER_A = 2;
+static const uint8_t L_BROWSER_B = 3;
+static const uint8_t NP_DATA     = 6;
+static const uint8_t L1VU_LATCH  = 16;
+static const uint8_t L1VU_SIG    = 17;
+static const uint8_t R_BROWSER_B = 18;
+static const uint8_t R_BROWSER_A = 19;
+static const uint8_t MRVU_LATCH  = 26;
+static const uint8_t MRVU_SIG    = 28;
+static const uint8_t MLVU_LATCH  = 30;
+static const uint8_t L2VU_SIG    = 31;
+static const uint8_t MLVU_SIG    = 32;
+static const uint8_t L3VU_SIG    = 34;
+static const uint8_t L3VU_LATCH  = 36;
+static const uint8_t FBL_LATCH   = 37;
+static const uint8_t L2VU_LATCH  = 38;
+static const uint8_t FBL_SIG     = 39;
+static const uint8_t FBR_LATCH   = 42;
+static const uint8_t FBR_SIG     = 44;
+static const uint8_t SRCLK       = 52;
 
 //////////////////////////////////////
 // MULTIPLEXER
 
-uint8_t const MPLEX_S0          = 47;
-uint8_t const MPLEX_S1          = 49;
-uint8_t const MPLEX_S2          = 40;
-uint8_t const MPLEX_S3          = 53;
-uint8_t const TOP_POTMUX_SIG    = A1;
-uint8_t const RIGHT_SWMUX_SIG   = A2;
-uint8_t const LEFT_SWMUX_SIG    = A3;
-uint8_t const BOTTOM_POTMUX_SIG = A4;
+static const uint8_t MPLEX_S0          = 47;
+static const uint8_t MPLEX_S1          = 49;
+static const uint8_t MPLEX_S2          = 40;
+static const uint8_t MPLEX_S3          = 53;
+static const uint8_t TOP_POTMUX_SIG    = A1;
+static const uint8_t RIGHT_SWMUX_SIG   = A2;
+static const uint8_t LEFT_SWMUX_SIG    = A3;
+static const uint8_t BOTTOM_POTMUX_SIG = A4;
 
-const uint8_t MUXPIN_BUNDLE[] = {
+static const uint8_t MUXPIN_BUNDLE[] = {
     MPLEX_S0,
     MPLEX_S1,
     MPLEX_S2,
     MPLEX_S3
 };
 
-uint8_t const T_MUXPIN_BUNDLE = 4;
+static const uint8_t T_MUXPIN_BUNDLE = 4;
 
 
-const uint8_t ARD_SW_BUNDLE[] = {
+static const uint8_t ARD_SW_BUNDLE[] = {
     SW_BROWSER_L,
     SW_BROWSER_R,
     SWBR_PREVIEW,
@@ -87,18 +87,18 @@ const uint8_t ARD_SW_BUNDLE[] = {
     RIGHT_SWMUX_SIG
 };
 
-uint8_t const T_ARD_SW_BUNDLE = 12;
+static const uint8_t T_ARD_SW_BUNDLE = 12;
 
 //////////////////////////////////////
 // POTS ANALOG PINS
 
-uint8_t const PFXR_1  = A0;
-uint8_t const PMASTER = A14;
+static const uint8_t PFXR_1  = A0;
+static const uint8_t PMASTER = A14;
 
-const uint8_t ARD_POTS_BUNDLE[] = {
+static const uint8_t ARD_POTS_BUNDLE[] = {
     PFXR_1,
     PMASTER};
 
-uint8_t const T_ARD_POTS = 2;
+static const uint8_t T_ARD_POTS = 2;
 
 #endif

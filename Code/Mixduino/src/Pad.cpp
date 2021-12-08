@@ -5,12 +5,9 @@
 namespace MD
 {
 
-  Pad::Pad(Button* padBtns, ButtonMode* mode, uint8_t* inPos, uint8_t* outPos, uint8_t firstMidiNumber)
+  Pad::Pad(Button* padBtns, ButtonMode* mode)
     : m_padBtns{padBtns},
-      m_mode{mode},
-      m_inPos{inPos},
-      m_outPos{outPos},
-      m_firstMidiNumber{firstMidiNumber}
+      m_mode{mode}
   {
 
   }
@@ -39,14 +36,15 @@ namespace MD
       }
   }
 
-  void Pad::setMidiCh(uint8_t midiCh)
+  void Pad::read(inMidip_t p) 
   {
-      m_midiCh = midiCh;
-  }
-
-  void Pad::read() 
-  {
-      m_mode->read(m_inPos[kTPadButtons], this);
+      m_mode->read(this);
+      for (uint8_t i = 0; i < kTPadButtons; i++)
+      {
+        p.midiNumber = i + m_firstMidiNumber;
+        m_padBtns[i].read(p);
+      }
+      
   }
 
   void Pad::setHotCueColor(uint8_t pos, uint8_t value)

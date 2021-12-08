@@ -4,8 +4,8 @@
 namespace MD
 {
 
-  Player::Player(Button* btns, const uint8_t* midiNumbers)
-    : m_btns{btns}, m_midiNumbers{midiNumbers}
+  Player::Player(Button* btns, Pot* tempo, const uint8_t* midiNumbers)
+    : m_btns{btns}, m_tempo{tempo}, m_midiNumbers{midiNumbers}
   {
   }
 

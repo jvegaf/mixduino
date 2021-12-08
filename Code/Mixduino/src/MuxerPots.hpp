@@ -1,14 +1,15 @@
 #pragma once
 #include <Multiplexer4067.h>
 #include "md_str.h"
+#include "Input.h"
 
 namespace MD
 {
-  class MuxerPots
+  class MuxerPots : public InputPot
   {
   public:
     MuxerPots(Multiplexer4067* muxer, const uint8_t* muxPositions, const uint8_t totalPots);
-    void read(inPotMidip_t p);
+    void read(inPotMidip_t p) override;
     
   private:
     Multiplexer4067* m_muxer{nullptr};

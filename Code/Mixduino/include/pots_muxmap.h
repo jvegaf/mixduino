@@ -73,4 +73,36 @@ static const uint8_t bottomMuxpotsSet[] = {
 
 static const uint8_t nBottomMuxPots = 16;
 
+static const uint8_t muxTopMixerPots[] = {
+    PGAINL1,
+    PGAINL2,
+    PGAINL3,
+    TREL1,
+    TREL2,
+    TREL3
+};
+
+static const uint8_t tMuxTopMixerPots = 6;
+
+static const uint8_t muxBtmMixerPots[] = {
+    MID_L1,
+    MID_L2,
+    MID_L3,
+    FILTER_L1,
+    FILTER_L2,
+    FILTER_L3,
+    BAS_L1,
+    BAS_L2,
+    BAS_L3,
+    FADER_L1,
+    FADER_L2,
+    FADER_L3,
+    PVOL_HP,
+    PMIX_HP
+};
+
+static const uint8_t tMuxBtmMixerPots = 12;
+
+static const uint8_t tMixerMuxPots = tMuxTopMixerPots + tMuxBtmMixerPots;
+
 #endif

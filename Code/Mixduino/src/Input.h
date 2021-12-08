@@ -11,4 +11,11 @@ public:
   virtual void read(uint8_t inPos, Container* container)=0;
 };
 
+class InputPot
+{
+public:
+  InputPot();
+  virtual void read(inPotMidip_t p) = 0;
+};
+
 } // namespace MD

@@ -1,5 +1,8 @@
-#include "VUmeter.h"
+#include "VU.hpp"
 
+namespace MD
+{
+    
 uint8_t dataValues[][2] = {
     {B00000000, B00000000},
     {B00000000, B00000001},
@@ -19,21 +22,21 @@ uint8_t dataValues[][2] = {
     {B01111111, B11111111},
     {B11111111, B11111111}};
 
-VUmeter::VUmeter(uint8_t p_data, uint8_t p_latch, uint8_t p_clock)
+VU::VU(uint8_t p_data, uint8_t p_latch, uint8_t p_clock)
 {
     data_pin = p_data;
     latch_pin = p_latch;
     clock_pin = p_clock;
 }
 
-void VUmeter::begin() {
+void VU::begin() {
 	pinMode(data_pin, OUTPUT);
 	pinMode(latch_pin, OUTPUT);
 	pinMode(clock_pin, OUTPUT);
     this->clear();
 }
 
-void VUmeter::setLevel(uint8_t level)
+void VU::setLevel(uint8_t level)
 {
     uint8_t highData = dataValues[level][0];
     uint8_t lowData = dataValues[level][1];
@@ -45,7 +48,9 @@ void VUmeter::setLevel(uint8_t level)
     digitalWrite(latch_pin, HIGH);
 }
 
-void VUmeter::clear()
+void VU::clear()
 {
     this->setLevel(0);
 }
+} // namespace MD
+

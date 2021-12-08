@@ -1,23 +1,14 @@
-#include "MDCore.h"
+#include "Core.hpp"
 
-
-void MDCore::initPins()
+namespace MD
 {
-    for(uint8_t i=0;i < T_MUXPIN_BUNDLE;i++) {
-        pinMode(MUXPIN_BUNDLE[i], OUTPUT);
-    }
-    for (uint8_t i = 0; i < T_ARD_SW_BUNDLE; i++)
-    {
-        pinMode(ARD_SW_BUNDLE[i], INPUT_PULLUP);
-    }
-}
 
-void MDCore::vuChange(uint8_t number, uint8_t value)
+void Core::vuChange(uint8_t number, uint8_t value)
 {
     _vuSet[number].setLevel(value);
 }
 
-void MDCore::readDecksMode()
+void Core::readDecksMode()
 {
     _leftFuncMode->read();
     _rightFuncMode->read();
@@ -25,7 +16,7 @@ void MDCore::readDecksMode()
     checkDeckMode(_rightFuncMode, _rightPad);
 }
 
-void MDCore::checkDeckMode(FuncMode *fm, PadContainer *p)
+void Core::checkDeckMode(FuncMode *fm, PadContainer *p)
 {
     if (!fm->isDisposed())
     {
@@ -39,11 +30,13 @@ void MDCore::checkDeckMode(FuncMode *fm, PadContainer *p)
     }
 }
 
-void MDCore::setInitialDeckB() {
+void Core::setInitialDeckB() {
 	_funcs->setTo(0, 1);
 }
 
-void MDCore::sendMonState() {
+void Core::sendMonState() {
 	fnOn(SEND_MON_STATE, 127, 3);
 	fnOff(SEND_MON_STATE, 127, 3);
 }
+} // namespace MD
+

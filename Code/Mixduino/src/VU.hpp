@@ -1,9 +1,11 @@
+#pragma once
 
-#ifndef ARDUINO_VUMETER_H
-#define ARDUINO_VUMETER_H
 #include <Arduino.h>
 
-class VUmeter  
+namespace MD
+{
+	
+class VU  
 {
 	private:
 		uint8_t data_pin;
@@ -11,10 +13,10 @@ class VUmeter
 		uint8_t clock_pin;
 		void clear();
 	public:
-		VUmeter(uint8_t p_data, uint8_t p_latch, uint8_t p_clock);
-		VUmeter() = default;
+		VU(uint8_t p_data, uint8_t p_latch, uint8_t p_clock);
+		VU() = default;
 		void begin();
 		void setLevel(uint8_t level);
 
 };
-#endif
+} // namespace MD

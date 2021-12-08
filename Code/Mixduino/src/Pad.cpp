@@ -56,10 +56,9 @@ namespace MD
     }
   }
 
-
   void Pad::setTo(uint8_t position, uint8_t value)
   {
-    m_padBtns[position].setTo(m_outPos[position], value);
+    m_padBtns[position].setTo(value);
   }
 
 

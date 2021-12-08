@@ -14,9 +14,9 @@ namespace MD
     m_input->read(p);
   }
 
-  void Button::setTo(uint8_t pos, int8_t value)
+  void Button::setTo(int8_t value)
   {
     if (m_output == nullptr) return;
-    m_output->setTo(pos, value);
+    m_output->setTo(m_outputPos, value);
   }
 } // namespace MD

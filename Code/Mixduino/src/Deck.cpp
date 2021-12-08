@@ -3,16 +3,10 @@
 namespace MD
 {
 
-Deck::Deck(Player* player, Pad* pad)
-  : m_player{player},m_pad{pad}
+Deck::Deck(Player* player, Pad* pad, const uint8_t midiCh)
+  : m_player{player},m_pad{pad}, m_midiCh{midiCh}
 {
   
-}
-
-void Deck::setMidiCh(uint8_t midiCh) {
-  m_midiCh = midiCh;
-  m_player->setMidiChannel(midiCh);
-  m_pad->setMidiCh(midiCh);
 }
 
 void Deck::read() {

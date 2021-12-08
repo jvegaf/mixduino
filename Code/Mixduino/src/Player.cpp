@@ -18,7 +18,7 @@ namespace MD
   }
 
   void Player::setTo(uint8_t pos, uint8_t value) {
-    m_btns[pos].setTo(m_outPositions[pos], value);
+    m_btns[pos].setTo(value);
   }
   
 

@@ -16,6 +16,7 @@ namespace MD
       void changeMode() override;
       void read(inMidip_t p);
       void setHotCueColor(uint8_t pos, uint8_t value);
+      void setHotcuesCluster(uint8_t* values);
     private:
       PadMode m_padMode{PadMode::HOTCUE_MODE};
       uint8_t* m_hotcues{nullptr};

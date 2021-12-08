@@ -1,8 +1,5 @@
-#include "BREncoder.h"
-#include "pin_map.h"
-#include "MDCore.h"
-#include "PotKit.h"
-#include "TouchKit.h"
+// #include "BREncoder.h"
+#include "Core.hpp"
 #include <Arduino.h>
 #include <MIDI.h>
 #include <Thread.h>
@@ -10,11 +7,11 @@
 // Rev5 version
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-BREncoder encL(L_BROWSER_A, L_BROWSER_B);
-BREncoder encR(R_BROWSER_A, R_BROWSER_B);
+// BREncoder encL(L_BROWSER_A, L_BROWSER_B);
+// BREncoder encR(R_BROWSER_A, R_BROWSER_B);
 PotKit pots;
 
-MDCore mdCore;
+Core mdCore;
 TouchKit touchBars;
 
 ThreadController cpu;     //thread master, onde as outras vao ser adicionadas

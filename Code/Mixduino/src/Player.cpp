@@ -4,20 +4,15 @@
 namespace MD
 {
 
-  Player::Player(Button* btns, const uint8_t* inPositions, const uint8_t* outPositions, const uint8_t* midiNumbers)
-    : m_btns{btns}, m_inPositions{inPositions}, m_outPositions{outPositions}, m_midiNumbers{midiNumbers}
+  Player::Player(Button* btns, const uint8_t* midiNumbers)
+    : m_btns{btns}, m_midiNumbers{midiNumbers}
   {
   }
 
-  void Player::setMidiChannel(uint8_t midiCh)
-  {
-    m_midiCh = midiCh;
-  }
-
-  void Player::read() {
+  void Player::read(inMidip_t p) {
     for (auto i = 0; i < kTDeckButtons; i++)
     {
-      inMidip_t p = {m_inPositions[i], m_midiCh, m_midiNumbers[i], m_funcOn, m_funcOff};
+      p.midiNumber = m_midiNumbers[i];
       m_btns[i].read(p);
     }
   }

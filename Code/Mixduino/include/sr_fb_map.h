@@ -1,9 +1,10 @@
 #pragma once
 
-#ifndef SR_FB_MAP_H
-#define SR_FB_MAP_H
 #include <Arduino.h>
+#include "np_conf.h"
 
+namespace MD
+{
 
 ////////////////////////////////////
 // FB RIGHT
@@ -30,4 +31,19 @@ static const uint8_t OUT_LOOP_L = 5;
 static const uint8_t OUT_PCUEL2 = 6;
 static const uint8_t OUT_PCUEL1 = 7;
 
-#endif
+static const uint8_t playerLeftOutBndl[] = {
+  OUT_PLAY_L,
+  OUT_CUE_L,
+  OUT_LOOP_L,
+  NP_SYNC_L
+};
+
+static const uint8_t playerRightOutBndl[] = {
+  OUT_PLAY_R,
+  OUT_CUE_R,
+  OUT_LOOP_R,
+  NP_SYNC_R
+};
+  
+} // namespace MD
+

@@ -1,15 +1,21 @@
 #include "ButtonFactory.hpp"
 #include "constans.h"
+#include "sw_muxmap.h"
+#include "sr_fb_map.h"
 
 namespace MD
 {
 
 ButtonFactory::ButtonFactory(MuxerInputFactory* inputFact, FBLedFactory* ledFact, FBPixel* fbPix)
 {
-  makePlayerLeftBtns(inputFact, ledFact, fbPix);
-  makePlayerRightBtns(inputFact, ledFact, fbPix);
-  makePadLeftBtns(inputFact, fbPix);
-  makePadRightBtns(inputFact, fbPix);
+  auto leftmuxer = inputFact->getLeftMuxer();
+  auto rightmuxer = inputFact->getRightMuxer();
+  m_playerLeftBtns = makePlayerBtns(leftmuxer, leftPlayerSwBnd, ledFact->getLeftFBLed(), fbPix, playerLeftOutBndl);
+  m_playerRightBtns = makePlayerBtns(rightmuxer, rightPlayerSwBnd, ledFact->getRightFBLed(), fbPix, playerRightOutBndl);
+  m_padLeftBtns = makePadBtns(leftmuxer, leftPadSwBnd, fbPix, PIXLS_PAD_L);
+  m_padRightBtns = makePadBtns(rightmuxer, rightPadSwBnd, fbPix, PIXLS_PAD_R);
+  m_padLeftModeBtn = new ButtonMode(leftmuxer, SWMODE_L, fbPix, NP_MODE_L);
+  m_padRightModeBtn = new ButtonMode(rightmuxer, SWMODE_R, fbPix, NP_MODE_R);
 }
 
 Button* ButtonFactory::getLeftPlayerBtns() {
@@ -38,45 +44,29 @@ ButtonMode* ButtonFactory::getRightPadModeBtn() {
 
 
 
-void ButtonFactory::makePlayerLeftBtns(MuxerInputFactory* inputFact, FBLedFactory* ledFact, FBPixel* fbPix) {
-  auto muxer = inputFact->getLeftMuxer();
-  auto fbLed = ledFact->getLeftFBLed();
-  m_playerLeftBtns = new Button[kTDeckButtons];
-  m_playerLeftBtns[0] = Button(muxer, fbLed);
-  m_playerLeftBtns[1] = Button(muxer, fbLed);
-  m_playerLeftBtns[2] = Button(muxer, fbLed);
-  m_playerLeftBtns[3] = Button(muxer, fbPix);
+Button* ButtonFactory::makePlayerBtns(Muxer* muxer, const uint8_t* inputPos, FBLed* fbled, FBPixel* fbPix, const uint8_t* outPos) {
+
+
+  auto result = new Button[kTDeckButtons];
+  result[0] = Button(muxer, inputPos[0], fbled, outPos[0]);
+  result[1] = Button(muxer, inputPos[1], fbled, outPos[1]);
+  result[2] = Button(muxer, inputPos[2], fbled, outPos[2]);
+  result[3] = Button(muxer, inputPos[3], fbPix, outPos[3]);
+  
+  return result;
 }
 
-void ButtonFactory::makePlayerRightBtns(MuxerInputFactory* inputFact, FBLedFactory* ledFact, FBPixel* fbPix) {
-  auto muxer = inputFact->getRightMuxer();
-  auto fbLed = ledFact->getRightFBLed();
-  m_playerRightBtns = new Button[kTDeckButtons];
-  m_playerRightBtns[0] = Button(muxer, fbLed);
-  m_playerRightBtns[1] = Button(muxer, fbLed);
-  m_playerRightBtns[2] = Button(muxer, fbLed);
-  m_playerRightBtns[3] = Button(muxer, fbPix);
-}
 
-void ButtonFactory::makePadLeftBtns(MuxerInputFactory* inputFact, FBPixel* fbPix) {
-  auto muxer = inputFact->getLeftMuxer();
-  m_padLeftBtns = new Button[kTPadButtons];
+Button* ButtonFactory::makePadBtns(Muxer* muxer, const uint8_t* inputPos, FBPixel* fbPix, const uint8_t* outPos) {
+  
+  auto result = new Button[kTPadButtons];
   for (auto i = 0; i < kTPadButtons; i++)
   {
-    m_padLeftBtns[i] = Button(muxer, fbPix);
+    result[i] = Button(muxer, inputPos[i], fbPix, outPos[i]);
   }
-  m_padLeftModeBtn = new ButtonMode(muxer, fbPix);
+  
 }
 
-void ButtonFactory::makePadRightBtns(MuxerInputFactory* inputFact, FBPixel* fbPix) {
-  auto muxer = inputFact->getRightMuxer();
-  m_padRightBtns = new Button[kTPadButtons];
-  for (auto i = 0; i < kTPadButtons; i++)
-  {
-    m_padRightBtns[i] = Button(muxer, fbPix);
-  }
-  m_padRightModeBtn = new ButtonMode(muxer, fbPix);
-}
   
 } // namespace MD
 

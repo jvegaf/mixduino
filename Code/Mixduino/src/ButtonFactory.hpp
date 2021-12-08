@@ -25,11 +25,15 @@ namespace MD
     ButtonMode* m_padLeftModeBtn{nullptr};
     Button* m_padRightBtns{nullptr};
     ButtonMode* m_padRightModeBtn{nullptr};
+    
+    
+    
 
-    void makePlayerLeftBtns(MuxerInputFactory* inputFact, FBLedFactory* ledFact, FBPixel* fbPix);
-    void makePlayerRightBtns(MuxerInputFactory* inputFact, FBLedFactory* ledFact, FBPixel* fbPix);
-    void makePadLeftBtns(MuxerInputFactory* inputFact, FBPixel* fbPix);
-    void makePadRightBtns(MuxerInputFactory* inputFact, FBPixel* fbPix);
+    
+
+    Button* makePlayerBtns(Muxer* muxer, const uint8_t* inputPos, FBLed* fbled, FBPixel* fbPix, const uint8_t* outPos);
+
+    Button* makePadBtns(Muxer* muxer, const uint8_t* inputPos, FBPixel* fbPix, const uint8_t* outPos);
     
     
   };

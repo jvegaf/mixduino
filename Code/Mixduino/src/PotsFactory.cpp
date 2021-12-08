@@ -8,27 +8,41 @@ namespace MD
   {
     auto muxTop = muxPotFact->getTopMuxer();
     auto muxBtm = muxPotFact->getBottomMuxer();
-    m_leftTempoPot = makeTempoPot(muxBtm);
-    m_rightTempoPot = makeTempoPot(muxBtm);
-    m_mixerPots = makeMixerPots(muxTop, muxBtm);
+    m_leftTempoPot = makeTempoPot(muxBtm, PITCH_L);
+    m_rightTempoPot = makeTempoPot(muxBtm, PITCH_R);
+    m_mixerPots = makeMixerPots(muxTop, muxTopMixerPots, muxBtm, muxBtmMixerPots);
   }
 
-  Pot* PotsFactory::makeMixerPots(MuxerPots *mxTop, MuxerPots *mxBottom) {
+  Pot* PotsFactory::getLeftTempoPot() {
+    return m_leftTempoPot;
+  }
+
+  Pot* PotsFactory::getRightTempoPot() {
+    return m_rightTempoPot;
+  }
+
+  Pot* PotsFactory::getMixerPots() {
+    return m_mixerPots;
+  }
+
+
+
+  Pot* PotsFactory::makeMixerPots(MuxerPots *mxTop, const uint8_t* topPos, MuxerPots *mxBottom, const uint8_t* btmPos) {
     auto mixerPots = new Pot[tMixerMuxPots];
     for (uint8_t i = 0; i < tMuxTopMixerPots; i++)
     {
-      mixerPots[i] = Pot(mxTop);
+      mixerPots[i] = Pot(mxTop, topPos[i]);
     }
-    for (uint8_t i = tMuxTopMixerPots; i < tMixerMuxPots; i++)
+    for (uint8_t i = 0; i < tMuxBtmMixerPots; i++)
     {
-      mixerPots[i] = Pot(mxBottom);
+      mixerPots[tMuxTopMixerPots + i] = Pot(mxBottom, btmPos[i]);
     }
     
     return mixerPots;
   }
 
-  Pot* PotsFactory::makeTempoPot(MuxerPots *muxer) {
-    return new Pot(muxer);
+  Pot* PotsFactory::makeTempoPot(MuxerPots *muxer, uint8_t inputPos) {
+    return new Pot(muxer, inputPos);
   }
 
 

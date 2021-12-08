@@ -47,6 +47,8 @@ static const uint8_t MUX_SW_BND_L[] = {
 static const uint8_t T_MUX_SW_BND_L = 16;
 
 
+
+
 //////////////////////////////////////
 // MUX RIGHT BUTTONS
 
@@ -86,5 +88,46 @@ static const uint8_t MUX_SW_BND_R[] = {
 };
 
 static const uint8_t T_MUX_SW_BND_R = 15;
+
+static const uint8_t leftPlayerSwBnd[] = {
+    SWPLAY_L,
+    SWCUE_L,
+    SWLOOP_L,
+    SWSYNC_L
+};
+
+static const uint8_t rightPlayerSwBnd[] = {
+    SWPLAY_R,
+    SWCUE_R,
+    SWLOOP_R,
+    SWSYNC_R
+};
+
+
+static const uint8_t leftPadSwBnd[] = {
+    SWPADL1,
+    SWPADL2,
+    SWPADL3,
+    SWPADL4,
+    SWPADL5,
+    SWPADL6,
+    SWPADL7,
+    SWPADL8
+};
+
+
+static const uint8_t rightPadSwBnd[] = {
+    SWPADR1,
+    SWPADR2,
+    SWPADR3,
+    SWPADR4,
+    SWPADR5,
+    SWPADR6,
+    SWPADR7,
+    SWPADR8
+};
+
+
+
 
 #endif

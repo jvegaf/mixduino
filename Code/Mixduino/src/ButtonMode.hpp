@@ -7,8 +7,8 @@ namespace MD
   class ButtonMode : public Button
   {
   public:
-    ButtonMode(Input* input, Output* output);
-    void read(uint8_t inPos, Container* container);
+    ButtonMode(Input* input, uint8_t inPos, Output* output, uint8_t outPos);
+    void read(Container* container);
   };
   
 } // namespace MD

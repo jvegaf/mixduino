@@ -6,7 +6,6 @@
 namespace MD {
 class Input {
 public:
-  Input();
   virtual void read(inCommand_t c) = 0;
   virtual void read(uint8_t inPos, Container* container)=0;
 };
@@ -14,7 +13,6 @@ public:
 class InputPot
 {
 public:
-  InputPot();
   virtual void read(inCommand_t c) = 0;
 };
 

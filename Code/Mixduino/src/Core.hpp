@@ -4,6 +4,7 @@
 #include "Deck.hpp"
 #include "ButtonMode.hpp"
 #include "constans.h"
+#include "midi_map.h"
 namespace MD
 {
 

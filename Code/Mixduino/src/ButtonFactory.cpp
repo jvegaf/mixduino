@@ -59,6 +59,7 @@ Button* ButtonFactory::makePadBtns(Muxer* muxer, const uint8_t* inputPos, FBPixe
   {
     result[i] = Button(muxer, inputPos[i], fbPix, outPos[i]);
   }
+  return result;
 }
 
   

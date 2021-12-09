@@ -2,6 +2,10 @@
 
 #include <Arduino.h>
 
+namespace MD
+{
+  
+
 
 /////////////////////////////////////////
 // CHANNELS
@@ -64,3 +68,4 @@ static const uint8_t LEVEL_DECK_B = 1;
 static const uint8_t LEVEL_DECK_C = 2;
 static const uint8_t MASTER_OUT_L = 3;
 static const uint8_t MASTER_OUT_R = 4;
+} // namespace MD

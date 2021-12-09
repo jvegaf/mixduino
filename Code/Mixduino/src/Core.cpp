@@ -1,6 +1,5 @@
 #include "Core.hpp"
 #include "MainFactory.hpp"
-#include "midi_map.h"
 
 namespace MD
 {
@@ -40,12 +39,14 @@ void Core::changeMode() {
 
 void Core::readDeckLeft() 
 {
+  m_deckSwitchBtn->read(this);
   inCommand_t c = { m_funcOn, m_funcOff, m_funcCC, kChDeckA, 0, 0};
   m_leftDeck->read(c);
 }
 
 void Core::readDeckRight() 
 {
+  m_deckSwitchBtn->read(this);
   inCommand_t c = { m_funcOn, m_funcOff, m_funcCC, m_midiChRight, 0, 0};
   m_rightDeck->read(c);
 }

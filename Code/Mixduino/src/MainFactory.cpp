@@ -18,6 +18,7 @@ namespace MD
     auto muxerPotFact = new MuxerPotsFactory();
     auto ledFact = new FBLedFactory();
     auto fbPixel = new FBPixel();
+    fbPixel->begin();
 
     auto btnFact = new ButtonFactory(muxerInFact, ledFact, fbPixel);
     auto potsFact = new PotsFactory(muxerPotFact);

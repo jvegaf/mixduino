@@ -13,6 +13,10 @@ m_playrStateDeckC{new uint8_t[kTDeckButtons]()},
 m_hotsStateDeckB{new uint8_t[kTPadButtons]()},
 m_hotsStateDeckC{new uint8_t[kTPadButtons]()}
 {
+}
+
+void Core::begin()
+{
     auto factory = new MainFactory();
     m_leftDeck = factory->getLeftDeck();
     m_rightDeck = factory->getRightDeck();

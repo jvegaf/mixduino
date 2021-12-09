@@ -16,5 +16,7 @@ class FBPixel : public Output
     FBPixel();
     void setTo(uint8_t pos, uint8_t value) override;
 
+    void begin();
+
 };
 } // namespace MD

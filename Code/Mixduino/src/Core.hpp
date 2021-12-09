@@ -22,6 +22,8 @@ public:
 
   void onNoteOn(uint8_t channel, uint8_t number, uint8_t value);
 
+  void begin();
+
 private:
   void (*m_funcOn)(uint8_t, uint8_t, uint8_t); 
   void (*m_funcOff)(uint8_t, uint8_t, uint8_t);

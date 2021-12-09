@@ -36,7 +36,7 @@ namespace MD
       }
   }
 
-  void Pad::read(inMidip_t p) 
+  void Pad::read(inCommand_t p) 
   {
       m_mode->read(this);
       for (uint8_t i = 0; i < kTPadButtons; i++)
@@ -68,16 +68,16 @@ namespace MD
     {
         setTo(i, m_hotcues[i]);
     }
-    m_mode->setTo(m_outPos[kTPadButtons], kBlueColor);
+    m_mode->setTo(kBlueColor);
   }
     
   void Pad::setAllTo(uint8_t value)
   {
     for (auto i = 0; i < kTPadButtons; i++)
     {
-        m_padBtns[i].setTo(m_outPos[i], value);
+        m_padBtns[i].setTo(value);
     }
-    m_mode->setTo(m_outPos[kTPadButtons], value);
+    m_mode->setTo(value);
   }
 } // namespace MD
 

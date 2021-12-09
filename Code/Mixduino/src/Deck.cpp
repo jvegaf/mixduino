@@ -3,15 +3,15 @@
 namespace MD
 {
 
-Deck::Deck(Player* player, Pad* pad, const uint8_t midiCh)
-  : m_player{player},m_pad{pad}, m_midiCh{midiCh}
+Deck::Deck(Player* player, Pad* pad)
+  : m_player{player},m_pad{pad}
 {
   
 }
 
-void Deck::read() {
-  m_player->read();
-  m_pad->read();
+void Deck::read(inCommand_t c) {
+  m_player->read(c);
+  m_pad->read(c);
 }
 
 void Deck::onNoteOn(uint8_t number, uint8_t value) {

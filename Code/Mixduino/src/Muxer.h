@@ -10,7 +10,7 @@ namespace MD
 
   public:
     Muxer(const uint8_t* mxPins, uint8_t sigPin, const uint8_t* swPositions, const uint8_t totalSw);
-    void read(inMidip_t p) override;
+    void read(inCommand_t c) override;
     void read(uint8_t inPos, Container* container) override;
 
   protected:

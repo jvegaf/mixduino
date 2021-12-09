@@ -9,7 +9,7 @@ namespace MD
   public:
     Pot(InputPot* input, uint8_t inputPos);
     Pot() = default;
-    void read(inPotMidip_t p);
+    void read(inCommand_t c);
   private:
     InputPot* m_input{nullptr};
     uint8_t m_inputPos{0};

@@ -1,9 +1,7 @@
+#pragma once
 
-#ifndef ARDUINO_SW_MUXMAP_H
-#define ARDUINO_SW_MUXMAP_H
 #include <Arduino.h>
 
-#pragma once
 
 //////////////////////////////////////
 // MUX LEFT BUTTONS
@@ -126,8 +124,3 @@ static const uint8_t rightPadSwBnd[] = {
     SWPADR7,
     SWPADR8
 };
-
-
-
-
-#endif

@@ -1,9 +1,10 @@
+#pragma once
 
-#ifndef MD_PINMAP_H
-#define MD_PINMAP_H
 #include <Arduino.h>
 
-#pragma once
+namespace MD
+{
+    
 
 //////////////////////////////////////
 // BUTTONS
@@ -100,5 +101,4 @@ static const uint8_t ARD_POTS_BUNDLE[] = {
     PMASTER};
 
 static const uint8_t T_ARD_POTS = 2;
-
-#endif
+} // namespace MD

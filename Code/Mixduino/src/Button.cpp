@@ -3,15 +3,18 @@
 namespace MD
 {
   Button::Button(Input* input, uint8_t inputPos, Output* output, uint8_t outputPos)
-  : m_input {input}, m_inputPos{inputPos}, m_output {output}, m_outputPos{outputPos}
+  : m_input {input}, 
+  m_inputPos{inputPos}, 
+  m_output {output}, 
+  m_outputPos{outputPos}
   {
 
   }
 
-  void Button::read(inMidip_t p)
+  void Button::read(inCommand_t c)
   {
-    p.inputPos = m_inputPos;
-    m_input->read(p);
+    c.inputPos = m_inputPos;
+    m_input->read(c);
   }
 
   void Button::setTo(int8_t value)

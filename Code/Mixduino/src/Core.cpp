@@ -1,42 +1,137 @@
 #include "Core.hpp"
+#include "MainFactory.hpp"
+#include "midi_map.h"
 
 namespace MD
 {
 
-void Core::vuChange(uint8_t number, uint8_t value)
+Core::Core(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t), void (*funcCC)(uint8_t, uint8_t, uint8_t))
+:m_funcOn{funcOn}, 
+m_funcOff{funcOff}, 
+m_funcCC{funcCC},
+m_playrStateDeckB{new uint8_t[kTDeckButtons]()},
+m_playrStateDeckC{new uint8_t[kTDeckButtons]()},
+m_hotsStateDeckB{new uint8_t[kTPadButtons]()},
+m_hotsStateDeckC{new uint8_t[kTPadButtons]()}
 {
-    _vuSet[number].setLevel(value);
+    auto factory = new MainFactory();
+    m_leftDeck = factory->getLeftDeck();
+    m_rightDeck = factory->getRightDeck();
+    m_deckSwitchBtn = factory->getDeckSwitcherBtn();
+    executeSelection(m_playrStateDeckB, m_hotsStateDeckB, kDeckBActiveColor);
 }
 
-void Core::readDecksMode()
+void Core::changeMode() {
+
+  switch (m_midiChRight)
+  {
+  case kChDeckB :
+      m_midiChRight = kChDeckC;
+      executeSelection(m_playrStateDeckC, m_hotsStateDeckC, kDeckCActiveColor);
+      break;
+  
+  case kChDeckC :
+      m_midiChRight = kChDeckB;
+      executeSelection(m_playrStateDeckB, m_hotsStateDeckB, kDeckBActiveColor);
+      break;
+  
+  }
+}
+
+void Core::readDeckLeft() 
 {
-    _leftFuncMode->read();
-    _rightFuncMode->read();
-    checkDeckMode(_leftFuncMode, _leftPad);
-    checkDeckMode(_rightFuncMode, _rightPad);
+  inCommand_t c = { m_funcOn, m_funcOff, m_funcCC, kChDeckA, 0, 0};
+  m_leftDeck->read(c);
 }
 
-void Core::checkDeckMode(FuncMode *fm, PadContainer *p)
+void Core::readDeckRight() 
 {
-    if (!fm->isDisposed())
-    {
-        p->setNote(fm->getModeNote());
-        p->setTo(fm->getModeColor());
-        fm->dispose();
-        if (fm->getMode() == deckMode::MODE_HOTCUE)
-        {
-            sendMonState();
-        }
-    }
+  inCommand_t c = { m_funcOn, m_funcOff, m_funcCC, m_midiChRight, 0, 0};
+  m_rightDeck->read(c);
 }
 
-void Core::setInitialDeckB() {
-	_funcs->setTo(0, 1);
+void Core::onCChange(uint8_t channel, uint8_t number, uint8_t value) {
+  switch (channel)
+  {
+  case kChDeckA:
+    m_leftDeck->onCChange(number, value);
+    break;
+  
+  case kChDeckB:
+    saveStateChange(m_hotsStateDeckB, number, value);
+    runControlChange(channel, number, value);
+    break;
+  
+  case kChDeckC:
+    saveStateChange(m_hotsStateDeckC, number, value);
+    runControlChange(channel, number, value);
+    break;
+  
+  }
+  
 }
 
-void Core::sendMonState() {
-	fnOn(SEND_MON_STATE, 127, 3);
-	fnOff(SEND_MON_STATE, 127, 3);
+void Core::onNoteOn(uint8_t channel, uint8_t number, uint8_t value) {
+  switch (channel)
+  {
+    case kChDeckA:
+      m_leftDeck->onNoteOn(number, value);
+      break;
+    
+    case kChDeckB:
+      saveStateChange(m_playrStateDeckB, number, value);
+      runNoteOn(channel, number, value);
+      break;
+    
+    case kChDeckC:
+      saveStateChange(m_playrStateDeckC, number, value);
+      runNoteOn(channel, number, value);
+      break;
+  
+  }
 }
+
+void Core::saveStateChange(uint8_t* storage, uint8_t number, uint8_t value)
+{
+
+    storage[number] = value;
+  
+}
+
+void Core::runControlChange(uint8_t channel, uint8_t number, uint8_t value)
+{
+  if (channel != m_midiChRight) return;
+  
+  m_rightDeck->onCChange(number, value);
+  
+}
+
+void Core::runNoteOn(uint8_t channel, uint8_t number, uint8_t value)
+{
+  if (channel != m_midiChRight) return;
+  
+  m_rightDeck->onNoteOn(number, value);
+  
+}
+
+void Core::executeSelection(uint8_t* playerState, uint8_t* padState, uint8_t btnColor)
+{
+  for (uint8_t i = 0; i < kTDeckButtons; i++)
+  {
+      m_rightDeck->onNoteOn(i, playerState[i]);
+  }
+  for (uint8_t i = 0; i < kTPadButtons; i++)
+  {
+      m_rightDeck->onCChange(i, padState[i]);
+  }
+  
+  m_deckSwitchBtn->setTo(btnColor);
+}
+
+
+
+
+
+
 } // namespace MD
 

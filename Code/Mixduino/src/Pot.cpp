@@ -8,10 +8,10 @@ namespace MD
     
   }
 
-  void Pot::read(inPotMidip_t p)
+  void Pot::read(inCommand_t c)
   {
-    p.inputPos = m_inputPos;
-    m_input->read(p);
+    c.inputPos = m_inputPos;
+    m_input->read(c);
   }
   
 } // namespace MD

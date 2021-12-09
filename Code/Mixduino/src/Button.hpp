@@ -13,11 +13,11 @@ namespace MD
   public:
     Button(Input* input, uint8_t inputPos, Output* output, uint8_t outputPos);
     Button() = default;
-    void read(inMidip_t p);
+    void read(inCommand_t c);
     void setTo(int8_t value);
   protected:
     Input* m_input{nullptr};
-    int8_t m_inputPos{0};
+    uint8_t m_inputPos{0};
     Output* m_output{nullptr};
     uint8_t m_outputPos{0};
   };

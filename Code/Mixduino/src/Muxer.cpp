@@ -6,10 +6,13 @@ namespace MD
 
 Muxer::Muxer(const uint8_t *mxPins, uint8_t sigPin, const uint8_t *swPositions,
              const uint8_t totalSw)
-    : m_sigPin{sigPin}, m_mxPins{mxPins}, m_Positions{swPositions},
-      m_tPositions{totalSw}, m_pState{new uint16_t[totalSw]()},
-      m_cState{new uint16_t[totalSw]()}, m_lastdebouncetime{
-                                             new uint32_t[totalSw]()} {}
+    : m_sigPin{sigPin}, 
+      m_mxPins{mxPins}, 
+      m_Positions{swPositions},
+      m_tPositions{totalSw}, 
+      m_pState{new uint16_t[totalSw]()},
+      m_cState{new uint16_t[totalSw]()}, 
+      m_lastdebouncetime{new uint32_t[totalSw]()} {}
 
 void Muxer::setMuxChannel(uint8_t channel) {
   digitalWrite(m_mxPins[0], bitRead(channel, 0));
@@ -18,20 +21,20 @@ void Muxer::setMuxChannel(uint8_t channel) {
   digitalWrite(m_mxPins[3], bitRead(channel, 3));
 }
 
-void Muxer::read(inMidip_t p) {
-  setMuxChannel(m_Positions[p.inputPos]);
-  m_cState[p.inputPos] = digitalRead(m_sigPin);
-  if ((millis() - m_lastdebouncetime[p.inputPos]) > kDebounceDelay) {
-    if (m_pState[p.inputPos] != m_cState[p.inputPos]) {
-      m_lastdebouncetime[p.inputPos] = millis();
+void Muxer::read(inCommand_t c) {
+  setMuxChannel(m_Positions[c.inputPos]);
+  m_cState[c.inputPos] = digitalRead(m_sigPin);
+  if ((millis() - m_lastdebouncetime[c.inputPos]) > kDebounceDelay) {
+    if (m_pState[c.inputPos] != m_cState[c.inputPos]) {
+      m_lastdebouncetime[c.inputPos] = millis();
 
-      m_pState[p.inputPos] = m_cState[p.inputPos];
-      if (m_cState[p.inputPos] == LOW) {
+      m_pState[c.inputPos] = m_cState[c.inputPos];
+      if (m_cState[c.inputPos] == LOW) {
         // MIDI.sendNoteOn(number , value(127) , channel);
-        p.funcOn(p.midiNumber, kMidiMaxValue, p.midiCh);
+        c.funcOn(c.midiNumber, kMidiMaxValue, c.midiCh);
         return;
       }
-      p.funcOff(p.midiNumber, kMidiMaxValue, p.midiCh);
+      c.funcOff(c.midiNumber, kMidiMaxValue, c.midiCh);
     }
   }
 }

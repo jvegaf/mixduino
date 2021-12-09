@@ -9,7 +9,7 @@ namespace MD
   {
   public:
     MuxerPots(Multiplexer4067* muxer, const uint8_t* muxPositions, const uint8_t totalPots);
-    void read(inPotMidip_t p) override;
+    void read(inCommand_t c) override;
     
   private:
     Multiplexer4067* m_muxer{nullptr};

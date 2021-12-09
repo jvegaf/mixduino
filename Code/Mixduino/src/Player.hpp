@@ -8,7 +8,7 @@ namespace MD
   {
   public:
     Player(Button* btns, Pot* tempo, const uint8_t* midiNumbers);
-    void read(inMidip_t p);
+    void read(inCommand_t c);
     void setTo(uint8_t pos, uint8_t value);
 
   private:

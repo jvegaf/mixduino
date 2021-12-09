@@ -9,12 +9,14 @@ namespace MD
   {
   }
 
-  void Player::read(inMidip_t p) {
+  void Player::read(inCommand_t c) {
     for (auto i = 0; i < kTDeckButtons; i++)
     {
-      p.midiNumber = m_midiNumbers[i];
-      m_btns[i].read(p);
+      c.midiNumber = m_midiNumbers[i];
+      m_btns[i].read(c);
     }
+    c.midiNumber = m_midiNumbers[kTDeckButtons];
+    m_tempo->read(c);
   }
 
   void Player::setTo(uint8_t pos, uint8_t value) {

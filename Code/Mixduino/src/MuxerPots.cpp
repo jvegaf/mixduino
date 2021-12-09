@@ -16,19 +16,19 @@ namespace MD
     
   }
 
-  void MuxerPots::read(inPotMidip_t p)
+  void MuxerPots::read(inCommand_t c)
   {
     boolean potMoving = false;
 
-    m_cState[p.inputPos] = m_muxer->readChannel(m_muxPositions[p.inputPos]);
+    m_cState[c.inputPos] = m_muxer->readChannel(m_muxPositions[c.inputPos]);
     
-        uint16_t potVar = abs(m_cState[p.inputPos] - m_pState[p.inputPos]); // calcula a variacao da porta analogica
+        uint16_t potVar = abs(m_cState[c.inputPos] - m_pState[c.inputPos]); // calcula a variacao da porta analogica
 
         if (potVar >= kvarThreshold)
         {
-            m_pTime[p.inputPos] = millis(); // armazena o tempo previo
+            m_pTime[c.inputPos] = millis(); // armazena o tempo previo
         }
-        uint32_t timer = millis() - m_pTime[p.inputPos]; // reseta o timer
+        uint32_t timer = millis() - m_pTime[c.inputPos]; // reseta o timer
         if (timer < kTimeOut)
         { // se o timer for menor que o tempo maximo permitido significa que o potenciometro ainda esta se movendo
             potMoving = true;
@@ -36,12 +36,12 @@ namespace MD
 
         if (potMoving == true)
         { // se o potenciometro ainda esta se movendo, mande o control change
-            uint8_t ccValue = map(m_cState[p.inputPos], 0, 1023, 0, 127);
-            if (m_lastCcValue[p.inputPos] != ccValue)
+            uint8_t ccValue = map(m_cState[c.inputPos], 0, 1023, 0, 127);
+            if (m_lastCcValue[c.inputPos] != ccValue)
             {
-                p.funcCC(p.midiNumber, ccValue, p.midiCh);
-                m_pState[p.inputPos] = m_cState[p.inputPos];                         // armazena a leitura atual do potenciometro para comparar com a proxima
-                m_lastCcValue[p.inputPos] = ccValue;
+                c.funcCC(c.midiNumber, ccValue, c.midiCh);
+                m_pState[c.inputPos] = m_cState[c.inputPos];                         // armazena a leitura atual do potenciometro para comparar com a proxima
+                m_lastCcValue[c.inputPos] = ccValue;
             }
         }
   }

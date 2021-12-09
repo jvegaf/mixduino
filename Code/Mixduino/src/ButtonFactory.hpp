@@ -18,6 +18,7 @@ namespace MD
     ButtonMode* getLeftPadModeBtn(); 
     Button* getRightPadBtns();
     ButtonMode* getRightPadModeBtn(); 
+    ButtonMode* getDeckSwitcherBtn();
   private:
     Button* m_playerLeftBtns{nullptr};
     Button* m_playerRightBtns{nullptr};
@@ -25,6 +26,7 @@ namespace MD
     ButtonMode* m_padLeftModeBtn{nullptr};
     Button* m_padRightBtns{nullptr};
     ButtonMode* m_padRightModeBtn{nullptr};
+    ButtonMode* m_deckSwitcherBtn{nullptr};
     
     
     

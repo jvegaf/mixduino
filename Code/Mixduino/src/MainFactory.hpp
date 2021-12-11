@@ -1,9 +1,9 @@
 #pragma once
 
+#include <Adafruit_NeoPixel.h>
 #include "Deck.hpp"
 #include "Player.hpp"
 #include "Pad.hpp" 
-#include <Adafruit_NeoPixel.h>
 
 
 namespace MD

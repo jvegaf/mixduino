@@ -11,6 +11,7 @@ namespace MD
     Input** getRightPlayerInputs();
     Input** getLeftPadInputs();
     Input** getRightPadInputs();
+    Input* getDeckSwitchInput();
   private:
     Input** m_lPlayerInputs{nullptr};
     Input** m_rPlayerInputs{nullptr};

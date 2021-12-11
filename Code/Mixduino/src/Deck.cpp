@@ -9,6 +9,10 @@ Deck::Deck(Player* player, Pad* pad)
   
 }
 
+void Deck::changePadmode() {
+  m_pad->changeMode();
+}
+
 void Deck::read(inCommand_t c) {
   m_player->read(c);
   m_pad->read(c);

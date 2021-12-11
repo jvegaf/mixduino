@@ -4,27 +4,47 @@
 namespace MD
 {
 
-Core::Core(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t), void (*funcCC)(uint8_t, uint8_t, uint8_t))
+Core::Core(
+      void (*funcOn)(uint8_t, uint8_t, uint8_t), 
+      void (*funcOff)(uint8_t, uint8_t, uint8_t), 
+      void (*funcCC)(uint8_t, uint8_t, uint8_t),
+      void (*cBackFn)(uint8_t),
+      Adafruit_NeoPixel* np)
 :m_funcOn{funcOn}, 
 m_funcOff{funcOff}, 
 m_funcCC{funcCC},
+m_cBackFn{cBackFn},
 m_playrStateDeckB{new uint8_t[kTDeckButtons]()},
 m_playrStateDeckC{new uint8_t[kTDeckButtons]()},
 m_hotsStateDeckB{new uint8_t[kTPadButtons]()},
 m_hotsStateDeckC{new uint8_t[kTPadButtons]()}
 {
-}
-
-void Core::begin()
-{
-    auto factory = new MainFactory();
+  auto factory = new MainFactory(np);
     m_leftDeck = factory->getLeftDeck();
     m_rightDeck = factory->getRightDeck();
     m_deckSwitchBtn = factory->getDeckSwitcherBtn();
     executeSelection(m_playrStateDeckB, m_hotsStateDeckB, kDeckBActiveColor);
 }
 
-void Core::changeMode() {
+void Core::handleCallback(uint8_t cType)
+{
+  switch (cType)
+  {
+  case kDeckSwitcherBtnType:
+    changeDeck();
+    break;
+  
+  case kPadModeLeftBtnType:
+    m_leftDeck->changePadmode();
+    break;
+  
+  case kPadModeRightBtnType:
+    m_rightDeck->changePadmode();
+    break;
+  }
+}
+
+void Core::changeDeck() {
 
   switch (m_midiChRight)
   {
@@ -43,15 +63,15 @@ void Core::changeMode() {
 
 void Core::readDeckLeft() 
 {
-  m_deckSwitchBtn->read(this);
-  inCommand_t c = { m_funcOn, m_funcOff, m_funcCC, kChDeckA, 0, 0};
+  inCommand_t c = { m_funcOn, m_funcOff, m_funcCC, m_cBackFn, kChDeckA, 0, 0};
+  m_deckSwitchBtn->read(c.cBackFn);
   m_leftDeck->read(c);
 }
 
 void Core::readDeckRight() 
 {
-  m_deckSwitchBtn->read(this);
-  inCommand_t c = { m_funcOn, m_funcOff, m_funcCC, m_midiChRight, 0, 0};
+  inCommand_t c = { m_funcOn, m_funcOff, m_funcCC, m_cBackFn, m_midiChRight, 0, 0};
+  m_deckSwitchBtn->read(c.cBackFn);
   m_rightDeck->read(c);
 }
 

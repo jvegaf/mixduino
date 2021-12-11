@@ -42,7 +42,7 @@ namespace MD
 
   void Pad::read(inCommand_t p) 
   {
-      m_mode->read(this);
+      m_mode->read(p.cBackFn);
       for (uint8_t i = 0; i < kTPadButtons; i++)
       {
         p.midiNumber = i + m_firstMidiNumber;

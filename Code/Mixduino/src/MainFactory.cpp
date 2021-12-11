@@ -1,43 +1,38 @@
 #include "MainFactory.hpp"
-#include "MuxerInputFactory.hpp"
-#include "MuxerPotsFactory.hpp"
-#include "FBLedFactory.hpp"
+#include "InputFactory.hpp"
+#include "OutputFactory.hpp"
 #include "FBPixel.h"
 #include "PlayerFactory.hpp"
-#include "PotsFactory.hpp"
 #include "PadFactory.hpp"
 #include "midi_map.h"
+#include "constans.h"
 
 namespace MD
 {
 
-  MainFactory::MainFactory()
+  MainFactory::MainFactory(Adafruit_NeoPixel* np)
   {
   
-    auto muxerInFact = new MuxerInputFactory();
-    auto muxerPotFact = new MuxerPotsFactory();
-    auto ledFact = new FBLedFactory();
-    auto fbPixel = new FBPixel();
-    fbPixel->begin();
+    auto inFact = new InputFactory();
+    auto outFact = new OutputFactory(np);
 
-    auto btnFact = new PlayerFactory(muxerInFact, ledFact, fbPixel);
-    auto potsFact = new PotsFactory(muxerPotFact);
-    auto padFact = new PadFactory(btnFact);
+    auto playerFact = new PlayerFactory(inFact, outFact);
+    auto padFact = new PadFactory(inFact, outFact);
 
-    auto leftPlayer = new Player(btnFact->getLeftPlayerBtns(), potsFact->getLeftTempoPot(), kPlayerMidi);
-    auto rightPlayer = new Player(btnFact->getRightPlayerBtns(), potsFact->getRightTempoPot(), kPlayerMidi);
+    auto leftPlayer = playerFact->getLeftPlayer();
+    auto rightPlayer = playerFact->getRightPlayer();
     auto leftPad = padFact->getLeftPad();
     auto rightPad = padFact->getRightPad();
 
     m_leftDeck = new Deck(leftPlayer, leftPad);
     m_rightDeck = new Deck(rightPlayer, rightPad);
-    m_deckSwBtn = btnFact->getDeckSwitcherBtn();
+    m_deckSwBtn = new ButtonCBack(inFact->getDeckSwitchInput(), outFact->getDeckSwitchOutput(), kDeckSwitcherBtnType );
   }
 
   Deck* MainFactory::getLeftDeck() { return m_leftDeck; }
 
   Deck* MainFactory::getRightDeck() { return m_rightDeck; }
 
-  ButtonMode* MainFactory::getDeckSwitcherBtn() { return m_deckSwBtn; }
+  ButtonCBack* MainFactory::getDeckSwitcherBtn() { return m_deckSwBtn; }
 
 } // namespace MD

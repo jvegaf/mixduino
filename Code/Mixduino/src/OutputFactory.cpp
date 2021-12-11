@@ -7,6 +7,7 @@ namespace MD
 {
 
   OutputFactory::OutputFactory(Adafruit_NeoPixel* np)
+  :m_np{np}
   {
     auto shfLeft = new Shifter(FBL_SIG, FBL_LATCH, SRCLK, 1);
     auto shfRight = new Shifter(FBR_SIG, FBR_LATCH, SRCLK, 1);
@@ -20,6 +21,7 @@ namespace MD
   Output** OutputFactory::getrPlayerOuts() { return m_rplayerOuts; }
   Output** OutputFactory::getlPadOuts() { return m_lpadOuts; }
   Output** OutputFactory::getrPadOuts() { return m_rpadOuts; }
+  Output* OutputFactory::getDeckSwitchOutput() { return new FBPixel(NP_DECK_SEL, m_np)};
 
   Output** OutputFactory::makePlayerOuts(const uint8_t* outPositions, Shifter* shf, Adafruit_NeoPixel* np) 
   {

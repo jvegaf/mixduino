@@ -13,8 +13,11 @@ namespace MD
     Output** getrPlayerOuts();
     Output** getlPadOuts();
     Output** getrPadOuts();
+
+    Output* getDeckSwitchOutput();
     
   private:
+    Adafruit_NeoPixel* m_np{nullptr};
     Output** m_lplayerOuts{nullptr};
     Output** m_lpadOuts{nullptr};
     Output** m_rplayerOuts{nullptr};

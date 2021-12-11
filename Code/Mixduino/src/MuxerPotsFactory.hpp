@@ -11,6 +11,7 @@ public:
   MuxerPotsFactory();
   MuxerPots* getTopMuxer();
   MuxerPots* getBottomMuxer();
+
 private:
   Multiplexer4067* m_top4067 { nullptr };
   Multiplexer4067* m_bottom4067 { nullptr };

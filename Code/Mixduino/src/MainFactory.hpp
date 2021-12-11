@@ -3,6 +3,7 @@
 #include "Deck.hpp"
 #include "Player.hpp"
 #include "Pad.hpp" 
+#include <Adafruit_NeoPixel.h>
 
 
 namespace MD
@@ -10,13 +11,13 @@ namespace MD
   class MainFactory
   {
   public:
-    MainFactory();
+    MainFactory(Adafruit_NeoPixel* np);
     Deck* getLeftDeck();
     Deck* getRightDeck();
-    ButtonMode* getDeckSwitcherBtn();
+    ButtonCBack* getDeckSwitcherBtn();
   private:
     Deck* m_leftDeck{nullptr};
     Deck* m_rightDeck{nullptr};
-    ButtonMode* m_deckSwBtn{nullptr};
+    ButtonCBack* m_deckSwBtn{nullptr};
   };
 } // namespace MD

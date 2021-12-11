@@ -21,6 +21,7 @@ Input** InputFactory::getLeftPlayerInputs() { return m_lPlayerInputs; }
 Input** InputFactory::getRightPlayerInputs() { return m_rPlayerInputs; }
 Input** InputFactory::getLeftPadInputs() { return m_lPadInputs; }
 Input** InputFactory::getRightPadInputs() { return m_rPadInputs; }
+Input* InputFactory::getDeckSwitchInput() { return new InputMux(SWDECK_SEL, MUXPIN_BUNDLE, RIGHT_SWMUX_SIG);}
 
 Input** InputFactory::makeMuxInputs(const uint8_t* muxPins, const uint8_t sigPin, const uint8_t* positions, const uint8_t tPositions)
 {

@@ -8,12 +8,17 @@
 namespace MD
 {
 
-class Core : public Container
+class Core 
 {
 public:
-  Core(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t), void (*funcCC)(uint8_t, uint8_t, uint8_t));
+  Core(
+  void (*funcOn)(uint8_t, uint8_t, uint8_t), 
+  void (*funcOff)(uint8_t, uint8_t, uint8_t), 
+  void (*funcCC)(uint8_t, uint8_t, uint8_t),
+  void (*cBackFn)(uint8_t),
+  Adafruit_NeoPixel* np);
 
-  void changeMode() override;
+  void changeDeck();
 
   void readDeckLeft();
   void readDeckRight();
@@ -24,10 +29,13 @@ public:
 
   void begin();
 
+  void handleCallback(uint8_t cType);
+
 private:
   void (*m_funcOn)(uint8_t, uint8_t, uint8_t); 
   void (*m_funcOff)(uint8_t, uint8_t, uint8_t);
   void (*m_funcCC)(uint8_t, uint8_t, uint8_t);
+  void (*m_cBackFn)(uint8_t);
 
   uint8_t m_midiChRight{kChDeckB};
 
@@ -38,7 +46,7 @@ private:
 
   Deck* m_leftDeck{nullptr};
   Deck* m_rightDeck{nullptr};
-  ButtonMode* m_deckSwitchBtn{nullptr};
+  ButtonCBack* m_deckSwitchBtn{nullptr};
 
   void executeSelection(uint8_t* playerState, uint8_t* padState, uint8_t btnColor);
 

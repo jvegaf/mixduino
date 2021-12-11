@@ -8,6 +8,7 @@ namespace MD
   {
   public:
     Deck(Player* player, Pad* pad);
+    void changePadmode();
     void read(inCommand_t c);
     void onNoteOn(uint8_t number, uint8_t value);
     void onCChange(uint8_t number, uint8_t value);

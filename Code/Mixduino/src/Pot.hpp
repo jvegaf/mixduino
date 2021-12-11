@@ -1,18 +1,18 @@
 #pragma once
 
-#include "MuxerPots.hpp"
+#include "Input.h"
+#include "Component.hpp"
 
 namespace MD
 {
-  class Pot
+  class Pot : public Component
   {
   public:
-    Pot(InputPot* input, uint8_t inputPos);
+    Pot(Input* input);
     Pot() = default;
-    void read(inCommand_t c);
+    void read(inCommand_t c) override;
   private:
-    InputPot* m_input{nullptr};
-    uint8_t m_inputPos{0};
+    Input* m_input{nullptr};
   };
   
 } // namespace MD

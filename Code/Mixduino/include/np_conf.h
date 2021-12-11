@@ -40,7 +40,9 @@ static const uint8_t PIXLS_PAD_L[] = {
     NP_PADL5,
     NP_PADL6,
     NP_PADL7,
-    NP_PADL8};
+    NP_PADL8,
+    NP_MODE_L
+    };
 
 static const uint8_t PIXLS_PAD_R[] = {
     NP_PADR_1,
@@ -50,7 +52,9 @@ static const uint8_t PIXLS_PAD_R[] = {
     NP_PADR_5,
     NP_PADR_6,
     NP_PADR_7,
-    NP_PADR_8};
+    NP_PADR_8,
+    NP_MODE_R
+    };
 
 static const uint8_t kBrigthness = 32;
 

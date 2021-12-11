@@ -2,15 +2,14 @@
 
 namespace MD
 {
-  Pot::Pot(InputPot* input, const uint8_t inputPos)
-    : m_input{input}, m_inputPos{inputPos}
+  Pot::Pot(Input* input)
+    : m_input{input}
   {
     
   }
 
   void Pot::read(inCommand_t c)
   {
-    c.inputPos = m_inputPos;
     m_input->read(c);
   }
   

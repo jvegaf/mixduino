@@ -5,11 +5,15 @@
 namespace MD
 {
 
-  Pad::Pad(Button* padBtns, ButtonMode* mode)
+  Pad::Pad(Button* padBtns, ButtonCBack* mode)
     : m_padBtns{padBtns},
       m_mode{mode}
   {
 
+  }
+
+  void Pad::setCBackFn(void(*cbFunc)(uint8_t)) {
+    m_cbFunc = cbFunc;
   }
 
   void Pad::changeMode() 

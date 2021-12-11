@@ -5,21 +5,14 @@
 namespace MD
 {
 
-FBPixel::FBPixel()
-: m_np{new Adafruit_NeoPixel(T_PIXELS, NP_DATA, NEO_GRB + NEO_KHZ800)}
+FBPixel::FBPixel(const uint8_t outPos, Adafruit_NeoPixel* np)
+: OutputBase(outPos), m_np{np}
 {
 }
 
-void FBPixel::begin()
+void FBPixel::setTo(uint8_t value)
 {
-  m_np->setBrightness(kBrigthness);
-  m_np->begin();
-  m_np->clear();
-}
-
-void FBPixel::setTo(uint8_t pos, uint8_t value)
-{
-    m_np->setPixelColor(pos, kColors[value]);
+    m_np->setPixelColor(m_outPos, kColors[value]);
     m_np->show();
 }
   

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Arduino.h>
+#include "pots_muxmap.h"
 
 
 //////////////////////////////////////
@@ -91,14 +91,16 @@ static const uint8_t leftPlayerSwBnd[] = {
     SWPLAY_L,
     SWCUE_L,
     SWLOOP_L,
-    SWSYNC_L
+    SWSYNC_L,
+    PITCH_L
 };
 
 static const uint8_t rightPlayerSwBnd[] = {
     SWPLAY_R,
     SWCUE_R,
     SWLOOP_R,
-    SWSYNC_R
+    SWSYNC_R,
+    PITCH_R
 };
 
 

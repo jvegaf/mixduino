@@ -3,7 +3,7 @@
 #include "MuxerPotsFactory.hpp"
 #include "FBLedFactory.hpp"
 #include "FBPixel.h"
-#include "ButtonFactory.hpp"
+#include "PlayerFactory.hpp"
 #include "PotsFactory.hpp"
 #include "PadFactory.hpp"
 #include "midi_map.h"
@@ -20,7 +20,7 @@ namespace MD
     auto fbPixel = new FBPixel();
     fbPixel->begin();
 
-    auto btnFact = new ButtonFactory(muxerInFact, ledFact, fbPixel);
+    auto btnFact = new PlayerFactory(muxerInFact, ledFact, fbPixel);
     auto potsFact = new PotsFactory(muxerPotFact);
     auto padFact = new PadFactory(btnFact);
 

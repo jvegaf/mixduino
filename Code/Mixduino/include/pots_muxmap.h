@@ -1,9 +1,7 @@
+#pragma once
 
-#ifndef ARDUINO_POTS_MUXMAP_H
-#define ARDUINO_POTS_MUXMAP_H
 #include <Arduino.h>
 
-#pragma once
 
 // top pots
 
@@ -104,5 +102,3 @@ static const uint8_t muxBtmMixerPots[] = {
 static const uint8_t tMuxBtmMixerPots = 12;
 
 static const uint8_t tMixerMuxPots = tMuxTopMixerPots + tMuxBtmMixerPots;
-
-#endif

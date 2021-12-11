@@ -2,18 +2,16 @@
 
 #include "Input.h"
 #include "Output.h"
-#include "Component.hpp"
-
 
 
 namespace MD
 {
-  class Button : public Component
+  class Button
   {
   public:
     Button(Input* input, Output* output);
     Button() = default;
-    void read(inCommand_t c) override;
+    void read(inCommand_t c);
     void setTo(int8_t value);
   protected:
     Input* m_input{nullptr};

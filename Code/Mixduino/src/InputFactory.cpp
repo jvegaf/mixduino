@@ -1,6 +1,6 @@
 #include "InputFactory.hpp"
 #include "InputMux.hpp"
-#include "InputMuxAnalog.hpp"
+#include "InputAnalogMux.hpp"
 #include "pin_map.h"
 #include "constans.h"
 #include "sw_muxmap.h"

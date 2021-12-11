@@ -1,5 +1,4 @@
 #pragma once
-#include "Container.hpp"
 #include "ButtonCBack.hpp"
 #include "Button.hpp"
 #include "md_str.h"
@@ -9,7 +8,7 @@ namespace MD
 {
   enum class PadMode { HOTCUE_MODE, LOOP_MODE, FX_MODE };
   
-  class Pad : 
+  class Pad 
   {
     public:
       Pad(Button* padBtns, ButtonCBack* mode);

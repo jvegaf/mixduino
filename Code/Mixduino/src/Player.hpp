@@ -1,17 +1,19 @@
 #pragma once
-#include "Component.hpp"
+#include "Button.hpp"
+#include "Pot.hpp"
 
 namespace MD
 {
   class Player
   {
   public:
-    Player(Component* comps, const uint8_t* midiNumbers);
+    Player(Button* btns, Pot* tempoPot, const uint8_t* midiNumbers);
     void read(inCommand_t c);
     void setTo(uint8_t pos, uint8_t value);
 
   private:
-    Component* m_comps{nullptr};
+    Button* m_btns{nullptr};
+    Pot* m_tempo{nullptr};
     const uint8_t* m_midiNumbers{nullptr};
   };
   

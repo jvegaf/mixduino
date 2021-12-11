@@ -21,17 +21,20 @@ PlayerFactory::PlayerFactory(InputFactory* inputFact, OutputFactory* outFact)
 
 }
 
+Player* PlayerFactory::getLeftPlayer() { return m_playerLeft; }
+
+Player* PlayerFactory::getRightPlayer() { return m_playerRight; }
+
+
 Player* PlayerFactory::makePlayer(Input** ins, Output** outs, const uint8_t* midiNums) {
-  auto comps = new Component[kTPlayerComponents];
+  Button* btns = new Button[kTDeckButtons];
   for (uint8_t i = 0; i < kTDeckButtons; i++)
   {
-    comps[i] = Button(ins[i], outs[i]);
+    btns[i] = Button(ins[i], outs[i]);
   }
-  comps[kTDeckButtons] = Pot(ins[kTDeckButtons]);
-  return new Player(comps, midiNums);
+  auto tempoPot = new Pot(ins[kTDeckButtons]);
+  return new Player(btns, tempoPot, midiNums);
 }
-
-
   
 } // namespace MD
 

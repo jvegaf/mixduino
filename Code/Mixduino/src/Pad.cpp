@@ -77,7 +77,7 @@ namespace MD
     
   void Pad::setAllTo(uint8_t value)
   {
-    for (auto i = 0; i < kTPadButtons; i++)
+    for (uint8_t i = 0; i < kTPadButtons; i++)
     {
         m_padBtns[i].setTo(value);
     }

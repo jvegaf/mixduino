@@ -1,12 +1,11 @@
-#include "InputMuxAnalog.hpp"
+#include "InputAnalogMux.hpp"
 #include "constans.h"
 
 namespace MD
 {
 
-  InputAnalogMux::InputAnalogMux(const uint8_t inputPos, Multiplexer4067* muxer)
-    : InputAnalogBase(inputPos),
-      m_muxer{muxer}
+  InputAnalogMux::InputAnalogMux(const uint8_t inPos, const uint8_t* muxPins, const uint8_t sigPin)
+    : InputAnalogBase(inPos), m_muxPins{muxPins}, m_sigPin{sigPin}
   {
     
   }
@@ -41,6 +40,12 @@ namespace MD
         }
   }
 
-
+  void InputAnalogMux::setMuxChannel(const uint8_t channel)
+  {
+    digitalWrite(m_muxPins[0], bitRead(channel, 0));
+    digitalWrite(m_muxPins[1], bitRead(channel, 1));
+    digitalWrite(m_muxPins[2], bitRead(channel, 2));
+    digitalWrite(m_muxPins[3], bitRead(channel, 3));
+  }
   
 } // namespace MD

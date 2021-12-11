@@ -1,16 +1,15 @@
 #pragma once
 
 #include "Input.h"
-#include "Component.hpp"
 
 namespace MD
 {
-  class Pot : public Component
+  class Pot
   {
   public:
     Pot(Input* input);
     Pot() = default;
-    void read(inCommand_t c) override;
+    void read(inCommand_t c);
   private:
     Input* m_input{nullptr};
   };

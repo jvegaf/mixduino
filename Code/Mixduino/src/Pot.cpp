@@ -1,4 +1,5 @@
 #include "Pot.hpp"
+#include "InputAnalogMux.hpp"
 
 namespace MD
 {
@@ -10,7 +11,8 @@ namespace MD
 
   void Pot::read(inCommand_t c)
   {
-    m_input->read(c);
+    InputAnalogMux* in = static_cast<InputAnalogMux*>(m_input);
+    in->read(c);
   }
   
 } // namespace MD

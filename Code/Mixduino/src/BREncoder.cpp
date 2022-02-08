@@ -1,28 +1,49 @@
-#include "BREncoder.h"
+#include "BREncoder.hpp"
 
-BREncoder::BREncoder(uint8_t pin_a, uint8_t pin_b)
-{
-  enc = new Encoder(pin_a, pin_b);
-  oldPosition = -10;
-}
-
-void BREncoder::readEnc(void (*scc_func)(uint8_t, uint8_t, uint8_t))
+namespace MDEncoder
 {
 
-  int newPosition = enc->read();
 
-  if (newPosition != oldPosition)
-  {
+Encoder knobLeft(L_BROWSER_A, L_BROWSER_B);
+Encoder knobRight(R_BROWSER_A, R_BROWSER_B);
 
-    if ((newPosition - oldPosition) > 0)
-    {
-      scc_func(14, 127, 1);
+volatile long positionLeft  = -999;
+volatile long positionRight = -999; 
+
+
+void read(void (*scc_func)(uint8_t, uint8_t, uint8_t))
+{
+
+  long newLeft, newRight;
+  newLeft = knobLeft.read();
+  newRight = knobRight.read();
+
+    if (newLeft != positionLeft ) {
+
+      if ((newLeft - positionLeft) > 0)
+      {
+        scc_func(14, 127, 1);
+      }
+      else
+      {
+        scc_func(14, 1, 1);
+      }
+
+      positionLeft = newLeft;
     }
-    else
-    {
-      scc_func(14, 1, 1);
-    }
+    if (newRight != positionRight ) {
 
-    oldPosition = newPosition;
-  }
+      if ((newRight - positionRight) > 0)
+      {
+        scc_func(14, 127, 1);
+      } 
+      else
+      {
+        scc_func(14, 1, 1);
+      }
+
+      positionRight = newRight;
+    }
 }
+  
+} // namespace MDEncoder

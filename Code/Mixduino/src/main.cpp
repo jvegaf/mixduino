@@ -4,7 +4,7 @@
 #include <ThreadController.h>
 #include "midi_map.h"
 #include "MDCore.h"
-#include "BREncoder.h"
+#include "BREncoder.hpp"
 #include "Muxer.h"
 #include "BtnKit.h"
 #include "PotKit.h"
@@ -12,8 +12,6 @@
 // Rev5 version
 MIDI_CREATE_DEFAULT_INSTANCE();
 
-BREncoder encL(L_BROWSER_A, L_BROWSER_B);
-BREncoder encR(R_BROWSER_A, R_BROWSER_B);
 PotKit pots;
 Muxer leftBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
 Muxer rightBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
@@ -31,7 +29,6 @@ void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOff(uint8_t channel, uint8_t number, uint8_t value);
 void readButtons();
 void readPots();
-void readEncoder();
 void readTouchBars();
 void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel);
 void sendMidiNoteOff(uint8_t number, uint8_t value, uint8_t channel);
@@ -72,7 +69,7 @@ void loop()
 {
   cpu.run();
   MIDI.read();
-  readEncoder();
+  MDEncoder::read(sendMidiCC);
   readTouchBars();
 }
 
@@ -106,12 +103,6 @@ void readButtons()
 void readPots()
 {
   pots.read(sendMidiCC);
-}
-
-void readEncoder()
-{
-  encL.readEnc(sendMidiCC);
-  encR.readEnc(sendMidiCC);
 }
 
 void readTouchBars()

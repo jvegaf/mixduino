@@ -1,7 +1,12 @@
 #include "TouchKit.h"
 
+
+namespace MD
+{
+    
 Trill leftBar;
 Trill rightBar;
+
 
 TouchKit::TouchKit()
 {
@@ -35,3 +40,4 @@ void TouchKit::touchRead(void (*scc_func)(uint8_t, uint8_t, uint8_t))
         scc_func(15, rightLoc, 7);
     }
 }
+} // namespace MD

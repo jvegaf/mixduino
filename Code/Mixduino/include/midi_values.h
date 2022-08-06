@@ -81,4 +81,6 @@ const uint8_t km_A_5  = 81;
 const uint8_t km_As_5 = 82;
 const uint8_t km_B_5  = 83;
 
+const uint8_t kfst_note = 12;
+
 #endif // MD_MIDI_VALUES_H

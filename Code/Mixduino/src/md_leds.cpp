@@ -1,7 +1,7 @@
 #include "md_leds.hpp"
-#include "midi_values.h"
-#include "pin_map.h"
 #include "md_leds_map.hpp"
+#include "midi_map.h"
+#include "pin_map.h"
 #include <Shifter.h>
 
 namespace MDLeds {
@@ -24,8 +24,9 @@ namespace MDLeds {
   fx1_r
 };
 
+
 void setValue(uint8_t number, uint8_t value){
-    uint8_t pos = number - kfst_note;
-    leds_group[pos].setValue(value);
+
+    leds_group[number - kfst_note].setValue(value);
 }
 } // namespace MDLeds

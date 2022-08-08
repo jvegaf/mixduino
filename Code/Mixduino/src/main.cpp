@@ -4,23 +4,34 @@
 #include <ThreadController.h>
 #include "midi_map.h"
 #include "md_output.hpp"
+#include "md_input.hpp"
 #include "BREncoder.hpp"
-#include "Muxer.h"
 #include "BtnKit.h"
 #include "PotKit.h"
 #include "md_touch.hpp"
+#include "pad.hpp"
+
+
 // Rev5 version
 MIDI_CREATE_DEFAULT_INSTANCE();
 
 PotKit pots;
-Muxer leftBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A3);
-Muxer rightBtns(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A2);
-BtnKit btns(aSwSet, nASw);
 
 ThreadController cpu;     //thread master, onde as outras vao ser adicionadas
 Thread threadReadPots;    // thread para controlar os pots
 Thread threadReadButtons; // thread para controlar os botoes
 
+Selected deckSelected = Selected::Deck_B;
+
+Pad::Mode padDeckA = Pad::Mode::HotCues;
+Pad::Mode padDeckB = Pad::Mode::HotCues;
+Pad::Mode padDeckC = Pad::Mode::HotCues;
+
+uint8_t padLCh = hotcues_ch;
+uint8_t padRCh = hotcues_ch;
+
+
+void changeDeck();
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value);
 void readButtons();
@@ -39,9 +50,7 @@ void setup()
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
   pots.begin();
-  leftBtns.begin(SwMuxLeftSet, nSwMuxLeft, LEFT_BTNS_CH);
-  rightBtns.begin(SWMuxRightSet, nSwMuxRight, RIGHT_BTNS_CH);
-  btns.begin(ARDUINO_BTNS_CH);
+  MDInput::initialize();
   MDOutput::initialize();
   MDTouch::initialize();
   // Set Deck B Focus
@@ -78,11 +87,45 @@ void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
   MDOutput::noteOn(channel, number, value);
 }
 
+void changeDeck() {
+  switch (deckSelected)
+  {
+  case Selected::Deck_B:
+    deckSelected = Selected::Deck_C;
+    padRCh = padDeckC;
+    break;
+  
+  case Selected::Deck_C:
+    deckSelected = Selected::Deck_B;
+    padRCh = padDeckB;
+    break;
+  }
+}
+
+
+void changePadL() {
+    padDeckA = Pad::change(padDeckA);
+}
+
+void changePadR(){
+  switch (deckSelected)
+  {
+  case Selected::Deck_B:
+    padDeckB = Pad::change(padDeckB);
+    break;
+
+  case Selected::Deck_C:
+    padDeckC = Pad::change(padDeckC);
+    break;
+  }
+}
+
 void readButtons()
 {
-  leftBtns.read(sendMidiNoteOn, sendMidiNoteOff);
-  rightBtns.read(sendMidiNoteOn, sendMidiNoteOff);
-  btns.read(sendMidiNoteOn, sendMidiNoteOff);
+  MDInput::readSelector(&changeDeck);
+  MDInput::readPadMode(&changePadL, Location::Left);
+  MDInput::readPadMode(&changePadR, Location::Right);
+  MDInput::read(sendMidiNoteOn, padLCh, padRCh);
 }
 
 void readPots()

@@ -1,9 +1,7 @@
+#pragma once
 
-#ifndef ARDUINO_PINMAP_H
-#define ARDUINO_PINMAP_H
 #include <Arduino.h>
 
-#pragma once
 
 //////////////////////////////////////
 // BUTTONS
@@ -18,20 +16,18 @@ uint8_t const SWFXR_1 = 12;
 uint8_t const SWBR_PREVIEW = 14;
 uint8_t const SWBR_BACK = 15;
 
-const uint8_t aSwSet[] = {
-    SWFXR_2,
-    SWFXR_3,
-    SWFXL_1,
-    SW_BROWSER_R,
-    SW_BROWSER_L,
-    SWFXL_2,
+uint8_t const aSwSet[] = {
     SWFXL_3,
+    SWFXL_2,
+    SWFXL_1,
+    SWFXR_3,
+    SWFXR_2,
     SWFXR_1,
-    SWBR_PREVIEW,
-    SWBR_BACK
+    SW_BROWSER_R,
+    SW_BROWSER_L
 };
 
-const uint8_t nASw = 10;
+const uint8_t nASw = 8;
 
 uint8_t const L_BROWSER_A = 2;
 uint8_t const L_BROWSER_B = 3;
@@ -77,5 +73,3 @@ const uint8_t aPotsSet[] = {
     PMASTER};
 
 const uint8_t nAPots = 2;
-
-#endif

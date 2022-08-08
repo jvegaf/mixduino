@@ -32,9 +32,18 @@ void initialize()
     np.clear();
 }
 
-void handleChange(uint8_t number, uint8_t value) 
+void changePixel(uint8_t position, uint8_t value) 
 {
-    np.setPixelColor(number, HCCols[value]); 
+    np.setPixelColor(position, HCCols[value]); 
     np.show();
 }
+
+void changeRange(uint8_t position, uint8_t t_pixels, uint8_t value) {
+    for (size_t i = 0 ; i < t_pixels; i++)
+    {
+        np.setPixelColor(position + i, HCCols[value]);
+    }
+    np.show();
+}
+
 } // namespace MDPixels

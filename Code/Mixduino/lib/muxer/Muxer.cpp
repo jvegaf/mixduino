@@ -1,4 +1,4 @@
-#include "Muxer.h"
+#include "Muxer.hpp"
 
 void Muxer::setMuxChannel(uint8_t channel)
 {
@@ -9,41 +9,29 @@ void Muxer::setMuxChannel(uint8_t channel)
 }
 
 Muxer::Muxer(uint8_t s0, uint8_t s1, uint8_t s2, uint8_t s3, uint8_t sig)
-{
-    muxS0 = s0;
-    muxS1 = s1;
-    muxS2 = s2;
-    muxS3 = s3;
-    muxSIG = sig;
-}
+:muxS0(s0),muxS1(s1),muxS2(s2),muxS3(s3),muxSIG(sig) { }
 
-void Muxer::begin(const uint8_t *mPins, const uint8_t nPins, uint8_t midiCh)
+void Muxer::initialize(const uint8_t *pins_group, const uint8_t t_pins, uint8_t firstNote)
 {
-    totalMuxPins = nPins;
-    muxPins = new uint8_t[totalMuxPins];
-    midiChannel = midiCh;
+    first_note = firstNote;
+    totalMuxPins = t_pins;
+    muxPinsGroup = new uint8_t[totalMuxPins];
     for (uint8_t i = 0; i < totalMuxPins; i++)
     {
-        muxPins[i] = mPins[i];
+        muxPinsGroup[i] = pins_group[i];
     }
 
     pState = new int[totalMuxPins]();
     cState = new int[totalMuxPins]();
     lastdebouncetime = new unsigned long[totalMuxPins]();
-
-    pinMode(muxSIG, INPUT_PULLUP);
-    pinMode(muxS0, OUTPUT);
-    pinMode(muxS1, OUTPUT);
-    pinMode(muxS2, OUTPUT);
-    pinMode(muxS3, OUTPUT);
 }
 
-void Muxer::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
+void Muxer::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), uint8_t midiCh)
 {
     for (uint8_t i = 0; i <= totalMuxPins; i++)
     {
 
-        setMuxChannel(i);
+        setMuxChannel(muxPinsGroup[i]);
 
         cState[i] = digitalRead(muxSIG);
         if ((millis() - lastdebouncetime[i]) > debouncedelay)
@@ -55,11 +43,11 @@ void Muxer::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint
                 if (cState[i] == LOW)
                 {
                     //MIDI.sendNoteOn(number , value(127) , channel);
-                    funcOn(i, 127U, midiChannel);
+                    funcOn(first_note + i, 127U, midiCh);
                 }
                 else
                 {
-                    funcOff(i, 127U, midiChannel);
+                    funcOn(first_note + i, 0, midiCh);
                     //MIDI.sendNoteOff(36 + i , 127 , 1);
                 }
 

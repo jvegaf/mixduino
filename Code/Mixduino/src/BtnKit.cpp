@@ -1,29 +1,22 @@
 #include "BtnKit.h"
 
-BtnKit::BtnKit(const uint8_t* arduinoPins, const uint8_t tPins)
+BtnKit::BtnKit(uint8_t* const arduinoPins, uint8_t* const notes, const uint8_t tPins)
+: pins(arduinoPins), midiNotes(notes), totalPins(tPins)
 {
-    totalPins = tPins;
-    pins = new uint8_t[totalPins];
-    for (uint8_t i = 0; i < totalPins; i++)
-    {
-        pins[i] = arduinoPins[i];
-    }
-    pState = new int[totalPins]();
-    cState = new int[totalPins]();
-    lastdebouncetime = new unsigned long[totalPins]();
+    pState = new int[tPins]();
+    cState = new int[tPins]();
+    lastdebouncetime = new unsigned long[tPins]();
 }
 
-void BtnKit::begin(uint8_t midiCh)
+void BtnKit::initialize()
 {
     for (uint8_t i = 0; i < totalPins; i++)
     {
         pinMode(pins[i], INPUT_PULLUP);
     }
-
-    midiChannel = midiCh;
 }
 
-void BtnKit::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uint8_t, uint8_t, uint8_t))
+void BtnKit::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), uint8_t midiCh)
 {
 
     for (uint8_t i = 0; i < totalPins; i++)
@@ -43,11 +36,11 @@ void BtnKit::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), void (*funcOff)(uin
 
                 if (cState[i] == LOW)
                 {
-                    funcOn(i, 127, midiChannel); // envia NoteOn(nota, velocity, canal midi)
+                    funcOn(midiNotes[i], 127, midiCh); // envia NoteOn(nota, velocity, canal midi)
                 }
                 else
                 {
-                    funcOff(i, 127, midiChannel);
+                    funcOn(midiNotes[i], 0, midiCh);
                 }
 
                 pState[i] = cState[i];

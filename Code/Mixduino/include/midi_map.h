@@ -6,36 +6,66 @@
 #pragma once
 
 
-/////////////////////////////////////////
-// INPUTS
+const uint8_t kfst_note = 12;
+const uint8_t lpad_fnote = kfst_note;
+const uint8_t rpad_fnote = 20;
+const uint8_t pbtn_l_fnote = 15;
+const uint8_t pbtn_r_fnote = 20;
+const uint8_t sbtn_l_fnote = 28;
+const uint8_t sbtn_r_fnote = 30;
 
-const uint8_t LEFT_BTNS_CH    = 5;
-const uint8_t RIGHT_BTNS_CH   = 6;
-const uint8_t ARDUINO_BTNS_CH = 7;
+
+
+/////////////////////////////////////////
+// CHN
+
+const uint8_t leds_out_ch    = 1;
+const uint8_t sw_in_ch       = 2;
+const uint8_t pad_in_ch      = 3;
+const uint8_t pad_out_ch     = 4;
+const uint8_t hotcues_ch     = 5;
+const uint8_t loop_size_ch   = 6;
+const uint8_t beatjump_ch    = 7;
+const uint8_t range_sel_ch   = 8;
+
+
 
 /////////////////////////////////////////
 // OUTS
 
-const uint8_t MONITOR_CUE_A       = 39; // d#2
-const uint8_t MONITOR_CUE_B       = 40; // e2
-const uint8_t MONITOR_CUE_C       = 41; // f2
 
-const uint8_t FX1_BTN_1           = 42; // f#2
-const uint8_t FX1_BTN_2           = 43; // g2
-const uint8_t FX1_BTN_3           = 44; // g#2
-const uint8_t FX2_BTN_1           = 45; // a2
-const uint8_t FX2_BTN_2           = 46; // a#2
-const uint8_t FX2_BTN_3           = 47; // b2
+const uint8_t FXL_BTN_3    = 12;
+const uint8_t FXL_BTN_2    = 13;
+const uint8_t FXL_BTN_1    = 14;
+const uint8_t PLAY_L       = 15;
+const uint8_t CUE_L        = 16;
+const uint8_t LOOP_L       = 17;
+const uint8_t CUE_B        = 18;
+const uint8_t CUE_A        = 19;
+const uint8_t CUE_C        = 20;
+const uint8_t CUE_R        = 21;
+const uint8_t PLAY_R       = 22;
+const uint8_t LOOP_R       = 23;
+const uint8_t FXR_BTN_3    = 24;
+const uint8_t FXR_BTN_2    = 25;
+const uint8_t FXR_BTN_1    = 26;
+const uint8_t	BROWSER_R = 27;
+const uint8_t	BROWSER_L = 28;
+const uint8_t	BR_PREVIEW = 29;
+const uint8_t	BR_BACK    = 30;
 
-const uint8_t PLAY_DECK_A         = 48; // c3
-const uint8_t PLAY_DECK_B         = 49; // c#3     & DECK_C
-
-const uint8_t CUE_DECK_A          = 50; // d3
-const uint8_t CUE_DECK_B          = 51; // d#3     & DECK_C
-
-const uint8_t LOOP_DECK_A          = 52; // e3
-const uint8_t LOOP_DECK_B          = 53; // f3     & DECK_C
-
+uint8_t const btn_kit_set[] = {
+  FXL_BTN_3,
+  FXL_BTN_2,
+  FXL_BTN_1,
+  FXR_BTN_3,
+  FXR_BTN_2,
+  FXR_BTN_1,
+  BROWSER_R,
+  BROWSER_L,
+  BR_PREVIEW,
+  BR_BACK
+};
 
 
 

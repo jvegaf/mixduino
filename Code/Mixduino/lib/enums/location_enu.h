@@ -6,5 +6,10 @@ enum class Location {
   Right
  };
 
+ enum class Selected
+ {
+  Deck_B, 
+  Deck_C
+ };
 
 #endif // __LOCATION_ENU_H__

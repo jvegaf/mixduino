@@ -4,18 +4,31 @@
 /////////////////////////////////////////
 // INPUTS
 
+// LED Buttons
+/**
+ * Channel 2 buttons (inputs)
+ * channel 3 leds (ouputs)
+ * 
+ */
+
+
+
+const uint8_t k_btns_ch = 2;
+const uint8_t k_leds_ch = 3;
+
+
+
+
 // PAD MODES
 /**
  *  hotcues
  *  loop size selector .5 1 2 4 5 16 32 off
  *  beatjump -.5 -1 -4 -16 .5 1 4 16
  *  range selector 8 10 20 100 tempbend down up
- *
+ *  
+ * channels 5 6 7
  */
 
-const uint8_t LEFT_BTNS_CH = 5;
-const uint8_t RIGHT_BTNS_CH = 6;
-const uint8_t ARDUINO_BTNS_CH = 7;
 
 /////////////////////////////////////////
 // OUTS

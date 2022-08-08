@@ -38,6 +38,14 @@ void noteOn(uint8_t channel, uint8_t number, uint8_t value)
     MDLeds::setValue(number, value);
 }
 
+void changePad(Location loc, uint32_t color){
+    if(loc == Location::Left) {
+        MDPixels::changeRange(NP_PADL1, 8, color);
+        return;
+    }
+    MDPixels::changeRange(NP_PADR1, 8, color);
+}
+
 
 } // namespace MDOutput
 

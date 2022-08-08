@@ -3,6 +3,7 @@
 #include <Thread.h>
 #include <ThreadController.h>
 #include "midi_map.h"
+#include "np_map.h"
 #include "md_output.hpp"
 #include "md_input.hpp"
 #include "BREncoder.hpp"
@@ -30,7 +31,8 @@ Pad::Mode padDeckC = Pad::Mode::HotCues;
 uint8_t padLCh = hotcues_ch;
 uint8_t padRCh = hotcues_ch;
 
-
+uint32_t getColorByMode(Pad::Mode mode);
+void setPadsColor(Location loc, uint32_t color);
 void changeDeck();
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value);
@@ -87,6 +89,29 @@ void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
   MDOutput::noteOn(channel, number, value);
 }
 
+inline uint32_t getColorByMode(Pad::Mode mode) {
+  uint32_t result = 0;
+  switch (mode)
+  {
+  case Pad::Mode::HotCues:
+    result = hotcues_padmode_color;
+
+  case Pad::Mode::Loop:
+    result = loop_padmode_color;
+  
+  case Pad::Mode::Beatjump:
+    result = beatj_padmode_color;
+  
+  case Pad::Mode::TempoRange:
+    result = temposel_padmode_color;
+  }
+  return result;
+}
+
+inline void setPadsColor(Location loc, uint32_t color) {
+  MDOutput::changePad(loc, color);
+}
+
 void changeDeck() {
   switch (deckSelected)
   {
@@ -105,19 +130,25 @@ void changeDeck() {
 
 void changePadL() {
     padDeckA = Pad::change(padDeckA);
+    auto col = getColorByMode(padDeckA);
+    setPadsColor(Location::Left, col);
 }
 
 void changePadR(){
+  uint32_t col = 0;
   switch (deckSelected)
   {
   case Selected::Deck_B:
     padDeckB = Pad::change(padDeckB);
+    col = getColorByMode(padDeckB);
     break;
 
   case Selected::Deck_C:
     padDeckC = Pad::change(padDeckC);
+    col = getColorByMode(padDeckC);
     break;
   }
+  setPadsColor(Location::Right, col);
 }
 
 void readButtons()

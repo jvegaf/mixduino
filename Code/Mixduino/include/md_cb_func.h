@@ -1,16 +1,17 @@
-#ifndef __MD_CB_FUNC_H__
-#define __MD_CB_FUNC_H__
+#ifndef MD_CB_FUNC_H_
+#define MD_CB_FUNC_H_
 
 #include <Arduino.h>
+#include "md_enums.hpp"
 
-struct inputCallbacks_str
+struct compoment_str
 {
-  void (*funcOn)(uint8_t, uint8_t, uint8_t); 
+  void (*funcPad)(Location, uint8_t);
   void (*funcDeckSel)();
-  void (*funcLPadMod)();
-  void (*funcRPadMod)();
+  void (*funcPadMod)(Location);
 };
 
 typedef struct inputCallBacks_str inCallBacks_t;
 
-#endif // __MD_CB_FUNC_H__
+#endif // MD_CB_FUNC_H_
+

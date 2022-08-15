@@ -1,14 +1,13 @@
-#include "md_output.hpp"
+#include "md_feedback.hpp"
 #include "vumeters.hpp"
 
 #include "md_leds.hpp"
 
-#include <Align.h>
 #include "md_pixels.hpp"
 #include "pin_map.h"
 #include "np_map.h"
 
-namespace MDOutput
+namespace MDFeedback
 {
     
 void initialize()
@@ -17,7 +16,7 @@ void initialize()
     MDPixels::initialize();
 }
 
-void cChange(uint8_t channel, uint8_t number, uint8_t value)
+void onCChange(uint8_t channel, uint8_t number, uint8_t value)
 {
     switch (channel)
     {
@@ -33,7 +32,7 @@ void cChange(uint8_t channel, uint8_t number, uint8_t value)
     }
 }
 
-void noteOn(uint8_t channel, uint8_t number, uint8_t value)
+void onNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
     MDLeds::setValue(number, value);
 }
@@ -47,7 +46,7 @@ void changePad(Location loc, uint32_t color){
 }
 
 
-} // namespace MDOutput
+} // namespace MDFeedback
 
 
 

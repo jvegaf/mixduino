@@ -2,15 +2,20 @@
 #include <MIDI.h>
 #include <Thread.h>
 #include <ThreadController.h>
-#include "midi_map.h"
-#include "np_map.h"
-#include "md_output.hpp"
-#include "md_input.hpp"
-#include "BREncoder.hpp"
-#include "BtnKit.h"
+#include "md_init.h"
+#include "md_enums.hpp"
 #include "PotKit.h"
+#include "md_pad.hpp"
+#include "BREncoder.hpp"
 #include "md_touch.hpp"
-#include "pad.hpp"
+#include "md_input.hpp"
+#include "components_def.h"
+
+
+
+
+
+
 
 
 // Rev5 version
@@ -22,41 +27,36 @@ ThreadController cpu;     //thread master, onde as outras vao ser adicionadas
 Thread threadReadPots;    // thread para controlar os pots
 Thread threadReadButtons; // thread para controlar os botoes
 
-Selected deckSelected = Selected::Deck_B;
+ActiveDeck rightDeck = ActiveDeck::Deck_B;
 
-Pad::Mode padDeckA = Pad::Mode::HotCues;
-Pad::Mode padDeckB = Pad::Mode::HotCues;
-Pad::Mode padDeckC = Pad::Mode::HotCues;
+void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel);
 
-uint8_t padLCh = hotcues_ch;
-uint8_t padRCh = hotcues_ch;
+Pad padA(pad_A_notes, sendMidiNoteOn);
+Pad padB(pad_C_notes, sendMidiNoteOn);
+Pad padC(pad_C_notes, sendMidiNoteOn);
 
-uint32_t getColorByMode(Pad::Mode mode);
-void setPadsColor(Location loc, uint32_t color);
 void changeDeck();
+
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value);
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value);
+void handleEvent(uint8_t component_id, State state);
 void readButtons();
 void readPots();
 void readTouchBars();
-void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel);
-void sendMidiNoteOff(uint8_t number, uint8_t value, uint8_t channel);
 void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel);
 
 void setup()
 {
   // Serial.begin(31250);
+  MD::initPins();
   MIDI.setHandleControlChange(handleControlChange);
   MIDI.setHandleNoteOn(handleNoteOn);
 
   MIDI.begin(MIDI_CHANNEL_OMNI);
   MIDI.turnThruOff();
   pots.begin();
-  MDInput::initialize();
-  MDOutput::initialize();
-  MDTouch::initialize();
   // Set Deck B Focus
-  // MIDI.sendNoteOn(1, 127, 9);
+  // MIDI.onNoteOn(1, 127, 9);
 
   /////////////////////////////////////////////
   // threads
@@ -81,82 +81,28 @@ void loop()
 
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value)
 {
-  MDOutput::cChange(channel, number, value);
+  // MDFeedback::onCChange(channel, number, value);
 }
 
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value)
 {
-  MDOutput::noteOn(channel, number, value);
+  // MDFeedback::onNoteOn(channel, number, value);
 }
 
-inline uint32_t getColorByMode(Pad::Mode mode) {
-  uint32_t result = 0;
-  switch (mode)
-  {
-  case Pad::Mode::HotCues:
-    result = hotcues_padmode_color;
-
-  case Pad::Mode::Loop:
-    result = loop_padmode_color;
-  
-  case Pad::Mode::Beatjump:
-    result = beatj_padmode_color;
-  
-  case Pad::Mode::TempoRange:
-    result = temposel_padmode_color;
-  }
-  return result;
-}
-
-inline void setPadsColor(Location loc, uint32_t color) {
-  MDOutput::changePad(loc, color);
-}
 
 void changeDeck() {
-  switch (deckSelected)
+  if (rightDeck == ActiveDeck::Deck_B)
   {
-  case Selected::Deck_B:
-    deckSelected = Selected::Deck_C;
-    padRCh = padDeckC;
-    break;
-  
-  case Selected::Deck_C:
-    deckSelected = Selected::Deck_B;
-    padRCh = padDeckB;
-    break;
+    rightDeck = ActiveDeck::Deck_C;
+    return;
   }
-}
 
-
-void changePadL() {
-    padDeckA = Pad::change(padDeckA);
-    auto col = getColorByMode(padDeckA);
-    setPadsColor(Location::Left, col);
-}
-
-void changePadR(){
-  uint32_t col = 0;
-  switch (deckSelected)
-  {
-  case Selected::Deck_B:
-    padDeckB = Pad::change(padDeckB);
-    col = getColorByMode(padDeckB);
-    break;
-
-  case Selected::Deck_C:
-    padDeckC = Pad::change(padDeckC);
-    col = getColorByMode(padDeckC);
-    break;
-  }
-  setPadsColor(Location::Right, col);
+  rightDeck = ActiveDeck::Deck_B;
 }
 
 void readButtons()
 {
-  MDInput::readSelector(&changeDeck);
-  MDInput::readPadMode(&changePadL, Location::Left);
-  MDInput::readPadMode(&changePadR, Location::Right);
-  MDInput::read(sendMidiNoteOn, padLCh, padRCh);
+  MDInput::read(handleEvent);
 }
 
 void readPots()
@@ -169,12 +115,57 @@ void sendMidiNoteOn(uint8_t number, uint8_t value, uint8_t channel)
   MIDI.sendNoteOn(number, value, channel);
 }
 
-void sendMidiNoteOff(uint8_t number, uint8_t value, uint8_t channel)
-{
-  MIDI.sendNoteOff(number, value, channel);
-}
 
 void sendMidiCC(uint8_t number, uint8_t value, uint8_t channel)
 {
   MIDI.sendControlChange(number, value, channel);
+}
+
+inline void handleEvent(uint8_t component_id, State state) {
+  switch (component_id)
+  {
+  case 11 ... 15 :
+    // mixer
+    break;
+  
+  case 16 ... 20:
+    // browser
+    break;
+  
+  case 21 ... 23:
+    //fx 1
+    break;
+
+  case 24 ... 26:
+    // fx 2
+    break;
+  
+  case 27 ... 31:
+    //deck L
+    break;
+  
+  case 32 ... 40:
+    // deck r
+    break;
+
+  case 41 ... 48:
+    padA.sendNote(component_id, state);
+    break;
+  
+  case 49 ... 64:
+    {
+      if (rightDeck == ActiveDeck::Deck_B) {
+        padB.sendNote(component_id, state);
+        return;
+      }
+      padC.sendNote(component_id, state);
+    }
+    break;
+
+  
+
+    
+  default:
+    break;
+  }
 }

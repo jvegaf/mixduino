@@ -1,57 +1,43 @@
 #include "Muxer.hpp"
+#include "md_enums.hpp"
+#include "controller.h"
+#include "mux_map.h"
+
+
 
 void Muxer::setMuxChannel(uint8_t channel)
 {
-    digitalWrite(muxS0, bitRead(channel, 0));
-    digitalWrite(muxS1, bitRead(channel, 1));
-    digitalWrite(muxS2, bitRead(channel, 2));
-    digitalWrite(muxS3, bitRead(channel, 3));
+    digitalWrite(mux_pins[0], bitRead(channel, 0));
+    digitalWrite(mux_pins[1], bitRead(channel, 1));
+    digitalWrite(mux_pins[2], bitRead(channel, 2));
+    digitalWrite(mux_pins[3], bitRead(channel, 3));
 }
 
-Muxer::Muxer(uint8_t s0, uint8_t s1, uint8_t s2, uint8_t s3, uint8_t sig)
-:muxS0(s0),muxS1(s1),muxS2(s2),muxS3(s3),muxSIG(sig) { }
-
-void Muxer::initialize(const uint8_t *pins_group, const uint8_t t_pins, uint8_t firstNote)
+void Muxer::read(void (*func)(uint8_t, State))
 {
-    first_note = firstNote;
-    totalMuxPins = t_pins;
-    muxPinsGroup = new uint8_t[totalMuxPins];
-    for (uint8_t i = 0; i < totalMuxPins; i++)
+    for (uint8_t i = 0; i <= t_elements; i++)
     {
-        muxPinsGroup[i] = pins_group[i];
-    }
+        if (elements[i] == kEmptyEl) continue; // this mux position is empty
+        
+        setMuxChannel(i);
 
-    pState = new int[totalMuxPins]();
-    cState = new int[totalMuxPins]();
-    lastdebouncetime = new unsigned long[totalMuxPins]();
-}
-
-void Muxer::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), uint8_t midiCh)
-{
-    for (uint8_t i = 0; i <= totalMuxPins; i++)
-    {
-
-        setMuxChannel(muxPinsGroup[i]);
-
-        cState[i] = digitalRead(muxSIG);
+        c_state[i] = digitalRead(sig_pin);
         if ((millis() - lastdebouncetime[i]) > debouncedelay)
         {
-            if (pState[i] != cState[i])
+            if (p_state[i] != c_state[i])
             {
                 lastdebouncetime[i] = millis();
 
-                if (cState[i] == LOW)
+                if (c_state[i] == LOW)
                 {
-                    //MIDI.sendNoteOn(number , value(127) , channel);
-                    funcOn(first_note + i, 127U, midiCh);
+                    func(elements[i], State::Triggered);
                 }
                 else
                 {
-                    funcOn(first_note + i, 0, midiCh);
-                    //MIDI.sendNoteOff(36 + i , 127 , 1);
+                    func(elements[i], State::Idle);
                 }
 
-                pState[i] = cState[i];
+                p_state[i] = c_state[i];
             }
         }
     }

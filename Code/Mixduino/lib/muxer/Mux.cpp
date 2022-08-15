@@ -1,22 +1,20 @@
 #include "Mux.hpp"
+#include "controller.h"
 
 void Mux::setMuxChannel(uint8_t channel)
 {
-    digitalWrite(muxS0, bitRead(channel, 0));
-    digitalWrite(muxS1, bitRead(channel, 1));
-    digitalWrite(muxS2, bitRead(channel, 2));
-    digitalWrite(muxS3, bitRead(channel, 3));
+    digitalWrite(muxpins[0], bitRead(channel, 0));
+    digitalWrite(muxpins[1], bitRead(channel, 1));
+    digitalWrite(muxpins[2], bitRead(channel, 2));
+    digitalWrite(muxpins[3], bitRead(channel, 3));
 }
 
-Mux::Mux(uint8_t s0, uint8_t s1, uint8_t s2, uint8_t s3, uint8_t sig)
-:muxS0(s0),muxS1(s1),muxS2(s2),muxS3(s3),muxSIG(sig) { }
+Mux::Mux(const uint8_t* m_pins, const uint8_t sig, const uint8_t pos, const uint8_t id)
+:muxpins(m_pins),muxSIG(sig), position(pos), element_id(id) { }
 
-void Mux::initialize(uint8_t pos)
-{
-    position = pos;
-}
 
-void Mux::read(void (*func)())
+
+void Mux::read(void (*func)(uint8_t, State))
 {
     setMuxChannel(position);
     cState = digitalRead(muxSIG);
@@ -29,7 +27,11 @@ void Mux::read(void (*func)())
 
             if (cState == LOW)
             {
-                func();
+                func(element_id, State::Triggered);
+            }
+            else
+            {
+                func(element_id, State::Idle);
             }
 
             pState = cState;

@@ -1,30 +1,24 @@
 #include "BtnKit.h"
+#include "controller.h"
 
-BtnKit::BtnKit(uint8_t* const arduinoPins, uint8_t* const notes, const uint8_t tPins)
-: pins(arduinoPins), midiNotes(notes), totalPins(tPins)
+BtnKit::BtnKit(const uint8_t* ard_pins, const uint8_t* el, const uint8_t t_pins)
+: pins(ard_pins), elements(el), total_pins(t_pins)
 {
-    pState = new int[tPins]();
-    cState = new int[tPins]();
-    lastdebouncetime = new unsigned long[tPins]();
+    pState = new uint16_t[t_pins]();
+    cState = new uint16_t[t_pins]();
+    lastdebouncetime = new uint32_t[t_pins]();
 }
 
-void BtnKit::initialize()
-{
-    for (uint8_t i = 0; i < totalPins; i++)
-    {
-        pinMode(pins[i], INPUT_PULLUP);
-    }
-}
 
-void BtnKit::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), uint8_t midiCh)
+void BtnKit::read(void (*func)(uint8_t, State))
 {
 
-    for (uint8_t i = 0; i < totalPins; i++)
+    for (uint8_t i = 0; i < total_pins; i++)
     {
         cState[i] = digitalRead(pins[i]);
     }
 
-    for (uint8_t i = 0; i < totalPins; i++)
+    for (uint8_t i = 0; i < total_pins; i++)
     {
 
         if ((millis() - lastdebouncetime[i]) > debouncedelay)
@@ -36,11 +30,11 @@ void BtnKit::read(void (*funcOn)(uint8_t, uint8_t, uint8_t), uint8_t midiCh)
 
                 if (cState[i] == LOW)
                 {
-                    funcOn(midiNotes[i], 127, midiCh); // envia NoteOn(nota, velocity, canal midi)
+                    func(elements[i], State::Triggered);
                 }
                 else
                 {
-                    funcOn(midiNotes[i], 0, midiCh);
+                    func(elements[i], State::Idle);
                 }
 
                 pState[i] = cState[i];

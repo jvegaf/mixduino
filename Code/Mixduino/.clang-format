@@ -1,0 +1,51 @@
+---
+BasedOnStyle: LLVM
+AccessModifierOffset: 0
+AlignAfterOpenBracket: AlwaysBreak
+AlignConsecutiveMacros: true
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveDeclarations: true
+AlignConsecutiveMacros: AcrossEmptyLines
+AlignConsecutiveMacros:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: false
+AlignEscapedNewlines: Right
+AlignOperands: 
+  AlignAfterOperator: true
+  AlignTrailingComments: true
+  AllowAllArgumentsOnNextLine: false
+  AllowAllParametersOfDeclarationOnNextLine: false
+  AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortBlocksOnASingleLine: All;
+AllowShortLambdasOnASingleLine: Empty
+AlwaysBreakBeforeMultilineStrings: false
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterEnum: true
+  AfterClass: true
+  AfterCaseLabel: false
+  AfterStruct: true
+  SplitEmptyFunction: false
+  AfterControlStatement: Never
+  AfterFunction: true
+  AfterNamespace: true
+  BeforeElse: true
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: BeforeColon
+Cpp11BracedListStyle: false
+PointerAlignment: Left
+ArrayInitializerAlignmentStyle: Right
+AlwaysBreakAfterReturnType: TopLevel
+AlwaysBreakTemplateDeclarations: Multiline
+BinPackArguments: false
+BitFieldColonSpacing: Both
+QualifierAlignment: Left
+QualifierOrder: ['inline', 'static' , 'type', 'const', 'volatile']
+ReferenceAlignment: Right
+ReflowComments: true
+SeparateDefinitionStyle: Always
+SortIncludes: CaseSensitive
+SortUsingDeclarations: true
+SpaceAfterCStyleCast: true
+SpaceAfterLogicalNot: false

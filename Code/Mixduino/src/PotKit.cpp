@@ -8,8 +8,8 @@ int potPState[totalPots] = {}; // previous state
 int potVar = 0;                // prev/current variation
 int lastCcValue[totalPots] = {};
 
-Multiplexer4067 mplexTopPots = Multiplexer4067(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A1);
-Multiplexer4067 mplexBottomPots = Multiplexer4067(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, MPLEX_A4);
+Multiplexer4067 mplexTopPots = Multiplexer4067(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, t_pots_datapin);
+Multiplexer4067 mplexBottomPots = Multiplexer4067(MPLEX_S0, MPLEX_S1, MPLEX_S2, MPLEX_S3, b_pots_datapin);
 
 uint8_t TIMEOUT = 50;
 uint8_t varThreshold = 8;

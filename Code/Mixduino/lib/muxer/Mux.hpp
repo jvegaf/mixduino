@@ -5,22 +5,25 @@
 class Mux
 {
 private:
-	uint8_t muxS0;
-	uint8_t muxS1;
-	uint8_t muxS2;
-	uint8_t muxS3;
-	uint8_t muxSIG;
-	uint8_t position{0};
+	const uint8_t* muxpins;
+	const uint8_t muxSIG;
+	const uint8_t position;
+	const uint8_t element_id;
 	uint16_t pState{0};
 	uint16_t cState{0};
 
-	unsigned long lastdebouncetime;
-	unsigned long debouncedelay = 20;
+	unsigned long lastdebouncetime{0};
+	unsigned long debouncedelay{20};
 	
 	void setMuxChannel(uint8_t channel);
 
 public:
-	Mux(uint8_t s0, uint8_t s1, uint8_t s2, uint8_t s3, uint8_t sig);
-	void initialize(uint8_t pos);
-	void read(void (*func)());
+	Mux(const uint8_t* m_pins, const uint8_t sig, const uint8_t pos, const uint8_t id);
+
+	/**
+	 *  callback function
+	 *  parameter 1: element id
+	 *  parameter 2: state
+	 */
+	void read(void (*func)(uint8_t, State));
 };

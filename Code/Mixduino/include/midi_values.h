@@ -15,7 +15,6 @@ const uint8_t km_Gs_0 = 20;
 const uint8_t km_A_0  = 21;
 const uint8_t km_As_0 = 22;
 const uint8_t km_B_0  = 23;
-
 const uint8_t km_C_1  = 24;
 const uint8_t km_Cs_1 = 25;
 const uint8_t km_D_1  = 26;

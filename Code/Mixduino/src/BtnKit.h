@@ -1,20 +1,21 @@
 #pragma once
 
 #include <Arduino.h>
+#include "md_enums.hpp"
+
 
 class BtnKit
 {
 private:
 	uint8_t const *pins;
-	uint8_t const *midiNotes;
-	const uint8_t totalPins;
-	int *pState;
-	int *cState;
+	uint8_t const *elements;
+	const uint8_t total_pins;
+	uint16_t *pState;
+	uint16_t *cState;
 
-	unsigned long* lastdebouncetime;
-	unsigned long debouncedelay = 20;
+	uint32_t* lastdebouncetime;
+	uint32_t debouncedelay = 20;
 public:
-	BtnKit(uint8_t* const arduinoPins, uint8_t* const notes, const uint8_t tPins); 
-	void initialize();
-	void read(void (*funcOn)(uint8_t, uint8_t, uint8_t), uint8_t midiCh);
+	BtnKit(const uint8_t* ard_pins, const uint8_t* el, const uint8_t t_pins); 
+	void read(void (*func)(uint8_t, State));
 };

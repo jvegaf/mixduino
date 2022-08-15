@@ -2,6 +2,8 @@
 
 #include <Arduino.h>
 
+
+
 class Muxer
 {
 private:
@@ -29,7 +31,7 @@ public:
 	/**
 	 *  callback function
 	 *  parameter 1: element id
-	 *  parameter 2: state
+	 *  parameter 2: valuw
 	 */
-	void read(void (*func)(uint8_t, State));
+	void read(void (*func)(uint8_t, uint8_t));
 };

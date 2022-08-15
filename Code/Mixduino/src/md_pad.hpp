@@ -1,32 +1,31 @@
 #pragma once
 
 #include <Arduino.h>
-#include "md_enums.hpp"
+#include "md_controller.h"
+#include "md_colors.h"
+#include "midi_map.h"
 
 class Pad
 {
 public:
+  Pad(const uint8_t *notes, void (*Func)(uint8_t, uint8_t, uint8_t), bool active) : midi_notes(notes), noteFunc(Func), is_active(active) {}
 
-    Pad(const uint8_t* notes, void(*Func)(uint8_t, uint8_t, uint8_t))
-    : midi_notes(notes), noteFunc(Func) { }
+  void changeMode(Location loc);
+  void changeState() { this->is_active = !this->is_active; }
 
-    void changeMode();
+  void handleEvent(uint8_t id, uint8_t value);
+  void handleEvent(uint8_t channel, uint8_t number, uint8_t value);
 
-    //todo: implement
-    void handleEvent(uint8_t id, State state);
+  private:
+    const uint8_t *midi_notes;
+    void (*noteFunc)(uint8_t, uint8_t, uint8_t);
+    uint8_t hotcueTypes[t_pads]{0};
+    uint32_t hc_cols[t_pads] = {MDColor::CLEAR_COL};
+    Mode pad_mode{Mode::HotCues};
+    bool is_active{false};
 
-    uint8_t* getHotcues()
-    {
-        return this->hotcues;
-    }
-
-    void setHotCueType(uint8_t pos, uint8_t type);
-
-    void sendNote(uint8_t element, State state);
-
-private:
-const uint8_t* midi_notes;
-void(*noteFunc)(uint8_t, uint8_t, uint8_t);
-uint8_t* hotcues{0};
-Mode pad_mode{Mode::HotCues};
+    void setHotCueType(uint8_t number, uint8_t type);
+    bool idExists(uint8_t id);
+    void draw(Location l, uint32_t color);
+    void draw(Location l, uint32_t *colors);
 };

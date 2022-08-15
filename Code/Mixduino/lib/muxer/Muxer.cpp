@@ -1,9 +1,6 @@
 #include "Muxer.hpp"
-#include "md_enums.hpp"
-#include "controller.h"
-#include "mux_map.h"
 
-
+const uint8_t kEmptyPos = 99;
 
 void Muxer::setMuxChannel(uint8_t channel)
 {
@@ -13,11 +10,11 @@ void Muxer::setMuxChannel(uint8_t channel)
     digitalWrite(mux_pins[3], bitRead(channel, 3));
 }
 
-void Muxer::read(void (*func)(uint8_t, State))
+void Muxer::read(void (*func)(uint8_t, uint8_t))
 {
     for (uint8_t i = 0; i <= t_elements; i++)
     {
-        if (elements[i] == kEmptyEl) continue; // this mux position is empty
+        if (elements[i] == kEmptyPos) continue; // this mux position is empty
         
         setMuxChannel(i);
 
@@ -30,11 +27,11 @@ void Muxer::read(void (*func)(uint8_t, State))
 
                 if (c_state[i] == LOW)
                 {
-                    func(elements[i], State::Triggered);
+                    func(elements[i], 127U);
                 }
                 else
                 {
-                    func(elements[i], State::Idle);
+                    func(elements[i], 0);
                 }
 
                 p_state[i] = c_state[i];

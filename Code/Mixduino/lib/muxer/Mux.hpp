@@ -2,6 +2,7 @@
 
 #include <Arduino.h>
 
+
 class Mux
 {
 private:
@@ -25,5 +26,5 @@ public:
 	 *  parameter 1: element id
 	 *  parameter 2: state
 	 */
-	void read(void (*func)(uint8_t, State));
+	void read(void (*func)(uint8_t, uint8_t));
 };

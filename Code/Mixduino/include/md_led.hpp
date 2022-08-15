@@ -5,21 +5,14 @@
 
 struct MDLed_t
 {
-  Shifter* shf_ptr;
-  uint8_t input_position;
+  Shifter* const shf_ptr;
+  const uint8_t input_position;
 
-  explicit MDLed_t(Shifter* s_ptr, uint8_t pos);
+  MDLed_t(Shifter* s_ptr, const uint8_t pos): shf_ptr(s_ptr), input_position(pos) {}
 
-  void setValue(uint8_t value) {  
-    boolean next = false;
-    if(value > 0 ) {
-      next = true;
-    }
+  void updateValue(uint8_t value) 
+  {
+    boolean next = value > 0U;
     shf_ptr->setPin(input_position, next);
   }
 };
-
-MDLed_t::MDLed_t(Shifter* s_ptr, uint8_t pos)
-  : shf_ptr(s_ptr),
-    input_position(pos)
-{}

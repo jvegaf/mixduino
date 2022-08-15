@@ -20,21 +20,20 @@ const uint8_t BRIGHTNESS = 32;
 
 // Range: -1 to 5 (-1 = no hotcue, 0 = Cue, 1 = FadeIn, 2 = FadeOut, 3 = Load, 4 = Grid, 5 = Loop)
 // mapped 0 to 6
-const uint32_t HCCols[] = {
-    CLEAR_COL,      // no hotcue
-    BLUE_COL,       // cue
-    ORANGE_COL,     // fade in out
-    YELLOW_COL,        // load
-    GRAY_COL,       // grid
-    GREEN_COL,
+
+const uint32_t hotcues_t[] {
+    BLUE_COL,
+    ORANGE_COL,
+    ORANGE_COL,
+    YELLOW_COL,
+    GRAY_COL,
+    GREEN_COL
 };
 
-const uint32_t cue_color = BLUE_COL;
-const uint32_t fadein_color = ORANGE_COL;
-const uint32_t fadeout_color = ORANGE_COL;
-const uint32_t load_color = YELLOW_COL;
-const uint32_t grid_color = GRAY_COL;
-const uint32_t loop_color = GREEN_COL;
+const uint32_t HotCueColorMode = CLEAR_COL;
+const uint32_t LoopColorMode = GREEN_COL; 
+const uint32_t BeJumpColorMode = ORANGE_COL; 
+const uint32_t TRangeColorMode = PURPLE_COL; 
   
 } // namespace MDColor
 

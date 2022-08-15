@@ -1,5 +1,4 @@
 #include "Mux.hpp"
-#include "controller.h"
 
 void Mux::setMuxChannel(uint8_t channel)
 {
@@ -14,7 +13,7 @@ Mux::Mux(const uint8_t* m_pins, const uint8_t sig, const uint8_t pos, const uint
 
 
 
-void Mux::read(void (*func)(uint8_t, State))
+void Mux::read(void (*func)(uint8_t, uint8_t))
 {
     setMuxChannel(position);
     cState = digitalRead(muxSIG);
@@ -27,11 +26,11 @@ void Mux::read(void (*func)(uint8_t, State))
 
             if (cState == LOW)
             {
-                func(element_id, State::Triggered);
+                func(element_id, 127U);
             }
             else
             {
-                func(element_id, State::Idle);
+                func(element_id, 0U);
             }
 
             pState = cState;

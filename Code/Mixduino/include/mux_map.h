@@ -48,7 +48,7 @@ const uint8_t left_mux_el[] = {
 
 const uint8_t t_mux_els = 16;
 
-const uint8_t kEmptyEl = 999;
+const uint8_t kEmptyEl = 99;
 
 //////////////888////////////////////////
 // MUX RIGHT BUTTONS

@@ -1,5 +1,5 @@
 #include "BtnKit.h"
-#include "controller.h"
+#include "md_controller.h"
 
 BtnKit::BtnKit(const uint8_t* ard_pins, const uint8_t* el, const uint8_t t_pins)
 : pins(ard_pins), elements(el), total_pins(t_pins)
@@ -10,7 +10,7 @@ BtnKit::BtnKit(const uint8_t* ard_pins, const uint8_t* el, const uint8_t t_pins)
 }
 
 
-void BtnKit::read(void (*func)(uint8_t, State))
+void BtnKit::read(void (*func)(uint8_t, uint8_t))
 {
 
     for (uint8_t i = 0; i < total_pins; i++)
@@ -30,11 +30,11 @@ void BtnKit::read(void (*func)(uint8_t, State))
 
                 if (cState[i] == LOW)
                 {
-                    func(elements[i], State::Triggered);
+                    func(elements[i], 127U);
                 }
                 else
                 {
-                    func(elements[i], State::Idle);
+                    func(elements[i], 0U);
                 }
 
                 pState[i] = cState[i];

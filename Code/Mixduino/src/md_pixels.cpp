@@ -1,6 +1,7 @@
 #include "md_pixels.hpp"
 #include "np_map.h"
 #include "pin_map.h"
+#include "md_colors.h"
 #include <Adafruit_NeoPixel.h>
 
 

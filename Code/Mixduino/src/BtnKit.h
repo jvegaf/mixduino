@@ -1,8 +1,6 @@
 #pragma once
 
 #include <Arduino.h>
-#include "md_enums.hpp"
-
 
 class BtnKit
 {
@@ -17,5 +15,5 @@ private:
 	uint32_t debouncedelay = 20;
 public:
 	BtnKit(const uint8_t* ard_pins, const uint8_t* el, const uint8_t t_pins); 
-	void read(void (*func)(uint8_t, State));
+	void read(void (*func)(uint8_t, uint8_t));
 };

@@ -86,21 +86,27 @@ const uint8_t pad_C_notes[] = {
 
 
 
-const uint8_t ldeck_notes[] =  {
-  km_G_1,
-  km_Ds_0,
-  km_E_0,
-  km_F_0,
-  km_Gs_1
- };
-
-const uint8_t rdeck_notes[] =  {
+const uint8_t deck_A_notes[] =  {
+  km_E_1,
+  km_F_1,
   km_Fs_1,
-  km_Gs_0,
-  km_A_0,
-  km_B_0,
-  km_As_1
- };
+  km_G_1
+};
+
+const uint8_t deck_B_notes[] =  {
+  km_A_1,
+  km_As_1,
+  km_B_1,
+  km_C_2
+};
+
+
+const uint8_t deck_C_notes[] = {
+  km_Cs_2,
+  km_D_2,
+  km_Ds_2,
+  km_E_2
+};
 
  
 const uint8_t lfx_notes[] =  {
@@ -115,9 +121,21 @@ const uint8_t rfx_notes[] =   {
   km_C_1
 };
 
-const uint8_t brw_notes[] = {
+const uint8_t mixer_notes[] = {
+  km_Cs_0,
+  km_D_0,
+  km_Ds_0,
   km_E_1,
   km_Ds_1,
   km_B_1,
   km_C_2  
+};
+
+
+enum class Mode : uint8_t
+{
+    HotCues = hotcues_ch,
+    Loop = loop_size_ch,
+    Beatjump = beatjump_ch,
+    TempoRange = tempo_range_ch
 };

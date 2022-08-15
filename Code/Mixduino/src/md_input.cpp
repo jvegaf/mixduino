@@ -1,7 +1,7 @@
 #include "md_input.hpp"
-#include "controller.h"
 #include "Muxer.hpp"
 #include "Mux.hpp"
+#include "md_controller.h"
 #include "pin_map.h"
 #include "mux_map.h"
 #include "midi_map.h"
@@ -16,7 +16,7 @@ namespace MDInput
   BtnKit bKit(ard_sw_pins, ard_elements, t_ard_sw);
 
 
-  void read(void (*func)(uint8_t, State)) {
+  void read(void (*func)(uint8_t, uint8_t)) {
     left_muxer.read(func);
     right_muxer.read(func);
     bKit.read(func);

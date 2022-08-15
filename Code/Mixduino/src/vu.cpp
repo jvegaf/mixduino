@@ -5,9 +5,6 @@ VU::VU(uint8_t p_data, uint8_t p_latch, uint8_t p_clock)
 { }
 
 void VU::begin() {
-	pinMode(m_data_pin, OUTPUT);
-	pinMode(m_latch_pin, OUTPUT);
-	pinMode(m_clock_pin, OUTPUT);
     this->clear();
 }
 

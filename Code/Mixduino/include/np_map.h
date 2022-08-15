@@ -2,7 +2,6 @@
 #ifndef ARDUINO_NP_MAP_H
 #define ARDUINO_NP_MAP_H
 #include <Arduino.h>
-#include "md_colors.h"
 
 #pragma once
 
@@ -31,7 +30,7 @@ const uint8_t NP_DECK_SEL = 18;
 const uint8_t NP_RANGE_R  = 19;
 const uint8_t NP_SYNC_R   = 20;
 
-uint8_t const px_padl_set[] = {
+const uint8_t px_padl_set[] = {
     NP_PADL1,
     NP_PADL2,
     NP_PADL3,
@@ -42,7 +41,7 @@ uint8_t const px_padl_set[] = {
     NP_PADL8
 };
 
-uint8_t const px_padr_set[] = {
+const uint8_t px_padr_set[] = {
     NP_PADR1,
     NP_PADR2,
     NP_PADR3,
@@ -52,35 +51,5 @@ uint8_t const px_padr_set[] = {
     NP_PADR7,
     NP_PADR8
 };
-
-const uint32_t hotcues_padmode_color = MDColor::CLEAR_COL;
-const uint32_t loop_padmode_color = MDColor::loop_color;
-const uint32_t beatj_padmode_color = MDColor::ORANGE_COL;
-const uint32_t temposel_padmode_color = MDColor::PURPLE_COL;
-
-
-// const uint8_t NPSet[] = {
-//     NP_PADL1,
-//     NP_PADL2,
-//     NP_PADL3,
-//     NP_PADL4,
-//     NP_PADL5,
-//     NP_PADL6,
-//     NP_PADL7,
-//     NP_PADL8,
-//     NP_RANGE_L,
-//     NP_SYNC_L,
-//     NP_PADR_1,
-//     NP_PADR_2,
-//     NP_PADR_3,
-//     NP_PADR_4,
-//     NP_PADR_5,
-//     NP_PADR_6,
-//     NP_PADR_7,
-//     NP_PADR_8,
-//     NP_DECK_SEL,
-//     NP_RANGE_R,
-//     NP_SYNC_R
-// };
 
 #endif

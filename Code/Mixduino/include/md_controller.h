@@ -18,9 +18,15 @@
 
 // Shared constants
 
-const uint8_t t_pads = 8;
+const uint8_t t_pads      = 8;
+const uint8_t t_deck_comp = 4;
+const uint8_t t_leds      = 15;
 
 
+enum class Location {
+  Left,
+  Right
+};
 
 // Elements
 

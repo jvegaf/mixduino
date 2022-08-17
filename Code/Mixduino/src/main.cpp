@@ -82,10 +82,11 @@ void loop() {
 
 void handleControlChange(uint8_t channel, uint8_t number, uint8_t value) {
   // MDFeedback::onCChange(channel, number, value);
+  handleEvent(channel, number, value);
 }
 
 void handleNoteOn(uint8_t channel, uint8_t number, uint8_t value) {
-  // MDFeedback::onNoteOn(channel, number, value);
+  handleEvent(channel, number, value);
 }
 
 void changeDeck() {

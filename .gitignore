@@ -5,3 +5,7 @@ PCB/Kicad/Traktorino-backups/
 /PCB/Kicad/Mixduino-backups/
 
 *.dxf~
+
+Code/Mixduino/.cache/clangd/index
+Code/Mixduino/.ccls
+Code/Mixduino/compile_commands.json
